@@ -1,0 +1,88 @@
+\section{Tutorial 11 - 12.26}
+
+We are working with this problem
+\[-L[y] = a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t)y = -\lambda y, \ \alpha < t < \beta\]
+\begin{align*}
+    B_\alpha[y] &= a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0, \ |a_1| + |b_1| > 0 \\
+    B_\beta[y] &= a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0, \ |a_2| + |b_2| > 0
+\end{align*}
+
+\(V = \left\{ y \in C^2[\alpha, \beta], \ B_\alpha[y] = B_\beta[y] = 0 \right\}\).
+
+\((L[y], z) = (y, L[z]) \ \forall \ y, z \in V\), where \((u,v) = \int_\alpha^\beta uv \, dt \rightsquigarrow L \text{ is self-adjoint}\).
+
+\begin{theorem}
+    Assume that \(b \in C^1[\alpha, \beta]\) and \(a \in C^2[\alpha, \beta]\).
+    The operator \(L\) is self-adjoint iff \(b = \frac{da}{dt}\).
+\end{theorem}
+
+\begin{proof}
+    For \(y, z \in V\), we have proven that
+    \[-(L[y], z) + (y, L[z]) = a(t) \left( z \frac{dy}{dt} - y \frac{dz}{dt} \right) \bigg|_\alpha^\beta - \int_\alpha^\beta \left( b(t) - \frac{da}{dt} \right) \left( y \frac{dz}{dt} - z \frac{dy}{dt} \right) dt\]
+
+    Let's prove first that
+    \[\left.\left( z \frac{dy}{dt} - y \frac{dz}{dt} \right) \right|_\alpha^\beta = 0 \tag{10}\]
+    
+    We separate the proof in three cases.
+    \begin{enumerate}
+        \item \(b_1=0, b_2=0\).
+        Then, \(y(\alpha)=0, z(\alpha)=0, y(\beta)=0, z(\beta)=0\).
+        So, (10) is true.
+        
+        \item \(b_1=0, b_2 \neq 0\) (\(b_1 \neq 0, b_2=0\) similar).
+        
+        Then, \(y(\alpha) = z(\alpha) = 0\). Also \(a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0\) so \(\frac{dy}{dt}(\beta) = -\frac{a_2}{b_2}y(\beta)\).
+        
+        Similarly, \(\frac{dz}{dt}(\beta) = -\frac{a_2}{b_2}z(\beta)\).
+        Then,
+        \[\left( z \frac{dy}{dt} - y \frac{dz}{dt} \right) \bigg|_\alpha^\beta = -z(\beta) \frac{a_2}{b_2} y(\beta) + y(\beta) \frac{a_2}{b_2} z(\beta) - \underbrace{z(\alpha)}_{=0} \frac{dy}{dt}(\alpha) + \underbrace{y(\alpha)}_{=0} \frac{dz}{dt}(\alpha) = 0\]
+        
+        \item \(b_1 \neq 0, b_2 \neq 0\) (exercise).
+    \end{enumerate}
+    
+    Therefore,
+    \[(L[y], z) - (y, L[z]) = \int_\alpha^\beta \left( b(t) - \frac{da(t)}{dt} \right) \left( y \frac{dz}{dt} - z \frac{dy}{dt} \right) dt = 0 \ \forall \ y, z \in V \iff b = \frac{da}{dt} \text{ in } [\alpha, \beta].\]
+    
+    \begin{itemize}
+        \item[\(\Leftarrow\)] Direct.
+        
+        \item[\(\Rightarrow\)]
+        Consider \(y(t) = (t-\alpha)^2 (t-\beta)^2, \ t \in [\alpha, \beta]\). Observe that \(y \in C^2[\alpha, \beta]\) and \(y(\alpha) = y(\beta) = \frac{dy}{dt}(\alpha) = \frac{dy}{dt}(\beta) = 0\). So \(B_\alpha[y] = B_\beta[y] = 0\).
+        Thus, \(y \in V\).
+        
+        Also, consider \(z(t) = y(t) \int_\alpha^t \varphi(s) ds, \ t \in [\alpha, \beta]\), where \(\varphi(s) = b(s) - \frac{da}{ds}(s)\).
+        
+        Given that \(b \in C^1[\alpha, \beta]\) and \(a \in C^2[\alpha, \beta]\), we observe that \(z \in C^2[\alpha, \beta]\). Also,
+        \[\frac{dz}{dt}(t) = \frac{dy}{dt}(t) \int_\alpha^t \varphi(s) ds + y(t) \varphi(t), \ t \in [\alpha, \beta].\]
+    
+        We have,
+        \[z(\alpha) = 0, z(\beta) \overset{y(\beta)=0}{=} 0, \frac{dz}{dt}(\alpha) \overset{y(\alpha)=0}{=} 0, \frac{dz}{dt}(\beta) \overset{\frac{dy}{dt}(\beta)=0 \text{ and } y(\beta)=0}{=} 0.\]
+    
+        Then \(B_\alpha[z] = B_\beta[z] = 0\).
+        
+        We know that \(\int_\alpha^\beta \varphi(t) \left( y \frac{dz}{dt} - z \frac{dy}{dt} \right) dt = 0\) for \(y(t) = (t-\alpha)^2 (t-\beta)^2\), \(z(t) = y(t) \int_\alpha^t \varphi(s) ds\).
+        
+        Also, notice that \(y \frac{dz}{dt} - z \frac{dy}{dt} = \frac{d}{dt}\left( \frac{z}{y} \right) y^2\) in \((\alpha, \beta)\). Also, \(\frac{d}{dt}\left( \frac{z}{y} \right) = \varphi\) in \((\alpha, \beta)\).
+        
+        Then, \(y \frac{dz}{dt} - z \frac{dy}{dt} = \varphi y^2\) in \((\alpha, \beta)\). Notice that this is true also in \([\alpha, \beta]\), as all the functions involved here are in \(C[\alpha, \beta]\).
+        
+        Then
+        \[0 = \int_\alpha^\beta \varphi(t) \left( y \frac{dz}{dt} - z \frac{dy}{dt} \right) dt = \int_\alpha^\beta \underbrace{y^2 \varphi^2}_{\ge 0} dt\]
+        
+        Then \(y(t)\varphi(t) = 0\) for every \(t \in [\alpha, \beta]\). From here, we obtain that \(\varphi(t) = 0\) for \(t \in (\alpha, \beta)\) (since \(y(t) \neq 0\) on \((\alpha, \beta)\)).
+        
+        Using that \(\varphi \in C[\alpha, \beta]\), we get \(\varphi(t) = 0\) for \(t \in [\alpha, \beta]\). Then, \(b = \frac{da}{dt}\) in \([\alpha, \beta]\).
+    \end{itemize}
+\end{proof}
+
+If \(L\) is self-adjoint, we know that \(b = \frac{da}{dt}\) in \([\alpha, \beta]\). Using the notation,
+\[p(t) = a(t), \ q(t) = -c(t)\]
+
+The operator \(L\) can be equivalently written as
+\[L[y] = -\left( \frac{d}{dt} \left( p \frac{dy}{dt} \right) - qy \right)\]
+
+Then, our original problem is
+\[\begin{cases}
+    \frac{d}{dt} \left( p \frac{dy}{dt} \right) - qy = -\lambda y & \alpha < t < \beta \\
+    B_\alpha[y] = B_\beta[y] = 0
+\end{cases}\]

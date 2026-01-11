@@ -1,0 +1,101 @@
+\section{Lecture 7 - 11.04}
+
+\begin{example}[Exercise (cont.)]
+    \[\begin{cases}
+        \frac{dy}{dt} = 1 + y^2 \\
+        y(0) = 0
+    \end{cases}\]
+
+    We know, by the \textit{existence and uniqueness theorem}, that there exists a unique solution \(y\) in \([t_0, t_0+\alpha] = [0,\alpha]\) where
+    \[\alpha = \min\left\{ a, \frac{b}{M} \right\}, \ M = \max_{-b \leq y \leq b} (1+y^2) = 1+b^2\]
+
+    \textbf{Exact Solution}
+    \[y(t) = \tan(t), \ t \in I = \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)\]
+    (largest interval of definition of \(y\))
+
+    \textbf{How can we select \(a, b\) such that \(\alpha\) is as large as possible?}
+
+    As \(\alpha = \min\left\{ a, \boxed{\frac{b}{1+b^2}} \right\}\), we observe that the largest value of \(\alpha\) is given by \(\frac{b}{1+b^2}\) when \(b=1\).
+
+    Therefore, the largest interval in the form \([0,\alpha]\) predicted by the theorem is \([0,1/2]\). A similar analysis gives that the largest interval of the form \([\beta,0]\) predicted by the theorem is \([-1/2,0]\), as \(\beta = \min\left\{ a, \frac{b}{N} \right\}, \ N = \max_{-b \leq y \leq b} 1+y^2\).
+
+    We obtained that the largest interval of solution given by the theorem is \([-1/2, 1/2]\).
+\end{example}
+
+\begin{theorem}[Continuation of solutions]
+    Assume that \(f\) is a continuous function in some open and connected set \(D\), and assume that \(f\) is bounded in \(D\).
+
+    If \(y\) is a solution to \(\frac{dy}{dt} = f(t,y)\), \(y(t_0) = y_0\) (46) in an interval \((a,b)\) then \(\lim_{t \to a^+} y(t)\) and \(\lim_{t \to b^-} y(t)\) exist. Also,
+    \begin{itemize}
+        \item If \((a, y(a^+)) \in D\) then the solution \(y\) can be extended to the left of \(a\).
+        \item Similarly, if \((b, y(b^-)) \in D\) then \(y\) can be extended to the right of \(b\).
+    \end{itemize}
+\end{theorem}
+
+\begin{proof}
+    Let's first prove that \(y(a^+)\) exists.
+
+    As \(y\) is a solution on \((a,b)\), we know
+    \[y(t) = y_0 + \int_{t_0}^t f(s,y(s)) ds \ \forall t \in (a,b)\]
+
+    Consider \(a < t_1 < t_2 < b\).
+
+    \[\left| y\left(t_1\right) - y\left(t_2\right) \right| = \left| \int_{t_1}^{t_2} f(s,y(s))ds \right| \leq \int_{t_1}^{t_2} \left| f(s,y(s)) \right| ds \leq M(t_2-t_1)\]
+    where \(M\) is a bound for \(f\) in \(D\).
+
+    If \(t_1,t_2 \to a^+\) then \(\left| y(t_1) - y(t_2) \right| \to 0\).
+    That is, \(y(a^+)\) exists, by the Cauchy criterion for convergence (\(\left\{ y\left(a+\frac{1}{n}\right) \right\}\) is a Cauchy seq).
+
+    The existence of \(y(b^-)\) is proved in the same way. Assume that \((b, y(b^-)) \in D\).
+
+    Consider the problem:
+    \[\begin{cases}
+        \frac{dz}{dt} = f(t,z) \\
+        z(b) = y(b^-)
+    \end{cases}\]
+    and a rectangle \(R = \left\{ (t,r) : b \leq t \leq b+A, \ |r - y(b^-)| \leq B \right\} \subset D\).
+
+    As \(f\) is continuous in \(R\), the problem has at least one solution \(z\) in \([b, b+\alpha]\), where \(\alpha\) is given by the existence theorem (Cauchy-Peano).
+
+    Now, let
+    \[\tilde{y}(t) = \begin{cases}
+        y(t) & \text{if } t \in (a,b) \\
+        z(t) & \text{if } t \in [b, b+\alpha]
+    \end{cases}\]
+
+    We'll prove that \(\tilde{y}\) extends \(y\) to \((a,b+\alpha]\) as a solution to:
+    \[\begin{cases}
+        \frac{dy}{dt} = f(t,y) \\
+        y(t_0) = y_0
+    \end{cases}\]
+
+    It suffices to prove that \(\tilde{y}\) is continuous and
+    \[\tilde{y}(t) = y_0 + \int_{t_0}^t f(s,\tilde{y}(s)) ds \ \forall t \in (a,b+\alpha]\]
+
+    The function \(\tilde{y}\) is continuous by construction. Also, for \(t \in \underline{(a,b)}\):
+    \[\tilde{y}(t) \stackrel{\text{by def.}}{=} y(t) \stackrel{y \text{ solves } \frac{dy}{dt}=f(t,y) \text{ in } (a,b)}{=} y_0 + \int_{t_0}^t f(s,y(s)) ds = y_0 + \int_{t_0}^t f(s,\tilde{y}(s)) ds\]
+
+    Additionally, we have, for \(t \in \underline{[b, b+\alpha]}\):
+    \[\tilde{y}(t) \stackrel{\text{by def.}}{=} z(t) = y(b^-) + \int_{b}^t f(s,z(s)) ds = y(b^-) + \int_{b}^t f(s,\tilde{y}(s)) ds\]
+
+    Also,
+    \begin{align*}
+        y(b^-) &= \lim_{t \to b^-} y(t) = \lim_{t \to b^-} \left( y_0 + \int_{t_0}^t f(s,y(s))ds \right) \\
+        &= y_0 + \int_{t_0}^b f(s,y(s))ds = y_0 + \int_{t_0}^b f(s,\tilde{y}(s))ds
+    \end{align*}
+
+    Then,
+    \begin{align*}
+        \tilde{y}(t) &= y_0 + \int_{t_0}^b f(s,\tilde{y}(s))ds + \int_{b}^t f(s,\tilde{y}(s))ds \\
+        &= y_0 + \int_{t_0}^t f(s,\tilde{y}(s))ds
+    \end{align*}
+\end{proof}
+
+\begin{remark}
+    This problem:
+    \[\begin{cases}
+        \frac{dy}{dt} + a(t)y = b(t) \\
+        y(t_0) = y_0
+    \end{cases}\]
+    (with \(a\) and \(b\) continuous in \(\mathbb{R}\)) has a solution defined in \(\mathbb{R}\).
+\end{remark}

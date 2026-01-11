@@ -1,0 +1,105 @@
+\section{Tutorial 8 - 12.19}
+
+\subsection{Exercise}
+
+Consider the eq.
+\[\frac{d^2y}{dt^2} + \frac{3t}{1+t^2} \frac{dy}{dt} + \frac{1}{1+t^2} y = 0\]
+
+\begin{itemize}
+    \item[a)] Find the general solution.
+    \item[b)] Find the solution that satisfies the initial conditions \(y(0)=2, \frac{dy}{dt}(0)=3\).
+\end{itemize}
+
+\subsection{Solution}
+
+As the eq. is linear with continuous coefficients in \(\mathbb{R}\), we know that the eq. admits solutions in \(\mathbb{R}\).
+
+\subsubsection{a) Method 1}
+
+We look for a solution \(y(t) = \sum_{n=0}^{\infty} a_n t^n\) and work with the equivalent eq.
+\[(1+t^2) \frac{d^2y}{dt^2} + 3t \frac{dy}{dt} + y = 0\]
+
+This approach avoids working with the Taylor's series expansions of the coeff. \(\frac{3t}{1+t^2}\) and \(\frac{1}{1+t^2}\).
+
+The derivatives of \(y\) are
+\[y'(t) = \sum_{n=1}^{\infty} n a_n t^{n-1}, \ y''(t) = \sum_{n=2}^{\infty} n(n-1) t^{n-2} a_n\]
+
+Then
+\begin{align*}
+    (1+t^2) \sum_{n=2}^{\infty} n(n-1) a_n t^{n-2} + 3t \sum_{n=1}^{\infty} n a_n t^{n-1} + \sum_{n=0}^{\infty} a_n t^n &= \\
+    \sum_{n=2}^{\infty} n(n-1) a_n t^{n-2} + \sum_{n=2}^{\infty} n(n-1) a_n t^n + \sum_{n=1}^{\infty} 3n a_n t^n + \sum_{n=0}^{\infty} a_n t^n &= \\
+    \sum_{n=0}^{\infty} (n+2)(n+1) a_{n+2} t^n + \sum_{n=0}^{\infty} n(n-1) a_n t^n + \sum_{n=0}^{\infty} 3n a_n t^n + \sum_{n=0}^{\infty} a_n t^n &= 0
+\end{align*}
+
+Thus,
+\[\sum_{n=0}^{\infty} \left[ (n+2)(n+1) a_{n+2} + (n(n-1) + 3n + 1) a_n \right] t^n = 0 \ \forall t\]
+
+Observe that the coefficient of \(a_n\) is \(n^2 - n + 3n + 1 = n^2 + 2n + 1 = (n+1)^2\).
+Thus,
+\[(n+2)(n+1) a_{n+2} + (n+1)^2 a_n = 0\]
+i.e.
+\[a_{n+2} = - \frac{n+1}{n+2} a_n, \ n \ge 0\]
+
+\begin{itemize}
+    \item Consider \(a_0=1, a_1=0\).
+    We notice that \(a_{2n+1} = 0\) as \(a_1=0\), for all \(n\).
+    Also,
+    \begin{align*}
+        n=0: \ & a_2 = -\frac{1}{2} a_0 = -\frac{1}{2} \\
+        n=2: \ & a_4 = -\frac{3}{4} a_2 = -\frac{3}{4} \left(-\frac{1}{2}\right) = (-1)^2 \frac{1 \cdot 3}{2 \cdot 4} \\
+        n=4: \ & a_6 = -\frac{5}{6} a_4 = - \frac{5}{6} \left( (-1)^2 \frac{1 \cdot 3}{2 \cdot 4} \right) = (-1)^3 \frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}
+    \end{align*}
+    
+    By induction, we can show that
+    \[a_{2n} = (-1)^n \frac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{2 \cdot 4 \cdot 6 \cdots (2n)} = \frac{(-1)^n 1 \cdot 3 \cdot 5 \cdots (2n-1)}{2^n n!}\]
+    
+    The solution is
+    \[y_1(t) = \sum_{n=0}^{\infty} \frac{(-1)^n (2n-1)!!}{2^n n!} t^{2n}\]
+    
+    By ratio test, we have
+    \[\left| \frac{a_{2n+2} t^{2n+2}}{a_{2n} t^{2n}} \right| = \left| \frac{-(2n+1)}{2n+2} t^2 \right| \xrightarrow{n \to \infty} t^2\]
+    
+    Then, the series is convergent if \(|t| < 1\) and divergent if \(|t| > 1\).
+
+    \item Consider \(a_0=0, a_1=1\).
+    Similarly, we find (exercise),
+    \[y_2(t) = \sum_{n=0}^{\infty} \frac{(-1)^n 2^n n!}{3 \cdot 5 \cdots (2n+1)} t^{2n+1}, \ |t| < 1\]
+\end{itemize}
+
+Also, \(W(y_1, y_2)(t) = \det \begin{pmatrix} y_1 & y_2 \\ y_1' & y_2' \end{pmatrix}\).
+If \(t=0\),
+\[W(y_1, y_2)(0) = \det \begin{pmatrix} a_0 & 0 \\ 0 & a_1 \end{pmatrix} = 1 \ne 0.\]
+
+Thus, \(\{y_1, y_2\}\) is a basis of the set of solutions in \((-1, 1)\).
+
+\subsubsection{a) Method 2}
+
+Let's propose a solution in the form \(y(t) = (1+t^2)^m\) where \(m\) must be determined.
+Computing \(\frac{dy}{dt}, \frac{d^2y}{dt^2}\) and then replacing everything in the eq., we have (exercise),
+\[(1+t^2)^{m-1} \left( (2m+1) + (4m^2+4m+1)t^2 \right) = 0 \ \forall t\]
+
+If \(2m+1=0\) and \(4m^2+4m+1=0\), then \(y\) is a solution. It's direct that \(m=-1/2\) works well.
+
+So, \(y_1(t) = (1+t^2)^{-1/2}\) is a solution in \(\mathbb{R}\).
+
+Now, we look for a second solution as \(y_2(t) = y_1(t) v(t)\) where \(v\) must be determined.
+
+Computing the derivatives and replacing everything in the eq. we obtain the following eq. for \(v\) (exercise, use that \(y_1\) is a sol.):
+\[\frac{d^2v}{dt^2} + \frac{t}{1+t^2} \frac{dv}{dt} = 0\]
+
+This is a separable of first order for \(\frac{dv}{dt}\). A sol. is (exercise)
+\[\frac{dv}{dt} = \frac{1}{(1+t^2)^{1/2}}\]
+
+Then \(v(t) = \sinh^{-1}(t) = \ln(t + \sqrt{1+t^2})\).
+
+Thus, \(y_2(t) = (1+t^2)^{-1/2} \ln(t + \sqrt{1+t^2}), \ t \in \mathbb{R}\).
+
+The sol. are l.i. (exercise, use the Wronskian), so \(\{y_1, y_2\}\) is a basis of sol. in \(\mathbb{R}\).
+
+\subsubsection{b)}
+
+\(y(t) = C_1 (1+t^2)^{-1/2} + C_2 (1+t^2)^{-1/2} \ln(t + \sqrt{1+t^2})\), \(C_1 ?, C_2 ?, t \in \mathbb{R}\).
+\begin{align*}
+    y(0) &= C_1 = 2 \\
+    y'(0) &= C_2 = 3
+\end{align*}

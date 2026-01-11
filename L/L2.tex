@@ -1,0 +1,92 @@
+\section{Lecture 2 - 10.16}
+
+\begin{recap}
+    \begin{itemize}
+        \item The general form of an ODE is \(F(t, y, y', \cdots, y^{(n)}) = 0\) (\(*\)). A solution \(y\) to eq. (\(*\)) is a function that satisfies \(F(t, y(t), y'(t), \cdots, y^{(n)}(t)) = 0\) for every \(t\) in some interval.
+
+        \item Classification of ODEs:
+        \begin{itemize}
+            \item Order
+            \item ODE (scalar), Systems of ODEs
+            \item Linear and nonlinear eqs.
+        \end{itemize}
+
+        \item Well-posed problems:
+        \begin{itemize}
+            \item Existence of solution
+            \item Uniqueness of solution
+            \item Stability (or continuous dependence on data)
+            \item Ex: \(\begin{cases} y' = f(t, y) \\ y(t_0) = y_0 \end{cases}\)
+        \end{itemize}
+    \end{itemize}
+\end{recap}
+
+\subsection{Some Solution Methods for First-Order Equations}
+
+\begin{definition}[First-order ODE]
+    The general form of a first-order equation is \(\frac{dy}{dt} = f(t, y)\).
+\end{definition}
+
+\subsection{Linear equations: The integrating factor method}
+
+\begin{definition}[Linear First-Order ODE]
+    The general form for a first-order linear ODE is
+    \[\frac{dy}{dt} + a(t)y = b(t) \tag{6}\]
+    (Here, \(f(t, y) = b(t) - a(t)y\)). Assume that \(a\) and \(b\) are continuous functions in \(\mathbb{R}\).
+\end{definition}
+
+If we can find an equivalent equation of equation (6), in the form
+\[\frac{d\tilde{y}}{dt} = \tilde{b}(t) \tag{7}\]
+we are done, because we can solve (7) by direct integration. The idea is to look first for a function \(\mu\) such that
+\[\mu(t)\left( \frac{dy}{dt} + a(t)y \right) = \mu(t)b(t) \tag{8}\]
+(where \(\mu(t)\frac{dy}{dt} + \mu(t)a(t)y\) can be easily transformed into the form (7)).
+
+\subsubsection{Core of the Integrating Factor Method}
+The core of the integrating factor method is the following observation
+\[\frac{d}{dt}\left( \mu(t) y \right) = \frac{d\mu}{dt} y + \mu(t) \frac{dy}{dt}.\]
+
+Then, if \(\mu\) satisfies
+\[\frac{d\mu}{dt} = a(t)\mu,\]
+then equation (8) reduces to
+\[\frac{d\left( \mu(t) y \right)}{dt} = \mu(t) b(t).\]
+
+Additionally, we can find \(\mu\) by solving \(\frac{d\mu}{dt} = a(t)\mu\).
+
+\subsubsection{Derivation of the Integrating Factor \(\mu(t)\)}
+Assume that the equation \(\frac{d\mu}{dt} = a(t)\mu\) admits a solution \(\mu\) which is positive, that is, \(\mu(t) > 0\) for every \(t\). Then,
+\[\frac{1}{\mu} \frac{d\mu}{dt} = a(t) \text{, that is } \ \frac{\mu'(t)}{\mu(t)} = a(t)\]
+(where \(\frac{\mu'(t)}{\mu(t)} = \frac{d}{dt} \ln|\mu(t)|\)).
+
+Integrating both sides, we get
+\[\int \frac{d}{dt} \ln|\mu(t)| \, dt = \int a(t) \, dt\]
+which simplifies to
+\[\ln|\mu(t)| = \int a(t) \, dt + C_0\]
+\[|\mu(t)| = e^{C_0} e^{\int a(t) \, dt} = C e^{\int a(t) \, dt}\]
+
+Since we assumed that \(\mu\) is positive, we get
+\[\mu(t) = C e^{\int a(t) \, dt} \ (C > 0).\]
+
+For simplicity, we set \(C = 1\), so the integrating factor \(\mu(t) = e^{\int a(t) dt}\).
+
+It’s easy to verify that \(\mu\) is a solution to \(\frac{d\mu}{dt} = a(t)\mu\).
+
+Then, equation (8) can be written as
+\[\frac{d}{dt} \left( e^{\int a(t) dt} y \right) = e^{\int a(t) dt} b(t)\]
+
+Integration with respect to \(t\), yields
+\[e^{\int a(t) dt} y = \int e^{\int a(t) dt} b(t) dt + C \ (C \in \mathbb{R})\]
+
+Therefore,
+\[y(t) = e^{-\int a(t) \, dt} \left( \int b(t) e^{\int a(t) \, dt} \, dt + C \right), \ t \in \mathbb{R} \tag{10}\]
+
+\subsubsection{Summary on Integrating Factor and General Solution}
+
+\begin{theorem}[General Solution to Linear First-Order ODE]
+    In summary, we deduced that if eq. (6) has a solution, then the solution must be a function in the form (10).
+    
+    Also, it's easy to verify that any function like (10) solves eq. (6) in \(\mathbb{R}\). So, formula (10) is called the general solution to eq. (6), \(\frac{dy}{dt} + a(t)y = b(t)\).
+\end{theorem}
+
+\begin{definition}[Integrating Factor]
+    The function \(\mu(t) = e^{\int a(t) dt}\) is called an integrating factor for eq. (6).
+\end{definition}

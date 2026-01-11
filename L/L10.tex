@@ -1,0 +1,82 @@
+\section{Lecture 10 - 11.13}
+
+\begin{recap}
+    \begin{itemize}
+        \item \(\frac{dy}{dt} = A(t)y + b(t)\), \(b = 0\).
+        
+        The set of solutions is a vector space of dimension \(n\).
+        \begin{itemize}
+            \item \(\mathcal{B} = \{y^{(1)}, y^{(2)}, \cdots, y^{(n)}\}\);
+            \item \(y_H = c_1 y^{(1)} + c_2 y^{(2)} + \cdots + c_n y^{(n)}\), \(c_1, \cdots, c_n \in \mathbb{R} \rightsquigarrow\) general solution to \(\frac{dy}{dt} = A(t)y\).
+        \end{itemize}
+        
+        \(\mathcal{B}\) is a basis of solutions.
+
+        \item \(\frac{dy}{dt} = A(t)y + b(t)\), \(b \not\equiv 0\).
+        \begin{itemize}
+            \item \(\mathcal{B}, y_H\) as before;
+            \item \(y = y_H + y_p\), where \(y_H\) is the general solution to the associated homogeneous system \(\frac{dy}{dt} = A(t)y\), and \(y_p\) is a particular solution to \(\frac{dy}{dt} = A(t)y + b(t)\).
+        \end{itemize}
+    \end{itemize}
+\end{recap}
+
+\begin{example}
+    \leavevmode
+    \begin{itemize}
+        \item \(\frac{dy}{dt} = y\), \(n=1\),
+        \[y(t) = C e^t, \ y_1(t) = 2e^t, \ y_2(t) = -\frac{9}{11} e^t.\]
+        \item \(\frac{dy}{dt} = y, \ y(0) = 1\).
+    \end{itemize}
+\end{example}
+
+\begin{remark}
+    \(\frac{dy}{dt} = \frac{dy_H}{dt} + \frac{dy_p}{dt} = A(t)y_H + A(t)y_p + b(t) = A(t)(y_H + y_p) + b(t) = A(t)y + b(t)\).
+\end{remark}
+
+\subsection{Fundamental Matrix Solution}
+
+Assume that \(\mathcal{B} = \{y^{(1)}, \cdots, y^{(n)}\}\) is a basis of solutions to \(\frac{dy}{dt} = A(t)y\).
+
+\begin{definition}[Fundamental Matrix Solution]
+    The matrix \(Q\) whose \(j\)-th column is \(y^{(j)}\) is called a fundamental matrix solution to \(\frac{dy}{dt} = A(t)y\).
+    
+    In other words, if \(y^{(1)} = \begin{pmatrix} y_1^{(1)} \\ \vdots \\ y_n^{(1)} \end{pmatrix}, \cdots, y^{(n)} = \begin{pmatrix} y_1^{(n)} \\ \vdots \\ y_n^{(n)} \end{pmatrix}\), then
+    \[Q = \begin{pmatrix} 
+    | & & | \\
+    y^{(1)} & \cdots & y^{(n)} \\
+    | & & | 
+    \end{pmatrix} 
+    = \begin{pmatrix} 
+    y_1^{(1)} & \cdots & y_1^{(n)} \\ 
+    \vdots & & \vdots \\ 
+    y_n^{(1)} & \cdots & y_n^{(n)} 
+    \end{pmatrix}
+    \rightsquigarrow \text{Fundamental Matrix Solution.}\]
+\end{definition}
+
+Observe that \(\frac{dQ}{dt} = A(t)Q\). Also, if \(y\) is a solution to \(\frac{dy}{dt} = A(t)y\), then there exists \(C \in \mathbb{R}^n\) s.t. \(y = QC\) (that is, \(y(t) = Q(t)C\) for every \(t\)).
+
+Notice that: \(\det Q(t) \neq 0\) for every \(t \iff \det Q(t_0) \neq 0\) at some \(t_0\).
+
+\subsection{Variation of Parameters}
+
+Assume that \(a_{ij}\) and \(b_j\) are continuous functions in some open interval \(I\), for \(i, j = 1, \cdots, n\). Let \(\mathcal{B} = \{y^{(1)}, \cdots, y^{(n)}\}\) be a basis of solutions to \(\frac{dy}{dt} = A(t)y\).
+
+The function \(y(t) = C_1(t)y^{(1)}(t) + \cdots + C_n(t)y^{(n)}(t)\) is a solution to \(\frac{dy}{dt} = A(t)y + b(t)\) if \(C_1, \cdots, C_n\) are continuously differentiable functions in \(I\), such that \(Q(t) \frac{dC}{dt} = b(t)\) where \(Q\) is the fundamental matrix.
+
+Notice that \(y(t) = Q(t)C(t)\), \(t \in I\). Then,
+\begin{align*}
+    \frac{dy(t)}{dt} &= \underbrace{\frac{dQ(t)}{dt}}_{A(t)Q(t)} C(t) + Q(t) \underbrace{\frac{dC(t)}{dt}}_{(Q(t))^{-1}b(t)} \\
+    &= A(t)\underbrace{Q(t)C(t)}_{y(t)} + \underbrace{Q(t)(Q(t))^{-1}}_{I} b(t) \\
+    &= A(t) y(t) + b(t) \ \checkmark
+\end{align*}
+
+\begin{proof}
+    As \(Q\) is a fundamental matrix, \(\det(Q(t)) \neq 0\) for every \(t \in I\).
+    
+    Then \(Q(t)z = b(t)\), for fixed \(t\), has a unique solution \(z = z(t)\).
+    
+    Let \(C(t) = \int_{t_0}^t z(s) ds\) for \(t \in I\), \(t_0\) is some point in \(I\). Notice that \(z(t) = [Q(t)]^{-1} b(t)\).
+    
+    Observe that, by construction, \(C\) is continuously differentiable and satisfies \(Q(t) \frac{dC}{dt} = b(t)\) for \(t \in I\). Let \(C = \begin{pmatrix} C_1 \\ \vdots \\ C_n \end{pmatrix}\). Only remains to prove that \(y(t) = C_1(t)y^{(1)}(t) + \cdots + C_n(t)y^{(n)}(t)\) solves \(\frac{dy}{dt} = A(t)y + b(t)\) in \(I\).
+\end{proof}

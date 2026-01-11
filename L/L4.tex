@@ -1,0 +1,79 @@
+\section{Lecture 4 - 10.23}
+
+\subsection{§2. The Existence and Uniqueness Theorem for First-Order ODEs (Continued)}
+
+Consider the initial value problem (IVP):
+\[\begin{cases}
+    \frac{dy}{dt} = f(t, y) \\
+    y(t_0) = y_0
+\end{cases}\]
+
+\begin{example}
+    \[\begin{cases}
+        \frac{dy}{dt} = 1 + y^2 \\
+        y(0) = 0
+    \end{cases}\]
+
+    Here, \(f(t, y) = 1 + y^2\). This IVP admits a solution given by \(y(t) = \tan(t)\) for \(t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\). Notice that \(y\) cannot be extended outside this interval as a continuous function.
+\end{example}
+
+\begin{remark}
+    The general solution to \(\frac{dy}{dt} = 1 + y^2\) is \(y(t) = \tan(t + c)\). This function satisfies \(y(0) = 0\) if and only if \(\tan(c) = 0\), so \(c = k\pi\) for some \(k \in \mathbb{Z}\). If \(c = k\pi\) is fixed, the domain of \(y\) can be selected as \(\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\).
+\end{remark}
+
+\begin{example}
+    \[\begin{cases}
+        \frac{dy}{dt} = \sqrt{|y|} \\
+        y(0) = 0
+    \end{cases}\]
+
+    Here, \(f(t, y) = \sqrt{|y|}\). This problem has infinitely many solutions, for instance, those of the form
+    \[y(t) = 
+    \begin{cases} 
+        0 & t \geq c \\
+        \frac{(t - c)^2}{4} & t < c 
+    \end{cases}\]
+    for any \(c \geq 0\).
+\end{example}
+
+\begin{theorem}[Picard-Lindelöf Theorem]
+    Assume \(f\) and \(\frac{\partial f}{\partial y}\) are continuous in the rectangle
+    \[R = \left\{ (t, y) \mid t_0 \leq t \leq t_0 + a, \, |y - y_0| \leq b \right\},\]
+    where \(a, b\) are given numbers.
+
+    Let \(M = \max_{(t, y) \in R} |f(t, y)|\) and \(\alpha = \min\left\{ a, \frac{b}{M} \right\}\). Then, the initial value problem
+    \[\begin{cases}
+        \frac{dy}{dt} = f(t, y) \\
+        y(t_0) = y_0
+    \end{cases}\]
+    has a unique solution in \([t_0, t_0 + \alpha]\). A similar result holds for intervals of the form \([t_0 - \alpha, t_0]\).
+\end{theorem}
+
+\begin{proof}
+    The general idea is to construct a sequence of functions \(\{ y_n \}\) such that, as \(n \to \infty\), \(y_n\) is ``near'' to solving the problem. Then, prove there exists a limit function to which \(\{ y_n \}\) converges, show the limit function solves the problem, and finally prove that it is the unique solution.
+
+    The proof is split into several steps.
+
+    \textbf{Step 1: Definition of the Sequence \(\{y_n\}\)}
+
+    A continuous function \(y\) is a solution to the initial value problem (1)-(2) if and only if y is a solution to
+    \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds \tag{6}\]
+
+    \begin{itemize}
+        \item If \(y\) solves (1)-(2), it is continuous. Integrating \(\frac{dy}{ds} = f(s, y(s))\) and using \(y(t_0) = y_0\), we get
+        \begin{align*}
+            \int_{t_0}^t \frac{dy(s)}{ds} \, ds = \int_{t_0}^t f(s, y(s)) \, ds 
+            &\Longleftrightarrow y(t) - y_0 = \int_{t_0}^t f(s, y(s)) \, ds \\
+            &\Longleftrightarrow y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds
+        \end{align*}
+
+        \item Conversely, if \(y\) is a continuous solution to (6), then \(y(t_0) = y_0\), and also differentiating (6) gives 
+        \[\frac{dy}{dt} = f(t, y(t))\]
+    \end{itemize}
+
+    We'll solve (1)-(2) by solving (6) for a continuous function by defining the sequence \(\{y_n\}\) as
+    \[\begin{cases}
+        y_0(t) = y_0 \\
+        y_n(t) = y_0 + \int_{t_0}^t f(s, y_{n-1}(s)) \, ds \ (n = 1, 2, \cdots)
+    \end{cases}\]
+\end{proof}

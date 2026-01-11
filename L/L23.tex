@@ -1,0 +1,107 @@
+\section{Lecture 23 - 12.30}
+
+\begin{recap}[Review]
+\begin{align*}
+    L[y] &= -\left( a(t) \frac{d^2 y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y \right) = \lambda r(t) y \ \alpha < t < \beta \ (r \equiv 1) \\
+    B_\alpha[y] &= a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0 \ |a_1| + |b_1| > 0 \\
+    B_\beta[y] &= a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0 \ |a_2| + |b_2| > 0
+\end{align*}
+\end{recap}
+
+\(\lambda\) is an eigenvalue of \(L\) with bdry. conditions \(B_\alpha[y] = B_\beta[y]\) iff there exists a nontrivial solution \(y\) to \(L[y] = \lambda r y\), \(B_\alpha[y] = B_\beta[y] = 0\). The function \(r\) is called a weight.
+
+If \(a \in C^2[\alpha, \beta]\) and \(b \in C^1[\alpha, \beta]\) then
+we say that \(L\) is self-adjoint
+\begin{align*}
+    \iff \left( L[y], z \right) = \left( y, L[z] \right) \ \forall y, z \in V = C^2[\alpha, \beta], B_\alpha[y] &= B_\beta[y] = 0 \\
+    B_\alpha[z] &= B_\beta[z] = 0
+\end{align*}
+iff \(b = \frac{da}{dt}\) in \([\alpha, \beta]\), where \((u, v) = \int_\alpha^\beta u v \, dt\).
+
+If \(L\) is self-adjoint and we denote \(p = a\) (so \(b = \frac{dp}{dt}\)) and \(q = -c\), then
+\[L[y] = -\left( \frac{d}{dt} \left( p(t) \frac{dy}{dt} \right) - q(t) y \right) \rightsquigarrow \text{Sturm-Liouville operator}\]
+
+\begin{example}
+\[\begin{cases} \frac{d^2 y}{dt^2} + \lambda y = 0 & 0 < t < L \\ y(0) = y(L) = 0 \end{cases}, \ L[y] = -\frac{d^2 y}{dt^2}\]
+
+\(\lambda_n = \left(\frac{\pi n}{L}\right)^2\) for \(n=1, 2, \cdots\) are the only real eigenvalues.
+
+\(y_n(t) = \sin\left(\frac{\pi n}{L} t\right), \ t \in [0, L]\), are the corresponding eigenfunctions.
+
+It can be shown that if \(f \in C^1[0, L]\) with \(f(0)=f(L)=0\), then \(\underbrace{\sum_{n=1}^\infty (f, y_n) y_n}_{\text{eigenfunction expansion of } f}\) converges uniformly to \(f\) in \([0, L]\).
+\end{example}
+
+\begin{definition}[Regular Sturm-Liouville problem]
+    The problem
+    \[\begin{cases}
+        \frac{d}{dt} \left( p(t) \frac{dy}{dt} \right) - q(t) y = -\lambda r y \ \alpha < t < \beta \\
+        B_\alpha[y] = B_\beta[y] = 0
+    \end{cases}\]
+    with \(|a_1| + |b_1| > 0\), \(|a_2| + |b_2| > 0\), \((\alpha, \beta)\) finite, \(p, r, \frac{dp}{dt}, q \in C[\alpha, \beta]\), \(p(t) > 0, r(t) > 0\) for every \(t \in [\alpha, \beta]\), is called a \textbf{regular Sturm-Liouville problem}.
+\end{definition}
+
+\begin{theorem}
+Consider a regular Sturm-Liouville problem as in the previous definition. Then,
+\begin{enumerate}[a)]
+    \item Eigenvalues exist and all of them are real.
+    \item Eigenvalues are simple, i.e. the associated eigenspaces have dimension 1.
+    \item Eigenfunctions are real, apart from possible complex multiplicative constants. Also, eigenfunctions with different eigenvalues are orthogonal, i.e. \((y, z) = 0\) if \(y, z\) are eigenfunctions with different eigenvalues, and \((y, z) = \int_\alpha^\beta r y z \, dt\).
+    \item There are countable infinite eigenvalues, \(\lambda_0, \lambda_1, \cdots\), and they can be ordered as \(\lambda_0 < \lambda_1 < \lambda_2 < \cdots\) and the index \(n\) is the number of zeros of the eigenfunction \(y_n\) with eigenvalue \(\lambda_n\), in \((\alpha, \beta)\). Also, the zeros of \(y_{n+1}\) interlace the zeros of \(y_n\), and \(\lim_{n \to \infty} \lambda_n = +\infty\).
+    \item If \(f \in C^1[\alpha, \beta]\) then the eigenfunction expansion of \(f\), \(\sum_{n=0}^\infty B_n y_n\) converges uniformly to \(f\) in any closed interval \(I \subset (\alpha, \beta)\), where \(B_n = \frac{(f, y_n)}{\|y_n\|}\), \(n=0, 1, 2, \cdots\).
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    For simplicity, we assume \(r \equiv 1\).
+    
+    \begin{enumerate}[a)]
+        \item We accept the proof of the existence of eigenvalues without proof.
+        
+        If you are interested, see Codington-Levinson, Ch. 7.
+    
+        Let's prove that all the eigenvalues are real. First, we'll show that
+        \[(L[y], z)_c = (y, L[z])_c\]
+        for every \(y, z \in C^2[\alpha, \beta]\), possibly complex-valued, that satisfy
+        \[B_\alpha[y] = B_\beta[y] = 0, \ B_\alpha[z] = B_\beta[z] = 0,\]
+        where \((u, w)_c = \int_\alpha^\beta u \bar{w} \, dt\). Let \(y, z\) be two of these functions.
+        \begin{align*}
+            (L[y], z)_c &= \int_\alpha^\beta \left( \frac{d}{dt} \left( p(t) \frac{dy}{dt} \right) - q(t) y \right) \bar{z} \, dt \\
+            &= \int_\alpha^\beta \frac{d}{dt} \left( p(t) \frac{dy}{dt} \right) \bar{z} \, dt - \int_\alpha^\beta q(t) y \bar{z} \, dt    
+        \end{align*}
+
+        Integration by parts in the first and middle term:
+        \begin{align*}
+            &= \left. p(t) \frac{dy}{dt} \bar{z} \right|_\alpha^\beta - \int_\alpha^\beta p(t) \frac{dy}{dt} \frac{d\bar{z}}{dt} \, dt - \int_\alpha^\beta q(t) y \bar{z} \, dt \\
+            &= \left. p(t) \left( \frac{dy}{dt} \bar{z} - y \frac{d\bar{z}}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left[ \frac{d}{dt} \left( p(t) \frac{d\bar{z}}{dt} \right) - q(t) \bar{z} \right] y \, dt \\
+            &= \underbrace{\left. p(t) \left( \frac{dy}{dt} \bar{z} - y \frac{d\bar{z}}{dt} \right) \right|_\alpha^\beta}_{\substack{=0 \text{ (see proof of } b=a') \\ B_\alpha[\bar{z}]=B_\beta[\bar{z}]=0 \text{ (linear and with real coeff.)}}} + \int_\alpha^\beta \underbrace{\left[ \frac{d}{dt} \left( p(t) \frac{d\bar{z}}{dt} \right) - q(t) \bar{z} \right]}_{\substack{-L[\bar{z}] = -\overline{L[z]} \\ \text{ (linear and with real coeff.)}}} y \, dt \\
+            &= -\int_\alpha^\beta y \overline{L[z]} \, dt = -(y, L[z])_c
+        \end{align*}
+
+        So \((L[y], z)_c = (y, L[z])_c\).
+
+        Assume that \(\lambda \in \mathbb{C}\) is an eigenvalue with eigenfunction \(y\). Then,
+        \[\underbrace{(L[y], y)_c}_{\lambda (y, y)_c} = (y, \underbrace{L[y]}_{\lambda y})_c = \int_\alpha^\beta y \overline{\lambda y} \, dt = \bar{\lambda} (y, y)_c\]
+        
+        That is, \(\lambda (y, y)_c = \bar{\lambda} (y, y)_c\).
+        
+        As \(y\) is an eigenfunction, \(y \not\equiv 0\), we deduce that \(\lambda = \bar{\lambda}\), so \(\lambda \in \mathbb{R}\).
+
+        \begin{remark}
+            \(z\) satisfies \(B_\alpha[z] = a_1 z(\alpha) + b_1 \frac{dz}{dt}(\alpha) = 0\). Then,
+            \[0 = \overline{B_\alpha[z]} = \overline{a_1} \overline{z(\alpha)} + \overline{b_1} \overline{\frac{dz}{dt}(\alpha)} \underset{\substack{\uparrow \\ a_1, b_1 \in \mathbb{R}}}{=} a_1 \bar{z}(\alpha) + b_1 \frac{d\bar{z}}{dt}(\alpha) = B_\alpha[\bar{z}]\]
+        \end{remark}
+
+        \item Let \(\lambda\) be an eigenvalue with eigenfunctions \(y, z\). We need to prove that \(y\) and \(z\) are linearly dependent. Recall that \(y, z\) solve
+        \[p(t) \frac{d^2 y}{dt^2} + \frac{dp(t)}{dt} \frac{dy}{dt} - q(t) y = \lambda y, \ \alpha < t < \beta\]
+        
+        As \(y, z\) are solutions to a linear second-order eq with continuous coeff, we know that \(W(y, z)\) is identically zero or never vanishes. Also, the first case tells us that \(y, z\) are linearly dependent.
+        \[W(y, z)(t) = \det \begin{pmatrix} y(t) & z(t) \\ \frac{dy}{dt}(t) & \frac{dz}{dt}(t) \end{pmatrix} = y(t) \frac{dz}{dt}(t) - \frac{dy}{dt}(t) z(t)\]
+    
+        We've proved in the theorem of characterization of self-adjoint operators that
+        \[p(t) \left( z \frac{dy}{dt} - y \frac{dz}{dt} \right) \Big|_\alpha^\beta = 0\]
+        if \(y, z\) satisfy the bdry conditions.
+        
+        As this is our case, \(p(t) W(y, z)(\alpha) = 0\). (since \(p(\alpha) > 0\), boundary term logic implies Wronskian at boundary is zero).
+        Then \(y, z\) are linearly dependent.
+    \end{enumerate}
+\end{proof}

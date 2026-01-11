@@ -1,0 +1,69 @@
+\section{Tutorial 4 - 11.07}
+
+\subsection{Exercises on Picard-Lindel\"of Theorem}
+
+\begin{xca}
+    Show that the initial-value problem
+    \[\begin{cases}
+        \frac{dy}{dt} = e^{-t^2} + y^3 \\
+        y(0) = 1
+    \end{cases}\]
+    admits a unique solution \(y\) on \([0, 1/9]\), which satisfies \(0 \leq y(t) \leq 2\) for every \(t \in [0, 1/9]\).
+\end{xca}
+\begin{proof}[Solution]
+    Let \(f(t, y) = e^{-t^2} + y^3\). Let \(a, b > 0\) and \(R = [0, a] \times [1-b, 1+b]\).
+
+    As \(f\) is \(C^\infty\) in \(\mathbb{R}^2\), we have that \(f\) and \(\frac{\partial f}{\partial y}\) are continuous on \(R\).
+
+    By the existence and uniqueness thm. (Picard-Lindel\"of), we know that there exists a unique solution \(y\) on \([0, \alpha]\) where \(\alpha = \min\{a, \frac{b}{M}\}\) and \(M = \max_{(t,y)\in R} |f(t,y)|\).
+    Also, as \((t, y(t)) \in R\) for every \(t \in [0, \alpha]\), we have that \(1-b \leq y(t) \leq 1+b\).
+
+    Let \(b=1\). Then
+    \[M = \max_{\substack{0 \le t \le a \\ 0 \le y \le 2}} |e^{-t^2} + y^3| = 1 + 2^3 = 9\]
+    and
+    \[\alpha = \min\left\{ a, \frac{1}{9} \right\}\]
+
+    Then we set \(a = \frac{1}{9}\) and get \(\alpha = \frac{1}{9}\).
+\end{proof}
+
+\begin{xca}
+    Let \(f\) be a function defined on \(D = [t_0, +\infty) \times (-\infty, +\infty)\).
+    Assume that \(f\) and \(\frac{\partial f}{\partial y}\) are continuous on \(D\), and there exists \(K\) such that \(|f(t, y)| \leq K\) for \((t, y) \in D\). 
+    
+    Show that
+    \[\begin{cases} \frac{dy}{dt} = f(t, y) \\ y(t_0) = y_0 \end{cases}\]
+    has a unique solution \(y(t)\) for \(t \geq t_0\).
+\end{xca}
+\begin{proof}[Solution]
+    By the existence and uniqueness thm., we know that there exists a unique solution \(y\) on \([t_0, t_0 + \alpha]\) where \(\alpha = \min\{a, \frac{b}{M}\}\) and \(M = \max_{R} |f(t,y)|\).
+    As \(|f| \leq K\) in \(R\), we have that \(M \leq K\), so \(\alpha \geq \min\left\{ a, \frac{b}{K} \right\}\), \(a, b\) are arbitrary. In particular, we can make \(a\) and \(b\) as large as desired so \(\alpha\) is as large as we want. In other words, \(y\) is well-defined for \(t \in [t_0, T]\) for every \(T > t_0\). So \(y\) must be defined in \([t_0, +\infty)\).
+\end{proof}
+
+\begin{xca}
+    The initial-value problem
+    \[\begin{cases}
+        \frac{dy}{dt} = t\sqrt{1-y^2} \\
+        y(0) = 1
+    \end{cases}\]
+    has the solution \(y_1(t)=1\). Find a solution \(y_2\), different for \(y_1\), and explain why this does not violate the existence and uniqueness theorem.
+\end{xca}
+\begin{proof}[Solution]
+    Notice that the ODE is separable.
+    \[\underbrace{\frac{dy}{dt}}_{y'(t)} = t\sqrt{1-y^2} \iff \underbrace{\int \frac{y'(t) dt}{\sqrt{1-y(t)^2}}}_{s = y(t)} = \int t dt \iff \arcsin(y(t)) = \frac{t^2}{2} + C\]
+
+    Then, \(y(t) = \sin(\frac{t^2}{2} + C)\), \(C \in \mathbb{R}\). Also, \(y(0) = \sin(C) = 1\). We choose \(C = \frac{\pi}{2}\).
+    Then \(y(t) = \sin(\frac{t^2}{2} + \frac{\pi}{2})\).
+
+    Observe the following:
+    \begin{itemize}
+        \item \(\frac{dy}{dt}(t) = \frac{2t}{2} \cos\left( \frac{t^2}{2} + \frac{\pi}{2} \right)\)
+        \item \(\cdot t\sqrt{1 - y(t)^2} = t\sqrt{1 - \sin^2\left( \frac{t^2}{2} + \frac{\pi}{2} \right)} = t\sqrt{\cos^2\left( \frac{t^2}{2} + \frac{\pi}{2} \right)} = t \left| \cos\left( \frac{t^2}{2} + \frac{\pi}{2} \right) \right|\)
+    \end{itemize}
+
+    Now we look for a domain of definition \(I\) such that \(0 \in I\) and \(\cos(\frac{t^2}{2} + \frac{\pi}{2}) \ge 0\) for every \(t \in I\). This second condition is true if
+    \[\frac{3\pi}{2} \le \frac{t^2}{2} + \frac{\pi}{2} \le \frac{5\pi}{2}\]
+    Then \(2\pi \le t^2 \le 4\pi\).
+    
+    This does not violate the thm. since \(\frac{\partial f}{\partial y}\) cannot be continuous at \((t, 1)\).
+    Also, \(f\) does not satisfy the Lipschitz condition near \((t, 1)\).
+\end{proof}

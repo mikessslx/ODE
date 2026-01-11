@@ -1,0 +1,78 @@
+\section{Lecture 20 - 12.18}
+
+\begin{example}[Euler's eq.]
+    \[t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0 \ \alpha, \beta \in \mathbb{R}\]
+    
+    We are looking for a solution \(y(t) = t^r\), where \(r\) must be determined, \(t > 0\).
+    
+    We've proved that \(y\) is a solution if \(r\) is a root of \(r^2 + (\alpha-1)r + \beta = 0\).
+
+    So, \(r_1 = -\frac{1}{2}\left((\alpha-1) + \sqrt{(\alpha-1)^2 - 4\beta}\right)\) and \(r_2 = -\frac{1}{2}\left((\alpha-1) - \sqrt{(\alpha-1)^2 - 4\beta}\right)\).
+
+    \begin{itemize}
+        \item \((\alpha-1)^2 - 4\beta > 0\):
+        \(y_1(t) = t^{r_1}, \ y_2(t) = t^{r_2}, \ t > 0\) is a basis.
+        
+        \item \((\alpha-1)^2 - 4\beta = 0\):
+        \(y_1(t) = t^r, \ y_2(t) = t^r \ln(t), \ t > 0\) is a basis. Here \(r = \frac{1-\alpha}{2}\).
+        
+        (\(y_2(t) = y_1(t) \underbrace{u(t)}_{?}\) reduction of order).
+        
+        \item \((\alpha-1)^2 - 4\beta < 0\):
+        Now \(r_1 = \lambda - i\mu, \ r_2 = \lambda + i\mu\) where \(\lambda = \frac{1-\alpha}{2}, \ \mu = \frac{1}{2}\sqrt{4\beta - (\alpha-1)^2}\).
+        
+        From here we have that \(y(t) = t^{\lambda + i\mu}\) is a complex valued solution, \(t > 0\).
+
+        Also, \(y(t) = t^\lambda t^{i\mu} = t^\lambda e^{i\mu \ln t} = t^\lambda (\cos(\mu \ln t) + i \sin(\mu \ln t))\).
+
+        Then, \(y_1(t) = t^\lambda \cos(\mu \ln t)\) and \(y_2(t) = t^\lambda \sin(\mu \ln t)\), \(t > 0\), are l.i. solutions (exercise).
+    \end{itemize}
+\end{example}
+
+\begin{remark}
+    \leavevmode
+    \begin{enumerate}[a)]
+        \item The Euler's eq. can be solved similarly for \(t < 0\) by introducing the change of variables \(s = -t\).
+        \item Eqs in the form
+        \[(t-t_0)^2 \frac{d^2 y}{dt^2} + \alpha(t-t_0) \frac{dy}{dt} + \beta y = 0\]
+        are called Euler's eq as well and they can be solved in the same way (e.g., for \(t > t_0, \ y(t)=(t-t_0)^r\)).
+    \end{enumerate}
+\end{remark}
+
+\subsection{Regular Series Expansions}
+
+Observe that the Euler's eq. can be written as
+\[\frac{d^2 y}{dt^2} + \frac{\alpha}{t} \frac{dy}{dt} + \frac{\beta}{t^2}y = 0 \ \text{for } t > 0\]
+For the case \(\frac{d^2 y}{dt^2} + p(t) \frac{dy}{dt} + q(t) y = 0\)
+we can follow a similar solution method approach if
+\begin{align*}
+    p(t) &= \frac{p_0}{t} + p_1 + p_2 t + p_3 t^2 + \cdots\\
+    q(t) &= \frac{q_0}{t^2} + \frac{q_1}{t} + q_2 + q_3 t + \cdots
+\end{align*}
+
+\begin{remark}
+    \begin{align*}
+        \frac{d^2 y}{dt^2} + p(t) \frac{dy}{dt} + q(t) y &= 0 \\
+        t^2 \frac{d^2 y}{dt^2} + t \left( t p(t) \frac{dy}{dt} \right) + (t^2 q(t)) y &= 0
+    \end{align*}
+
+    We'll look for a solution in the form \(y(t) = \sum_{n=0}^{\infty} a_n t^{n+r}\).
+\end{remark}
+
+\begin{theorem}
+    Assume that \(t=0\) is a \textbf{regular singular point} to the equation (47). Assume that the expansions in (48) and (49) converge for \(|t| < \rho\). Let \(r_1\) and \(r_2\) be the solutions to \(r(r-1) + p_0 r + q_0 = 0\). Also, assume \(r_1 \ge r_2\) if \(r_1, r_2 \in \mathbb{R}\). Then the eq. (47) admits two l.i. solutions \(y_1\) and \(y_2\) in \((0, \rho)\) where
+    
+    \begin{enumerate}[a)]
+        \item If \(r_1 - r_2\) is not a positive integer,
+        \[y_1(t) = t^{r_1} \sum_{n=0}^\infty a_n t^n, \ y_2(t) = t^{r_2} \sum_{n=0}^\infty b_n t^n\]
+        
+        \item If \(r_1 = r_2\), then
+        \[y_1(t) = t^{r_1} \sum_{n=0}^\infty a_n t^n \ \text{and} \ y_2(t) = y_1(t) \ln t + t^{r_1} \sum_{n=0}^\infty b_n t^n\]
+        
+        \item If \(r_1 - r_2 = N\) is a positive integer, then
+        \[y_1(t) = t^{r_1} \sum_{n=0}^\infty a_n t^n \ \text{and} \ y_2(t) = a y_1(t) \ln t + t^{r_2} \sum_{n=0}^\infty b_n t^n\]
+        where \(a\) can be zero.
+    \end{enumerate}
+    
+    In all cases, the coeff. \(a_n, b_n\) can be determined as before (replacing the formulas in the eq.).
+\end{theorem}

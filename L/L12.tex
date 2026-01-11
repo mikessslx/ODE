@@ -1,0 +1,69 @@
+\section{Lecture 12 - 11.20}
+
+\begin{recap}
+    \begin{itemize}
+        \item \(\frac{dy}{dt} = Ay + b, \ A \in \mathbb{R}^{n \times n}\)
+        \item \(\frac{dy}{dt} = Ay\)
+        \item If \(n=1\) then the system is one single eq., \(\frac{dy}{dt} = ay\). The general solution is \(y(t) = C e^{at}, \ t \in \mathbb{R}, \ C \in \mathbb{R}\).
+        \item Based on this, we look for solutions to \(\frac{dy}{dt} = Ay\) in the form \(y(t) = v e^{\lambda t}\) where \(v \in \mathbb{R}^n, \ \lambda \in \mathbb{R}\). Also, \(y \not\equiv 0\). Solutions in this form exist provided that \(\lambda\) is a real eigenvalue of \(A\) with eigenvector \(v\).
+    \end{itemize}
+\end{recap}
+
+\subsection{Case 1: \(A\) has \(n\) distinct real eigenvalues}
+
+If \(v_k\) is an eigenvector to \(A\) associated to \(\lambda_k\), \(v_k \in \mathbb{R}^n\), then \(y^{(k)}(t) = v_k e^{\lambda_k t}\), \(k=1, \cdots, n\) form a basis of solutions.
+
+\subsection{Case 2: \(A\) has complex eigenvalues}
+
+Assume that \(\lambda = \alpha + i\beta \in \mathbb{C}, \ \beta \neq 0\) is a complex eigenvalue of \(A\). Let \(v = u + iw \in \mathbb{C}^n\) be an eigenvector of \(A\) for \(\lambda\), where \(u \in \mathbb{R}^n\) and \(w \in \mathbb{R}^n\).
+
+Recall that \(e^z = e^a (\cos(b) + i \sin(b))\) if \(z = a + ib\) and if \(f(t) = e^{zt}\) where \(t \in \mathbb{R}, z \in \mathbb{C}\), then
+\[\frac{df(t)}{dt} = z e^{zt}\]
+
+Then \(y(t) = v e^{\lambda t}\) is a solution, which takes complex values.
+
+Notice that if \(x(t) = x_1(t) + i x_2(t)\) is a solution to \(\frac{dy}{dt} = Ay\), where \(x_1\) and \(x_2\) are real-valued functions, then \(x_1\) and \(x_2\) are solutions to the same eq.
+In fact,
+\[\begin{array}{ccc}
+\displaystyle \frac{dx}{dt} & = & \displaystyle \underbrace{\frac{dx_1}{dt}}_{\text{Re}(dx/dt)} + i \underbrace{\frac{dx_2}{dt}}_{\text{Im}(dx/dt)} \\
+\parallel \\
+Ax & = & \displaystyle \underbrace{Ax_1}_{\text{Re}(Ax)} + i \underbrace{Ax_2}_{\text{Im}(Ax)}
+\end{array}\]
+
+Then \(Ax_1 = \frac{dx_1}{dt}\) and \(Ax_2 = \frac{dx_2}{dt}\). Thus, \(\underbrace{\text{Re}(y(t))}_{y^{(1)}(t)}\) and \(\underbrace{\text{Im}(y(t))}_{y^{(2)}(t)}\) are real-valued solutions. Also,
+\begin{align*}
+    y^{(1)}(t) &= e^{\alpha t} (u \cos(\beta t) - w \sin(\beta t)) \\
+    y^{(2)}(t) &= e^{\alpha t} (u \sin(\beta t) + w \cos(\beta t)), \ t \in \mathbb{R}
+\end{align*}
+
+Notice that \(y^{(1)}(0) = u\) and \(y^{(2)}(0) = w\).
+
+As \(A\) is real, \(\bar{\lambda} = \alpha - i\beta\) is an eigenvalue of \(A\). Also, \(\bar{v} = u - iw\) is an eigenvector of \(A\) with eigenvalue \(\bar{\lambda}\). (Notice that \(v\) and \(\bar{v}\) are l.i. since \(\lambda \neq \bar{\lambda}\).)
+
+Finally, observe that \(u = \frac{v + \bar{v}}{2}\) and \(w = \frac{v - \bar{v}}{2i}\).
+
+From here, we deduce that \(u\) and \(w\) are l.i. (exercise). Then \(y^{(1)}\) and \(y^{(2)}\) are l.i.
+
+\begin{remark}
+    Let \(y_1, y_2\) be two functions. They are l.i. if \(a_1 y_1 + a_2 y_2 = 0\) then \(a_1 = a_2 = 0\).
+\end{remark}
+
+\begin{example}
+    Consider \(\frac{dy}{dt} = Ay\) where \(A\) has two real eigenvalues \(\lambda_1 \neq \lambda_2\), and two complex conjugate eigenvalues \(\lambda = \alpha + i\beta\) and \(\bar{\lambda} = \alpha - i\beta\), \(\beta \neq 0\).
+    
+    A basis of solutions is given by
+    \begin{align*}
+        y^{(i)}(t) &= v_i e^{\lambda_i t} \ (Av_i = \lambda_i v_i, \ i=1,2) \\
+        y^{(3)}(t) &= e^{\alpha t} (u \cos(\beta t) - w \sin(\beta t)) \\
+        y^{(4)}(t) &= e^{\alpha t} (w \cos(\beta t) + u \sin(\beta t))
+    \end{align*}
+    where \(v = u + iw\) is an eigenvector for \(\lambda\).
+    
+    Remark: They are l.i.
+\end{example}
+
+\subsection{Case 3}
+
+Consider \(A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{pmatrix}\). The char. polynomial is \(p(\lambda) = (1-\lambda)^2 (2-\lambda)\).
+
+(\(\lambda_1 = 1, \ l=2 \ ; \ \lambda_2 = 2\).)

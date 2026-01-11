@@ -1,0 +1,39 @@
+\section{Lecture 14 - 11.27}
+
+\begin{xca}
+How to find a basis of solutions of the system \(\frac{dy}{dt} = Ay\), where \(A \in \mathbb{R}^{n \times n}\)?
+\end{xca}
+\begin{proof}[Solution]
+\begin{itemize}
+    \item If \(A\) admits \(n\) real distinct eigenvalues \(\lambda_1, \cdots, \lambda_n\) with eigenvectors \(v_1, \cdots, v_n \in \mathbb{R}^n\) then the functions \(y^{(k)}(t) = v_k e^{\lambda_k t}, \ k=1, \cdots, n\) form a basis of real solutions.
+    
+    \item If \(A\) admits \(k\) real distinct eigenvalues \(\lambda_1, \cdots, \lambda_k\) with eigenvectors \(v_1, \cdots, v_k \in \mathbb{R}^n\), and \(\frac{n-k}{2}\) pairs of distinct complex conjugates eigenvalues \(\alpha_1 + i\beta_1, \cdots, \alpha_{\frac{n-k}{2}} + i\beta_{\frac{n-k}{2}}, \alpha_1 - i\beta_1, \cdots, \alpha_{\frac{n-k}{2}} - i\beta_{\frac{n-k}{2}}\) with eigenvectors
+    \[u_1 + iw_1, \cdots, u_{\frac{n-k}{2}} + iw_{\frac{n-k}{2}}, u_1 - iw_1, \cdots, u_{\frac{n-k}{2}} - iw_{\frac{n-k}{2}}, u_j, w_j \in \mathbb{R}^n, \ j=1, \cdots, \frac{n-k}{2},\]
+    then the functions
+    \[y^{(l)}(t) = v_l e^{\lambda_l t}, \ t \in \mathbb{R}, \ l=1, \cdots, k\]
+    and
+    \begin{align*}
+        y^{(s)}(t) &= e^{\alpha_s t} \left( u_s \cos(\beta_s t) - w_s \sin(\beta_s t) \right), \ t \in \mathbb{R}, \ s=1, \cdots, \frac{n-k}{2} \\
+        y^{(\tilde{s})}(t) &= e^{\alpha_{\tilde{s}} t} \left( u_{\tilde{s}} \sin(\beta_{\tilde{s}} t) + w_{\tilde{s}} \cos(\beta_{\tilde{s}} t) \right), \ t \in \mathbb{R}, \ \tilde{s}=1, \cdots, \frac{n-k}{2}
+    \end{align*}
+    form a basis of real solutions.
+    
+    \item If \(A\) admits \(k\) distinct eigenvalues \(\lambda_1, \cdots, \lambda_k\) with multiplicities \(l_1, \cdots, l_k\), where \(l_i > 1\) for some \(i \in \{1, \cdots, k\}\), and the eigenspaces have dimensions \(n_1, \cdots, n_k\), respectively, where \(n_1 + n_2 + \cdots + n_k = n\). Then the functions \(y^{(p)}_i(t) = v_{i_p} e^{\lambda_p t}\), \(t \in \mathbb{R}, \ p=1, \cdots, k\) form a basis of complex solutions where \(\{v_{i_1}, \cdots, v_{i_{n_p}}\}\) is a basis of the eigenspace of \(\lambda_p\). From this, we can find then a real basis of solutions.
+    
+    \item If \(A\) is as in the previous case, but now \(n_1 + n_2 + \cdots + n_k < n\) then the functions \(y_i^{(p)}(t) = e^{At} v_i\) \(t \in \mathbb{R}\) form a basis of complex solutions, where \(v_1, \cdots, v_{l_p}\) are linearly independent solutions to \((A - \lambda_p I)^{m_p} v = 0\) for some \(m_p \in \mathbb{N}\) such that \(m_p \le l_p\).
+    
+    Moreover,
+    \[y_i^{(p)}(t) = e^{At} v_i = \left( I + (A-\lambda_p I)t + \cdots + \frac{(A-\lambda_p I)^{m_p-1} t^{m_p-1}}{(m_p-1)!} \right) e^{\lambda_p t} v_i,\]
+    \(i = 1, \cdots, l_p, \ p = 1, \cdots, k\). From here, if necessary, we can find a real basis.
+\end{itemize}
+\end{proof}
+
+\begin{theorem}
+    \begin{enumerate}[a)]
+        \item A matrix \(Q\) is a fundamental solution matrix to the system \(\frac{dy}{dt} = Ay\) if and only if \(\frac{dQ}{dt} = AQ\) and \(\det(Q)(t_0) \neq 0\) for some \(t_0 \in \mathbb{R}\).
+        
+        \item Let \(Q\) and \(R\) be two fundamental matrix solutions to \(\frac{dy}{dt} = Ay\), then there exists a constant matrix \(C\) s.t. \(R(t) = Q(t)C\) for every \(C \in \mathbb{R}^{n \times n}\).
+        
+        \item The matrix exponential \(e^{At}\) is a fundamental matrix solution to \(\frac{dy}{dt} = Ay\). Also, if \(Q\) is a fundamental matrix solution for \(\frac{dy}{dt} = Ay\), then \(e^{At} = Q(t) Q(0)^{-1}, \ t \in \mathbb{R}\).
+    \end{enumerate}
+\end{theorem}

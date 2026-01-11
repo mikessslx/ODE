@@ -1,0 +1,125 @@
+\section{Lecture 19 - 12.16}
+
+\subsection{Linear equations with non-constant coefficients}
+
+Consider \( p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = f(t) \), where \(p, q, r, \text{and} f\) are continuous functions in some open interval \(I\).
+
+\subsubsection{Case 1: \(p(t) \neq 0\) for every \(t \in I\)}
+
+\begin{remark}
+    \(y(t) = y_H(t) + y_p(t), t \in I\).
+\end{remark}
+
+\begin{remark}[Goal]
+    To find a basis of solutions to homogeneous eq.
+\end{remark}
+
+\begin{example}
+Let's find a basis of solutions to \(\frac{d^2 y}{dt^2} - 2t \frac{dy}{dt} - 2y = 0\). Here \(\frac{q(t)}{p(t)}\) and \(\frac{r(t)}{p(t)}\) are polynomials. For simplicity, \(p(t) = 1, q(t) = -2t, r(t) = -2\).
+
+Let's look for a solution in the form \(y(t) = \sum_{n=0}^{\infty} a_n t^n\) for \(|t| < \rho\).
+We already know that a sufficient cond for \(y(t)\) to be a solution to the eq is that 
+\[a_{n+2} = \frac{2 a_n}{n+2}, \ n = 0, 1, 2, \cdots\]
+
+Consider \(a_0=1, a_1=0\).
+As \(a_1 = 0\), we notice that \(a_{2k+1} = 0\) for \(k = 1, 2, \cdots\).
+
+Also, \(a_2 = \frac{2 \cdot 1}{2} = 1\), \(a_4 = \frac{2}{4} \cdot 1 = \frac{1}{2}\), \(a_6 = \frac{2}{6} \frac{1}{2} = \frac{1}{6} = \frac{1}{3!}\).
+
+It can be shown (by induction) that \(a_{2k} = \frac{1}{k!}\).
+Then,
+\[y_1(t) = \sum_{k=0}^{\infty} a_{2k} t^{2k} = \sum_{k=0}^{\infty} \frac{1}{k!} (t^2)^k = e^{t^2}\]
+is a solution for \(t \in I\) where \(I\) is any open interval of \(\mathbb{R}\).
+
+Consider \(a_0=0, a_1=1\).
+As before, we notice that \(a_{2k} = 0\) for \(k = 1, 2, \cdots\).
+
+Additionally, \(a_3 = \frac{2}{3} \cdot 1 = \frac{2}{3}\), \(a_5 = \frac{2}{5} \cdot \frac{2}{3} = \frac{2^2}{5 \cdot 3}\).
+
+Again by induction, we can prove that \(a_{2k+1} = \frac{2^k}{(2k+1)(2k-1)\cdots 1}\).
+Then,
+\[y_2(t) = \sum_{n=0}^{\infty} a_n t^n = \sum_{k=0}^{\infty} a_{2k+1} t^{2k+1}\]
+where \(a_{2k+1}\) is given above.
+
+Let's analyze if \(y_1\) and \(y_2\) are l.i.
+\[W(y_1, y_2)(t) = \det \begin{pmatrix} y_1(t) & y_2(t) \\ y_1'(t) & y_2'(t) \end{pmatrix}\]
+
+If \(t=0\) then \(W(y_1, y_2)(0) = \det \begin{pmatrix} 1 & y_2(0) \\ 0 & a_1 \end{pmatrix} = a_1 = 1 \neq 0\). (since \(y_2(0) = 0\))
+
+Then \(\{y_1, y_2\}\) is a basis.
+\end{example}
+
+\begin{remark}
+    How to generalize?
+    \[\frac{d^2 y}{dt^2} + \frac{q(t)}{p(t)} \frac{dy}{dt} + \frac{r(t)}{p(t)} = 0\]
+    admit power series expansions.
+\end{remark}
+
+\begin{remark}[Some more about power series]
+\begin{itemize}
+    \item The product of two power series \(\sum a_n t^n\) and \(\sum b_n t^n\) is a power series \(\sum c_n t^n\) where \(c_n = \sum_{j=0}^{n} a_j b_{n-j}\).
+    \item Let \(f\) be an infinitely differentiable function. We say that \(f\) is analytic at \(t=t_0\) if there exists \(\rho > 0\) s.t. \(f(t) = \sum_{n=0}^\infty \frac{f^{(n)}(t_0)}{n!} (t-t_0)^n\) for every \(|t-t_0| < \rho\).
+\end{itemize}
+\end{remark}
+
+\begin{theorem}
+Assume that \(q/p\) and \(r/p\) admit Taylor's series expansions about \(t_0\) for \(|t-t_0| < \rho\). Then, any solution to \(p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = 0\) is analytic at \(t_0\) for \(|t-t_0| < \tilde{\rho}\) with \(\tilde{\rho} \geq \rho\) and the coeff can be obtained by replacing \(y\) in the equation and setting the sum of coeff. of like powers equal to zero.
+\end{theorem}
+
+\subsubsection{Case 2: \(p(t)\) may vanish at some \(t_0 \in I\)}
+
+We say that the eq \(p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = 0\) is singular at \(t=t_0\) if \(p(t_0) = 0\).
+
+\begin{example}[Euler's equation]
+Let's find a basis of solutions to the Euler's eq.
+\[t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0\]
+where \(\alpha, \beta \in \mathbb{R}\). Here \(p(t) = t^2\), \(q(t) = \alpha t\), and \(r(t) = \beta\).
+The eq. is singular at \(t_0 = 0\). Observe that the eq. admits solutions in \((0, +\infty)\) and in \((-\infty, 0)\). From now on we'll consider \(t > 0\). Let \(y(t) = t^r\), \(t > 0\). We observe,
+\begin{align*}
+    t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y &= t^2 r(r-1) t^{r-2} + \alpha t r t^{r-1} + \beta t^r \\
+    &= (r(r-1) + \alpha r + \beta) t^r \\
+    &= (r^2 + (\alpha-1)r + \beta) t^r = 0
+\end{align*}
+\(\forall t > 0\) iff \(r^2 + (\alpha-1)r + \beta = 0\).
+
+So, \(y(t) = t^r\), \(t > 0\), is a solution if and only if \(r\) is a solution to \(r^2 + (\alpha-1)r + \beta = 0\), i.e.
+\[r_{1,2} = \frac{-(\alpha-1) \pm \sqrt{(\alpha-1)^2 - 4\beta}}{2}\]
+
+\begin{itemize}
+    \item Assume that \((\alpha-1)^2 - 4\beta > 0\). Then, \(y_1(t) = t^{r_1}\) and \(y_2(t) = t^{r_2}\) are solutions for \(t > 0\). Also,
+    \[W(y_1, y_2)(t) = \det \begin{pmatrix} t^{r_1} & t^{r_2} \\ r_1 t^{r_1-1} & r_2 t^{r_2-1} \end{pmatrix} = r_2 t^{r_1+r_2-1} - r_1 t^{r_1+r_2-1} \neq 0, \ \forall t > 0\]
+    since \(r_1 \neq r_2\).
+    
+    \item Assume that \((\alpha-1)^2 - 4\beta = 0\).
+    Then \(r_1 = r_2 = r = \frac{1-\alpha}{2}\). Thus, \(y_1(t) = t^r\) is one solution for \(t > 0\). We'll look for a second solution by a method often called \textbf{reduction of order}. We look for a solution \(y_2(t) = u(t) t^r\). Observe that
+    \begin{align*}
+        t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y &= \beta u(t) t^r + \alpha t \left( \frac{du}{dt} t^r + r u(t) t^{r-1} \right) \\
+        &+ t^2 \left( \frac{d^2 u}{dt^2} t^r + 2r \frac{du}{dt} t^{r-1} + r(r-1) t^{r-2} u(t) \right) \\
+        &= t^r \left( u(t) \underbrace{(\beta + \alpha r + r(r-1))}_{=0} + \frac{du}{dt} (\alpha t + 2rt) + \frac{d^2 u}{dt^2} t^2 \right) \\
+        &= t^r \left( (\alpha + 2r) t \frac{du}{dt} + t^2 \frac{d^2 u}{dt^2} \right)
+    \end{align*}
+
+    By \(\frac{1-\alpha}{2} \Rightarrow \alpha + 2r = 1\), we get it \(= t^{r} \left( t \frac{du}{dt} + t^2 \frac{d^2 u}{dt^2} \right) = t^{r+1} \left( \frac{du}{dt} + t \frac{d^2 u}{dt^2} \right) = 0, \ \forall t > 0\).
+
+    If \(u\) is a solution to \(t \frac{d^2 u}{dt^2} + \frac{du}{dt} = 0\) for \(t > 0\), then \(y_2\) is a solution on \((0, +\infty)\).
+
+    Let \(v = \frac{du}{dt}\). Then \(u\) is a sol to the eq iff \(v\) solves \(t \frac{dv}{dt} + v = 0\) for \(t > 0\).
+
+    Observe that \(v(t) = \frac{1}{t}\) is a solution for \(t > 0\).
+    
+    Then, \(u(t) = \ln t\), \(t > 0\). Then \(y_2(t) = (\ln t) t^r\).
+    
+    Also, we have
+    \begin{align*}
+        W(y_1, y_2)(t) &= \det \begin{pmatrix} t^r & t^r \ln t \\ r t^{r-1} & r t^{r-1} \ln t + t^{r-1} \end{pmatrix} \\
+        &= r t^{2r-1} \ln t + t^{2r-1} - r t^{2r-1} \ln t \\
+        &= t^{2r-1} \\
+        &\neq 0 \text{ for } t > 0.
+    \end{align*}
+\end{itemize}
+
+\begin{remark}
+    If we consider \(\tilde{r}(t) = -t\), then \(\tilde{u}(t) = -\frac{1}{2}t^2\), so \(\tilde{y}_2(t) = -\frac{1}{2}t^{r+2}\). Then,
+    \[W(\tilde{y}_1, \tilde{y}_2)(t) = \det \begin{pmatrix} t^r & -\frac{1}{2}t^{r+2} \\ r t^{r-1} & -\frac{1}{2}(r+2)t^{r+1} \end{pmatrix} = -\frac{1}{2}(r+2)t^{2r+1} + \frac{1}{2}r t^{2r+1} = t^{2r+1} \checkmark\]
+\end{remark}
+\end{example}

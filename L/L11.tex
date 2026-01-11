@@ -1,0 +1,142 @@
+\section{Lecture 11 - 11.18}
+
+\begin{recap}
+    Under the assumptions given in the theorems we proved:
+    \begin{itemize}
+        \item \(\frac{dy}{dt} = A(t)y \rightsquigarrow\) The set of solutions is a vector space of dimension \(n\). General solution:
+        \[y_H(t) = C_1 y^{(1)}(t) + \cdots + C_n y^{(n)}(t),\]
+        where \(\{y^{(1)}, \cdots, y^{(n)}\}\) is a basis of solutions.
+
+        \item \(\frac{dy}{dt} = A(t)y + b(t) \rightsquigarrow\) General solution:
+        \[y(t) = y_H(t) + z(t),\]
+        where \(z\) is a particular solution to the given system.
+        \item We can find \(z\) by the method of variation of parameters
+        \[\rightsquigarrow z(t) = C_1(t) y^{(1)}(t) + \cdots + C_n(t) y^{(n)}(t),\]
+        where \(C = \begin{pmatrix} C_1 \\ \vdots \\ C_n \end{pmatrix}\) satisfies \(\frac{dC(t)}{dt} = (Q(t))^{-1} b(t)\).
+    \end{itemize}
+\end{recap}
+
+\subsection{Equations of order \(n\)}
+
+The general form of an ODE of order \(n\) is
+\[\frac{d^n y}{dt^n} = f\left( t, y, \frac{dy}{dt}, \frac{d^2 y}{dt^2}, \cdots, \frac{d^{n-1} y}{dt^{n-1}} \right) \tag{20}\]
+where \(f\) is given.
+
+Observe the following. Assume that \(y\) is a solution to (20).
+
+Let \(y_1 = y, \ y_2 = \frac{dy}{dt}, \ y_3 = \frac{d^2 y}{dt^2}, \ \cdots, \ y_n = \frac{d^{n-1} y}{dt^{n-1}}\).
+Then,
+\[\begin{cases}
+    \frac{dy_1}{dt} = y_2 = f_1(t, y_1, y_2, \cdots, y_n) \\
+    \frac{dy_2}{dt} = y_3 = f_2(t, y_1, \cdots, y_n) \\
+    \vdots \\
+    \frac{dy_n}{dt} = f(t, y_1, y_2, \cdots, y_n) = f_n(t, y_1, \cdots, y_n)
+\end{cases} \tag{21}\]
+
+Also, if \(Y = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}\) is a solution to (21) then \(y = y_1\) is a solution to eq. (20).
+
+If we add the initial condition
+\[y(t_0) = y_1^0, \ \frac{dy}{dt}(t_0) = y_2^0, \ \cdots, \ \frac{d^{n-1} y}{dt^{n-1}}(t_0) = y_n^0 \tag{22}\]
+to eq. (20), we observe that \(y\) solves (20)-(22) if and only if \(Y = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}\) solves (21) with the initial condition
+\[y_1(t_0) = y_1^0, \cdots, y_n(t_0) = y_n^0 \tag{23}.\]
+
+Also, \(y = y_1\).
+
+\begin{remark}
+    \leavevmode
+    \begin{enumerate}[a)]
+        \item The IVP (20)-(22) admits a unique solution in \([t_0, t_0 + \alpha]\) if \(f\) and \(\nabla_y f\) are continuous in \(R = \{(t, y) \mid t_0 \le t \le a, \|y - y^0\| \le b\}\) for \(a, b\) given, where \(\alpha = \max \{a, \frac{b}{M}\}\) and \(M = \max_{in R} |f|\).
+        
+        \item The general form of a linear eq. of order \(n\) is
+        \[\frac{d^n y}{dt^n} + a_{n-1}(t) \frac{d^{n-1}y}{dt^{n-1}} + \cdots + a_1(t) \frac{dy}{dt} + a_0(t) y = f(t) \tag{24}\]
+
+        This eq. admits solutions defined on any open interval \(I\) where \(a_j, j = 0, \cdots, n-1\) and \(f\) are continuous.
+    \end{enumerate}
+\end{remark}
+
+\begin{theorem}
+    Assume that \(a_0, \cdots, a_{n-1}\) are continuous functions in an open interval \(I\). Then, the set of solutions to the homogeneous eq. associated to (24) (\(f \equiv 0\)) is a vector space of dimension \(n\).
+\end{theorem}
+
+Assume the same as before. Let \(\mathcal{B} = \{y_1, \cdots, y_n\}\) be a set of solutions to the eq. (24) with \(f \equiv 0\) in \(I\), and let \(t_0 \in I\).
+Then \(\mathcal{B}\) is l.i. if and only if
+\[W(y_1, \cdots, y_n)(t) = \det \begin{pmatrix}
+y_1(t) & \cdots & y_n(t) \\
+\frac{dy_1(t)}{dt} & \cdots & \frac{dy_n(t)}{dt} \\
+\vdots & & \vdots \\
+\frac{d^{n-1}y_1(t)}{dt^{n-1}} & \cdots & \frac{d^{n-1}y_n(t)}{dt^{n-1}}
+\end{pmatrix} \neq 0\]
+for every \(t \in I\). Equivalently, if \(W(y_1, \cdots, y_n)(t_0) \neq 0\).
+
+The function \(W(y_1, \cdots, y_n)\) is called the \textbf{Wronskian} of \(y_1, \cdots, y_n\).
+
+\begin{theorem}
+    Under the same assumptions as before, the general solution to (24) is \(y = y_H + z\) where \(y_H\) is the general solution to the homogeneous eq. associated to (24) and \(z\) is a particular solution of (24).
+\end{theorem}
+
+\begin{theorem}
+    Under the same assumptions, we have that
+    \[z(t) = C_1(t)y_1 + \cdots + C_n(t)y_n \ \text{where } \{y_1, \cdots, y_n\} \text{ is a basis}\]
+    for (24) with \(f \equiv 0\), is a solution to (24) if \(C\) is a cont. diff. vector field s.t.
+    \[\frac{dC(t)}{dt} = (W(y_1, \cdots, y_n))^{-1} \begin{pmatrix} 0 \\ 0 \\ \vdots \\ 0 \\ f(t) \end{pmatrix} \ \text{for all } t \in I, \text{ where } C = \begin{pmatrix} C_1 \\ \vdots \\ C_n \end{pmatrix}\]
+\end{theorem}
+
+\subsection{§4. Linear Systems of First-Order with Constant Coefficients}
+
+A linear system of first-order with constant coefficients is
+\[\frac{dy}{dt} = Ay \ \text{where } A = \begin{pmatrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \cdots & a_{nn} \end{pmatrix} \in \mathbb{R}^{n \times n} \tag{1}\]
+
+Noticed that the general solution is given by
+\[y = C_1 y^{(1)} + \cdots + C_n y^{(n)} \ \text{in } \mathbb{R}\]
+where \(\{y^{(1)}, \cdots, y^{(n)}\}\) is a basis of solutions.
+
+If \(n=1\), then the system reduces to the eq. \(\frac{dy}{dt} = ay\). The general solution is
+\[y(t) = C e^{at}, \ C \in \mathbb{R}.\]
+
+Let's look for a solution to (1) for \(n \ge 2\) in the form \(y(t) = v e^{\lambda t}, \ t \in \mathbb{R}\), where \(\lambda \in \mathbb{R}, v \in \mathbb{R}^n\).
+
+We need \(\frac{dy}{dt} = Ay \iff \lambda v e^{\lambda t} = A v e^{\lambda t} \ \forall t \in \mathbb{R}\).
+
+From here we observe that \(\lambda\) and \(v\) must be s.t.
+\[A v = \lambda v\]
+
+(The case \(v = 0\) is uninteresting for us because it produces the function \(y \equiv 0\), which does not belong to any basis of solution.)
+
+Then, \(y(t) = v e^{\lambda t}\) is a nontrivial solution of (1) if and only if \(\lambda\) is an eigenvalue of \(A\) with eigenvector \(v\).
+
+\begin{recap}[A brief review on eigenvalues and eigenvectors]
+    Let \(A \in \mathbb{R}^{n \times n}\).
+    \begin{enumerate}[a)]
+        \item We say that \(\lambda \in \mathbb{C}\) is an eigenvalue of \(A\) if there exists \(v \in \mathbb{C}^n \setminus \{0\}\) s.t. \(Av = \lambda v\). In this case, we say that \(v\) is an eigenvector of \(A\) with eigenvalue \(\lambda\).
+
+        \item \(\lambda \in \mathbb{C}\) is an eigenvalue of \(A\) if and only if \(\lambda\) is a root of the characteristic polynomial of \(A\), \(p(\lambda) = \det(A - \lambda I)\).
+        \[Av = \lambda v \iff Av - \lambda v = 0 \iff Av - \lambda I v = 0 \iff (A - \lambda I)v = 0\]
+        
+        \item The matrix \(A\) has at most \(n\) distinct eigenvalues and at most \(n\) l.i. eigenvectors.
+
+        \item If \(v_1, \cdots, v_k \in \mathbb{C}^n\) are eigenvectors of \(A\) associated to different eigenvalues \((\lambda_1, \cdots, \lambda_k \in \mathbb{C})\) then \(v_1, \cdots, v_k\) are linearly independent, for some \(1 \le k \le n\).
+    \end{enumerate}
+\end{recap}
+
+Let's look for a basis of solutions to (1) according to the properties of the eigenvalues and eigenvectors of \(A\).
+
+\subsubsection{Case 1: \(A\) has \(n\) real distinct eigenvalues \(\lambda_1, \cdots, \lambda_n\).}
+
+Let \(v_k\) be an eigenvector of \(A\) with eigenvalue \(\lambda_k\), \(k = 1, \cdots, n\). As \(\lambda_1, \cdots, \lambda_n\) are distinct, \(v_1, \cdots, v_n\) are l.i. Let
+\[y^{(k)}(t) = v_k e^{\lambda_k t}, \ t \in \mathbb{R}, \ k = 1, \cdots, n\]
+
+We know that each \(y^{(k)}\) is a solution. Also, \(\{y^{(1)}, \cdots, y^{(n)}\}\) is l.i. since \(\{y^{(1)}(0), \cdots, y^{(n)}(0)\} = \{v_1, \cdots, v_n\}\) is a set of l.i. vectors.
+The general solution is
+\[y(t) = C_1 v_1 e^{\lambda_1 t} + \cdots + C_n v_n e^{\lambda_n t}, \ t \in \mathbb{R}, \ C_1, \cdots, C_n \in \mathbb{R}\]
+
+Notice that \(y(t) \in \mathbb{R}^n\) for every \(t \in \mathbb{R}\) since \(v_k \in \mathbb{R}^n, k=1,\cdots,n\) because \(A\) has real entries and real eigenvalues.
+
+\subsubsection{Case 2: \(A\) has a complex eigenvalue \(\lambda = \alpha + i\beta\).}
+
+Remember that we look for real-valued solutions, that is, \(y(t) \in \mathbb{R}\) for all \(t \in \mathbb{R}\).
+\begin{align*}
+    &Av = \lambda v \rightsquigarrow y(t) = v e^{\lambda t} \in \mathbb{C} \ \text{for } t \in \mathbb{R}, \\
+    &e^{\lambda t} = e^{(\alpha + i\beta)t} = e^{\alpha t} (\cos(\beta t) + i \sin(\beta t)), \\
+    &\frac{d(e^{\lambda t})}{dt} = \lambda e^{\lambda t} \ (\text{exercise}), \\
+    &y \text{ is a complex-valued solution.}
+\end{align*}
