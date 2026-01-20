@@ -1,14 +1,14 @@
 \section{Lecture 3 - 10.21}
 
 \begin{recap}
-    Solution Methods for Some First-Order ODEs
-    \begin{itemize}
-        \item The integrating factor method for linear equations:
-        \[\frac{d\tilde{y}}{dt} = \tilde{b}(t) \tag{*}\]
-        (Idea: Transform the given equation into something in the form (*).)
+Solution Methods for Some First-Order ODEs
+\begin{itemize}
+\item The integrating factor method for linear equations:
+\[\frac{d\tilde{y}}{dt} = \tilde{b}(t) \tag{*}\]
+(Idea: Transform the given equation into something in the form (*).)
 
-        \item Separable equations: \(\mu(y)\frac{dy}{dt} = g(t)\).
-    \end{itemize}
+\item Separable equations: \(\mu(y)\frac{dy}{dt} = g(t)\).
+\end{itemize}
 \end{recap}
 
 \subsection{Exact Equations}
@@ -30,57 +30,61 @@ Now, observe that
 If we find \(\phi\) such that \(\frac{\partial\phi}{\partial t} = M\) and \(\frac{\partial\phi}{\partial y} = N\), then the equation (18) has the form (17), and so \(y\) is given by \(\phi(t, y) = c\) for \(c \in \mathbb{R}\).
 
 \begin{remark}[on (\textcolor{red}{*})]
-    Consider a function \(\phi(t, u)\), \((t, u) \in \mathbb{R}^2\). Then, \(\phi(t, y(t))\) is a function of \(t\) only.
+Consider a function \(\phi(t, u)\), \((t, u) \in \mathbb{R}^2\). Then, \(\phi(t, y(t))\) is a function of \(t\) only.
 
-    To compute \(\frac{d\phi(t, y(t))}{dt}\), we use the chain rule
-    \[\frac{d\phi(t, y(t))}{dt} = \frac{\partial\phi}{\partial t} \cdot \frac{dt}{dt} + \frac{\partial\phi}{\partial u} \cdot \frac{dy(t)}{dt}\]
+To compute \(\frac{d\phi(t, y(t))}{dt}\), we use the chain rule
+\[\frac{d\phi(t, y(t))}{dt} = \frac{\partial\phi}{\partial t} \cdot \frac{dt}{dt} + \frac{\partial\phi}{\partial u} \cdot \frac{dy(t)}{dt}\]
 
-    Since \(\frac{dt}{dt} = 1\), this simplifies to
-    \[\frac{d\phi(t, y(t))}{dt} = \frac{\partial\phi}{\partial t} + \frac{\partial\phi}{\partial u} \cdot \frac{dy}{dt}\]
+Since \(\frac{dt}{dt} = 1\), this simplifies to
+\[\frac{d\phi(t, y(t))}{dt} = \frac{\partial\phi}{\partial t} + \frac{\partial\phi}{\partial u} \cdot \frac{dy}{dt}\]
 
-    By an abuse of notation, we usually write \(u = y\).
+By an abuse of notation, we usually write \(u = y\).
 \end{remark}
 
 \begin{theorem}[Exactness Condition]
-    Let \(M\) and \(N\) be continuous functions with continuous first-order partial derivatives. Then, there exists a function \(\phi\) that satisfies the exactness condition if and only if
-    \[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\]
+Let \(M\) and \(N\) be continuous functions with continuous first-order partial derivatives. Then, there exists a function \(\phi\) that satisfies the exactness condition if and only if
+\[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\]
 \end{theorem}
 
-\begin{proof}
-    A function \(\phi\) satisfies \(\frac{\partial \phi}{\partial t} = M\) if and only if
-    \[\phi(t, y) = \int M(t, y) dt + h(y)\]
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    Also, \(\phi\) satisfies \(\frac{\partial \phi}{\partial y} = N\) if
-    \[\frac{\partial \phi(t, y)}{\partial y} = \frac{\partial}{\partial y} \left( \int M(t, y) dt + h(y) \right) = N(t, y)\]
+% \begin{proof}
+% A function \(\phi\) satisfies \(\frac{\partial \phi}{\partial t} = M\) if and only if
+% \[\phi(t, y) = \int M(t, y) dt + h(y)\]
 
-    That is
-    \[N(t, y) = \frac{d}{dy} \int M(t, y) dt + \frac{dh}{dy}\]
+% Also, \(\phi\) satisfies \(\frac{\partial \phi}{\partial y} = N\) if
+% \[\frac{\partial \phi(t, y)}{\partial y} = \frac{\partial}{\partial y} \left( \int M(t, y) dt + h(y) \right) = N(t, y)\]
 
-    Thus, a function \(\phi\) with the exactness property exists if and only if \(\phi(t, y) = \int M(t, y) dt + h(y)\), where \(h(y)\) is such that
-    \[\frac{dh}{dy} = N(t, y) - \frac{d}{dy} \int M(t, y) dt\]
-    (Both sides are functions of \(y\) only.)
+% That is
+% \[N(t, y) = \frac{d}{dy} \int M(t, y) dt + \frac{dh}{dy}\]
 
-    Notice that \(h\) exists if and only if the right-hand side depends only on \(y\). That is, if and only if
-    \[\frac{\partial}{\partial t} \left( N(t, y) - \frac{d}{dy} \int M(t, y) dt \right) = 0,\]
-    which simplifies to \(\frac{\partial N}{\partial t} = \frac{\partial}{\partial t} \left( \frac{d}{dy} \int M(t, y) dt \right)\).
+% Thus, a function \(\phi\) with the exactness property exists if and only if \(\phi(t, y) = \int M(t, y) dt + h(y)\), where \(h(y)\) is such that
+% \[\frac{dh}{dy} = N(t, y) - \frac{d}{dy} \int M(t, y) dt\]
+% (Both sides are functions of \(y\) only.)
 
-    Equivalently, if and only if
-    \[\frac{\partial N}{\partial t}(t, y) - \frac{\partial}{\partial t} \int \frac{\partial M}{\partial y}(t, y) dt = \frac{\partial N}{\partial t}(t, y) - \frac{\partial M}{\partial y}(t, y) = 0\]
-\end{proof}
+% Notice that \(h\) exists if and only if the right-hand side depends only on \(y\). That is, if and only if
+% \[\frac{\partial}{\partial t} \left( N(t, y) - \frac{d}{dy} \int M(t, y) dt \right) = 0,\]
+% which simplifies to \(\frac{\partial N}{\partial t} = \frac{\partial}{\partial t} \left( \frac{d}{dy} \int M(t, y) dt \right)\).
+
+% Equivalently, if and only if
+% \[\frac{\partial N}{\partial t}(t, y) - \frac{\partial}{\partial t} \int \frac{\partial M}{\partial y}(t, y) dt = \frac{\partial N}{\partial t}(t, y) - \frac{\partial M}{\partial y}(t, y) = 0\]
+% \end{proof}
 
 \begin{remark}[Differentiation Under the Integral Sign]
-    In the proof we used that \(\frac{\partial}{\partial y} \int M(t, y) dt = \int \frac{\partial}{\partial y} M(t, y) dt\). This holds because \(M\) is continuous and \(\frac{\partial M}{\partial y}\) is continuous as well. The proof of this is based on the Dominated Convergence Theorem (DCT):
-    \begin{itemize}
-        \item \(\{f_n(t)\}\), \(f_n(t) \to f(t)\) for every \(t\)
-        \item \(|f_n(t)| \leq g(t)\) for every \(t\)
-        \item \(\int_a^b g(t) dt\) exists
-    \end{itemize}
+In the proof we used that \(\frac{\partial}{\partial y} \int M(t, y) dt = \int \frac{\partial}{\partial y} M(t, y) dt\). This holds because \(M\) is continuous and \(\frac{\partial M}{\partial y}\) is continuous as well. The proof of this is based on the Dominated Convergence Theorem (DCT):
+\begin{itemize}
+\item \(\{f_n(t)\}\), \(f_n(t) \to f(t)\) for every \(t\)
+\item \(|f_n(t)| \leq g(t)\) for every \(t\)
+\item \(\int_a^b g(t) dt\) exists
+\end{itemize}
 
-    Then \(\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \lim_{n \to \infty} f_n(t) dt = \int_a^b f(t) dt\).
+Then \(\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \lim_{n \to \infty} f_n(t) dt = \int_a^b f(t) dt\).
 \end{remark}
 
 \begin{definition}[Exact Equation]
-    Any first-order ODE in the form \(M(t, y) + N(t, y)\frac{dy}{dt} = 0\) that satisfies \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\) is called an \textbf{exact equation}.
+Any first-order ODE in the form \(M(t, y) + N(t, y)\frac{dy}{dt} = 0\) that satisfies \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\) is called an \textbf{exact equation}.
 \end{definition}
 
 \subsection{Integrating Factor for Non-Exact Equations}
@@ -107,34 +111,34 @@ If \(N\) never vanishes, then
 
 Notice that the previous equation makes sense if and only if \(\frac{1}{N} \left( \frac{\partial N}{\partial t} - \frac{\partial M}{\partial y} \right)\) depends on \(t\) only.
 
-\subsection{§2. The Existence and Uniqueness Theorem for First-Order ODEs}
+\subsection{\S2. The Existence and Uniqueness Theorem for First-Order ODEs}
 
 Consider the initial value problem (IVP):
 \[\begin{cases}
-    \frac{dy}{dt} = f(t, y) \\
-    y(t_0) = y_0
+\frac{dy}{dt} = f(t, y) \\
+y(t_0) = y_0
 \end{cases}\]
 
 \begin{example}
-    \[\begin{cases}
-        \frac{dy}{dt} = 1 + y^2 \\
-        y(0) = 0
-    \end{cases}\]
+\[\begin{cases}
+\frac{dy}{dt} = 1 + y^2 \\
+y(0) = 0
+\end{cases}\]
 
-    Here, \(f(t, y) = 1 + y^2\), \(t_0 = 0\), \(y_0 = 0\).
+Here, \(f(t, y) = 1 + y^2\), \(t_0 = 0\), \(y_0 = 0\).
 
-    Notice that the ODE is separable. Let's look for the general solution:
-    \[\frac{dy}{dt} = 1 + y^2 \iff \frac{1}{1 + y^2} \frac{dy}{dt} = 1\]
+Notice that the ODE is separable. Let's look for the general solution:
+\[\frac{dy}{dt} = 1 + y^2 \iff \frac{1}{1 + y^2} \frac{dy}{dt} = 1\]
 
-    Integration yields:
-    \[\int \frac{y'(t)}{1 + y(t)^2} dt = \int dt\]
+Integration yields:
+\[\int \frac{y'(t)}{1 + y(t)^2} dt = \int dt\]
 
-    Thus,
-    \[\arctan(y(t)) = t + c, \ c \in \mathbb{R}\]
+Thus,
+\[\arctan(y(t)) = t + c, \ c \in \mathbb{R}\]
 
-    Therefore,
-    \[y(t) = \tan(t + c), \ c \in \mathbb{R}\]
+Therefore,
+\[y(t) = \tan(t + c), \ c \in \mathbb{R}\]
 
-    Additionally, to have \(y(0) = 0\), we need \(\tan(c) = 0\). We choose \(c = 0\), so
-    \[y(t) = \tan(t), \ t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\]
+Additionally, to have \(y(0) = 0\), we need \(\tan(c) = 0\). We choose \(c = 0\), so
+\[y(t) = \tan(t), \ t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\]
 \end{example}

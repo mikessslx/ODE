@@ -1,13 +1,13 @@
 \section{Lecture 21 - 12.23}
 
-\subsection{§6. Sturm-Liouville Theory for second-order boundary problems}
+\subsection{\S6. Sturm-Liouville Theory for second-order boundary problems}
 
 \begin{example}
 Let's look for a solution to
 \[\begin{cases}
-    u_t - k u_{xx} = 0 & \text{(PDE)} \ 0 < x < L, \ t > 0 \ (k > 0) \\
-    u(0, t) = u(L, t) = 0 & \text{(BC)} \ t \geq 0 \\
-    u(x, 0) = f(x) & \text{(IC)} \ 0 \leq x \leq L
+u_t - k u_{xx} = 0 & \text{(PDE)} \ 0 < x < L, \ t > 0 \ (k > 0) \\
+u(0, t) = u(L, t) = 0 & \text{(BC)} \ t \geq 0 \\
+u(x, 0) = f(x) & \text{(IC)} \ 0 \leq x \leq L
 \end{cases}\]
 where \(u(x, t)\): temperature at position \(x\) at time \(t > 0\).
 \end{example}
@@ -17,8 +17,8 @@ First, look for a solution \(u\) of the PDE and the BC.
 Specifically, let's look for a solution in the form \(u(x, t) = X(x) T(t)\).
 Replacing \(u\) in the PDE, we get (formally)
 \begin{align*}
-    X T' - k X'' T &= 0 \\
-    \underbrace{\frac{1}{k} \frac{T'}{T}}_{\text{function of } t} = \underbrace{\frac{X''}{X}}_{\text{function of } x} &= -\lambda \ \text{for some } \lambda \in \mathbb{R}
+X T' - k X'' T &= 0 \\
+\underbrace{\frac{1}{k} \frac{T'}{T}}_{\text{function of } t} = \underbrace{\frac{X''}{X}}_{\text{function of } x} &= -\lambda \ \text{for some } \lambda \in \mathbb{R}
 \end{align*}
 
 Then \(X'' + \lambda X = 0 \ 0 < x < L\) and \(T' + k \lambda T = 0 \ t > 0\).
@@ -29,41 +29,41 @@ Moreover, we look for a nontrivial solution. So, \(X\) and \(T\) are not identic
 
 Therefore, second-order ODE with BC:
 \[\begin{cases}
-    X'' + \lambda X = 0 & 0 < x < L \\
-    X(0) = X(L) = 0
+X'' + \lambda X = 0 & 0 < x < L \\
+X(0) = X(L) = 0
 \end{cases} \ \text{and} \ T' + \lambda k T = 0 \ t > 0.\]
 
 Let's find, if possible, nontrivial solutions to these problems. Let's start with the problem for \(X\).
 
 \begin{itemize}
-    \item Assume \(\lambda = 0\)
+\item Assume \(\lambda = 0\)
 
-    The ODE is \(X'' = 0 \ 0 < x < L\).
-    The general sol is \(X(x) = Ax + B, \ A, B \in \mathbb{R}\).
+The ODE is \(X'' = 0 \ 0 < x < L\).
+The general sol is \(X(x) = Ax + B, \ A, B \in \mathbb{R}\).
 
-    Also, \(X(0) = B = 0\), \(X(L) = AL = 0\) so \(A = 0\).
-    Then, \(X \equiv 0\).
+Also, \(X(0) = B = 0\), \(X(L) = AL = 0\) so \(A = 0\).
+Then, \(X \equiv 0\).
 
-    \item Assume \(\lambda < 0\)
+\item Assume \(\lambda < 0\)
 
-    The char. polynomial is \(p(\omega) = \omega^2 + \lambda\).
-    The roots are \(\omega = \sqrt{-\lambda}\) and \(\omega = -\sqrt{-\lambda}\).
+The char. polynomial is \(p(\omega) = \omega^2 + \lambda\).
+The roots are \(\omega = \sqrt{-\lambda}\) and \(\omega = -\sqrt{-\lambda}\).
 
-    The general sol to the ODE is \(X(x) = A e^{\sqrt{-\lambda}x} + B e^{-\sqrt{-\lambda}x}\).
+The general sol to the ODE is \(X(x) = A e^{\sqrt{-\lambda}x} + B e^{-\sqrt{-\lambda}x}\).
 
-    Also, \(X(0) = A + B = 0 \Rightarrow A = -B\). \(X(L) = A(e^{\sqrt{-\lambda}L} - e^{-\sqrt{-\lambda}L}) = 0 \Rightarrow A = 0\).
-    Then \(X \equiv 0\).
+Also, \(X(0) = A + B = 0 \Rightarrow A = -B\). \(X(L) = A(e^{\sqrt{-\lambda}L} - e^{-\sqrt{-\lambda}L}) = 0 \Rightarrow A = 0\).
+Then \(X \equiv 0\).
 
-    \item Assume \(\lambda > 0\)
+\item Assume \(\lambda > 0\)
 
-    The roots of the char. polynomial are \(\omega = \sqrt{\lambda}i\) and \(\omega = -\sqrt{\lambda}i\).
+The roots of the char. polynomial are \(\omega = \sqrt{\lambda}i\) and \(\omega = -\sqrt{\lambda}i\).
 
-    The general solution is \(X(x) = A \cos(\sqrt{\lambda}x) + B \sin(\sqrt{\lambda}x)\).
+The general solution is \(X(x) = A \cos(\sqrt{\lambda}x) + B \sin(\sqrt{\lambda}x)\).
 
-    Also, \(X(0) = A = 0\). \(X(L) = B \sin(\sqrt{\lambda}L) = 0\). To have a nontrivial sol, we consider \(B \neq 0\).
-    Then \(\sin(\sqrt{\lambda}L) = 0\), i.e. \(\sqrt{\lambda}L = n\pi\), i.e. \(\lambda_n = (\frac{n\pi}{L})^2\), \(n=1, 2, \cdots\).
+Also, \(X(0) = A = 0\). \(X(L) = B \sin(\sqrt{\lambda}L) = 0\). To have a nontrivial sol, we consider \(B \neq 0\).
+Then \(\sin(\sqrt{\lambda}L) = 0\), i.e. \(\sqrt{\lambda}L = n\pi\), i.e. \(\lambda_n = (\frac{n\pi}{L})^2\), \(n=1, 2, \cdots\).
 
-    So \(X_n(x) = \sin(\frac{n\pi}{L}x)\) is a nontrivial solution, \(n=1, 2, \cdots\).
+So \(X_n(x) = \sin(\frac{n\pi}{L}x)\) is a nontrivial solution, \(n=1, 2, \cdots\).
 \end{itemize}
 
 For \(\lambda_n = (\frac{n\pi}{L})^2\), let's solve the ODE for \(T\): \(T' + k \lambda_n T = 0\). The function
@@ -84,9 +84,9 @@ Assume that \(f\) admits a representation in the form (*). Let's look for \(B_n\
 \begin{example}
 Consider the problem
 \begin{align*}
-    a(t) \frac{d^2 y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y &= -\lambda r(t) y \ \alpha < t < \beta \\
-    B_\alpha[y] &= a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0 \\
-    B_\beta[y] &= a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0
+a(t) \frac{d^2 y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y &= -\lambda r(t) y \ \alpha < t < \beta \\
+B_\alpha[y] &= a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0 \\
+B_\beta[y] &= a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0
 \end{align*}
 
 Let \(V\) be the space of twice continuously diff functions in \([\alpha, \beta]\). Also,
@@ -94,10 +94,10 @@ Let \(V\) be the space of twice continuously diff functions in \([\alpha, \beta]
 \end{example}
 
 \begin{remark}
-    We know functions \(f: \mathbb{R} \to \mathbb{R}\), \(f(x) = y\).
-    We usually call operators to functions whose domain is a set of functions.
-    If \(L: V \to W\) where \(W\) is the space of cont. functions in \([\alpha, \beta]\),
-    \(L[y] = -\frac{d^2 y}{dt^2}\), then we call \(L\) an operator.
+We know functions \(f: \mathbb{R} \to \mathbb{R}\), \(f(x) = y\).
+We usually call operators to functions whose domain is a set of functions.
+If \(L: V \to W\) where \(W\) is the space of cont. functions in \([\alpha, \beta]\),
+\(L[y] = -\frac{d^2 y}{dt^2}\), then we call \(L\) an operator.
 \end{remark}
 
 If \(r\) is a nonnegative function then any nontrivial solution to
@@ -110,8 +110,8 @@ We'll work with the inner product
 \begin{example}
 If \(r=1, a=1, b=0, c=0\), \(b_1=b_2=0, a_1=a_2, \alpha=0, \beta=L\),
 \begin{align*}
-    -\frac{d^2 y}{dt^2} &= \lambda y \ 0 < t < L \\
-    y(0) &= y(L) = 0
+-\frac{d^2 y}{dt^2} &= \lambda y \ 0 < t < L \\
+y(0) &= y(L) = 0
 \end{align*}
 then we know that the eigenvalues are \(\lambda_n = (\frac{n\pi}{L})^2\) and the eigenfunctions are \(y_n(t) = \sin(\frac{n\pi}{L}t)\), \(n=1, 2, \cdots\).
 \end{example}
@@ -119,14 +119,14 @@ then we know that the eigenvalues are \(\lambda_n = (\frac{n\pi}{L})^2\) and the
 \begin{recap}[A brief review of properties of self-adjoint matrices]
 Let \(A = (a_{ij})\), \(i,j=1, \cdots, n\), \(a_{ij} \in \mathbb{C}\), \(A \in \mathbb{C}^{n \times n}\).
 \begin{itemize}
-    \item The adjoint of \(A\) is \(A^* = \bar{A}^t = (\overline{a_{ji}})\).
-    \item We say that \(A\) is \textbf{self-adjoint} or Hermitian if \(A^* = A\).
-    \item If \(A\) is self-adjoint then:
-    \begin{enumerate}[i)]
-        \item All eigenvalues of \(A\) are real.
-        \item There exists a basis of \(\mathbb{R}^n\) of eigenvectors of \(A\).
-        \item If \(v\) and \(w\) are eigenvector with different eigenvalues then \(v \cdot w = 0\).
-        \item \((Av, w) = (v, A^* w) \ \forall v, w \in \mathbb{C}^n\).
-    \end{enumerate}
+\item The adjoint of \(A\) is \(A^* = \bar{A}^t = (\overline{a_{ji}})\).
+\item We say that \(A\) is \textbf{self-adjoint} or Hermitian if \(A^* = A\).
+\item If \(A\) is self-adjoint then:
+\begin{enumerate}[i)]
+\item All eigenvalues of \(A\) are real.
+\item There exists a basis of \(\mathbb{R}^n\) of eigenvectors of \(A\).
+\item If \(v\) and \(w\) are eigenvector with different eigenvalues then \(v \cdot w = 0\).
+\item \((Av, w) = (v, A^* w) \ \forall v, w \in \mathbb{C}^n\).
+\end{enumerate}
 \end{itemize}
 \end{recap}

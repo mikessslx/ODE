@@ -3,69 +3,69 @@
 \subsection{Exercise}
 
 \begin{xca}
-    Find \(k \in \mathbb{R}\) such that \(y(t) = te^{3t}\) is a solution to the equation
-    \[y'' + (k-3)y' - 3ky = 0 \tag{*}\]
+Find \(k \in \mathbb{R}\) such that \(y(t) = te^{3t}\) is a solution to the equation
+\[y'' + (k-3)y' - 3ky = 0 \tag{*}\]
 
-    For that value of \(k\), find the general solution to
-    \[y'' + (k-3)y' - 3ky = 1 + e^{3t} \tag{**}\]
+For that value of \(k\), find the general solution to
+\[y'' + (k-3)y' - 3ky = 1 + e^{3t} \tag{**}\]
 \end{xca}
 \begin{proof}[Solution]
-    Let \(y(t) = te^{3t}\). Then \(y'(t) = e^{3t} + 3te^{3t}\) and \(y''(t) = 3e^{3t} + 3e^{3t} + 9te^{3t} = 6e^{3t} + 9te^{3t}\).
-    Thus,
-    \begin{align*}
-        &y''(t) + (k-3)y'(t) - 3ky(t) = \\
-        &e^{3t}(6 + 9t + (k-3)(1+3t) - 3kt) = \\
-        &e^{3t}(6 + 9t + k + 3kt - 3 - 9t - 3kt) = e^{3t}(k+3) = 0 \ \forall t \iff k = -3.
-    \end{align*}
+Let \(y(t) = te^{3t}\). Then \(y'(t) = e^{3t} + 3te^{3t}\) and \(y''(t) = 3e^{3t} + 3e^{3t} + 9te^{3t} = 6e^{3t} + 9te^{3t}\).
+Thus,
+\begin{align*}
+&y''(t) + (k-3)y'(t) - 3ky(t) = \\
+&e^{3t}(6 + 9t + (k-3)(1+3t) - 3kt) = \\
+&e^{3t}(6 + 9t + k + 3kt - 3 - 9t - 3kt) = e^{3t}(k+3) = 0 \ \forall t \iff k = -3.
+\end{align*}
 
-    Then, the nonhomogeneous eq. is
-    \[y'' - 6y' + 9y = 1 + e^{3t}\]
+Then, the nonhomogeneous eq. is
+\[y'' - 6y' + 9y = 1 + e^{3t}\]
 
-    The general solution is given by
-    \[y(t) = y_H(t) + y_P(t)\]
-    where \(y_H\) is the general solution to (*) and \(y_P\) is a particular solution to (**).
-    
-    As the eq. is linear with continuous (const.) coeff. in \(\mathbb{R}\).
-    We look first for a basis of solutions to (*).
-    Let's write the system associated to (*). Let \(y_1 = y\) and \(y_2 = y'\), then
-    \[\begin{cases}
-        y_1' = y_2 \\
-        y_2' = 6y_2 - 9y_1
-    \end{cases}\]
+The general solution is given by
+\[y(t) = y_H(t) + y_P(t)\]
+where \(y_H\) is the general solution to (*) and \(y_P\) is a particular solution to (**).
 
-    The coeff. matrix is \(A = \begin{pmatrix} 0 & 1 \\ -9 & 6 \end{pmatrix}\).
+As the eq. is linear with continuous (const.) coeff. in \(\mathbb{R}\).
+We look first for a basis of solutions to (*).
+Let's write the system associated to (*). Let \(y_1 = y\) and \(y_2 = y'\), then
+\[\begin{cases}
+y_1' = y_2 \\
+y_2' = 6y_2 - 9y_1
+\end{cases}\]
 
-    Let's find the eigenvalues of \(A\):
-    \[p(\lambda) = \det(A - \lambda I) = \det \begin{pmatrix} -\lambda & 1 \\ -9 & 6-\lambda \end{pmatrix} = \lambda(\lambda-6) + 9 = \lambda^2 - 6\lambda + 9 = (\lambda-3)^2\]
-    \(A\) has one real eigenvalue, \(\lambda = 3\), with multiplicity 2. As 3 is an eigenvalue, we know that \(Y(t) = v e^{3t}\) is a solution to the system, where \(v\) is an eigenvector of \(A\) for \(\lambda = 3\). Let \(v = \begin{pmatrix} u \\ w \end{pmatrix}\). Then \(Y(t) = \begin{pmatrix} ue^{3t} \\ we^{3t} \end{pmatrix}\).
-    Then \(ue^{3t}\) is a solution to (*). Let \(\tilde{y}(t) = e^{3t}\). This is a solution to (*) (exercise).
+The coeff. matrix is \(A = \begin{pmatrix} 0 & 1 \\ -9 & 6 \end{pmatrix}\).
 
-    Let's now analyze if \(y\) and \(\tilde{y}\) are l.i.
-    \[W(y, \tilde{y})(t) = \det \begin{pmatrix} y(t) & \tilde{y}(t) \\ y'(t) & \tilde{y}'(t) \end{pmatrix} = \det \begin{pmatrix} te^{3t} & e^{3t} \\ e^{3t}(1+3t) & 3e^{3t} \end{pmatrix} = 3te^{6t} - (1+3t)e^{6t} = -e^{6t} \neq 0\]
-    for every \(t \in \mathbb{R}\). Then, \(\{y, \tilde{y}\}\) is a basis of solutions to (*). We have \(y_H\).
-    
-    Let's now look for a particular solution \(y_P\) to (**).
-    
-    One way to find \(y_P\) is by the method of variation of parameters (Exercise).
-    \[y_P(t) = c_1(t)\tilde{y}(t) + c_2(t)y(t) , \ \frac{dC(t)}{dt} = (W(y, \tilde{y})(t))^{-1} \begin{pmatrix} 0 \\ 1+e^{3t} \end{pmatrix}, \ C(t) = \begin{pmatrix} c_1(t) \\ c_2(t) \end{pmatrix}\]
-    
-    Another way is the following. Let's look for a particular solution in the form \(y_P = y_{P_1} + y_{P_2}\), where \(y_{P_1}\) is a solution to \(y'' - 6y' + 9y = 1\) and \(y_{P_2}\) is a solution to \(y'' - 6y' + 9y = e^{3t}\).
-    
-    It's direct that \(y_{P_1}(t) = \frac{1}{9}\) is a solution to \(y'' - 6y' + 9y = 1\).
-    Let's look for a solution to the other eq. in the form \(y_{P_2}(t) = c(t)e^{3t}\).
+Let's find the eigenvalues of \(A\):
+\[p(\lambda) = \det(A - \lambda I) = \det \begin{pmatrix} -\lambda & 1 \\ -9 & 6-\lambda \end{pmatrix} = \lambda(\lambda-6) + 9 = \lambda^2 - 6\lambda + 9 = (\lambda-3)^2\]
+\(A\) has one real eigenvalue, \(\lambda = 3\), with multiplicity 2. As 3 is an eigenvalue, we know that \(Y(t) = v e^{3t}\) is a solution to the system, where \(v\) is an eigenvector of \(A\) for \(\lambda = 3\). Let \(v = \begin{pmatrix} u \\ w \end{pmatrix}\). Then \(Y(t) = \begin{pmatrix} ue^{3t} \\ we^{3t} \end{pmatrix}\).
+Then \(ue^{3t}\) is a solution to (*). Let \(\tilde{y}(t) = e^{3t}\). This is a solution to (*) (exercise).
 
-    \begin{remark}
-        \(y_{P_2}(t) = \alpha e^{3t}\), \(y'_{P_2}(t) = 3\alpha e^{3t}\), \(y''_{P_2}(t) = 9\alpha e^{3t}\);
-        
-        \(y''_{P_2}(t)-6y'_{P_2}(t)+9y_{P_2}(t) = 9\alpha e^{3t} - 18\alpha e^{3t} + 9\alpha e^{3t} = 0 \neq e^{3t}\). Wrong!
-    \end{remark}
-    
-    Then, \(y_{P_2}'(t) = c'(t)e^{3t} + 3c(t)e^{3t}\) and \(y_{P_2}''(t) = c''(t)e^{3t} + 6c'(t)e^{3t} + 9c(t)e^{3t}\).
+Let's now analyze if \(y\) and \(\tilde{y}\) are l.i.
+\[W(y, \tilde{y})(t) = \det \begin{pmatrix} y(t) & \tilde{y}(t) \\ y'(t) & \tilde{y}'(t) \end{pmatrix} = \det \begin{pmatrix} te^{3t} & e^{3t} \\ e^{3t}(1+3t) & 3e^{3t} \end{pmatrix} = 3te^{6t} - (1+3t)e^{6t} = -e^{6t} \neq 0\]
+for every \(t \in \mathbb{R}\). Then, \(\{y, \tilde{y}\}\) is a basis of solutions to (*). We have \(y_H\).
 
-    Thus, 
-    \[y_{P_2}''(t) - 6y_{P_2}'(t) + 9y_{P_2}(t) = e^{3t} ( c''(t) + 6c'(t) + 9c(t) - 6c'(t) - 18c(t) + 9c(t) ) = e^{3t} \iff c''(t) = 1\]
+Let's now look for a particular solution \(y_P\) to (**).
 
-    Then, we can take \(c(t) = \frac{t^2}{2}\). Then \(y_{P_2}(t) = \frac{t^2}{2}e^{3t}\).
-    
-    (The general solution is \(y(t) = c_1 e^{3t} + c_2 t e^{3t} + \frac{1}{9} + \frac{t^2}{2}e^{3t}, \ t \in \mathbb{R}\).)
+One way to find \(y_P\) is by the method of variation of parameters (Exercise).
+\[y_P(t) = c_1(t)\tilde{y}(t) + c_2(t)y(t) , \ \frac{dC(t)}{dt} = (W(y, \tilde{y})(t))^{-1} \begin{pmatrix} 0 \\ 1+e^{3t} \end{pmatrix}, \ C(t) = \begin{pmatrix} c_1(t) \\ c_2(t) \end{pmatrix}\]
+
+Another way is the following. Let's look for a particular solution in the form \(y_P = y_{P_1} + y_{P_2}\), where \(y_{P_1}\) is a solution to \(y'' - 6y' + 9y = 1\) and \(y_{P_2}\) is a solution to \(y'' - 6y' + 9y = e^{3t}\).
+
+It's direct that \(y_{P_1}(t) = \frac{1}{9}\) is a solution to \(y'' - 6y' + 9y = 1\).
+Let's look for a solution to the other eq. in the form \(y_{P_2}(t) = c(t)e^{3t}\).
+
+\begin{remark}
+\(y_{P_2}(t) = \alpha e^{3t}\), \(y'_{P_2}(t) = 3\alpha e^{3t}\), \(y''_{P_2}(t) = 9\alpha e^{3t}\);
+
+\(y''_{P_2}(t)-6y'_{P_2}(t)+9y_{P_2}(t) = 9\alpha e^{3t} - 18\alpha e^{3t} + 9\alpha e^{3t} = 0 \neq e^{3t}\). Wrong!
+\end{remark}
+
+Then, \(y_{P_2}'(t) = c'(t)e^{3t} + 3c(t)e^{3t}\) and \(y_{P_2}''(t) = c''(t)e^{3t} + 6c'(t)e^{3t} + 9c(t)e^{3t}\).
+
+Thus, 
+\[y_{P_2}''(t) - 6y_{P_2}'(t) + 9y_{P_2}(t) = e^{3t} ( c''(t) + 6c'(t) + 9c(t) - 6c'(t) - 18c(t) + 9c(t) ) = e^{3t} \iff c''(t) = 1\]
+
+Then, we can take \(c(t) = \frac{t^2}{2}\). Then \(y_{P_2}(t) = \frac{t^2}{2}e^{3t}\).
+
+(The general solution is \(y(t) = c_1 e^{3t} + c_2 t e^{3t} + \frac{1}{9} + \frac{t^2}{2}e^{3t}, \ t \in \mathbb{R}\).)
 \end{proof}

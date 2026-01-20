@@ -4,8 +4,8 @@
 \[a(t) \frac{d^2 y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y = -\lambda r(t) y \ \alpha < t < \beta\]
 Boundaries conditions:
 \begin{align*}
-    B_\alpha[y] = a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0 & \ |a_1| + |b_1| > 0 \\
-    B_\beta[y] = a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0 & \ |a_2| + |b_2| > 0
+B_\alpha[y] = a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0 & \ |a_1| + |b_1| > 0 \\
+B_\beta[y] = a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0 & \ |a_2| + |b_2| > 0
 \end{align*}
 \end{recap}
 
@@ -17,16 +17,16 @@ Here \(L[y] = \lambda y\), \(-\frac{d^2 y}{dt^2}\). \(a=1, b=0, c=0, r=1\); \(a_
 Eigenvalues:
 \[\lambda_n = \left(\frac{n\pi}{l}\right)^2 \ n=1, 2, \cdots\]
 \begin{itemize}
-    \item \(\lambda_n \in \mathbb{R} \ \forall n\)
-    \item \(\lambda_1 < \lambda_2 < \cdots\)
-    \item \(\lim_{n \to \infty} \lambda_n = +\infty\)
+\item \(\lambda_n \in \mathbb{R} \ \forall n\)
+\item \(\lambda_1 < \lambda_2 < \cdots\)
+\item \(\lim_{n \to \infty} \lambda_n = +\infty\)
 \end{itemize}
 
 Eigenfunctions:
 \[y_n(t) = \sin\left(\frac{n\pi}{l}t\right), \ t \in [0, l]\]
 \begin{itemize}
-    \item \(\int_0^l y_n(t) y_m(t) \, dt = 0\) if \(n \neq m\).
-    \item \(f(t) = \sum_{n=1}^\infty B_n y_n(t)\), \(B_n = \frac{2}{l} \int_0^l f(t) y_n(t) \, dt\) for \(f \in C^2[0, l]\).
+\item \(\int_0^l y_n(t) y_m(t) \, dt = 0\) if \(n \neq m\).
+\item \(f(t) = \sum_{n=1}^\infty B_n y_n(t)\), \(B_n = \frac{2}{l} \int_0^l f(t) y_n(t) \, dt\) for \(f \in C^2[0, l]\).
 \end{itemize}
 
 We've proven that this problem has nontrivial solutions given by multiples of \(y_n(t) = \sin(\frac{n\pi t}{l})\) (\(n=1, 2, \cdots\)), and that they correspond to \(\lambda_n = \left(\frac{n\pi}{l}\right)^2\).
@@ -49,20 +49,24 @@ As an exercise, show that \(L[y] = -d^2y/dt^2\) satisfies (7).
 Assume that \(a \in C^2[\alpha, \beta]\) and \(b \in C^1[\alpha, \beta]\). The operator \(L\) is self-adjoint (in the sense of eq. (7)) if and only if \(b = \frac{da}{dt}\).
 \end{theorem}
 
-\begin{proof}
-    Let \(y, z \in V\). We have,
-    \begin{align*}
-        -(L[y], z) + (y, L[z]) &= \int_\alpha^\beta \left( a(t) \frac{d^2 y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y \right) z \, dt - \int_\alpha^\beta \left( a(t) \frac{d^2 z}{dt^2} + b(t) \frac{dz}{dt} + c(t) z \right) y \, dt \\
-        &= \int_\alpha^\beta \left( a(t) \frac{d^2 y}{dt^2} z + b(t) \frac{dy}{dt} z - a(t) \frac{d^2 z}{dt^2} y - b(t) \frac{dz}{dt} y \right) \, dt
-    \end{align*}
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    Integration by parts on the terms with second-order derivatives:
-    \begin{align*}
-        &= \left. \left( a(t) z \frac{dy}{dt} - a(t) y \frac{dz}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left[ \frac{d(a(t)y)}{dt} \frac{dz}{dt} - \frac{d(a(t)z)}{dt} \frac{dy}{dt} + b(t) z \frac{dy}{dt} - b(t) y \frac{dz}{dt} \right] \, dt \\
-        &= \left. \left( a(t) z \frac{dy}{dt} - a(t) y \frac{dz}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left[ \left( \frac{da(t)}{dt} y \frac{dz}{dt} + a(t) \frac{dy}{dt} \frac{dz}{dt} \right) - \left( \frac{da(t)}{dt} z \frac{dy}{dt} + a(t) \frac{dz}{dt} \frac{dy}{dt} \right) \right. \\
-        &\left. + b(t) z \frac{dy}{dt} - b(t) y \frac{dz}{dt} \right] \, dt \\
-        &= \left. \left( a(t) z \frac{dy}{dt} - a(t) y \frac{dz}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left( b(t) - \frac{da(t)}{dt} \right) \left( z \frac{dy}{dt} - y \frac{dz}{dt} \right) \, dt
-    \end{align*}
+% \begin{proof}
+% Let \(y, z \in V\). We have,
+% \begin{align*}
+% -(L[y], z) + (y, L[z]) &= \int_\alpha^\beta \left( a(t) \frac{d^2 y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y \right) z \, dt - \int_\alpha^\beta \left( a(t) \frac{d^2 z}{dt^2} + b(t) \frac{dz}{dt} + c(t) z \right) y \, dt \\
+% &= \int_\alpha^\beta \left( a(t) \frac{d^2 y}{dt^2} z + b(t) \frac{dy}{dt} z - a(t) \frac{d^2 z}{dt^2} y - b(t) \frac{dz}{dt} y \right) \, dt
+% \end{align*}
 
-    (We'll finish the proof tomorrow.)
-\end{proof}
+% Integration by parts on the terms with second-order derivatives:
+% \begin{align*}
+% &= \left. \left( a(t) z \frac{dy}{dt} - a(t) y \frac{dz}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left[ \frac{d(a(t)y)}{dt} \frac{dz}{dt} - \frac{d(a(t)z)}{dt} \frac{dy}{dt} + b(t) z \frac{dy}{dt} - b(t) y \frac{dz}{dt} \right] \, dt \\
+% &= \left. \left( a(t) z \frac{dy}{dt} - a(t) y \frac{dz}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left[ \left( \frac{da(t)}{dt} y \frac{dz}{dt} + a(t) \frac{dy}{dt} \frac{dz}{dt} \right) - \left( \frac{da(t)}{dt} z \frac{dy}{dt} + a(t) \frac{dz}{dt} \frac{dy}{dt} \right) \right. \\
+% &\left. + b(t) z \frac{dy}{dt} - b(t) y \frac{dz}{dt} \right] \, dt \\
+% &= \left. \left( a(t) z \frac{dy}{dt} - a(t) y \frac{dz}{dt} \right) \right|_\alpha^\beta + \int_\alpha^\beta \left( b(t) - \frac{da(t)}{dt} \right) \left( z \frac{dy}{dt} - y \frac{dz}{dt} \right) \, dt
+% \end{align*}
+
+% (We'll finish the proof tomorrow.)
+% \end{proof}

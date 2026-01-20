@@ -1,0 +1,77 @@
+\section{Tutorial 12 - 01.09}
+
+\subsection{Example (cont.)}
+
+Recall that we are working with the regular Sturm-Liouville problem
+\[\begin{cases}
+\frac{d^2y}{dt^2} + \lambda y = 0 & 0 < t < 1 \\
+\frac{dy}{dt}(0) = 0, \ y(1) + \frac{dy}{dt}(1) = 0
+\end{cases}\]
+
+\begin{enumerate}
+\item If \(\lambda \le 0\) then the unique solution is \(y \equiv 0\).
+\item If \(\lambda > 0\) and \(\sqrt{\lambda} = \frac{\pi}{2} + n\pi\) for some \(n \in \mathbb{N}\) then the unique solution is \(y \equiv 0\). Also, if \(\sqrt{\lambda} \neq \frac{\pi}{2} + n\pi\) for every \(n \in \mathbb{N}\), then if \(\lambda\) solves \(1 - \sqrt{\lambda} \tan(\sqrt{\lambda}) = 0\), then the problem admits a nontrivial solution given by \(y(t) = \cos(\sqrt{\lambda}t)\).
+\end{enumerate}
+
+Then, we notice that there is a countable number of \(\lambda\), given by:
+\[\begin{cases}
+\lambda_0 & \text{is the root of } 1 = \sqrt{x} \tan(\sqrt{x}) \text{ in } (0, \frac{\pi}{2}) \\
+\lambda_n & \text{is the root of } 1 = \sqrt{x} \tan(\sqrt{x}) \text{ in } (\frac{\pi}{2} + (n-1)\pi, \frac{\pi}{2} + n\pi), \, n \ge 1.
+\end{cases}\]
+
+The eigenfunctions are \(y_n(t) = \cos(\sqrt{\lambda_n} t)\), \(t \in [0, 1]\), \(n \ge 0\).
+
+Let's now show that the eigenfunctions with distinct eigenvalues are orthogonal w.r.t. \((y, z) = \int_0^1 y z \, dt\).
+Let \(n \neq m\), \(n, m \in \mathbb{N}\).
+\begin{align*}
+(\cos(\sqrt{\lambda_n} t), \cos(\sqrt{\lambda_m} t)) &= \int_0^1 \cos(\sqrt{\lambda_n} t) \cos(\sqrt{\lambda_m} t) \, dt \\
+&= \frac{\sqrt{\lambda_n} \sin(\sqrt{\lambda_n}) \cos(\sqrt{\lambda_m}) - \sqrt{\lambda_m} \sin(\sqrt{\lambda_m}) \cos(\sqrt{\lambda_n})}{\lambda_n - \lambda_m}
+\end{align*}
+
+Since \(\frac{\sqrt{\lambda_k} \sin(\sqrt{\lambda_k}) \cos(\sqrt{\lambda_k})}{\cos(\sqrt{\lambda_k}) \cos(\sqrt{\lambda_k})} = \sqrt{\lambda_k} \tan(\sqrt{\lambda_k}) = 1\) (from boundary condition), we have
+\[= \frac{\cos(\sqrt{\lambda_n}) \cos(\sqrt{\lambda_m})}{\lambda_n - \lambda_m} \left( \overbrace{\sqrt{\lambda_n} \tan(\sqrt{\lambda_n})}^{=1} - \overbrace{\sqrt{\lambda_m} \tan(\sqrt{\lambda_m})}^{=1} \right) = 0.\]
+
+Assume that \(f \in C^1[0, 1]\), then the eigenfunction expansion of \(f\) is
+\[\sum_{n=0}^\infty B_n y_n \ \text{where } B_n = \frac{(f, y_n)}{(y_n, y_n)}.\]
+
+Then,
+\[f(t) = \sum_{n=0}^\infty \left( \int_0^1 f(s) \cos(\sqrt{\lambda_n} s) \, ds \right) \cos(\sqrt{\lambda_n} t), \ \text{uniformly}\]
+for \(t \in I \subset (0, 1)\), \(I\) closed interval.
+
+\subsection{Example}
+
+Consider the problem
+\[\begin{cases}
+t^2 \frac{d^2y}{dt^2} = \lambda \left( t \frac{dy}{dt} - y \right) & 1 < t < 2 \\
+y(1) = 0, \, y(2) = 0
+\end{cases}\]
+
+Observe that this is not a Sturm-Liouville problem (\(\lambda\) appears in the coeff. of \(\frac{dy}{dt}\)). Let's look for \(\lambda\) to have nontrivial solutions to the problem.
+
+Assume first that \(\lambda \in \mathbb{R}\). Notice that the eq. can be written as
+\[t^2 \frac{d^2y}{dt^2} - \lambda t \frac{dy}{dt} + \lambda y = 0, \ 1 < t < 2\]
+
+This is the Euler's eq. \(t^2 \frac{d^2y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0\), for \(\alpha = -\lambda\) and \(\beta = \lambda\).
+
+To find a basis for the set of solutions, we need to analyze the sign of \((\alpha-1)^2 - 4\beta\).
+
+In our case,
+\[(\alpha-1)^2 - 4\beta = (-\lambda-1)^2 - 4\lambda = (\lambda+1)^2 - 4\lambda = (\lambda-1)^2 \ge 0.\]
+
+If \(\lambda \neq 1\), then \((\alpha-1)^2 - 4\beta > 0\).
+Then, the general solution to the eq. is \(y(t) = A t^{r_1} + B t^{r_2}\) where \(r_1\) and \(r_2\) are two different solutions to \(r^2 - (\lambda+1)r + \lambda = 0\) (review the Euler's eq.).
+Also, \(y(1) = A + B = 0\) iff \(A = -B\), and
+\[y(2) = A 2^{r_1} - A 2^{r_2} = A \underbrace{\left( 2^{r_1} - 2^{r_2} \right)}_{\neq 0} = 0 \iff A = 0.\]
+
+The unique sol. is \(y \equiv 0\).
+
+Assume that \(\lambda = 1\). Then \((\alpha-1)^2 - 4\beta = 0\). The general solution to the eq. is
+\[y(t) = A t^r + B t^r \ln t, \ A, B \in \mathbb{R}.\]
+
+Also, \(y(1) = A = 0\), and
+\[y(2) = B \underbrace{2^r \ln 2}_{\neq 0} = 0 \iff B = 0.\]
+
+Then, the unique sol. is \(y \equiv 0\).
+
+Therefore, the problem does not admit real eigenvalues.
+Now consider \(\lambda \in \mathbb{C}, \lambda \notin \mathbb{R}\).

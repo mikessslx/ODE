@@ -3,94 +3,94 @@
 \subsection{Damped Free Vibrations}
 
 \begin{xca}
-    A small object of mass \(1 \text{kg}\) is attached to a spring with spring constant \(1 \text{N/m}\) (\(1\text{N} = 1 \text{kg m/s}^2\)) and is immersed in a viscous medium with damping constant \(2 \text{N s/m}\).
+A small object of mass \(1 \text{kg}\) is attached to a spring with spring constant \(1 \text{N/m}\) (\(1\text{N} = 1 \text{kg m/s}^2\)) and is immersed in a viscous medium with damping constant \(2 \text{N s/m}\).
     
-    At time \(t=0\), the mass is lowered \(1/4 \text{m}\), and given an initial velocity of \(1 \text{m/s}\) in upward direction. Show that the mass passes through its equilibrium position once, and returns toward equilibrium without oscillating.
+At time \(t=0\), the mass is lowered \(1/4 \text{m}\), and given an initial velocity of \(1 \text{m/s}\) in upward direction. Show that the mass passes through its equilibrium position once, and returns toward equilibrium without oscillating.
 \end{xca}
 \begin{proof}[Solution]
-    The equation of motion is \(m \frac{d^2y}{dt^2} + c \frac{dy}{dt} + k y = 0\), where \(m=1, c=2, k=1\).
-    \[\frac{d^2y}{dt^2} + 2 \frac{dy}{dt} + y = 0\]
-    
-    (Diagram: spring mass system, \(y(t)\) displacement w.r.t equilibrium, \(y\) axis points down.)
+The equation of motion is \(m \frac{d^2y}{dt^2} + c \frac{dy}{dt} + k y = 0\), where \(m=1, c=2, k=1\).
+\[\frac{d^2y}{dt^2} + 2 \frac{dy}{dt} + y = 0\]
 
-    The initial conditions are
-    \begin{itemize}
-        \item Mass lowered \(1/4\) m: \(y(0) = \frac{1}{4}\).
-        \item Upward velocity \(1\) m/s: \(y'(0) = -1\) (since \(y\) is positive downwards).
-    \end{itemize}
+(Diagram: spring mass system, \(y(t)\) displacement w.r.t equilibrium, \(y\) axis points down.)
 
-    The characteristic polynomial is \(p(\lambda) = \lambda^2 + 2\lambda + 1 = (\lambda + 1)^2\).
-    It has a double root \(\lambda = -1\).
-    (Basis: \(y_1(t) = e^{-t}, \ y_2(t) = t e^{-t}\).)
-    Then, the general solution to the eq. is
-    \[y(t) = (C_1 + C_2 t)e^{-t}, \ t \ge 0.\]
+The initial conditions are
+\begin{itemize}
+\item Mass lowered \(1/4\) m: \(y(0) = \frac{1}{4}\).
+\item Upward velocity \(1\) m/s: \(y'(0) = -1\) (since \(y\) is positive downwards).
+\end{itemize}
 
-    Using the initial conditions, \(y(0) = \frac{1}{4} \implies C_1 = \frac{1}{4}\) and
-    \begin{align*}
-        y'(t) &= C_2 e^{-t} - (C_1 + C_2 t) e^{-t} = (C_2 - C_1 - C_2 t) e^{-t}, \\
-        y'(0) &= C_2 - C_1 = -1 \implies C_2 = C_1 - 1 = \frac{1}{4} - 1 = -\frac{3}{4}.
-    \end{align*}
-    
-    The motion is characterized by \(y(t) = \left( \frac{1}{4} - \frac{3}{4} t \right) e^{-t}, \ t \ge 0\).
-    
-    As \(y(t) = 0 \iff t = \frac{1}{3}\), we observe that the mass passes through equilibrium once, and as \(\lim_{t \to \infty} y(t) = 0\), the mass tends to equilibrium without oscillating around equilibrium.
-    
-    \begin{remark}
-        The motion is ``Damped Free Vibrations''. The motion can be overdamped, critically damped (the case of the ex.) or damped vibrations.
-    \end{remark}
+The characteristic polynomial is \(p(\lambda) = \lambda^2 + 2\lambda + 1 = (\lambda + 1)^2\).
+It has a double root \(\lambda = -1\).
+(Basis: \(y_1(t) = e^{-t}, \ y_2(t) = t e^{-t}\).)
+Then, the general solution to the eq. is
+\[y(t) = (C_1 + C_2 t)e^{-t}, \ t \ge 0.\]
+
+Using the initial conditions, \(y(0) = \frac{1}{4} \implies C_1 = \frac{1}{4}\) and
+\begin{align*}
+y'(t) &= C_2 e^{-t} - (C_1 + C_2 t) e^{-t} = (C_2 - C_1 - C_2 t) e^{-t}, \\
+y'(0) &= C_2 - C_1 = -1 \implies C_2 = C_1 - 1 = \frac{1}{4} - 1 = -\frac{3}{4}.
+\end{align*}
+
+The motion is characterized by \(y(t) = \left( \frac{1}{4} - \frac{3}{4} t \right) e^{-t}, \ t \ge 0\).
+
+As \(y(t) = 0 \iff t = \frac{1}{3}\), we observe that the mass passes through equilibrium once, and as \(\lim_{t \to \infty} y(t) = 0\), the mass tends to equilibrium without oscillating around equilibrium.
+
+\begin{remark}
+The motion is ``Damped Free Vibrations''. The motion can be overdamped, critically damped (the case of the ex.) or damped vibrations.
+\end{remark}
 \end{proof}
 
 \subsection{Resonance}
 
 \begin{xca}
-    A small object of mass \(4 \text{kg}\) attached to an elastic spring with spring constant \(64 \text{N/m}\), and is acted upon by an external force \(F(t) = A \cos^3(\omega t), \ t \ge 0\) where \(A \neq 0\). Assume that the system is undamped. Find all values of \(\omega\) at which resonance occurs.
+A small object of mass \(4 \text{kg}\) attached to an elastic spring with spring constant \(64 \text{N/m}\), and is acted upon by an external force \(F(t) = A \cos^3(\omega t), \ t \ge 0\) where \(A \neq 0\). Assume that the system is undamped. Find all values of \(\omega\) at which resonance occurs.
 \end{xca}
 \begin{proof}[Solution]
-    Here, the eq. of motion is
-    \[4 \frac{d^2y}{dt^2} + 64 y = F(t) \iff \frac{d^2y}{dt^2} + 16 y = \frac{F(t)}{4}\]
-    
-    The natural freq. is \(\omega_0 = \sqrt{\frac{64}{4}} = \sqrt{16} = 4\).
+Here, the eq. of motion is
+\[4 \frac{d^2y}{dt^2} + 64 y = F(t) \iff \frac{d^2y}{dt^2} + 16 y = \frac{F(t)}{4}\]
 
-    \begin{remark}
-         \(m \frac{d^2y}{dt^2} + c \frac{dy}{dt} + y = F_0 \cos(\omega t)\). Resonance if \(\omega = \omega_0\), where \(\omega_0 = \sqrt{\frac{k}{m}}\).
-    \end{remark}
+The natural freq. is \(\omega_0 = \sqrt{\frac{64}{4}} = \sqrt{16} = 4\).
 
-    Using \(\cos^3(\theta) = \frac{1}{4}(3\cos(\theta) + \cos(3\theta))\), we have
-    \[\frac{F(t)}{4} = \frac{A}{4} \cos^3(\omega t) = \frac{A}{16} (3 \cos(\omega t) + \cos(3\omega t))\]
-    So the equation is
-    \[\frac{d^2y}{dt^2} + 16 y = \frac{3A}{16} \cos(\omega t) + \frac{A}{16} \cos(3\omega t)\]
+\begin{remark}
+\(m \frac{d^2y}{dt^2} + c \frac{dy}{dt} + y = F_0 \cos(\omega t)\). Resonance if \(\omega = \omega_0\), where \(\omega_0 = \sqrt{\frac{k}{m}}\).
+\end{remark}
 
-    \paragraph*{Method 1}
-    The general solution is \(y(t) = y_H(t) + y_p(t)\), where \(y_H(t)\) is the general solution to \(\frac{d^2y}{dt^2} + 16y = 0\).
-    
-    \(y_p(t)\) is a part. sol. to the non-homogeneous equation. We can split it: \(y_p(t) = y_{p_1}(t) + y_{p_2}(t)\), where
-    \begin{itemize}
-        \item \(y_{p_1}\) solves \(\frac{d^2y}{dt^2} + 16 y = \frac{3A}{16} \cos(\omega t)\).
-        \item \(y_{p_2}\) solves \(\frac{d^2y}{dt^2} + 16 y = \frac{A}{16} \cos(3\omega t)\).
-    \end{itemize}
+Using \(\cos^3(\theta) = \frac{1}{4}(3\cos(\theta) + \cos(3\theta))\), we have
+\[\frac{F(t)}{4} = \frac{A}{4} \cos^3(\omega t) = \frac{A}{16} (3 \cos(\omega t) + \cos(3\omega t))\]
+So the equation is
+\[\frac{d^2y}{dt^2} + 16 y = \frac{3A}{16} \cos(\omega t) + \frac{A}{16} \cos(3\omega t)\]
 
-    From the lecture, we know that
-    \[y_{p_1}(t) = \begin{cases} \text{const} \cdot \cos(\omega t) & \text{if } \omega \neq 4 \\ \text{const} \cdot t \sin(4t) & \text{if } \omega = 4 \end{cases} \text{ and } y_{p_2}(t) = \begin{cases} \text{const} \cdot \cos(3\omega t) & \text{if } 3\omega \neq 4 \\ \text{const} \cdot t \sin(4t) & \text{if } 3\omega = 4 \end{cases}\]
+\paragraph*{Method 1}
+The general solution is \(y(t) = y_H(t) + y_p(t)\), where \(y_H(t)\) is the general solution to \(\frac{d^2y}{dt^2} + 16y = 0\).
 
-    \paragraph*{Analysis of Resonance}
-    Also, \(y_H(t) = C_1 \sin(4t) + C_2 \cos(4t)\). Then, the general sol. is
-    \begin{itemize}
-        \item Case \(\omega = 4\):
-        \[y(t) = \underbrace{C_1 \sin(4t) + C_2 \cos(4t)}_{\text{bounded}} + \underbrace{\text{const} \cdot t \sin(4t)}_{\substack{\text{causes resonance} \\ \to \infty \text{ as } t \to \infty}} + \underbrace{\text{const} \cdot \cos(12t)}_{\text{bounded}}\]
-        
-        \item Case \(\omega = 4/3\) (\(3\omega = 4\)): Similar.
-        \[y(t) = y_H(t) + \text{const} \cdot \cos(\omega t) + \underbrace{\text{const} \cdot t \sin(4t)}_{\text{resonance}}\]
+\(y_p(t)\) is a part. sol. to the non-homogeneous equation. We can split it: \(y_p(t) = y_{p_1}(t) + y_{p_2}(t)\), where
+\begin{itemize}
+\item \(y_{p_1}\) solves \(\frac{d^2y}{dt^2} + 16 y = \frac{3A}{16} \cos(\omega t)\).
+\item \(y_{p_2}\) solves \(\frac{d^2y}{dt^2} + 16 y = \frac{A}{16} \cos(3\omega t)\).
+\end{itemize}
 
-        \item Case \(\omega \neq 4\) and \(\omega \neq 4/3\):
-        \[y(t) = y_H(t) + \text{const} \cdot \cos(\omega t) + \text{const} \cdot \cos(3\omega t)\]
-        We have no resonance.
-    \end{itemize}
-    
-    Thus, resonance occurs at \(\omega = 4\) and \(\omega = 4/3\).
+From the lecture, we know that
+\[y_{p_1}(t) = \begin{cases} \text{const} \cdot \cos(\omega t) & \text{if } \omega \neq 4 \\ \text{const} \cdot t \sin(4t) & \text{if } \omega = 4 \end{cases} \text{ and } y_{p_2}(t) = \begin{cases} \text{const} \cdot \cos(3\omega t) & \text{if } 3\omega \neq 4 \\ \text{const} \cdot t \sin(4t) & \text{if } 3\omega = 4 \end{cases}\]
 
-    \begin{remark}[Method 2 (Idea)]
-        Many times, for a general \(F\),
-        \[F(t) = \sum_{n=0}^\infty B_n \cos(\delta_n t)\]
-        Resonance occurs if any \(\delta_n = \omega_0\).
-    \end{remark}
+\paragraph*{Analysis of Resonance}
+Also, \(y_H(t) = C_1 \sin(4t) + C_2 \cos(4t)\). Then, the general sol. is
+\begin{itemize}
+\item Case \(\omega = 4\):
+\[y(t) = \underbrace{C_1 \sin(4t) + C_2 \cos(4t)}_{\text{bounded}} + \underbrace{\text{const} \cdot t \sin(4t)}_{\substack{\text{causes resonance} \\ \to \infty \text{ as } t \to \infty}} + \underbrace{\text{const} \cdot \cos(12t)}_{\text{bounded}}\]
+
+\item Case \(\omega = 4/3\) (\(3\omega = 4\)): Similar.
+\[y(t) = y_H(t) + \text{const} \cdot \cos(\omega t) + \underbrace{\text{const} \cdot t \sin(4t)}_{\text{resonance}}\]
+
+\item Case \(\omega \neq 4\) and \(\omega \neq 4/3\):
+\[y(t) = y_H(t) + \text{const} \cdot \cos(\omega t) + \text{const} \cdot \cos(3\omega t)\]
+We have no resonance.
+\end{itemize}
+
+Thus, resonance occurs at \(\omega = 4\) and \(\omega = 4/3\).
+
+\begin{remark}[Method 2 (Idea)]
+Many times, for a general \(F\),
+\[F(t) = \sum_{n=0}^\infty B_n \cos(\delta_n t)\]
+Resonance occurs if any \(\delta_n = \omega_0\).
+\end{remark}
 \end{proof}

@@ -3,119 +3,131 @@
 \subsection{Review: Systems of First-Order Equations}
 
 \begin{recap}
-    \begin{itemize}
-        \item \textbf{General form} \(\frac{dy}{dt} = F(t,y)\) where \(y = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}\), \(F(t,y) = \begin{pmatrix} f_1(t, y_1, \cdots, y_n) \\ \vdots \\ f_n(t, y_1, \cdots, y_n) \end{pmatrix}\).
+\begin{itemize}
+\item \textbf{General form} \(\frac{dy}{dt} = F(t,y)\) where \(y = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}\), \(F(t,y) = \begin{pmatrix} f_1(t, y_1, \cdots, y_n) \\ \vdots \\ f_n(t, y_1, \cdots, y_n) \end{pmatrix}\).
         
-        \item \textbf{Initial-value problem}
-        \[\begin{cases}
-            \frac{dy}{dt} = F(t,y) \\
-            y(t_0) = y^0 \rightsquigarrow y_1(t_0)=y_1^0, \cdots, y_n(t_0)=y_n^0
-        \end{cases}\]
+\item \textbf{Initial-value problem}
+\[\begin{cases}
+\frac{dy}{dt} = F(t,y) \\
+y(t_0) = y^0 \rightsquigarrow y_1(t_0)=y_1^0, \cdots, y_n(t_0)=y_n^0
+\end{cases}\]
         
-        \item \textbf{Linear system}
-        \[\frac{dy}{dt} = A(t)y + b(t) \ \text{where } A(t) = \begin{pmatrix} a_{11}(t) & \cdots & a_{1n}(t) \\ \vdots & & \vdots \\ a_{n1}(t) & \cdots & a_{nn}(t) \end{pmatrix} \text{ and } b(t) = \begin{pmatrix} b_1(t) \\ \vdots \\ b_n(t) \end{pmatrix}\]
-    \end{itemize}
+\item \textbf{Linear system}
+\[\frac{dy}{dt} = A(t)y + b(t) \ \text{where } A(t) = \begin{pmatrix} a_{11}(t) & \cdots & a_{1n}(t) \\ \vdots & & \vdots \\ a_{n1}(t) & \cdots & a_{nn}(t) \end{pmatrix} \text{ and } b(t) = \begin{pmatrix} b_1(t) \\ \vdots \\ b_n(t) \end{pmatrix}\]
+\end{itemize}
 \end{recap}
 
 \subsection{Structure of the Solution Set}
 
 \begin{theorem}
-    For \(i,j=1,\cdots,n\), assume that \(a_{ij}\) form a continuous function in an open interval \(I\). Then, the set of solutions to \(\frac{dy}{dt} = A(t)y\) in \(I\) is a vector space of dimension \(n\).
+For \(i,j=1,\cdots,n\), assume that \(a_{ij}\) form a continuous function in an open interval \(I\). Then, the set of solutions to \(\frac{dy}{dt} = A(t)y\) in \(I\) is a vector space of dimension \(n\).
 \end{theorem}
 
 \begin{remark}[Comparison]
-    \[\begin{tabular}{p{0.1\textwidth} p{0.4\textwidth} p{0.4\textwidth}}
-        & \textbf{Scalar} & \textbf{System} \\
-        \textbf{ODE} & \(\frac{dy}{dt} = f(t,y)\), \(y: I \subset \mathbb{R} \to \mathbb{R}\) & \(\frac{dy}{dt} = F(t,y)\), \(y: I \subset \mathbb{R} \to \mathbb{R}^n\) \\
-        \textbf{IVP} & \(\begin{cases} \frac{dy}{dt} = f(t,y) = a(t)y + b(t) \\ y(t_0) = y_0 \in \mathbb{R} \end{cases}\) & \(\begin{cases} \frac{dy}{dt} = F(t,y) = A(t)y + b(t) \\ y(t_0) = y_0 \in \mathbb{R}^n \end{cases}\)
-    \end{tabular}\]
+\[\begin{tabular}{p{0.1\textwidth} p{0.4\textwidth} p{0.4\textwidth}}
+& \textbf{Scalar} & \textbf{System} \\
+\textbf{ODE} & \(\frac{dy}{dt} = f(t,y)\), \(y: I \subset \mathbb{R} \to \mathbb{R}\) & \(\frac{dy}{dt} = F(t,y)\), \(y: I \subset \mathbb{R} \to \mathbb{R}^n\) \\
+\textbf{IVP} & \(\begin{cases} \frac{dy}{dt} = f(t,y) = a(t)y + b(t) \\ y(t_0) = y_0 \in \mathbb{R} \end{cases}\) & \(\begin{cases} \frac{dy}{dt} = F(t,y) = A(t)y + b(t) \\ y(t_0) = y_0 \in \mathbb{R}^n \end{cases}\)
+\end{tabular}\]
 \end{remark}
 
-\begin{proof}
-    Notice that the set of solutions is non empty as \(y=0=\begin{pmatrix} 0 & \cdots & 0 \end{pmatrix}^T\) is a solution in \(I\). Also, as the system is linear, all solutions can be defined in \(I\). To show that the set of solutions is a vector space, we need to prove that given two solution \(y_1\) and \(y_2\) and \(\alpha \in \mathbb{R}\), we have that \(y_1+y_2\) and \(\alpha y_1\) are solutions as well.
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    Let \(y_1, y_2\) be solutions, and \(\alpha \in \mathbb{R}\).
-    \begin{itemize}
-        \item \(\frac{d(y_1+y_2)}{dt} \underset{\text{Linearity of } \frac{d}{dt}}{=} \frac{dy_1}{dt} + \frac{dy_2}{dt} \underset{y_1, y_2 \text{ are solutions}}{=} A(t)y_1 + A(t)y_2 \underset{\text{Linearity of the eq.}}{=} A(t)(y_1+y_2) \ \checkmark\)
-        \item \(\frac{d(\alpha y_1)}{dt} = \alpha \frac{dy_1}{dt} = \alpha A(t)y_1 = A(t)(\alpha y_1) \ \checkmark\)
-    \end{itemize}
-    
-    The set of solutions is a vector space. Now we determine its dimension.
-    
-    Consider \(y^{(k)}\) such that
-    \[\begin{cases}
-        \frac{dy^{(k)}}{dt} = A(t)y^{(k)} \\
-        y^{(k)}(t_0) = e_k = (0, \cdots, 1, \cdots, 0)^T
-    \end{cases} \text{in } I, \ k=1,\cdots,n.\]
-    
-    Let \(\mathcal{B} = \{y^{(1)}, y^{(2)}, \cdots, y^{(n)}\}\). We'll show that \(\mathcal{B}\) is a basis of the set of solutions:
-    \begin{itemize}
-        \item
-        Let \(y\) be a solution to \(\frac{dy}{dt} = A(t)y\). Let \(y(t_0) = y^0 \in \mathbb{R}^n\). Then there exist \(\alpha_1, \cdots, \alpha_n \in \mathbb{R}\) such that \(y^0 = \alpha_1 e_1 + \cdots + \alpha_n e_n\). Now, consider the function \(z = \alpha_1 y^{(1)} + \cdots + \alpha_n y^{(n)}\). Notice that \(y\) and \(z\) both satisfy the IVP \(\begin{cases} \frac{dy}{dt} = A(t)y \\ y(t_0) = y^0 \end{cases} \text{ in } I\). As this problem admits a unique solution in \(I\), we find \(y=z\). Therefore, \(\mathcal{B}\) spans the set of solutions.
-    
-        \item
-        Let \(\beta_1, \cdots, \beta_n \in \mathbb{R}\) s.t. \(\beta_1 y^{(1)} + \cdots + \beta_n y^{(n)} = 0\), then
-        \[\beta_1 y^{(1)}(t) + \cdots + \beta_n y^{(n)}(t) = 0 \ \forall t \in I.\]
+% \begin{proof}
+% Notice that the set of solutions is non empty as \(y=0=\begin{pmatrix} 0 & \cdots & 0 \end{pmatrix}^T\) is a solution in \(I\). Also, as the system is linear, all solutions can be defined in \(I\). To show that the set of solutions is a vector space, we need to prove that given two solution \(y_1\) and \(y_2\) and \(\alpha \in \mathbb{R}\), we have that \(y_1+y_2\) and \(\alpha y_1\) are solutions as well.
 
-        In particular, this is true for \(t_0\). Then \(\beta_1 y^{(1)}(t_0) + \cdots + \beta_n y^{(n)}(t_0) = 0\), that is
-        \[\beta_1 e_1 + \cdots + \beta_n e_n = 0.\]
+% Let \(y_1, y_2\) be solutions, and \(\alpha \in \mathbb{R}\).
+% \begin{itemize}
+% \item \(\frac{d(y_1+y_2)}{dt} \underset{\text{Linearity of } \frac{d}{dt}}{=} \frac{dy_1}{dt} + \frac{dy_2}{dt} \underset{y_1, y_2 \text{ are solutions}}{=} A(t)y_1 + A(t)y_2 \underset{\text{Linearity of the eq.}}{=} A(t)(y_1+y_2) \ \checkmark\)
+% \item \(\frac{d(\alpha y_1)}{dt} = \alpha \frac{dy_1}{dt} = \alpha A(t)y_1 = A(t)(\alpha y_1) \ \checkmark\)
+% \end{itemize}
 
-        As \(\{e_1, \cdots, e_n\}\) is a set of linearly independent vectors, we find \(\beta_1 = \cdots = \beta_n = 0\). Thus, \(\mathcal{B}\) is linearly independent.
-    \end{itemize}
+% The set of solutions is a vector space. Now we determine its dimension.
 
-    Therefore, \(\mathcal{B}\) is a basis, and the set of solutions has dimension \(n\).
-\end{proof}
+% Consider \(y^{(k)}\) such that
+% \[\begin{cases}
+% \frac{dy^{(k)}}{dt} = A(t)y^{(k)} \\
+% y^{(k)}(t_0) = e_k = (0, \cdots, 1, \cdots, 0)^T
+% \end{cases} \text{in } I, \ k=1,\cdots,n.\]
+
+% Let \(\mathcal{B} = \{y^{(1)}, y^{(2)}, \cdots, y^{(n)}\}\). We'll show that \(\mathcal{B}\) is a basis of the set of solutions:
+% \begin{itemize}
+% \item
+% Let \(y\) be a solution to \(\frac{dy}{dt} = A(t)y\). Let \(y(t_0) = y^0 \in \mathbb{R}^n\). Then there exist \(\alpha_1, \cdots, \alpha_n \in \mathbb{R}\) such that \(y^0 = \alpha_1 e_1 + \cdots + \alpha_n e_n\). Now, consider the function \(z = \alpha_1 y^{(1)} + \cdots + \alpha_n y^{(n)}\). Notice that \(y\) and \(z\) both satisfy the IVP \(\begin{cases} \frac{dy}{dt} = A(t)y \\ y(t_0) = y^0 \end{cases} \text{ in } I\). As this problem admits a unique solution in \(I\), we find \(y=z\). Therefore, \(\mathcal{B}\) spans the set of solutions.
+
+% \item
+% Let \(\beta_1, \cdots, \beta_n \in \mathbb{R}\) s.t. \(\beta_1 y^{(1)} + \cdots + \beta_n y^{(n)} = 0\), then
+% \[\beta_1 y^{(1)}(t) + \cdots + \beta_n y^{(n)}(t) = 0 \ \forall t \in I.\]
+
+% In particular, this is true for \(t_0\). Then \(\beta_1 y^{(1)}(t_0) + \cdots + \beta_n y^{(n)}(t_0) = 0\), that is
+% \[\beta_1 e_1 + \cdots + \beta_n e_n = 0.\]
+
+% As \(\{e_1, \cdots, e_n\}\) is a set of linearly independent vectors, we find \(\beta_1 = \cdots = \beta_n = 0\). Thus, \(\mathcal{B}\) is linearly independent.
+% \end{itemize}
+
+% Therefore, \(\mathcal{B}\) is a basis, and the set of solutions has dimension \(n\).
+% \end{proof}
 
 \begin{proposition}
-    Consider the same assumptions of the previous theorem. Let \(\mathcal{B} = \{ y^{(1)}, y^{(2)}, \cdots, y^{(n)} \}\) be a set of solutions to \(\frac{dy}{dt} = A(t)y\) in \(I\). Then \(\mathcal{B}\) is linearly independent if and only if the set \(\mathcal{B}_0 = \{ y^{(1)}(t_0), \cdots, y^{(n)}(t_0) \}\) is a set of linearly independent vectors for any \(t_0 \in I\).
+Consider the same assumptions of the previous theorem. Let \(\mathcal{B} = \{ y^{(1)}, y^{(2)}, \cdots, y^{(n)} \}\) be a set of solutions to \(\frac{dy}{dt} = A(t)y\) in \(I\). Then \(\mathcal{B}\) is linearly independent if and only if the set \(\mathcal{B}_0 = \{ y^{(1)}(t_0), \cdots, y^{(n)}(t_0) \}\) is a set of linearly independent vectors for any \(t_0 \in I\).
 \end{proposition}
 
-\begin{proof}
-    Let \(t_0 \in I\).
-    
-    Assume that \(\mathcal{B}_0\) is linearly independent. Exactly as in the previous proof, we obtain that \(\mathcal{B}\) is linearly independent. (The \(\Leftarrow\) direction is true in general, even if the elements in \(\mathcal{B}\) are not solutions to the same system.)
-    
-    Assume that \(\mathcal{B}\) is linearly independent. Let \(\beta_1, \cdots, \beta_n \in \mathbb{R}\) s.t.
-    \[\beta_1 y^{(1)}(t_0) + \cdots + \beta_n y^{(n)}(t_0) = 0\]
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    We know that if \(\alpha_1 y^{(1)}(t) + \cdots + \alpha_n y^{(n)}(t) = 0 \ \forall t \in I\), then \(\alpha_1 = \cdots = \alpha_n = 0\).
-    
-    Consider the function \(y = \beta_1 y^{(1)} + \cdots + \beta_n y^{(n)}\). This function satisfies \(\frac{dy}{dt} = A(t)y\) in \(I\).
-    
-    As \(y(t_0) = 0\) (zero function also is a solution), we find that \(y \equiv 0\) in \(I\).
+% \begin{proof}
+% Let \(t_0 \in I\).
 
-    Then \(\beta_1 y^{(1)}(t) + \cdots + \beta_n y^{(n)}(t) = 0 \ \forall t \in I\). Using that \(\mathcal{B}\) is l.i., we get \(\beta_1 = \cdots = \beta_n = 0\). Thus, \(\mathcal{B}_0\) is l.i.
-\end{proof}
+% Assume that \(\mathcal{B}_0\) is linearly independent. Exactly as in the previous proof, we obtain that \(\mathcal{B}\) is linearly independent. (The \(\Leftarrow\) direction is true in general, even if the elements in \(\mathcal{B}\) are not solutions to the same system.)
+
+% Assume that \(\mathcal{B}\) is linearly independent. Let \(\beta_1, \cdots, \beta_n \in \mathbb{R}\) s.t.
+% \[\beta_1 y^{(1)}(t_0) + \cdots + \beta_n y^{(n)}(t_0) = 0\]
+
+% We know that if \(\alpha_1 y^{(1)}(t) + \cdots + \alpha_n y^{(n)}(t) = 0 \ \forall t \in I\), then \(\alpha_1 = \cdots = \alpha_n = 0\).
+
+% Consider the function \(y = \beta_1 y^{(1)} + \cdots + \beta_n y^{(n)}\). This function satisfies \(\frac{dy}{dt} = A(t)y\) in \(I\).
+
+% As \(y(t_0) = 0\) (zero function also is a solution), we find that \(y \equiv 0\) in \(I\).
+
+% Then \(\beta_1 y^{(1)}(t) + \cdots + \beta_n y^{(n)}(t) = 0 \ \forall t \in I\). Using that \(\mathcal{B}\) is l.i., we get \(\beta_1 = \cdots = \beta_n = 0\). Thus, \(\mathcal{B}_0\) is l.i.
+% \end{proof}
 
 \begin{example}
-    Let \(y^{(1)}(t) = \begin{pmatrix} e^t \\ 0 \end{pmatrix}\) and \(y^{(2)}(t) = \begin{pmatrix} 0 \\ t \end{pmatrix}\), \(t \in \mathbb{R}\).
-    These functions are l.i.:
-    \begin{align*}
-        &\alpha y^{(1)}(t) + \beta y^{(2)}(t) = \begin{pmatrix} \alpha e^t \\ \beta t \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \ \forall t \in \mathbb{R} \\
-        \implies &\alpha e^t = 0 \text{ and } \beta t = 0 \ \forall t \in \mathbb{R} \\
-        \implies &\alpha = \beta = 0
-    \end{align*}
+Let \(y^{(1)}(t) = \begin{pmatrix} e^t \\ 0 \end{pmatrix}\) and \(y^{(2)}(t) = \begin{pmatrix} 0 \\ t \end{pmatrix}\), \(t \in \mathbb{R}\).
+These functions are l.i.:
+\begin{align*}
+&\alpha y^{(1)}(t) + \beta y^{(2)}(t) = \begin{pmatrix} \alpha e^t \\ \beta t \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \ \forall t \in \mathbb{R} \\
+\implies &\alpha e^t = 0 \text{ and } \beta t = 0 \ \forall t \in \mathbb{R} \\
+\implies &\alpha = \beta = 0
+\end{align*}
 
-    However, \(y^{(1)}(0) = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\), \(y^{(2)}(0) = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\) are not l.i.
+However, \(y^{(1)}(0) = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\), \(y^{(2)}(0) = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\) are not l.i.
 \end{example}
 
 \begin{theorem}
-    Assume that \(a_{ij}\) and \(b_i\) are continuous functions in \(I\) for \(i,j=1,\cdots,n\). Then the general solution to \(\frac{dy}{dt} = A(t)y + b(t)\) (14) is
-    \[y(t) = y_H(t) + z(t) \tag{15}\]
-    where \(y_H\) is the general solution of the homogeneous system associated to (14) and \(z\) is a particular solution to (14).
+Assume that \(a_{ij}\) and \(b_i\) are continuous functions in \(I\) for \(i,j=1,\cdots,n\). Then the general solution to \(\frac{dy}{dt} = A(t)y + b(t)\) (14) is
+\[y(t) = y_H(t) + z(t) \tag{15}\]
+where \(y_H\) is the general solution of the homogeneous system associated to (14) and \(z\) is a particular solution to (14).
 \end{theorem}
 
-\begin{proof}
-    Let \(y\) be a function in the form (15), that is
-    \[y(t) = c_1 y^{(1)}(t) + \cdots + c_n y^{(n)}(t) + z(t) \ \forall t \in I\]
-    where \(\{ y^{(1)}, \cdots, y^{(n)} \}\) is a basis of solutions of the homogeneous system and \(c_1, \cdots, c_n \in \mathbb{R}\).
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    Notice that
-    \[\frac{dy}{dt} = \frac{dz}{dt} + \frac{d\tilde{y}}{dt} = A(t)z + b(t) + A(t)\tilde{y} = A(t)(\tilde{y}+z) + b(t) = A(t)y + b(t) \ \checkmark\]
+% \begin{proof}
+% Let \(y\) be a function in the form (15), that is
+% \[y(t) = c_1 y^{(1)}(t) + \cdots + c_n y^{(n)}(t) + z(t) \ \forall t \in I\]
+% where \(\{ y^{(1)}, \cdots, y^{(n)} \}\) is a basis of solutions of the homogeneous system and \(c_1, \cdots, c_n \in \mathbb{R}\).
 
-    Hence \(y\) solves (14).
-    
-    Let \(y\) be another solution to (14). Notice that \(y-z\) is a solution to the homogeneous system. Then there exist \(c_1, \cdots, c_n \in \mathbb{R}\) s.t. \(y(t) - z(t) = c_1 y^{(1)}(t) + \cdots + c_n y^{(n)}(t) = \tilde{y}(t)\).
+% Notice that
+% \[\frac{dy}{dt} = \frac{dz}{dt} + \frac{d\tilde{y}}{dt} = A(t)z + b(t) + A(t)\tilde{y} = A(t)(\tilde{y}+z) + b(t) = A(t)y + b(t) \ \checkmark\]
 
-    Then \(y\) is in the form (15).
-\end{proof}
+% Hence \(y\) solves (14).
+
+% Let \(y\) be another solution to (14). Notice that \(y-z\) is a solution to the homogeneous system. Then there exist \(c_1, \cdots, c_n \in \mathbb{R}\) s.t. \(y(t) - z(t) = c_1 y^{(1)}(t) + \cdots + c_n y^{(n)}(t) = \tilde{y}(t)\).
+
+% Then \(y\) is in the form (15).
+% \end{proof}

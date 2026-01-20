@@ -1,125 +1,125 @@
 \section{Lecture 1 - 10.14}
 
-\subsection{§1. Ordinary differential equations. Some solution methods for first order equations}
+\subsection{\S1. Ordinary differential equations. Some solution methods for first order equations}
 
 \subsubsection{Introduction}
 A differential is an equation that involves a function and its derivatives, where the unknown is the function itself.
 
 \begin{example}[A falling object]
-    The equation
-    \[m\frac{dv}{dt} = mg - \gamma v \tag{1}\]
-    (where \(v\): unknown; \(m, g, \gamma\): data) describes the velocity \(v\) of an object falling in the atmosphere near the sea level. Here, \(m\) represents the mass of the object, \(g\) is the acceleration due to gravity, and \(\gamma\) is known as the drag coefficient. Always remind that \(v = v(t)\).
+The equation
+\[m\frac{dv}{dt} = mg - \gamma v \tag{1}\]
+(where \(v\): unknown; \(m, g, \gamma\): data) describes the velocity \(v\) of an object falling in the atmosphere near the sea level. Here, \(m\) represents the mass of the object, \(g\) is the acceleration due to gravity, and \(\gamma\) is known as the drag coefficient. Always remind that \(v = v(t)\).
 \end{example}
 
 \begin{example}[Mice and owls]
-    The equation
-    \[\frac{dp}{dt} = rp - k \tag{2}\]
-    (where \(p\): unknown; \(r, k\): data) describes the population of mice that inhabit a rural area, in presence of owls. Here, \(r\) represents the growth of the mice population and \(k\) represents the rate of predation by owls.
+The equation
+\[\frac{dp}{dt} = rp - k \tag{2}\]
+(where \(p\): unknown; \(r, k\): data) describes the population of mice that inhabit a rural area, in presence of owls. Here, \(r\) represents the growth of the mice population and \(k\) represents the rate of predation by owls.
 \end{example}
 
 \begin{example}[Heat equation]
-    The equation
-    \[\frac{\partial T}{\partial t} - d\Delta T = 0 \tag{3}\]
-    (where \(T\): unknown; \(d\): data) represents the conduction of heat in an isotropic and homogeneous medium. Here, \(\Delta\) is called the Laplace operator, and it's given by \(\Delta T = \frac{\partial^2 T}{\partial x_1^2} + \frac{\partial^2 T}{\partial x_2^2} + \frac{\partial^2 T}{\partial x_3^2}\) if the medium has dimension 3 (so \(T = T(x_1, x_2, x_3)\)).
+The equation
+\[\frac{\partial T}{\partial t} - d\Delta T = 0 \tag{3}\]
+(where \(T\): unknown; \(d\): data) represents the conduction of heat in an isotropic and homogeneous medium. Here, \(\Delta\) is called the Laplace operator, and it's given by \(\Delta T = \frac{\partial^2 T}{\partial x_1^2} + \frac{\partial^2 T}{\partial x_2^2} + \frac{\partial^2 T}{\partial x_3^2}\) if the medium has dimension 3 (so \(T = T(x_1, x_2, x_3)\)).
 \end{example}
 
-*{Supplementary Conditions for Differential Equations}
+\paragraph*{Supplementary Conditions for Differential Equations}
 Often, in practice, mathematical models given by differential equations are supplemented by associated conditions. For instance, if we drop an object from a certain height, then the phenomenon is governed by eq. (1) and the condition \(v(0) = 0\). A very simple model for heat conduction in a long thin bar is given by \(T'' = 0\) for \(0 < x < L\). If we know the temperature of the extremes of the bar, we supplement this eq. with the conditions \(T(0) = a\), \(T(L) = b\). Differential problems supplemented with initial conditions are called initial value problems, and those supplemented with boundary conditions are called boundary value problems.
 
 \begin{example}[Heat Conduction in a 3-dimensional Ball]
-    A problem of heat conduction in a 3-dimensional ball \(D \subset \mathbb{R}^3\) is:
-    \[\begin{cases}
-        \frac{\partial T}{\partial t} - \Delta T = 0 & \text{in } D \times (0, \tau) \\
-        T(x, 0) = f(x) & x \in D \ (\text{initial condition}) \\
-        T(x, t) = g(x, t) & x \in \partial D, t \in (0, \tau) \ (\text{boundary condition})
-    \end{cases}\]
+A problem of heat conduction in a 3-dimensional ball \(D \subset \mathbb{R}^3\) is:
+\[\begin{cases}
+\frac{\partial T}{\partial t} - \Delta T = 0 & \text{in } D \times (0, \tau) \\
+T(x, 0) = f(x) & x \in D \ (\text{initial condition}) \\
+T(x, t) = g(x, t) & x \in \partial D, t \in (0, \tau) \ (\text{boundary condition})
+\end{cases}\]
 \end{example}
 
 \subsubsection{Classification of Differential Equations}
 
 \begin{definition}[Ordinary and partial differential equations]
-    If the unknown depends on one variable, we say that the eq. is an ordinary differential equation (ODE). If, instead, the unknown depends on two or more variables, we say that the eq. is a partial differential equation (PDE).
+If the unknown depends on one variable, we say that the eq. is an ordinary differential equation (ODE). If, instead, the unknown depends on two or more variables, we say that the eq. is a partial differential equation (PDE).
 \end{definition}
 
 \begin{definition}[Scalar differential equations and systems of differential equations]
-    If we have a problem with one eq. in one unknown, we have a (scalar) ODE. If we have a problem given by two or more eq. with two or more unknowns, we say that we have a system of ODEs. For instance, the system
-    \[\begin{cases}
-        \frac{dx}{dt} = ax - \alpha xy \\
-        \frac{dy}{dt} = -cy + \delta xy
-    \end{cases}\]
-    (where \(x, y\): unknowns; \(a, \alpha, c, \delta\): data) is known as Lotka-Volterra system and describes the populations of \(x\) and \(y\) of prey and predator species.
+If we have a problem with one eq. in one unknown, we have a (scalar) ODE. If we have a problem given by two or more eq. with two or more unknowns, we say that we have a system of ODEs. For instance, the system
+\[\begin{cases}
+\frac{dx}{dt} = ax - \alpha xy \\
+\frac{dy}{dt} = -cy + \delta xy
+\end{cases}\]
+(where \(x, y\): unknowns; \(a, \alpha, c, \delta\): data) is known as Lotka-Volterra system and describes the populations of \(x\) and \(y\) of prey and predator species.
 \end{definition}
 
 \begin{definition}[Order]
-    The order of an ODE is the order of the highest derivative of the unknown.
+The order of an ODE is the order of the highest derivative of the unknown.
 \end{definition}
 
 \begin{definition}[Linear and nonlinear equations]
-    An ODE \(F(t, u, u', u'', \cdots, u^{(n)}) = 0\) is linear if \(F\) is linear with respect to the last \((n-1)\) variables. Otherwise, the eq. is called nonlinear.
+An ODE \(F(t, u, u', u'', \cdots, u^{(n)}) = 0\) is linear if \(F\) is linear with respect to the last \((n-1)\) variables. Otherwise, the eq. is called nonlinear.
 \end{definition}
 
 \subsubsection{Well-posed problems}
 Recall our first example:
 \[\begin{cases}
-    m\frac{dv}{dt} = mg - \gamma v & t > 0 \\
-    v(0) = v_0
+m\frac{dv}{dt} = mg - \gamma v & t > 0 \\
+v(0) = v_0
 \end{cases}\]
 
 \begin{definition}[Well-posedness]
-    We say that an initial value problem for an ODE is well-posed if it satisfies the following conditions:
-    \begin{enumerate}[a)]
-        \item Existence. The problem has at least one solution.
-        \item Uniqueness. The problem has at most one solution.
-        \item Stability. ``Small'' changes in the initial data produce ``small'' changes in the solution.
-    \end{enumerate}
+We say that an initial value problem for an ODE is well-posed if it satisfies the following conditions:
+\begin{enumerate}[a)]
+\item Existence. The problem has at least one solution.
+\item Uniqueness. The problem has at most one solution.
+\item Stability. ``Small'' changes in the initial data produce ``small'' changes in the solution.
+\end{enumerate}
 \end{definition}
 
 \begin{example}
-    \leavevmode
-    \begin{enumerate}[a)]
-        \item
-        Consider the initial value problem given by
-        \[\begin{cases}
-            \frac{dy}{dt} = y & t > 0 \\
-            y(0) = y_0
-        \end{cases}\]
+\leavevmode
+\begin{enumerate}[a)]
+\item
+Consider the initial value problem given by
+\[\begin{cases}
+\frac{dy}{dt} = y & t > 0 \\
+y(0) = y_0
+\end{cases}\]
     
-        If we integrate the eq. \(\frac{dy}{dt} = y\), we find that \(y(t) = Ce^t\). Since \(y'(t) = Ce^t = y(t)\), and to satisfy \(y(0) = y_0\), we must have \(y(0) = C = y_0\). So, the function \(y(t) = y_0 e^t\) for \(t \geq 0\) is a solution to the problem. It can be also shown that this solution is the only solution to the problem.
+If we integrate the eq. \(\frac{dy}{dt} = y\), we find that \(y(t) = Ce^t\). Since \(y'(t) = Ce^t = y(t)\), and to satisfy \(y(0) = y_0\), we must have \(y(0) = C = y_0\). So, the function \(y(t) = y_0 e^t\) for \(t \geq 0\) is a solution to the problem. It can be also shown that this solution is the only solution to the problem.
     
-        Assume, for instance, that \(y_0 = 0\). So, the solution is the trivial solution \(y \equiv 0\). Additionally, consider a ``small'' change in the initial data:
-        \[\begin{cases}
-            \frac{dy_\epsilon}{dt} = y_\epsilon & t > 0 \\
-            y_\epsilon(0) = \epsilon
-        \end{cases}\]
+Assume, for instance, that \(y_0 = 0\). So, the solution is the trivial solution \(y \equiv 0\). Additionally, consider a ``small'' change in the initial data:
+\[\begin{cases}
+\frac{dy_\epsilon}{dt} = y_\epsilon & t > 0 \\
+y_\epsilon(0) = \epsilon
+\end{cases}\]
     
-        for some \(0 < \epsilon \ll 1\). Now, the solution is given by \(y_\epsilon(t) = \epsilon e^t\). To satisfy the stability condition, \(y_\epsilon\) must be close to \(y\) for all \(t > 0\). However, \(|y(t) - y_\epsilon(t)| = \epsilon e^t \to +\infty\) as \(t \to +\infty\). Thus, the problem does not satisfy the stability condition, so it is ill-posed (not well-posed).
+for some \(0 < \epsilon \ll 1\). Now, the solution is given by \(y_\epsilon(t) = \epsilon e^t\). To satisfy the stability condition, \(y_\epsilon\) must be close to \(y\) for all \(t > 0\). However, \(|y(t) - y_\epsilon(t)| = \epsilon e^t \to +\infty\) as \(t \to +\infty\). Thus, the problem does not satisfy the stability condition, so it is ill-posed (not well-posed).
 
-        \item
-        Consider the initial value problem
-        \[\begin{cases}
-            \frac{dy}{dt} = \sqrt{|y|} & t > 0 \\
-            y(0) = 0
-        \end{cases}\]
+\item
+Consider the initial value problem
+\[\begin{cases}
+\frac{dy}{dt} = \sqrt{|y|} & t > 0 \\
+y(0) = 0
+\end{cases}\]
     
-        This problem admits the trivial solution \(y \equiv 0\). Also, the function \(y(t) = \frac{t^2}{4}\) for \(t \geq 0\) is a solution (exercise). Moreover, any function of the form
-        \[y(t) = 
-        \begin{cases} 
-            0 & \text{if } t \leq c \\
-            \frac{(t - c)^2}{4} & \text{if } t \geq c 
-        \end{cases}\]
+This problem admits the trivial solution \(y \equiv 0\). Also, the function \(y(t) = \frac{t^2}{4}\) for \(t \geq 0\) is a solution (exercise). Moreover, any function of the form
+\[y(t) = 
+\begin{cases} 
+0 & \text{if } t \leq c \\
+\frac{(t - c)^2}{4} & \text{if } t \geq c 
+\end{cases}\]
     
-        (for any \(c \geq 0\)) is also a solution. Since the problem has infinitely many solutions, it's ill-posed.
-    \end{enumerate}
+(for any \(c \geq 0\)) is also a solution. Since the problem has infinitely many solutions, it's ill-posed.
+\end{enumerate}
 \end{example}
 
 \subsection{Some Solution Methods for First-Order Equations}
 
 \begin{definition}[First-order ODE]
-    A first-order ODE is an equation of the form:
-    \[\frac{dy}{dt} = f(t, y).\]
+A first-order ODE is an equation of the form:
+\[\frac{dy}{dt} = f(t, y).\]
 \end{definition}
 
 \begin{definition}[Linear first-order ODE]
-    A linear first-order ODE is one of the form:
-    \[\frac{dy}{dt} + a(t)y = b(t) \rightsquigarrow \frac{d\tilde{y}}{dt} = \tilde{b}(t).\]
+A linear first-order ODE is one of the form:
+\[\frac{dy}{dt} + a(t)y = b(t) \rightsquigarrow \frac{d\tilde{y}}{dt} = \tilde{b}(t).\]
 \end{definition}

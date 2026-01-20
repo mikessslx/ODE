@@ -3,132 +3,136 @@
 \subsection{Review: Picard-Lindelöf Theorem}
 
 \begin{theorem}[Picard-Lindelöf]
-    Assume \(f\) and \(\frac{\partial f}{\partial y}\) are continuous in the rectangle
-    \[R = \left\{ (t, y) \mid t_0 \leq t \leq t_0 + a, \, |y - y_0| \leq b \right\}\]
-    for some \(a, b > 0\).
+Assume \(f\) and \(\frac{\partial f}{\partial y}\) are continuous in the rectangle
+\[R = \left\{ (t, y) \mid t_0 \leq t \leq t_0 + a, \, |y - y_0| \leq b \right\}\]
+for some \(a, b > 0\).
 
-    Then, the initial value problem
-    \[\begin{cases}
-        \frac{dy}{dt} = f(t, y) &\ (1) \\
-        y(t_0) = y_0  &\ (2)
-    \end{cases}\]
-    has a unique solution \(y\) on \([t_0, t_0 + \alpha]\), where \(\alpha = \min\left\{ a, \frac{b}{M} \right\}\) and \(M = \max_{(t, y) \in R} |f(t, y)|\).
+Then, the initial value problem
+\[\begin{cases}
+\frac{dy}{dt} = f(t, y) &\ (1) \\
+y(t_0) = y_0  &\ (2)
+\end{cases}\]
+has a unique solution \(y\) on \([t_0, t_0 + \alpha]\), where \(\alpha = \min\left\{ a, \frac{b}{M} \right\}\) and \(M = \max_{(t, y) \in R} |f(t, y)|\).
 \end{theorem}
 
 \subsubsection{Proof (Continued)}
 The proof consists of the following steps:
 \begin{itemize}
-    \item Step 1: Construction of a sequence \(\{y_n\}\)
-    \item Step 2: Convergence of \(\{y_n\}\) to \(y\)
-    \item Step 3: The limit function \(y\) is a solution
-    \item Step 4: The solution \(y\) is unique
+\item Step 1: Construction of a sequence \(\{y_n\}\)
+\item Step 2: Convergence of \(\{y_n\}\) to \(y\)
+\item Step 3: The limit function \(y\) is a solution
+\item Step 4: The solution \(y\) is unique
 \end{itemize}
 
-\begin{proof}
-    \textbf{Step 1}: A function \(y\) is a solution to (1)-(2) on \([t_0, t_0 + \alpha]\) if and only if it is a continuous function satisfying
-    \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds\]
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    We define the sequence \(\{y_n\}\) (called \textbf{Picard iterates}) as
-    \[\begin{cases}
-        y_0(t) = y_0 \\
-        y_n(t) = y_0 + \int_{t_0}^t f(s, y_{n-1}(s)) \, ds \ (n = 1, 2, \cdots)
-    \end{cases}\]
+% \begin{proof}
+% \textbf{Step 1}: A function \(y\) is a solution to (1)-(2) on \([t_0, t_0 + \alpha]\) if and only if it is a continuous function satisfying
+% \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds\]
 
-    \textbf{Step 2}: \textit{Step 2.1: Uniform Boundedness}
+% We define the sequence \(\{y_n\}\) (called \textbf{Picard iterates}) as
+% \[\begin{cases}
+% y_0(t) = y_0 \\
+% y_n(t) = y_0 + \int_{t_0}^t f(s, y_{n-1}(s)) \, ds \ (n = 1, 2, \cdots)
+% \end{cases}\]
 
-    We'll first show that
-    \[|y_n(t) - y_0| \leq M(t - t_0) \tag{8}\]
-    for every \(t \in [t_0, t_0 + \alpha]\) and every \(n\).
+% \textbf{Step 2}: \textit{Step 2.1: Uniform Boundedness}
 
-    We prove this by induction.
+% We'll first show that
+% \[|y_n(t) - y_0| \leq M(t - t_0) \tag{8}\]
+% for every \(t \in [t_0, t_0 + \alpha]\) and every \(n\).
 
-    Base Case (\(n = 0\)): \(|y_0(t) - y_0| = 0 \leq M(t - t_0)\), which holds.
+% We prove this by induction.
 
-    Inductive Step: Assume (8) is true for \(n = k \geq 0\). For \(n = k + 1\), we have
-    \[|y_{k+1}(t) - y_0| = \left| \int_{t_0}^t f(s, y_k(s)) \, ds \right| \leq \int_{t_0}^t |f(s, y_k(s))| \, ds \leq \int_{t_0}^t M \, ds = M(t - t_0)\]
+% Base Case (\(n = 0\)): \(|y_0(t) - y_0| = 0 \leq M(t - t_0)\), which holds.
 
-    We are using the induction assumption in this way:
+% Inductive Step: Assume (8) is true for \(n = k \geq 0\). For \(n = k + 1\), we have
+% \[|y_{k+1}(t) - y_0| = \left| \int_{t_0}^t f(s, y_k(s)) \, ds \right| \leq \int_{t_0}^t |f(s, y_k(s))| \, ds \leq \int_{t_0}^t M \, ds = M(t - t_0)\]
 
-    Observe that \(|y_n(s) - y_0| \leq M(s - t_0) < M(t - t_0) \leq M\alpha \leq b\) (since \(\alpha = \min\left\{ a, \frac{b}{M} \right\}\)) for every \(s \in [t_0, t]\) for \(t \in [t_0, t_0 + \alpha]\).
+% We are using the induction assumption in this way:
 
-    Observe that (8) also gives that \(y_n\) is well-defined for every \(n\) since \((t, y_n(t)) \in R\) for every \(t \in [t_0, t_0 + \alpha]\).
+% Observe that \(|y_n(s) - y_0| \leq M(s - t_0) < M(t - t_0) \leq M\alpha \leq b\) (since \(\alpha = \min\left\{ a, \frac{b}{M} \right\}\)) for every \(s \in [t_0, t]\) for \(t \in [t_0, t_0 + \alpha]\).
 
-    \textit{Step 2.2: Series Representation}
+% Observe that (8) also gives that \(y_n\) is well-defined for every \(n\) since \((t, y_n(t)) \in R\) for every \(t \in [t_0, t_0 + \alpha]\).
 
-    We'll prove now that \(\{y_n\}\) converges to some function \(y\).
+% \textit{Step 2.2: Series Representation}
 
-    Let \(t \in [t_0, t_0 + \alpha]\). Observe that
-    \[y_n(t) = y_0 + (y_1(t) - y_0) + (y_2(t) - y_1(t)) + \cdots + (y_n(t) - y_{n-1}(t)) = y_0 + \sum_{k=1}^n (y_k(t) - y_{k-1}(t))\]
+% We'll prove now that \(\{y_n\}\) converges to some function \(y\).
 
-    Then, \(\{y_n(t)\}\) converges if and only if \(\sum_{n=1}^\infty |y_n(t) - y_{n-1}(t)| < \infty\). We'll prove that
-    \[\sum_{n=1}^\infty |y_n(t) - y_{n-1}(t)| < \infty \tag{9}\]
+% Let \(t \in [t_0, t_0 + \alpha]\). Observe that
+% \[y_n(t) = y_0 + (y_1(t) - y_0) + (y_2(t) - y_1(t)) + \cdots + (y_n(t) - y_{n-1}(t)) = y_0 + \sum_{k=1}^n (y_k(t) - y_{k-1}(t))\]
 
-    \textit{Step 2.3: Lipschitz Estimate}
+% Then, \(\{y_n(t)\}\) converges if and only if \(\sum_{n=1}^\infty |y_n(t) - y_{n-1}(t)| < \infty\). We'll prove that
+% \[\sum_{n=1}^\infty |y_n(t) - y_{n-1}(t)| < \infty \tag{9}\]
 
-    We have
-    \begin{align*}
-        |y_n(t) - y_{n-1}(t)|
-        &= \left| \int_{t_0}^t f(s, y_{n-1}(s)) - f(s, y_{n-2}(s)) ds \right| \\
-        &\leq \int_{t_0}^t \left| f(s, y_{n-1}(s)) - f(s, y_{n-2}(s)) \right| ds \\
-        &= \int_{t_0}^t \left| \frac{\partial f}{\partial y}(s, \xi(s)) \right| |y_{n-1}(s) - y_{n-2}(s)| ds \\
-        &\leq L \int_{t_0}^t |y_{n-1}(s) - y_{n-2}(s)| ds
-    \end{align*}
-    for some \(\xi(s)\) between \(y_{n-1}(s)\) and \(y_{n-2}(s)\), and where \(L = \max_{(t,y) \in R} \left| \frac{\partial f}{\partial y}(t, y) \right|\).
+% \textit{Step 2.3: Lipschitz Estimate}
 
-    Notice that \(L\) exists since \(\frac{\partial f}{\partial y}\) is continuous in the compact set \(R\).
+% We have
+% \begin{align*}
+% |y_n(t) - y_{n-1}(t)|
+% &= \left| \int_{t_0}^t f(s, y_{n-1}(s)) - f(s, y_{n-2}(s)) ds \right| \\
+% &\leq \int_{t_0}^t \left| f(s, y_{n-1}(s)) - f(s, y_{n-2}(s)) \right| ds \\
+% &= \int_{t_0}^t \left| \frac{\partial f}{\partial y}(s, \xi(s)) \right| |y_{n-1}(s) - y_{n-2}(s)| ds \\
+% &\leq L \int_{t_0}^t |y_{n-1}(s) - y_{n-2}(s)| ds
+% \end{align*}
+% for some \(\xi(s)\) between \(y_{n-1}(s)\) and \(y_{n-2}(s)\), and where \(L = \max_{(t,y) \in R} \left| \frac{\partial f}{\partial y}(t, y) \right|\).
 
-    So far, we have
-    \[|y_n(t) - y_{n-1}(t)| \leq L \int_{t_0}^t |y_{n-1}(s) - y_{n-2}(s)| ds\]
+% Notice that \(L\) exists since \(\frac{\partial f}{\partial y}\) is continuous in the compact set \(R\).
 
-    \textit{Step 2.4: Recursive Bound by Induction}
+% So far, we have
+% \[|y_n(t) - y_{n-1}(t)| \leq L \int_{t_0}^t |y_{n-1}(s) - y_{n-2}(s)| ds\]
 
-    We'll now prove that \(|y_m(t) - y_{m-1}(t)| \leq \frac{ML^{m-1}(t - t_0)^m}{m!}\) for every \(m = 1, 2, \cdots\).
+% \textit{Step 2.4: Recursive Bound by Induction}
 
-    Base Case (\(m = 1\)):
-    \[|y_1(t) - y_0(t)| \leq M(t - t_0) = \frac{ML^0(t - t_0)^1}{1!}\]
-    which holds.
+% We'll now prove that \(|y_m(t) - y_{m-1}(t)| \leq \frac{ML^{m-1}(t - t_0)^m}{m!}\) for every \(m = 1, 2, \cdots\).
 
-    Inductive Step: Assume the inequality holds for \(m = k\). For \(m = k + 1\), we have
-    \[|y_{k+1}(t) - y_k(t)| \leq L \int_{t_0}^t |y_k(s) - y_{k-1}(s)| ds \leq L \int_{t_0}^t \frac{ML^{k-1}(s - t_0)^k}{k!} ds = \frac{ML^k(t - t_0)^{k+1}}{(k+1)!}\]
+% Base Case (\(m = 1\)):
+% \[|y_1(t) - y_0(t)| \leq M(t - t_0) = \frac{ML^0(t - t_0)^1}{1!}\]
+% which holds.
 
-    \textit{Step 2.5: Convergence via Exponential Series}
+% Inductive Step: Assume the inequality holds for \(m = k\). For \(m = k + 1\), we have
+% \[|y_{k+1}(t) - y_k(t)| \leq L \int_{t_0}^t |y_k(s) - y_{k-1}(s)| ds \leq L \int_{t_0}^t \frac{ML^{k-1}(s - t_0)^k}{k!} ds = \frac{ML^k(t - t_0)^{k+1}}{(k+1)!}\]
 
-    Since \(\sum_{m=0}^\infty \frac{x^m}{m!} = e^x\) converges, then
-    \[\sum_{m=1}^\infty \frac{ML^{m-1}(t - t_0)^m}{m!} \leq M \sum_{m=1}^\infty \frac{(L\alpha)^m}{m!} < \infty\]
+% \textit{Step 2.5: Convergence via Exponential Series}
 
-    Thus, \(\{y_m(t)\}\) converges for every \(t \in [t_0, t_0 + \alpha]\).
+% Since \(\sum_{m=0}^\infty \frac{x^m}{m!} = e^x\) converges, then
+% \[\sum_{m=1}^\infty \frac{ML^{m-1}(t - t_0)^m}{m!} \leq M \sum_{m=1}^\infty \frac{(L\alpha)^m}{m!} < \infty\]
 
-    \textbf{Step 3}: We'll show that \(y\) is continuous and satisfies
-    \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) ds \tag{6}\]
+% Thus, \(\{y_m(t)\}\) converges for every \(t \in [t_0, t_0 + \alpha]\).
 
-    \textit{Step 3.1: Passage to the Limit}
+% \textbf{Step 3}: We'll show that \(y\) is continuous and satisfies
+% \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) ds \tag{6}\]
 
-    We have
-    \begin{align*}
-        y(t) &= \lim_{m \to \infty} y_m(t) \\
-        &= y_0 + \lim_{m \to \infty} \int_{t_0}^t f(s, y_m(s)) ds \\
-        &= y_0 + \int_{t_0}^t \lim_{m \to \infty} f(s, y_m(s)) ds \\
-        &= y_0 + \int_{t_0}^t f(s, y(s)) ds
-    \end{align*}
+% \textit{Step 3.1: Passage to the Limit}
 
-    We'll skip the proof of continuity (exercise) and prove (6).
+% We have
+% \begin{align*}
+% y(t) &= \lim_{m \to \infty} y_m(t) \\
+% &= y_0 + \lim_{m \to \infty} \int_{t_0}^t f(s, y_m(s)) ds \\
+% &= y_0 + \int_{t_0}^t \lim_{m \to \infty} f(s, y_m(s)) ds \\
+% &= y_0 + \int_{t_0}^t f(s, y(s)) ds
+% \end{align*}
 
-    \textit{Step 3.2: Verification of Integral Equation}
+% We'll skip the proof of continuity (exercise) and prove (6).
 
-    We have
-    \[\left| \int_{t_0}^t f(s, y_m(s)) ds - \int_{t_0}^t f(s, y(s)) ds \right| \leq L \int_{t_0}^t |y_m(s) - y(s)| ds\]
+% \textit{Step 3.2: Verification of Integral Equation}
 
-    Recall that \(y_n(s)\) can be written as
-    \[y_n(s) = y_0 + \sum_{k=1}^n \left( y_k(s) - y_{k-1}(s) \right)\]
+% We have
+% \[\left| \int_{t_0}^t f(s, y_m(s)) ds - \int_{t_0}^t f(s, y(s)) ds \right| \leq L \int_{t_0}^t |y_m(s) - y(s)| ds\]
 
-    Then
-    \[y(s) = y_0 + \sum_{k=1}^\infty \left( y_k(s) - y_{k-1}(s) \right)\]
+% Recall that \(y_n(s)\) can be written as
+% \[y_n(s) = y_0 + \sum_{k=1}^n \left( y_k(s) - y_{k-1}(s) \right)\]
 
-    Thus,
-    \[|y_n(s) - y(s)| = \left| \sum_{k=n+1}^\infty \left( y_k(s) - y_{k-1}(s) \right) \right|\]
+% Then
+% \[y(s) = y_0 + \sum_{k=1}^\infty \left( y_k(s) - y_{k-1}(s) \right)\]
 
-    We have
-    \[\int_{t_0}^t |y_n(s) - y(s)| ds \leq \int_{t_0}^t \sum_{k=n+1}^\infty |y_k(s) - y_{k-1}(s)| ds \leq \sum_{k=n+1}^\infty \frac{M}{L} \frac{(L\alpha)^k}{k!} \to 0\]
+% Thus,
+% \[|y_n(s) - y(s)| = \left| \sum_{k=n+1}^\infty \left( y_k(s) - y_{k-1}(s) \right) \right|\]
 
-    Since \(\sum_{k=n+1}^\infty \frac{(L\alpha)^k}{k!}\) is the tail of a convergent series, it tends to 0 as \(n \to \infty\).
-\end{proof}
+% We have
+% \[\int_{t_0}^t |y_n(s) - y(s)| ds \leq \int_{t_0}^t \sum_{k=n+1}^\infty |y_k(s) - y_{k-1}(s)| ds \leq \sum_{k=n+1}^\infty \frac{M}{L} \frac{(L\alpha)^k}{k!} \to 0\]
+
+% Since \(\sum_{k=n+1}^\infty \frac{(L\alpha)^k}{k!}\) is the tail of a convergent series, it tends to 0 as \(n \to \infty\).
+% \end{proof}

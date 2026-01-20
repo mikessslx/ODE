@@ -1,0 +1,70 @@
+\section{Lecture 25 - 01.08}
+
+\subsection{Example (cont.)}
+
+Consider the problem
+\[\begin{cases}
+\frac{d^2y}{dt^2} + \lambda y = 0 & 0 < t < L = \pi \\
+y(0) = y(L) = 0
+\end{cases}\]
+
+Recall that the eigenvalues are \(\lambda_n = (n\pi)^2\) and the corresponding eigenfunctions are
+\[y_n(t) = \sin(n\pi t), \ n=1, 2, \cdots\]
+
+Consider \(f(t) = t(\pi-t)\), \(t \in [0, \pi]\).
+
+In the previous lecture we proved that the eigenfunction expansion of \(f\) is
+\[\sum_{k=0}^\infty \frac{8 \sin((2k+1)t)}{\pi (2k+1)^3}.\]
+
+Also, we proved that the series is uniformly convergent to some function \(g\) in \([0, \pi]\), and that \(g\) is continuous in \([0, \pi]\). We want to prove that \(g=f\).
+
+Assume that \(g\) is differentiable in \([0, \pi]\) and \(\frac{dg}{dt} = \sum_{k=0}^\infty \frac{d}{dt} \left( \frac{8 \sin((2k+1)t)}{\pi (2k+1)^3} \right) (*)\).
+
+If \(\frac{dg}{dt} = \frac{df}{dt}\) then \(g = f + c\) for some constant \(c \in \mathbb{R}\). Also, using \(g(0) = f(0)\) we get \(c=0\) and therefore \(g=f\). The proof of \((*)\) is standard (exercise).
+Also, observe that
+\[\sum_{k=0}^\infty \frac{8 \cos((2k+1)t)}{\pi (2k+1)^2} \underset{\text{exercise}}{\underset{\uparrow}{=}} \pi - 2t = \frac{df}{dt}.\]
+
+\subsection{Example}
+
+Consider the problem
+\[\begin{cases}
+\frac{d^2y}{dt^2} + \lambda y = 0 & 0 < t < 1 \\
+y'(0) = 0, \, y(1) + y'(1) = 0
+\end{cases}\]
+
+Observe that this is a regular Sturm-Liouville problem, where
+\[p = 1, \ q = 0, \ r = 1, \ a_1 = 0, \ b_1 = 1, \ a_2 = 1, \ b_2 = 1.\]
+
+First, let's compute the eigenvalues and eigenfunctions.
+
+\begin{enumerate}
+\item Assume \(\lambda = 0\). Then the eq. is \(\frac{d^2y}{dt^2} = 0\), so the general solution is \(y(t) = At + B\), \(A, B \in \mathbb{R}\).
+Then \(\frac{dy}{dt}(t) = A\). Also, \(\frac{dy}{dt}(0) = A = 0\), and \(y(1) + \frac{dy}{dt}(1) = B + A = 0\), so \(B = -A = 0\).
+
+\item Assume that \(\lambda < 0\). Then the char. polynomial is \(p(\omega) = \omega^2 + \lambda\). The roots are \(\sqrt{-\lambda}\) and \(-\sqrt{-\lambda}\).
+The general solution to the eq. is \(y(t) = A e^{-\sqrt{-\lambda}t} + B e^{\sqrt{-\lambda}t}\). Then,
+\[\frac{dy}{dt}(t) = -\sqrt{-\lambda} A e^{-\sqrt{-\lambda}t} + B \sqrt{-\lambda} e^{\sqrt{-\lambda}t}\]
+
+Also, \(\frac{dy}{dt}(0) = \underbrace{\sqrt{-\lambda}}_{\neq 0} (B-A) = 0\) iff \(A=B\), and
+\begin{align*}
+&y(1) + \frac{dy}{dt}(1) = \left( A e^{-\sqrt{-\lambda}} + A e^{\sqrt{-\lambda}} \right) + \left( -\sqrt{-\lambda} A e^{-\sqrt{-\lambda}} + A \sqrt{-\lambda} e^{\sqrt{-\lambda}} \right) \\
+= &2A \left( \frac{e^{\sqrt{-\lambda}} + e^{-\sqrt{-\lambda}}}{2} \right) + 2A \sqrt{-\lambda} \left( \frac{e^{\sqrt{-\lambda}} - e^{-\sqrt{-\lambda}}}{2} \right) \\
+= &2A \cosh(\sqrt{-\lambda}) + 2A \sinh(\sqrt{-\lambda})\sqrt{-\lambda} \\
+= &2A \left( \underbrace{\cosh(\sqrt{-\lambda})}_{>0} + \underbrace{\sqrt{-\lambda}}_{>0} \underbrace{\sinh(\sqrt{-\lambda})}_{>0} \right) = 0 \iff A = 0.
+\end{align*}
+
+\item Assume that \(\lambda > 0\). The roots of the char. polynomial are \(\sqrt{\lambda} i\) and \(-\sqrt{\lambda} i\). The general solution to the eq. is \(y(t) = A \cos(\sqrt{\lambda}t) + B \sin(\sqrt{\lambda}t)\). Then,
+\[\frac{dy}{dt}(t) = -A\sqrt{\lambda} \sin(\sqrt{\lambda}t) + B\sqrt{\lambda} \cos(\sqrt{\lambda}t).\]
+
+Also, \(\frac{dy}{dt}(0) = B\underbrace{\sqrt{\lambda}}_{>0} = 0\), so \(B=0\), and
+\[y(1) + \frac{dy}{dt}(1) = A \cos(\sqrt{\lambda}) - A\sqrt{\lambda} \sin(\sqrt{\lambda}) = A (\cos(\sqrt{\lambda}) - \sqrt{\lambda} \sin(\sqrt{\lambda})).\]
+
+Assume that \(\sqrt{\lambda} = \frac{\pi}{2} + n\pi\) for some \(n \in \mathbb{Z}\). Then \(\cos(\sqrt{\lambda}) = 0\). Then \(y(1) + \frac{dy}{dt}(1) = 0\) iff \(A=0\).
+Assume then that \(\sqrt{\lambda} \neq \frac{\pi}{2} + n\pi\) for all \(n \in \mathbb{Z}\). Then
+\[A (\cos(\sqrt{\lambda}) - \sqrt{\lambda} \sin(\sqrt{\lambda})) = 0 \iff A (1 - \sqrt{\lambda} \tan(\sqrt{\lambda})) = 0.\]
+
+If \(\lambda_n\) is the unique solution to the eq. \(1 - \sqrt{\lambda} \tan \sqrt{\lambda} = 0\) in \((0, \pi/2)\) and \(\lambda_n\) is the unique sol. to \(1 - \sqrt{x} \tan \sqrt{x} = 0\) in \((\frac{\pi}{2} + (n-1)\pi, \frac{\pi}{2} + n\pi)\) then \(y(1) + \frac{dy}{dt}(1) = 0\) for any value of \(A\).
+\end{enumerate}
+
+Therefore, the eigenvalues are \(\lambda_n\), \(n \in \mathbb{N}_0\), defined above, and the eigenfunctions are
+\[y_n(t) = \cos(\sqrt{\lambda_n} t), \ n \in \mathbb{N}_0.\]

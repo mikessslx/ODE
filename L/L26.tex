@@ -1,0 +1,68 @@
+\section{Lecture 26 - 01.12}
+
+\subsection{Example (cont.)}
+
+We are working with
+\[\begin{cases}
+t^2 \frac{d^2y}{dt^2} = \lambda \left( t \frac{dy}{dt} - y \right) & 1 < t < 2 \\
+y(1) = 0, \, y(2) = 0
+\end{cases}\]
+
+Recall that this is not a regular Sturm-Liouville problem. Also, that the problem does not have any nontrivial solution if \(\lambda \in \mathbb{R}\), i.e. the problem does not have any real eigenvalue.
+
+Assume now that \(\lambda \in \mathbb{C}, \lambda \notin \mathbb{R}\). Let's look for a solution in the form \(y(t) = t^r\) where \(r \in \mathbb{C}\). As for the Euler's equation, we find that \(y\) solves the equation if and only if \(r\) is a solution to \(r^2 - (\lambda + 1)r + \lambda = 0\). Observe first that
+\[\Delta = (\lambda+1)^2 - 4\lambda = (\lambda-1)^2,\]
+and that the roots are given by
+\[\frac{(\lambda+1) \pm \sqrt{\Delta}}{2}.\]
+
+Then, we find that the solutions are
+\[\frac{(\lambda+1) + \lambda - 1}{2} = \lambda \ \text{and} \ \frac{\lambda+1 - \lambda + 1}{2} = 1.\]
+
+Then, we have two solutions, \(t^\lambda\) and \(t\). Also, observe that \(y(t) = A t^\lambda + Bt\) is also a solution for any \(A, B \in \mathbb{C}\).
+Also, \(y(1) = A+B=0\) iff \(A=-B\), and
+\begin{align*}
+y(2) &= A(2^\lambda - 2) \\
+&= A \left( e^{\lambda \ln 2} - 2 \right) \\
+&\underset{\lambda = \alpha + i\beta, \, \beta \neq 0}{=} A \left( e^{\alpha \ln 2} e^{i \beta \ln 2} - 2 \right) \\
+&= A \left( 2^\alpha (\cos(\beta \ln 2) + i \sin(\beta \ln 2)) - 2 \right) = 0
+\end{align*}
+if \(\beta = \frac{2\pi}{\ln 2}\) and \(\alpha = 1\), for any value of \(A\).
+
+Then, if \(\lambda = 1 + i \frac{2\pi}{\ln 2}\) then the problem admits nontrivial solutions, given by
+\[y(t) = t^\lambda - t, \ t \in [1, 2].\]
+
+\subsection{Theorem}
+
+\begin{theorem}
+Consider the non-homogeneous problem
+\begin{align*}
+\frac{d}{dt} \left( p(t) \frac{dy}{dt} \right) - q(t)y &= -\mu r(t) y + f(t) \ \alpha < t < \beta \tag{40} \\
+B_\alpha[y] = 0, \ B_\beta[y] &= 0 \tag{41}
+\end{align*}
+where \(p, \frac{dp}{dt}, q, r \in C[\alpha, \beta]\), \(p(x) > 0\), \(r(x) > 0\) for every \(x \in [\alpha, \beta]\), \(-\infty < \alpha < \beta < \infty\).
+Then exactly one of the following possibilities is true:
+\begin{enumerate}
+\item[(a)] For every \(f \in C[\alpha, \beta]\), the non-homogeneous problem admits a unique solution.
+\item[(b)] The homogeneous associated problem (i.e. \(f \equiv 0\)), admits non-trivial solutions.
+\end{enumerate}
+
+Also, (a) occurs when \(\mu \neq \lambda\) for every eigenvalue \(\lambda\) of the associated homogeneous problem.
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}
+% We shall prove the theorem under some additional assumptions.
+
+% First, notice that the homogeneous problem is a Sturm-Liouville problem. Then we know that it has a seq. \(\{\lambda_n\}_{n \ge 0}\) of real eigenvalues, with associated seq. of normalized eigenfunctions \(\{y_n\}_{n \ge 0}\). Also, if \(y \in C^1[\alpha, \beta]\), then \(y = \sum_{n=0}^\infty B_n y_n\) uniformly in any closed interval \(I \subset (\alpha, \beta)\). Then, \(y \in C^2(\alpha, \beta) \cap C^1[\alpha, \beta]\) solves (40) in \(I\) and (41) iff \(y\) satisfies (41) and
+% \[\underbrace{-\mu r(t) y}_{\sum_{n=0}^\infty (-\mu r(t) B_n y_n)} + \underbrace{f(t)}_{\frac{r(t) f(t)}{r(t)}} = -L \left[ \sum_{n=0}^\infty B_n y_n \right] \overset{\text{by assumption}}{=} -\sum_{n=0}^\infty B_n L[y_n] = -\sum_{n=0}^\infty B_n \lambda_n y_n r\]
+
+% Assume that \(\frac{f}{r} \in C^1[\alpha, \beta]\), then \(g = \frac{f}{r} = \sum_{n=0}^\infty C_n y_n\) uniformly in \(I\), with \(I\) as before.
+
+% Then, \(-\mu r(t) \sum_{n=0}^\infty B_n y_n + r(t) \sum_{n=0}^\infty C_n y_n = -r(t) \sum_{n=0}^\infty B_n \lambda_n y_n\) in \(I\).
+
+% That is,
+% \[\sum_{n=0}^\infty \underbrace{\left( -\mu B_n + C_n + \lambda_n B_n \right)}_{(\lambda_n - \mu)B_n + C_n} y_n = 0 \ \text{in } I.\]
+% \end{proof}

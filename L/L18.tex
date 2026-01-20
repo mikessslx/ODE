@@ -34,25 +34,25 @@ We'll look for solutions in the form
 where the coefficients \(a_n\) must be determined.
 
 \begin{recap}[Brief review on power series]
-    \begin{itemize}
-        \item Any series of the form \(\sum_{n=0}^\infty a_n (t - t_0)^n\) is called a power series about \(t_0\). Any power series has an interval of convergence. Specifically, there exists \(\rho > 0\) such that the series is convergent if \(|t - t_0| < \rho\) and the series diverges if \(|t - t_0| > \rho\). By the ratio test, we know that if \(|\frac{a_{n+1}}{a_n}| \to \lambda\) as \(n \to \infty\) for some \(\lambda > 0\), then \(\rho = \frac{1}{\lambda}\).
-        \item All power series can be integrated and differentiated term-by-term, and the resulting series have the same radius of convergence as the original series.
-    \end{itemize}
+\begin{itemize}
+\item Any series of the form \(\sum_{n=0}^\infty a_n (t - t_0)^n\) is called a power series about \(t_0\). Any power series has an interval of convergence. Specifically, there exists \(\rho > 0\) such that the series is convergent if \(|t - t_0| < \rho\) and the series diverges if \(|t - t_0| > \rho\). By the ratio test, we know that if \(|\frac{a_{n+1}}{a_n}| \to \lambda\) as \(n \to \infty\) for some \(\lambda > 0\), then \(\rho = \frac{1}{\lambda}\).
+\item All power series can be integrated and differentiated term-by-term, and the resulting series have the same radius of convergence as the original series.
+\end{itemize}
 \end{recap}
 
 Let's \(\rho > 0\) be the radius of convergence of (32). From now on we assume that \(|t| < \rho\). Observe that
 \begin{align*}
-    \frac{dy}{dt} &= \sum_{n=1}^\infty n a_n t^{n-1} = \sum_{n=0}^\infty (n+1) a_{n+1} t^{n}\\
-    \frac{d^2 y}{dt^2} &= \sum_{n=2}^\infty n(n-1) a_n t^{n-2} = \sum_{n=0}^\infty n(n+1) a_{n+2} t^{n}
+\frac{dy}{dt} &= \sum_{n=1}^\infty n a_n t^{n-1} = \sum_{n=0}^\infty (n+1) a_{n+1} t^{n}\\
+\frac{d^2 y}{dt^2} &= \sum_{n=2}^\infty n(n-1) a_n t^{n-2} = \sum_{n=0}^\infty n(n+1) a_{n+2} t^{n}
 \end{align*}
 
 Then, \(y(t)\) solves the eq. iff
 \begin{align*}
-    0 &= \sum_{n=0}^\infty n(n-1) a_n t^{n-2} - 2t \sum_{n=0}^\infty n a_n t^{n-1} - 2 \sum_{n=0}^\infty a_n t^n \\
-    &= \sum_{n=0}^\infty n(n-1) a_n t^{n-2} - \sum_{n=0}^\infty 2n a_n t^n - \sum_{n=0}^\infty 2 a_n t^n \\
-    &= \underbrace{\sum_{k=-2}^\infty (k+2)(k+1) a_{k+2} t^k}_{k = n-2} - \sum_{n=0}^\infty 2n a_n t^n - \sum_{n=0}^\infty 2 a_n t^n \\
-    &= \sum_{n=0}^\infty (n+2)(n+1) a_{n+2} t^n - \sum_{n=0}^\infty 2n a_n t^n - \sum_{n=0}^\infty 2 a_n t^n \\
-    &= \sum_{n=0}^\infty \left( (n+2)(n+1) a_{n+2} - 2n a_n - 2 a_n \right) t^n 
+0 &= \sum_{n=0}^\infty n(n-1) a_n t^{n-2} - 2t \sum_{n=0}^\infty n a_n t^{n-1} - 2 \sum_{n=0}^\infty a_n t^n \\
+&= \sum_{n=0}^\infty n(n-1) a_n t^{n-2} - \sum_{n=0}^\infty 2n a_n t^n - \sum_{n=0}^\infty 2 a_n t^n \\
+&= \underbrace{\sum_{k=-2}^\infty (k+2)(k+1) a_{k+2} t^k}_{k = n-2} - \sum_{n=0}^\infty 2n a_n t^n - \sum_{n=0}^\infty 2 a_n t^n \\
+&= \sum_{n=0}^\infty (n+2)(n+1) a_{n+2} t^n - \sum_{n=0}^\infty 2n a_n t^n - \sum_{n=0}^\infty 2 a_n t^n \\
+&= \sum_{n=0}^\infty \left( (n+2)(n+1) a_{n+2} - 2n a_n - 2 a_n \right) t^n 
 \end{align*}
 
 From here, we notice that we can look for the coeff. from

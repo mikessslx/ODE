@@ -3,97 +3,97 @@
 \subsection{Exercises on Systems of ODEs}
 
 \begin{xca}
-    Consider the IVP
-    \[\begin{cases}
-        \frac{dy_1}{dt} = y_2 \\
-        \frac{dy_2}{dt} = -y_1 - 2y_2 \\
-        y_1(0) = 1, y_2(0) = 1
-    \end{cases}\]
+Consider the IVP
+\[\begin{cases}
+\frac{dy_1}{dt} = y_2 \\
+\frac{dy_2}{dt} = -y_1 - 2y_2 \\
+y_1(0) = 1, y_2(0) = 1
+\end{cases}\]
     
-    \begin{enumerate}[a)]
-        \item Prove that \(y^{(1)}(t) = \begin{pmatrix} e^{-t} \\ -e^{-t} \end{pmatrix}\) and \(y^{(2)}(t) = \begin{pmatrix} te^{-t} \\ (1-t)e^{-t} \end{pmatrix}\) form a basis of solutions to the associated homogeneous system.
-        \item Find the solution to the IVP.
-    \end{enumerate}
+\begin{enumerate}[a)]
+\item Prove that \(y^{(1)}(t) = \begin{pmatrix} e^{-t} \\ -e^{-t} \end{pmatrix}\) and \(y^{(2)}(t) = \begin{pmatrix} te^{-t} \\ (1-t)e^{-t} \end{pmatrix}\) form a basis of solutions to the associated homogeneous system.
+\item Find the solution to the IVP.
+\end{enumerate}
 \end{xca}
 \begin{proof}[Solution]
-    \begin{enumerate}[a)]
-        \item
-        Notice that the homogeneous system associated to the IVP is
-        \[\begin{cases} \frac{dy_1}{dt} = y_2 \\ \frac{dy_2}{dt} = -y_1 - 2y_2 \end{cases}, \text{ that is } \frac{dy}{dt} = Ay \text{ where } y = \begin{pmatrix} y_1 \\ y_2 \end{pmatrix} \text{ and } A = \begin{pmatrix} 0 & 1 \\ -1 & -2 \end{pmatrix}\]
-    
-        This is a linear system with constant coefficients, thus the set of solutions is a vector space of dimension 2.
-        
-        Let's check that \(y^{(1)}\) and \(y^{(2)}\) are solutions.
-        \begin{itemize}
-            \item \(\frac{dy^{(1)}}{dt} = \begin{pmatrix} -e^{-t} \\ e^{-t} \end{pmatrix}\), \(A y^{(1)} = \begin{pmatrix} 0 & 1 \\ -1 & -2 \end{pmatrix} \begin{pmatrix} e^{-t} \\ -e^{-t} \end{pmatrix} = \begin{pmatrix} -e^{-t} \\ -e^{-t} + 2e^{-t} \end{pmatrix} = \begin{pmatrix} -e^{-t} \\ e^{-t} \end{pmatrix} \ \checkmark\)
-            \item Similarly, we observe that \(y^{(2)}\) is a solution as well.
-        \end{itemize}
+\begin{enumerate}[a)]
+\item
+Notice that the homogeneous system associated to the IVP is
+\[\begin{cases} \frac{dy_1}{dt} = y_2 \\ \frac{dy_2}{dt} = -y_1 - 2y_2 \end{cases}, \text{ that is } \frac{dy}{dt} = Ay \text{ where } y = \begin{pmatrix} y_1 \\ y_2 \end{pmatrix} \text{ and } A = \begin{pmatrix} 0 & 1 \\ -1 & -2 \end{pmatrix}\]
 
-        Let's finally prove that \(y^{(1)}\) and \(y^{(2)}\) are linearly independent.
-        To show this, it's enough to prove that \(y^{(1)}(t_0)\) and \(y^{(2)}(t_0)\) are linear independent vectors for some \(t_0\). As
-        \[y^{(1)}(0) = \begin{pmatrix} 1 \\ -1 \end{pmatrix} \text{ and } y^{(2)}(0) = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\]
-        are linearly independent, we observe that \(y^{(1)}\) and \(y^{(2)}\) are linear independent functions.
+This is a linear system with constant coefficients, thus the set of solutions is a vector space of dimension 2.
 
-        Therefore, \(\{y^{(1)}, y^{(2)}\}\) is a basis.
+Let's check that \(y^{(1)}\) and \(y^{(2)}\) are solutions.
+\begin{itemize}
+\item \(\frac{dy^{(1)}}{dt} = \begin{pmatrix} -e^{-t} \\ e^{-t} \end{pmatrix}\), \(A y^{(1)} = \begin{pmatrix} 0 & 1 \\ -1 & -2 \end{pmatrix} \begin{pmatrix} e^{-t} \\ -e^{-t} \end{pmatrix} = \begin{pmatrix} -e^{-t} \\ -e^{-t} + 2e^{-t} \end{pmatrix} = \begin{pmatrix} -e^{-t} \\ e^{-t} \end{pmatrix} \ \checkmark\)
+\item Similarly, we observe that \(y^{(2)}\) is a solution as well.
+\end{itemize}
 
-        \item
-        The general solution to the system is
-        \[y(t) = c_1 y^{(1)}(t) + c_2 y^{(2)}(t), \ t \in \mathbb{R}, c_1, c_2 \in \mathbb{R}\]
+Let's finally prove that \(y^{(1)}\) and \(y^{(2)}\) are linearly independent.
+To show this, it's enough to prove that \(y^{(1)}(t_0)\) and \(y^{(2)}(t_0)\) are linear independent vectors for some \(t_0\). As
+\[y^{(1)}(0) = \begin{pmatrix} 1 \\ -1 \end{pmatrix} \text{ and } y^{(2)}(0) = \begin{pmatrix} 0 \\ 1 \end{pmatrix}\]
+are linearly independent, we observe that \(y^{(1)}\) and \(y^{(2)}\) are linear independent functions.
 
-        Also, \(y(0) = c_1 y^{(1)}(0) + c_2 y^{(2)}(0) = c_1 \begin{pmatrix} 1 \\ -1 \end{pmatrix} + c_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\).
+Therefore, \(\{y^{(1)}, y^{(2)}\}\) is a basis.
 
-        Then, \(\begin{cases} c_1 = 1 \\ -c_1 + c_2 = 1 \implies c_2 = 2 \end{cases}\).
-        The solution is
-        \[y(t) = y^{(1)}(t) + 2y^{(2)}(t), \ t \in \mathbb{R}\]
-        i.e., \(y_1(t) = e^{-t} + 2te^{-t}\) and \(y_2(t) = -e^{-t} + 2(1-t)e^{-t}, \ t \in \mathbb{R}\).
-    \end{enumerate}
+\item
+The general solution to the system is
+\[y(t) = c_1 y^{(1)}(t) + c_2 y^{(2)}(t), \ t \in \mathbb{R}, c_1, c_2 \in \mathbb{R}\]
+
+Also, \(y(0) = c_1 y^{(1)}(0) + c_2 y^{(2)}(0) = c_1 \begin{pmatrix} 1 \\ -1 \end{pmatrix} + c_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\).
+
+Then, \(\begin{cases} c_1 = 1 \\ -c_1 + c_2 = 1 \implies c_2 = 2 \end{cases}\).
+The solution is
+\[y(t) = y^{(1)}(t) + 2y^{(2)}(t), \ t \in \mathbb{R}\]
+i.e., \(y_1(t) = e^{-t} + 2te^{-t}\) and \(y_2(t) = -e^{-t} + 2(1-t)e^{-t}, \ t \in \mathbb{R}\).
+\end{enumerate}
 \end{proof}
 
 \begin{xca}
-    Consider the system
-    \[\begin{cases}
-        \frac{dy_1}{dt} = y_2 + t \\
-        \frac{dy_2}{dt} = -y_1 - 2y_2 + 2t
-    \end{cases}\]
+Consider the system
+\[\begin{cases}
+\frac{dy_1}{dt} = y_2 + t \\
+\frac{dy_2}{dt} = -y_1 - 2y_2 + 2t
+\end{cases}\]
 
-    Find the general solution.
+Find the general solution.
 \end{xca}
 \begin{proof}[Solution]
-    The homogeneous system associated to the given system is the one from the previous exercise (we know the general solution \(y_H\)). As \(b(t) = \begin{pmatrix} t \\ 2t \end{pmatrix}\) is continuous in \(\mathbb{R}\), we know that the general solution is \(y = y_H + z\) where \(z\) is a particular solution to the non-hom. system.
+The homogeneous system associated to the given system is the one from the previous exercise (we know the general solution \(y_H\)). As \(b(t) = \begin{pmatrix} t \\ 2t \end{pmatrix}\) is continuous in \(\mathbb{R}\), we know that the general solution is \(y = y_H + z\) where \(z\) is a particular solution to the non-hom. system.
 
-    Let's find the particular solution \(z\).
-    
-    \paragraph*{Method 1 (Method of variation of parameters)}
-    \(z(t) = C_1(t) y^{(1)}(t) + C_2(t) y^{(2)}(t), \ t \in \mathbb{R}\)
-    is a particular solution if \(C(t) = \begin{pmatrix} C_1(t) \\ C_2(t) \end{pmatrix}\) solves \(Q(t) \frac{dC(t)}{dt} = b(t), \ t \in \mathbb{R}\)
-    where \(Q\) is the fundamental matrix related to the basis \(\{y^{(1)}, y^{(2)}\}\).
+Let's find the particular solution \(z\).
 
-    We have that \(Q(t) = \begin{pmatrix} e^{-t} & te^{-t} \\ -e^{-t} & (1-t)e^{-t} \end{pmatrix}, \ t \in \mathbb{R}\). Recall that \(\det(Q(t)) \neq 0\).
-    Then \[\frac{dC(t)}{dt} = (Q(t))^{-1}b(t) = e^t \begin{pmatrix} 1-t & -t \\ 1 & 1 \end{pmatrix} \begin{pmatrix} t \\ 2t \end{pmatrix} = e^t \begin{pmatrix} t - t^2 - 2t^2 \\ t + 2t \end{pmatrix} = te^t \begin{pmatrix} 1-3t \\ 3 \end{pmatrix}\]
-    (exercise)
-    
-    Integration yields
-    \begin{align*}
-        c_1(t) &= \int t(1-3t)e^t dt = (-3t^2 + 7t - 7)e^t \\
-        c_2(t) &= \int 3te^t dt = 3(t-1)e^t
-    \end{align*}
+\paragraph*{Method 1 (Method of variation of parameters)}
+\(z(t) = C_1(t) y^{(1)}(t) + C_2(t) y^{(2)}(t), \ t \in \mathbb{R}\)
+is a particular solution if \(C(t) = \begin{pmatrix} C_1(t) \\ C_2(t) \end{pmatrix}\) solves \(Q(t) \frac{dC(t)}{dt} = b(t), \ t \in \mathbb{R}\)
+where \(Q\) is the fundamental matrix related to the basis \(\{y^{(1)}, y^{(2)}\}\).
 
-    Then, the general solution to the non-hom. system is
-    \[y(t) = \underbrace{c_1 y^{(1)}(t) + c_2 y^{(2)}(t)}_{y_H(t)} + \underbrace{(-3t^2 + 7t - 7)e^t y^{(1)}(t) + 3(t-1)e^t y^{(2)}(t)}_{z}\]
-    for \(t \in \mathbb{R}\).
+We have that \(Q(t) = \begin{pmatrix} e^{-t} & te^{-t} \\ -e^{-t} & (1-t)e^{-t} \end{pmatrix}, \ t \in \mathbb{R}\). Recall that \(\det(Q(t)) \neq 0\).
+Then \[\frac{dC(t)}{dt} = (Q(t))^{-1}b(t) = e^t \begin{pmatrix} 1-t & -t \\ 1 & 1 \end{pmatrix} \begin{pmatrix} t \\ 2t \end{pmatrix} = e^t \begin{pmatrix} t - t^2 - 2t^2 \\ t + 2t \end{pmatrix} = te^t \begin{pmatrix} 1-3t \\ 3 \end{pmatrix}\]
+(exercise)
 
-    \paragraph{Method 2}
-    As the system is linear and of first-order, with constant coefficients and a linear polynomials as non homogeneous terms in each equation, it seems natural to look for a solution in the form \(y_1(t) = a_1 t + b_1, \ y_2(t) = a_2 t + b_2\) and look for appropriate choice of \(a_1, a_2, b_1, b_2\).
-    
-    To have a solution we must have \(\begin{cases} 0 = a_2 t + b_2 + t - a_1 \\ 0 = -a_1 t - b_1 - 2a_2 t - 2b_2 + 2t - a_2 \end{cases}\) for every \(t\).
-    
-    This is true if
-    \[\begin{cases}
-    a_2 + 1 = 0 \\
-    b_2 - a_1 = 0 \\
-    -a_1 - 2a_2 + 2 = 0 \\
-    -b_1 - 2b_2 - a_2 = 0
-    \end{cases}\]
+Integration yields
+\begin{align*}
+c_1(t) &= \int t(1-3t)e^t dt = (-3t^2 + 7t - 7)e^t \\
+c_2(t) &= \int 3te^t dt = 3(t-1)e^t
+\end{align*}
 
-    The solution is \(a_1=4, a_2=-1, b_1=-7, b_2=4\).
+Then, the general solution to the non-hom. system is
+\[y(t) = \underbrace{c_1 y^{(1)}(t) + c_2 y^{(2)}(t)}_{y_H(t)} + \underbrace{(-3t^2 + 7t - 7)e^t y^{(1)}(t) + 3(t-1)e^t y^{(2)}(t)}_{z}\]
+for \(t \in \mathbb{R}\).
+
+\paragraph{Method 2}
+As the system is linear and of first-order, with constant coefficients and a linear polynomials as non homogeneous terms in each equation, it seems natural to look for a solution in the form \(y_1(t) = a_1 t + b_1, \ y_2(t) = a_2 t + b_2\) and look for appropriate choice of \(a_1, a_2, b_1, b_2\).
+
+To have a solution we must have \(\begin{cases} 0 = a_2 t + b_2 + t - a_1 \\ 0 = -a_1 t - b_1 - 2a_2 t - 2b_2 + 2t - a_2 \end{cases}\) for every \(t\).
+
+This is true if
+\[\begin{cases}
+a_2 + 1 = 0 \\
+b_2 - a_1 = 0 \\
+-a_1 - 2a_2 + 2 = 0 \\
+-b_1 - 2b_2 - a_2 = 0
+\end{cases}\]
+
+The solution is \(a_1=4, a_2=-1, b_1=-7, b_2=4\).
 \end{proof}

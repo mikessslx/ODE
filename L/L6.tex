@@ -3,59 +3,63 @@
 \subsection{Review: Picard-Lindelöf Theorem}
 
 \begin{recap}
-    \textbf{Picard Iterates (Sequence of Successive Approximations)}
+\textbf{Picard Iterates (Sequence of Successive Approximations)}
     
-    The sequence \(\{y_n(t)\}\) is defined as:
-    \[\begin{cases}
-        y_0(t) = y_0 \\
-        y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s)) \, ds \ (n = 0, 1, 2, \cdots)
-    \end{cases}\]
+The sequence \(\{y_n(t)\}\) is defined as:
+\[\begin{cases}
+y_0(t) = y_0 \\
+y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s)) \, ds \ (n = 0, 1, 2, \cdots)
+\end{cases}\]
 
-    This sequence \(\{y_n(t)\}\) converges to a continuous function \(y(t)\) for each \(t \in [t_0, t_0 + \alpha]\), and \(y(t)\) solves the initial value problem on \([t_0, t_0 + \alpha]\).
+This sequence \(\{y_n(t)\}\) converges to a continuous function \(y(t)\) for each \(t \in [t_0, t_0 + \alpha]\), and \(y(t)\) solves the initial value problem on \([t_0, t_0 + \alpha]\).
 \end{recap}
 
 \subsubsection{Proof (Continued)}
 
-\begin{proof}[Proof (Continued)]
-    \textbf{Step 4}: We'll prove that the limit function \(y\) is unique.
+\begin{remark}
+Proof is commented out!
+\end{remark}
 
-    Assume \(y\) and \(z\) are two solutions to the IVP on \([t_0, t_0 + \alpha]\). Then,
-    \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds, \ z(t) = y_0 + \int_{t_0}^t f(s, z(s)) \, ds\]
+% \begin{proof}[Proof (Continued)]
+% \textbf{Step 4}: We'll prove that the limit function \(y\) is unique.
 
-    Taking the absolute difference,
-    \[|y(t) - z(t)| = \left| \int_{t_0}^t \left( f(s, y(s)) - f(s, z(s)) \right) ds \right| \leq \int_{t_0}^t \left| f(s, y(s)) - f(s, z(s)) \right| ds\]
+% Assume \(y\) and \(z\) are two solutions to the IVP on \([t_0, t_0 + \alpha]\). Then,
+% \[y(t) = y_0 + \int_{t_0}^t f(s, y(s)) \, ds, \ z(t) = y_0 + \int_{t_0}^t f(s, z(s)) \, ds\]
 
-    By the Mean Value Theorem, \(|f(s, y(s)) - f(s, z(s))| \leq L |y(s) - z(s)|\) (where \(L = \max_{(t,y) \in R} \left| \frac{\partial f}{\partial y}(t, y) \right|\)).
+% Taking the absolute difference,
+% \[|y(t) - z(t)| = \left| \int_{t_0}^t \left( f(s, y(s)) - f(s, z(s)) \right) ds \right| \leq \int_{t_0}^t \left| f(s, y(s)) - f(s, z(s)) \right| ds\]
 
-    We have
-    \[|y(t) - z(t)| \leq L \int_{t_0}^t |y(s) - z(s)| ds\]
+% By the Mean Value Theorem, \(|f(s, y(s)) - f(s, z(s))| \leq L |y(s) - z(s)|\) (where \(L = \max_{(t,y) \in R} \left| \frac{\partial f}{\partial y}(t, y) \right|\)).
 
-    We'll now prove a general result that will give us that \(z = y\).
+% We have
+% \[|y(t) - z(t)| \leq L \int_{t_0}^t |y(s) - z(s)| ds\]
 
-    Assume that \(w\) is a non-negative and continuous function in \([t_0, t_0 + \alpha]\) such that
-    \[w(t) \leq L \int_{t_0}^t w(s) ds\]
+% We'll now prove a general result that will give us that \(z = y\).
 
-    Then, \(w \equiv 0\). Let \(W(t) = \int_{t_0}^t w(s) ds\), \(t \in [t_0, t_0 + \alpha]\).
+% Assume that \(w\) is a non-negative and continuous function in \([t_0, t_0 + \alpha]\) such that
+% \[w(t) \leq L \int_{t_0}^t w(s) ds\]
 
-    We have that (in \([t_0, t_0 + \alpha]\))
-    \[\frac{dW}{dt} = w(t) \leq L \int_{t_0}^t w(s) ds = L W(t) \implies \frac{dW}{dt} - L W(t) \leq 0\]
+% Then, \(w \equiv 0\). Let \(W(t) = \int_{t_0}^t w(s) ds\), \(t \in [t_0, t_0 + \alpha]\).
 
-    Multiplying by \(e^{-L(t - t_0)}\) (a positive function),
-    \[\frac{d}{dt} \left( e^{-L(t - t_0)} W(t) \right) \leq 0\]
+% We have that (in \([t_0, t_0 + \alpha]\))
+% \[\frac{dW}{dt} = w(t) \leq L \int_{t_0}^t w(s) ds = L W(t) \implies \frac{dW}{dt} - L W(t) \leq 0\]
 
-    Since \(e^{-L(t - t_0)} W\) is non-negative, zero at \(t = t_0\) and decreasing, it follows that \(e^{-L(t - t_0)} W(t) = 0\) for every \(t \in [t_0, t_0 + \alpha]\). As \(e^{-L(t - t_0)} > 0\) for all \(t\), we get that \(W \equiv 0\) in \([t_0, t_0 + \alpha]\). Only, remains to note that this implies that \(w \equiv 0\). In particular, for \(w = |y - z|\), we have \(y = z\), so the solution is unique.
-\end{proof}
+% Multiplying by \(e^{-L(t - t_0)}\) (a positive function),
+% \[\frac{d}{dt} \left( e^{-L(t - t_0)} W(t) \right) \leq 0\]
+
+% Since \(e^{-L(t - t_0)} W\) is non-negative, zero at \(t = t_0\) and decreasing, it follows that \(e^{-L(t - t_0)} W(t) = 0\) for every \(t \in [t_0, t_0 + \alpha]\). As \(e^{-L(t - t_0)} > 0\) for all \(t\), we get that \(W \equiv 0\) in \([t_0, t_0 + \alpha]\). Only, remains to note that this implies that \(w \equiv 0\). In particular, for \(w = |y - z|\), we have \(y = z\), so the solution is unique.
+% \end{proof}
 
 \begin{remark}
-    \leavevmode
-    \begin{enumerate}[a)]
-    \item
-    In the proof, we repeatedly used the inequality:
-    \[|f(s, y) - f(s, z)| \leq L |y - z| \ \forall (s, y), (s, z) \in R \tag{*}\]
+\leavevmode
+\begin{enumerate}[a)]
+\item
+In the proof, we repeatedly used the inequality:
+\[|f(s, y) - f(s, z)| \leq L |y - z| \ \forall (s, y), (s, z) \in R \tag{*}\]
 
-    The theorem’s conclusion holds if we replace the assumption that \(\frac{\partial f}{\partial y}\) is continuous in \(R\) with \(f\) satisfying inequality (*). A function satisfying (*) is called \textbf{Lipschitz} with respect to its second argument. There exist differentiable Lipschitz functions (e.g. \(f(t, y) = 2y\), which is differentiable and satisfies \(|2y - 2z| = 2|y - z|\), so \(L = 2\)).
+The theorem’s conclusion holds if we replace the assumption that \(\frac{\partial f}{\partial y}\) is continuous in \(R\) with \(f\) satisfying inequality (*). A function satisfying (*) is called \textbf{Lipschitz} with respect to its second argument. There exist differentiable Lipschitz functions (e.g. \(f(t, y) = 2y\), which is differentiable and satisfies \(|2y - 2z| = 2|y - z|\), so \(L = 2\)).
 
-    \item
-    If we remove the assumption on \(\frac{\partial f}{\partial y}\), the \textbf{Cauchy-Peano Theorem} guarantees that the initial value problem has at least one solution.
-    \end{enumerate}
+\item
+If we remove the assumption on \(\frac{\partial f}{\partial y}\), the \textbf{Cauchy-Peano Theorem} guarantees that the initial value problem has at least one solution.
+\end{enumerate}
 \end{remark}

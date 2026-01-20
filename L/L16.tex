@@ -4,8 +4,8 @@
 Consider the eq. \(\frac{d^2 y}{dt^2} + a\frac{dy}{dt} + by = 0\).
 The associated system is
 \[\begin{cases}
-    \frac{dy_1}{dt} = y_2 \\
-    \frac{dy_2}{dt} = -by_1 - ay_2
+\frac{dy_1}{dt} = y_2 \\
+\frac{dy_2}{dt} = -by_1 - ay_2
 \end{cases} \ y_1 = y, \ y_2 = \frac{dy}{dt}\]
 
 The coeff. matrix is \(A = \begin{pmatrix} 0 & 1 \\ -b & -a \end{pmatrix}\).
@@ -18,8 +18,8 @@ where \(v = \begin{pmatrix} u \\ w \end{pmatrix}\).
 
 From this we observe that
 \begin{itemize}
-    \item If \(\lambda \neq 0\) and \(u = 0\), then \(w = 0\). Therefore, if \(\lambda \neq 0\) and \(v\) is an eigenvector for \(\lambda\), then \(u \neq 0\).
-    \item If \(\lambda = 0\) then \(w = 0\), and \(u\) can be any number. If \(\lambda = 0\) and \(v\) is an eigenvector for \(\lambda\), then \(u \neq 0\).
+\item If \(\lambda \neq 0\) and \(u = 0\), then \(w = 0\). Therefore, if \(\lambda \neq 0\) and \(v\) is an eigenvector for \(\lambda\), then \(u \neq 0\).
+\item If \(\lambda = 0\) then \(w = 0\), and \(u\) can be any number. If \(\lambda = 0\) and \(v\) is an eigenvector for \(\lambda\), then \(u \neq 0\).
 \end{itemize}
 
 \subsubsection{Case 1: \(p(\lambda)\) has two distinct real roots \(\lambda_1, \lambda_2\)}
@@ -45,7 +45,7 @@ Let's check that \((A-\lambda I)^2 = 0\):
 Also, \(\lambda = -\frac{a}{2}\) and \(a^2 = 4b\). From this, we find that \((A-\lambda I)^2 = 0\) (exercise).
 
 \begin{remark}
-    \(p(\lambda) = \lambda^2 + a\lambda + b \implies \lambda = \frac{-a \pm \sqrt{a^2-4b}}{2}\).
+\(p(\lambda) = \lambda^2 + a\lambda + b \implies \lambda = \frac{-a \pm \sqrt{a^2-4b}}{2}\).
 \end{remark}
 
 The first components of \(y^{(1)}\) and \(y^{(2)}\),
@@ -56,5 +56,5 @@ are solutions to the eq. From here, we observe that
 are solutions, and they are l.i. (exercise).
 
 \begin{remark}
-    \(W(y_1, y_2)(t) = \det \begin{pmatrix} y_1(t) & y_2(t) \\ \frac{dy_1(t)}{dt} & \frac{dy_2(t)}{dt} \end{pmatrix}\).
+\(W(y_1, y_2)(t) = \det \begin{pmatrix} y_1(t) & y_2(t) \\ \frac{dy_1(t)}{dt} & \frac{dy_2(t)}{dt} \end{pmatrix}\).
 \end{remark}

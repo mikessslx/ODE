@@ -6,91 +6,91 @@ Consider the equation
 \[M(t, y) + N(t, y)\frac{dy}{dt} = 0 \ \left( \frac{d\phi(t, y(t))}{dt} = 0 \right)\]
 
 \begin{theorem}
-    If \(M\) and \(N\) are continuous functions with continuous partial derivatives in \(R = (a, b) \times (c, d)\), then there exists \(\phi\) such that \(\frac{\partial \phi}{\partial t} = M\) and \(\frac{\partial \phi}{\partial y} = N\) if and only if
-    \[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}.\]
+If \(M\) and \(N\) are continuous functions with continuous partial derivatives in \(R = (a, b) \times (c, d)\), then there exists \(\phi\) such that \(\frac{\partial \phi}{\partial t} = M\) and \(\frac{\partial \phi}{\partial y} = N\) if and only if
+\[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}.\]
 
-    In that case the general solution to the equation is given by \(\phi(t, y) = c\) for \(c \in \mathbb{R}\).
+In that case the general solution to the equation is given by \(\phi(t, y) = c\) for \(c \in \mathbb{R}\).
 \end{theorem}
 
 \subsection{Exercise}
 
 \begin{xca}
-    Solve the equation
-    \[2y + e^t + (2t + \sin(y))\frac{dy}{dt} = 0\]
+Solve the equation
+\[2y + e^t + (2t + \sin(y))\frac{dy}{dt} = 0\]
 \end{xca}
 \begin{proof}[Solution]
-    Notice that the equation is nonlinear and non-separable. Also, let \(M(t, y) = 2y + e^t\) and \(N(t, y) = 2t + \sin(y)\). These functions are continuous with continuous partial derivatives in \(\mathbb{R}^2\).
+Notice that the equation is nonlinear and non-separable. Also, let \(M(t, y) = 2y + e^t\) and \(N(t, y) = 2t + \sin(y)\). These functions are continuous with continuous partial derivatives in \(\mathbb{R}^2\).
 
-    We have
-    \[\frac{\partial M}{\partial y}(t, y) = 2 \ \text{and} \ \frac{\partial N}{\partial t}(t, y) = 2 \ \text{for every } (t, y) \in \mathbb{R}^2.\]
+We have
+\[\frac{\partial M}{\partial y}(t, y) = 2 \ \text{and} \ \frac{\partial N}{\partial t}(t, y) = 2 \ \text{for every } (t, y) \in \mathbb{R}^2.\]
 
-    We know that there exists \(\phi\) such that \(\frac{\partial \phi}{\partial y} = N\) and \(\frac{\partial \phi}{\partial t} = M\).
+We know that there exists \(\phi\) such that \(\frac{\partial \phi}{\partial y} = N\) and \(\frac{\partial \phi}{\partial t} = M\).
 
-    Then,
-    \begin{align*}
-        \frac{\partial \phi}{\partial t}(t, y) = M(t, y) &\implies \frac{\partial \phi}{\partial t}(t, y) = 2y + e^t \\
-        &\implies \phi(t, y) = 2y \int dt + \int e^t dt + h(y) \\
-        &\implies \phi(t, y) = 2yt + e^t + h(y), \\
-        \frac{\partial \phi}{\partial y}(t, y) = N(t, y) &\implies \frac{\partial}{\partial y} \left( 2yt + e^t + h(y) \right) = 2t + \sin(y) \\
-        &\implies 2t + h'(y) = 2t + \sin(y) \\
-        &\implies h'(y) = \sin(y).
-    \end{align*}
+Then,
+\begin{align*}
+\frac{\partial \phi}{\partial t}(t, y) = M(t, y) &\implies \frac{\partial \phi}{\partial t}(t, y) = 2y + e^t \\
+&\implies \phi(t, y) = 2y \int dt + \int e^t dt + h(y) \\
+&\implies \phi(t, y) = 2yt + e^t + h(y), \\
+\frac{\partial \phi}{\partial y}(t, y) = N(t, y) &\implies \frac{\partial}{\partial y} \left( 2yt + e^t + h(y) \right) = 2t + \sin(y) \\
+&\implies 2t + h'(y) = 2t + \sin(y) \\
+&\implies h'(y) = \sin(y).
+\end{align*}
 
-    Then we choose \(h(y) = -\cos(y)\). Therefore, \(\phi(t, y) = 2yt + e^t - \cos(y)\).
+Then we choose \(h(y) = -\cos(y)\). Therefore, \(\phi(t, y) = 2yt + e^t - \cos(y)\).
 
-    Finally, the solution is given implicitly by \(2yt + e^t - \cos(y) = C, \ C \in \mathbb{R}\).
+Finally, the solution is given implicitly by \(2yt + e^t - \cos(y) = C, \ C \in \mathbb{R}\).
 \end{proof}
 
 \begin{xca}
-    Solve the equation
-    \[y^2 + 4ye^t + 2(y+e^t)\frac{dy}{dt} = 0\]
+Solve the equation
+\[y^2 + 4ye^t + 2(y+e^t)\frac{dy}{dt} = 0\]
 \end{xca}
 \begin{proof}[Solution]
-    As before, we can check that we are under the assumptions of the theorem for \(M(t, y) = y^2 + 4ye^t\) and \(N(t, y) = 2(y+e^t)\), except the condition \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\) since
-    \[\frac{\partial M}{\partial y}(t, y) = 2y + 4e^t \ \text{and} \ \frac{\partial N}{\partial t}(t, y) = 2e^t, \ (t, y) \in \mathbb{R}^2.\]
+As before, we can check that we are under the assumptions of the theorem for \(M(t, y) = y^2 + 4ye^t\) and \(N(t, y) = 2(y+e^t)\), except the condition \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\) since
+\[\frac{\partial M}{\partial y}(t, y) = 2y + 4e^t \ \text{and} \ \frac{\partial N}{\partial t}(t, y) = 2e^t, \ (t, y) \in \mathbb{R}^2.\]
 
-    We look for some integrating factor \(\mu\) to transform the eq. into an exact eq.
-    \[\underbrace{\mu(t, y)(y^2 + 4ye^t)}_{\tilde{M}(t, y)} + \underbrace{\mu(t, y)2(y+e^t)}_{\tilde{N}(t, y)}\frac{dy}{dt} = 0\]
+We look for some integrating factor \(\mu\) to transform the eq. into an exact eq.
+\[\underbrace{\mu(t, y)(y^2 + 4ye^t)}_{\tilde{M}(t, y)} + \underbrace{\mu(t, y)2(y+e^t)}_{\tilde{N}(t, y)}\frac{dy}{dt} = 0\]
 
-    Recall that we deduced that there exists an integrating factor \(\mu = \mu(t)\) if and only if
-    \[\frac{1}{N} \left( \frac{\partial M}{\partial y} - \frac{\partial N}{\partial t} \right)\]
-    depends only on \(t\).
+Recall that we deduced that there exists an integrating factor \(\mu = \mu(t)\) if and only if
+\[\frac{1}{N} \left( \frac{\partial M}{\partial y} - \frac{\partial N}{\partial t} \right)\]
+depends only on \(t\).
 
-    We have,
-    \[\frac{1}{2(y+e^t)} (2y + 4e^t - 2e^t) = \frac{2y + 2e^t}{2(y+e^t)} = 1\]
+We have,
+\[\frac{1}{2(y+e^t)} (2y + 4e^t - 2e^t) = \frac{2y + 2e^t}{2(y+e^t)} = 1\]
 
-    Also, we know that \(\mu\) must be a solution to
-    \[\frac{d\mu}{dt} = \frac{1}{N} \left( \frac{\partial M}{\partial y} - \frac{\partial N}{\partial t} \right) \mu \iff \frac{d\mu}{dt} = \mu\]
+Also, we know that \(\mu\) must be a solution to
+\[\frac{d\mu}{dt} = \frac{1}{N} \left( \frac{\partial M}{\partial y} - \frac{\partial N}{\partial t} \right) \mu \iff \frac{d\mu}{dt} = \mu\]
 
-    We choose, \(\mu(t) = e^t\).
+We choose, \(\mu(t) = e^t\).
 
-    From now on, the solution follows as in the previous example:
+From now on, the solution follows as in the previous example:
 
-    We look for \(\phi\) such that \(\frac{\partial \phi}{\partial t} = \mu(t)M(t, y)\) and \(\frac{\partial \phi}{\partial y} = \mu(t)N(t, y)\).
+We look for \(\phi\) such that \(\frac{\partial \phi}{\partial t} = \mu(t)M(t, y)\) and \(\frac{\partial \phi}{\partial y} = \mu(t)N(t, y)\).
 
-    After the computations, we have \(\phi(t, y) = y^2e^t + 2ye^{2t}\) (exercise).
+After the computations, we have \(\phi(t, y) = y^2e^t + 2ye^{2t}\) (exercise).
 
-    The solution is given by \(y^2e^t + 2ye^{2t} = c, \ c \in \mathbb{R}\).
+The solution is given by \(y^2e^t + 2ye^{2t} = c, \ c \in \mathbb{R}\).
 \end{proof}
 
 \begin{xca}
-    Find the constant \(a \in \mathbb{R}\) such that the equation
-    \[\frac{1}{t^2} + \frac{1}{y^2} + \frac{at+1}{y^3} \frac{dy}{dt} = 0\]
-    is exact, and then solve the equation.
+Find the constant \(a \in \mathbb{R}\) such that the equation
+\[\frac{1}{t^2} + \frac{1}{y^2} + \frac{at+1}{y^3} \frac{dy}{dt} = 0\]
+is exact, and then solve the equation.
 \end{xca}
 \begin{proof}[Solution]
-    Let \(M(t, y) = \frac{1}{t^2} + \frac{1}{y^2}\) and \(N(t, y) = \frac{at+1}{y^3}\). These functions are continuous and have continuous partial derivatives in every \(R = (a, b) \times (c, d)\) not containing the origin \((t, y) = (0, 0)\).
+Let \(M(t, y) = \frac{1}{t^2} + \frac{1}{y^2}\) and \(N(t, y) = \frac{at+1}{y^3}\). These functions are continuous and have continuous partial derivatives in every \(R = (a, b) \times (c, d)\) not containing the origin \((t, y) = (0, 0)\).
 
-    Let \(R\) a rectangle as before. We'll find \(a\) such that
-    \[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t} \rightsquigarrow a = -2. \ (\text{exercise})\]
+Let \(R\) a rectangle as before. We'll find \(a\) such that
+\[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t} \rightsquigarrow a = -2. \ (\text{exercise})\]
 
-    After solving the eq., we find the solution given by \(-\frac{1}{t} + \frac{1}{y^2}(t-1) = c, \ c \in \mathbb{R}\).
+After solving the eq., we find the solution given by \(-\frac{1}{t} + \frac{1}{y^2}(t-1) = c, \ c \in \mathbb{R}\).
 \end{proof}
 
 \begin{remark}
-    Suppose we also have the initial condition \(y(2) = 1\).
+Suppose we also have the initial condition \(y(2) = 1\).
 
-    From this, \(c = \frac{1}{2}\). The solution is \(y^2 = \frac{t-1}{2+t} 2t\).
+From this, \(c = \frac{1}{2}\). The solution is \(y^2 = \frac{t-1}{2+t} 2t\).
 
-    This makes sense iff \(\frac{t-1}{2+t} 2t \geq 0\). From here, we find the domain (exercise).
+This makes sense iff \(\frac{t-1}{2+t} 2t \geq 0\). From here, we find the domain (exercise).
 \end{remark}

@@ -9,29 +9,29 @@
 \(y(t) = e^{-\int a(t) dt} (\int b(t)e^{\int a(t) dt} dt + c)\), \(C \in \mathbb{R}, t \in \mathbb{R}\). (General solution to \(\frac{dy}{dt} + a(t)y = b(t)\).)
 
 \begin{xca}
-    Solve the initial-value problem
-    \[\begin{cases}
-        \frac{dy}{dt} + ty = 2t \\
-        y(0) = 1
-    \end{cases}\]
+Solve the initial-value problem
+\[\begin{cases}
+\frac{dy}{dt} + ty = 2t \\
+y(0) = 1
+\end{cases}\]
 \end{xca}
 \begin{proof}[Solution]
-    Observe that the given equ. is linear, so it can be written as
-    \[\frac{dy}{dt} + a(t)y = b(t) \ \text{where} \ a(t) = t, \ b(t) = 2t\]
-    with \(a(t), b(t)\) continuous in \(\mathbb{R}\).
-    
-    So the general solution to the eq. is given by
-    \begin{align*}
-        y(t) &= e^{-\int a(t) dt} \left( \int b(t) e^{\int a(t) dt} dt + C \right) \\
-        &= e^{-\int t dt} \left( \int 2t e^{\int t dt} dt + C \right) \\
-        &= e^{-t^2/2} \left( \int 2t e^{t^2/2} dt + C \right) \\
-        &= e^{-t^2/2} \left( 2e^{t^2/2} + C \right) \\
-        &= 2 + Ce^{-t^2/2}, \ C \in \mathbb{R}, \ t \in \mathbb{R}
-    \end{align*}
-    
-    \(y(0) = 2 + C e^0 = 2 + C = 1 \iff C = -1\).
-    
-    So, \(y(t) = 2 - e^{-t^2/2}, \ t \in \mathbb{R}\).
+Observe that the given equ. is linear, so it can be written as
+\[\frac{dy}{dt} + a(t)y = b(t) \ \text{where} \ a(t) = t, \ b(t) = 2t\]
+with \(a(t), b(t)\) continuous in \(\mathbb{R}\).
+
+So the general solution to the eq. is given by
+\begin{align*}
+y(t) &= e^{-\int a(t) dt} \left( \int b(t) e^{\int a(t) dt} dt + C \right) \\
+&= e^{-\int t dt} \left( \int 2t e^{\int t dt} dt + C \right) \\
+&= e^{-t^2/2} \left( \int 2t e^{t^2/2} dt + C \right) \\
+&= e^{-t^2/2} \left( 2e^{t^2/2} + C \right) \\
+&= 2 + Ce^{-t^2/2}, \ C \in \mathbb{R}, \ t \in \mathbb{R}
+\end{align*}
+
+\(y(0) = 2 + C e^0 = 2 + C = 1 \iff C = -1\).
+
+So, \(y(t) = 2 - e^{-t^2/2}, \ t \in \mathbb{R}\).
 \end{proof}
 
 \subsection{Separable equations}
@@ -41,59 +41,59 @@ Given an ODE of first-order, \(\frac{dy}{dt} = f(t, y)\), we say that the equati
 
 Observe that the equ. is equivalent to
 \begin{align*}
-    h(y) \frac{dy}{dt} &= g(t) \\
-    h(y(t)) y'(t) &= g(t)
+h(y) \frac{dy}{dt} &= g(t) \\
+h(y(t)) y'(t) &= g(t)
 \end{align*}
 
 Integrate:
 \begin{align*}
-    \int h(y(t)) y'(t) dt &= \int g(t) dt \\
-    \int h(y) dy &= \int g(t) dt,
+\int h(y(t)) y'(t) dt &= \int g(t) dt \\
+\int h(y) dy &= \int g(t) dt,
 \end{align*}
 where \(y = y(t)\).
 
 By solving, if possible, the integral in the LHS, we find a formula for \(y(t)\) which sometimes gives us \(y(t)\) in an implicit way.
 
 \begin{remark}
-    In the context of ODEs. a first-order linear equation is one of the form:
-    \[\underbrace{\left[ \frac{dy}{dt} + a(t)y \right]}_{\text{differential operator}} = b(t)\]
-    or more generally:
-    \[c(t)\frac{dy}{dt} + a(t)y = b(t).\]
+In the context of ODEs. a first-order linear equation is one of the form:
+\[\underbrace{\left[ \frac{dy}{dt} + a(t)y \right]}_{\text{differential operator}} = b(t)\]
+or more generally:
+\[c(t)\frac{dy}{dt} + a(t)y = b(t).\]
     
-    Observe that \(f(t, y) = b(t) - a(t)y\). We have
-    \[f(t, \alpha y + \beta z) \neq \alpha f(t, y) + \beta f(t, z).\]
+Observe that \(f(t, y) = b(t) - a(t)y\). We have
+\[f(t, \alpha y + \beta z) \neq \alpha f(t, y) + \beta f(t, z).\]
 \end{remark}
 
 \begin{xca}
-    Solve the initial-value problem
-    \[\begin{cases}
-        e^y \frac{dy}{dt} = t \\
-        y(1) = 1
-    \end{cases}\]
+Solve the initial-value problem
+\[\begin{cases}
+e^y \frac{dy}{dt} = t \\
+y(1) = 1
+\end{cases}\]
 \end{xca}
 \begin{proof}[Solution]
-    Notice that the equ. can be written as
-    \[\frac{dy}{dt} = f(t, y) \ \text{where} \ f(t, y) = \frac{g(t)}{h(y)}, \ g(t) = t, \ h(y) = e^y.\]
-    
-    Observe that the ODE is nonlinear. However, it's separable.
-    \begin{align*}
-        \int e^{y(t)} y'(t) dt &= \int t dt \\
-        e^{y(t)} &= t^2/2 + C \\
-        y(t) &= \ln\left( \frac{t^2}{2} + C \right)
-    \end{align*}
-    
-    Notice that
-    \begin{itemize}
-        \item if \(C > 0\), then \(\frac{t^2}{2} + C > 0\) for all \(t \in \mathbb{R}\);
-        \item if \(C \leq 0\), then \(\frac{t^2}{2} + C > 0 \iff |t| > \sqrt{-2C} \iff t \in (-\infty, -\sqrt{-2C}) \cup (\sqrt{-2C}, +\infty)\).
-    \end{itemize}
-    
-    We have
-    \begin{align*}
-        y(1) = 1 \iff \ln\left( \frac{1}{2} + C \right) &= 1 \\
-        \frac{1}{2} + C &= e \\
-        C = e - \frac{1}{2} &> 0
-    \end{align*}
-    
-    Therefore, \(y(t) = \ln\left( \frac{t^2}{2} + e - \frac{1}{2} \right), \ t \in \mathbb{R}\).
+Notice that the equ. can be written as
+\[\frac{dy}{dt} = f(t, y) \ \text{where} \ f(t, y) = \frac{g(t)}{h(y)}, \ g(t) = t, \ h(y) = e^y.\]
+
+Observe that the ODE is nonlinear. However, it's separable.
+\begin{align*}
+\int e^{y(t)} y'(t) dt &= \int t dt \\
+e^{y(t)} &= t^2/2 + C \\
+y(t) &= \ln\left( \frac{t^2}{2} + C \right)
+\end{align*}
+
+Notice that
+\begin{itemize}
+\item if \(C > 0\), then \(\frac{t^2}{2} + C > 0\) for all \(t \in \mathbb{R}\);
+\item if \(C \leq 0\), then \(\frac{t^2}{2} + C > 0 \iff |t| > \sqrt{-2C} \iff t \in (-\infty, -\sqrt{-2C}) \cup (\sqrt{-2C}, +\infty)\).
+\end{itemize}
+
+We have
+\begin{align*}
+y(1) = 1 \iff \ln\left( \frac{1}{2} + C \right) &= 1 \\
+\frac{1}{2} + C &= e \\
+C = e - \frac{1}{2} &> 0
+\end{align*}
+
+Therefore, \(y(t) = \ln\left( \frac{t^2}{2} + e - \frac{1}{2} \right), \ t \in \mathbb{R}\).
 \end{proof}

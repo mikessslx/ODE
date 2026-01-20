@@ -16,8 +16,8 @@ As the eigenvalues are real and distinct, we know that \(y^{(1)}(t) = v_1 e^{-5t
 
 Let's compute \(v_1\).
 \begin{align*}
-    A v_1 = \lambda_1 v &\iff \begin{pmatrix} 1 & 12 \\ 3 & 1 \end{pmatrix} \begin{pmatrix} u \\ w \end{pmatrix} = -5 \begin{pmatrix} u \\ w \end{pmatrix} \iff \begin{cases} u + 12w = -5u \\ 3u + w = -5w \end{cases} \\
-    &\iff \begin{cases} 6u + 12w = 0 \\ 3u + 6w = 0 \end{cases} \iff u + 2w = 0.
+A v_1 = \lambda_1 v &\iff \begin{pmatrix} 1 & 12 \\ 3 & 1 \end{pmatrix} \begin{pmatrix} u \\ w \end{pmatrix} = -5 \begin{pmatrix} u \\ w \end{pmatrix} \iff \begin{cases} u + 12w = -5u \\ 3u + w = -5w \end{cases} \\
+&\iff \begin{cases} 6u + 12w = 0 \\ 3u + 6w = 0 \end{cases} \iff u + 2w = 0.
 \end{align*}
 
 For \(w = 1\), we have \(u = -2\). Then, \(v_1 = \begin{pmatrix} -2 \\ 1 \end{pmatrix}\).
@@ -44,9 +44,9 @@ If \(\omega = 1\), then \(v_2 = \begin{pmatrix} 0 \\ 1 \\ -i \end{pmatrix} = \be
 
 From here, we have
 \begin{align*}
-    z^{(2)}(t) &= \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + i \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} \right] e^t (\cos t + i\sin t) \\
-    &= \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} e^t \cos t - \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} e^t \sin t + i \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} e^t \sin t + \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} e^t \cos t \right] \\
-    &= y^{(2)}(t) + i y^{(3)}(t)
+z^{(2)}(t) &= \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + i \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} \right] e^t (\cos t + i\sin t) \\
+&= \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} e^t \cos t - \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} e^t \sin t + i \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} e^t \sin t + \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} e^t \cos t \right] \\
+&= y^{(2)}(t) + i y^{(3)}(t)
 \end{align*}
 
 Notice that \(y^{(1)}, y^{(2)}, y^{(3)}\) are solutions, and they are l.i. since

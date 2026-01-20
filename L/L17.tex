@@ -9,29 +9,29 @@ Also, \(F_{\text{total}} = W + R + D + F\).
 
 Here,
 \begin{itemize}
-    \item \(W\) is the forced caused by the weight of the object, \(W > 0\), moreover, \(W = mg\), where \(g\) is the gravitational acceleration.
+\item \(W\) is the forced caused by the weight of the object, \(W > 0\), moreover, \(W = mg\), where \(g\) is the gravitational acceleration.
 
-    \item \(R\) is the restoring force. We know that \(R\) is proportional, by a constant \(k\), to the elongation or compression of the spring respect to its natural length, \(\Delta l + y\).
-    \begin{itemize}
-        \item If \(\Delta l + y > 0\), then \(R < 0\). Hence \(R = -k(\Delta l + y)\).
-        \item If \(\Delta l + y < 0\), then \(R > 0\). Hence \(R = -k(\Delta l + y)\).
-    \end{itemize}
+\item \(R\) is the restoring force. We know that \(R\) is proportional, by a constant \(k\), to the elongation or compression of the spring respect to its natural length, \(\Delta l + y\).
+\begin{itemize}
+\item If \(\Delta l + y > 0\), then \(R < 0\). Hence \(R = -k(\Delta l + y)\).
+\item If \(\Delta l + y < 0\), then \(R > 0\). Hence \(R = -k(\Delta l + y)\).
+\end{itemize}
 
-    Thus in either case, \(R = -k(\Delta l + y)\).
+Thus in either case, \(R = -k(\Delta l + y)\).
 
-    \item \(D\) is the damping force caused by the medium. Usually it acts in the direction opposite to the movement, and it is proportional to the magnitude of the velocity. (experimental law)
-    \begin{itemize}
-        \item If \(\frac{dy}{dt} > 0\), then \(D < 0\). Also, \(D = -c \frac{dy}{dt}\), where \(c > 0\) depending on the medium where the system is immersed.
-        \item Also, if \(\frac{dy}{dt} < 0\), then \(D > 0\) and \(D = -c \frac{dy}{dt}\).
-    \end{itemize}
+\item \(D\) is the damping force caused by the medium. Usually it acts in the direction opposite to the movement, and it is proportional to the magnitude of the velocity. (experimental law)
+\begin{itemize}
+\item If \(\frac{dy}{dt} > 0\), then \(D < 0\). Also, \(D = -c \frac{dy}{dt}\), where \(c > 0\) depending on the medium where the system is immersed.
+\item Also, if \(\frac{dy}{dt} < 0\), then \(D > 0\) and \(D = -c \frac{dy}{dt}\).
+\end{itemize}
 
-    \item \(F\) is an external forced in the vertical direction (it usually depends on \(t\)).
+\item \(F\) is an external forced in the vertical direction (it usually depends on \(t\)).
 \end{itemize}
 
 Thus,
 \begin{align*}
-    m \frac{d^2 y}{dt^2} &= mg - k(\Delta l + y) - c \frac{dy}{dt} + F \\
-    &= \underbrace{mg - k \Delta l}_{=0} - ky - c \frac{dy}{dt} + F
+m \frac{d^2 y}{dt^2} &= mg - k(\Delta l + y) - c \frac{dy}{dt} + F \\
+&= \underbrace{mg - k \Delta l}_{=0} - ky - c \frac{dy}{dt} + F
 \end{align*}
 i.e.
 \[m \frac{d^2 y}{dt^2} + c \frac{dy}{dt} + ky = F \tag{20}\]
@@ -46,10 +46,10 @@ The char. polynomial is \(p(\lambda) = \lambda^2 + \omega_0^2\). The roots are \
 
 Assume that \(c_1 \neq 0\). Then, \(y(t) = R \cos(\omega_0 t - \delta)\), where \(\delta \in (-\frac{\pi}{2}, \frac{\pi}{2})\), \(\tan \delta = \frac{c_2}{c_1}\) and \(R = \sqrt{c_1^2 + c_2^2}\) (exercise). Observe that \(y\) is bounded, more precisely, \(|y(t)| \leq R\) for all \(t \geq 0\). Also, \(y\) is periodic with period \(\frac{2\pi}{\omega_0}\). The solution behaves in the same way if \(c_1 = 0\). This type of motion is called simple harmonic motion. Also,
 \begin{align*}
-    R &: \text{amplitude of the motion} \\
-    T_0 = \frac{2\pi}{\omega_0} &: \text{natural period of the motion} \\
-    \delta &: \text{phase angle of the motion} \\
-    \omega_0 = \sqrt{\frac{k}{m}} &: \text{natural frequency of the motion}
+R &: \text{amplitude of the motion} \\
+T_0 = \frac{2\pi}{\omega_0} &: \text{natural period of the motion} \\
+\delta &: \text{phase angle of the motion} \\
+\omega_0 = \sqrt{\frac{k}{m}} &: \text{natural frequency of the motion}
 \end{align*}
 
 \subsection{Damped free vibrations (\(c \neq 0, F \equiv 0\))}
@@ -59,29 +59,29 @@ Eq.(20) is \(m \frac{d^2 y}{dt^2} + c \frac{dy}{dt} + ky = 0\). The characterist
 The roots are given by \(\frac{-c \pm \sqrt{c^2 - 4mk}}{2m}\).
 
 \begin{itemize}
-    \item Assume \(c^2 - 4mk > 0\). Then, the roots are
-    \[0 > \lambda_1 = \frac{-c + \sqrt{c^2 - 4mk}}{2m} \ \text{and} \ \lambda_2 = \frac{-c - \sqrt{c^2 - 4mk}}{2m} < 0\]
-    Hence, the general solution is
-    \[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
+\item Assume \(c^2 - 4mk > 0\). Then, the roots are
+\[0 > \lambda_1 = \frac{-c + \sqrt{c^2 - 4mk}}{2m} \ \text{and} \ \lambda_2 = \frac{-c - \sqrt{c^2 - 4mk}}{2m} < 0\]
+Hence, the general solution is
+\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
 
-    This motion is known as \textbf{overdamped motion}.
+This motion is known as \textbf{overdamped motion}.
 
-    \item Assume that \(c^2 - 4mk = 0\).
-    The char. polynomial has a double root \(\lambda = -\frac{c}{2m}\).
-    The general solution is
-    \[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} + c_2 t e^{-\frac{c t}{2m}}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
+\item Assume that \(c^2 - 4mk = 0\).
+The char. polynomial has a double root \(\lambda = -\frac{c}{2m}\).
+The general solution is
+\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} + c_2 t e^{-\frac{c t}{2m}}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
     
-    This motion is known as \textbf{critically damped motion}.
+This motion is known as \textbf{critically damped motion}.
 
-    \item Assume that \(c^2 - 4mk < 0\).
-    The roots of the char. polynomial are
-    \[\lambda = -\frac{c}{2m} + i \frac{\sqrt{4mk - c^2}}{2m} \ \text{and} \ \bar{\lambda}\]
-    The general solution is
-    \[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} \cos(\mu t) + c_2 e^{-\frac{c t}{2m}} \sin(\mu t), \ t \geq 0, \ c_1, c_2 \in \mathbb{R},\]
-    where \(\mu = \frac{1}{2m} \sqrt{4mk - c^2}\).
+\item Assume that \(c^2 - 4mk < 0\).
+The roots of the char. polynomial are
+\[\lambda = -\frac{c}{2m} + i \frac{\sqrt{4mk - c^2}}{2m} \ \text{and} \ \bar{\lambda}\]
+The general solution is
+\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} \cos(\mu t) + c_2 e^{-\frac{c t}{2m}} \sin(\mu t), \ t \geq 0, \ c_1, c_2 \in \mathbb{R},\]
+where \(\mu = \frac{1}{2m} \sqrt{4mk - c^2}\).
 
-    This motion is called \textbf{damped vibrations}. Observe that, for \(c_1 \neq 0\),
-    \[y(t) = e^{-\frac{ct}{2m}} R \cos(\mu t - \delta) \ \text{and} \ y(t) = e^{-\frac{ct}{2m}} c_2 \cos(\mu t - \pi/2) \ \text{if } c_1 = 0.\]
+This motion is called \textbf{damped vibrations}. Observe that, for \(c_1 \neq 0\),
+\[y(t) = e^{-\frac{ct}{2m}} R \cos(\mu t - \delta) \ \text{and} \ y(t) = e^{-\frac{ct}{2m}} c_2 \cos(\mu t - \pi/2) \ \text{if } c_1 = 0.\]
 \end{itemize}
 
 \subsection{Damped forced vibrations (\(c \neq 0, F \neq 0\))}

@@ -1,0 +1,107 @@
+\section{Tutorial 13 - 01.13}
+
+\subsection{Theorem (cont.)}
+
+\begin{theorem}
+We are working with
+\begin{align*}
+\frac{d}{dt} \left( p \frac{dy}{dt} \right) - qy &= -\mu r y + f \quad \alpha < t < \beta \tag{40} \\
+B_\alpha[y] = B_\beta[y] &= 0 \tag{41}
+\end{align*}
+
+Only one of these are true:
+\begin{enumerate}
+\item[(a)] The nonhom. prob. admits a unique sol. for every \(f \in C[\alpha, \beta]\).
+\item[(b)] The associated hom. prob. has non trivial solutions.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Proof is commented out!
+\end{remark}
+
+% \begin{proof}[Proof (under additional assumptions)]
+% Sketch from yesterday.
+
+% A function \(y \in C^2(\alpha, \beta) \cap C^1[\alpha, \beta]\) satisfies (40) in \(I \subset (\alpha, \beta)\) and (41) iff \(y\) satisfies (41) and
+% \[\sum_{n=1}^\infty ((\lambda_n - \mu)B_n + C_n) y_n = 0 \quad \text{in } I,\]
+% where
+% \[\frac{f}{r} = \sum_{n=1}^\infty C_n y_n \text{ in } I. \quad \text{Recall } y = \sum_{n=0}^\infty B_n y_n.\]
+
+% If \((\lambda_n - \mu)B_n + C_n = 0\) for all \(n \ge 0\) then \(\sum_{n=1}^\infty ((\lambda_n - \mu)B_n + C_n) y_n = 0\) in \(I\).
+
+% Reciprocally, if \(\sum_{n=0}^\infty (\lambda_n - \mu)B_n + C_n) y_n = 0\) in every \(I \subset (\alpha, \beta)\), \(I\) closed, then
+% \begin{align*}
+% 0 &= \int_\alpha^\beta r y_m \sum_{n=0}^\infty ((\lambda_n - \mu)B_m + C_m) y_n \, dt = \sum_{n=0}^\infty ((\lambda_n - \mu)B_n + C_n) \underbrace{\int_\alpha^\beta r y_n y_m \, dt}_{\begin{cases} 1 & \text{if } n=m \\ 0 & \text{if } n \neq m \end{cases}} \\
+% &= (\lambda_m - \mu)B_m + C_m \quad \text{for all } m \ge 0.
+% \end{align*}
+
+% Assume that \(\mu \neq \lambda_n\) for all \(n \ge 0\).
+
+% If \(B_n = \frac{C_n}{\mu - \lambda_n}\), \(n \ge 0\), then \(y = \sum_{n=0}^\infty B_n y_n\) solves the eq. in \((\alpha, \beta)\). Also,
+% \begin{align*}
+% B_\alpha[y] &= a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = a_1 \sum_{n=0}^\infty B_n y_n(\alpha) + b_1 \sum_{n=0}^\infty B_n \frac{dy_n}{dt}(\alpha) \\
+% &= \sum_{n=0}^\infty B_n \underbrace{\left( a_1 y_n(\alpha) + b_1 \frac{dy_n}{dt}(\alpha) \right)}_{=0} = 0, \text{ similarly } B_\beta[y] = 0.
+% \end{align*}
+
+% Then, (a) is true and (b) fails.
+
+% Assume that \(\mu = \lambda_m\) for some \(m \ge 0\).
+% The eq. \((\lambda_m - \mu)B_m + C_m = 0\) reduces to \(C_m = 0\).
+% If \(C_m = 0\) then \(y = \sum_{n=0}^\infty B_n y_n\) solves the nonhom. problem where
+% \[B_n = \frac{C_n}{\mu - \lambda_n} \text{ if } n \neq m, \text{ and } B_m \text{ is any number}.\]
+
+% Then (a) fails because the nonhom. prob. has infinitely many solutions, and (b) is true.
+
+% Finally, assume that \(C_m \neq 0\). Then \((\lambda_m + \mu)B_m + C_m = 0\) does not admit any solution. Then, there is no solution to the eq. in \((\alpha, \beta)\).
+% Then, (a) fails because the problem has no solutions, and (b) is true.
+% \end{proof}
+
+\subsection{Final Review}
+
+\paragraph{\S1. ODEs. Some Sol. Meth. For First-Order Eqs.}
+\begin{itemize}
+\item Classification: order, scalar eqs / system of eqs, linear and nonlinear eqs.
+\item Sol. meth.: meth. of integ. factor for linear eqs., direct integ. for separable eqs., sol. meth. for exact eqs. and meth. of integ. factors for non-exact eqs.
+\end{itemize}
+
+\paragraph{\S2. The Existence and Uniq. Thm. For First-Order Eqs.}
+\begin{align*}
+\begin{cases} \frac{dy}{dt} = f(t, y) \\ y(t_0) = y_0 \end{cases} \quad
+\begin{aligned}
+&\text{Picard-Lindelof } (\exists !) \\
+&\text{Cauchy-Peano } (\exists) \\
+&\text{Picard iterates.}
+\end{aligned}
+\end{align*}
+
+\begin{itemize}
+\item Continuation of sol.
+\item Linear eqs. with cont. coeff. have global sol.
+\end{itemize}
+
+\paragraph{\S3. Systems of First-Order Eqs ($n$th-order Eqs)}
+\begin{itemize}
+\item The results from \S 2 extend to the context of systems and eqs (as they have associated systems).
+\item Linear systems, \(\frac{dy}{dt} = A(t)y + b(t)\). Structure of the set of solutions. Solution matrix. Meth. of variation of parameters.
+\item Wronskian.
+\end{itemize}
+
+\paragraph{\S4. Linear Systems with Const. Coeff.}
+\[\frac{dy}{dt} = Ay + b\]
+\begin{itemize}
+\item Basis of sol. to \(\frac{dy}{dt} = Ay\) is related to the eigenval. and eigenvectors of \(A\).
+\item Exponential matrix.
+\end{itemize}
+
+\paragraph{\S5. Sol. Meth. for Second-Order Linear Eqs.}
+\begin{itemize}
+\item Const. coeff.: Roots of the char. polynomial and basis.
+\item Non-const. coeff.: Series sol. meth.
+\end{itemize}
+
+\paragraph{\S6. Sturm-Liouville Theory.}
+\begin{itemize}
+\item Main thm.
+\item Fredholm alternative.
+\end{itemize}
