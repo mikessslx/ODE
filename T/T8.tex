@@ -4,32 +4,33 @@
 
 \begin{xca}
 Find the general solution to
-\[\frac{d^2y}{dt^2} - 2\frac{dy}{dt} + y = t\]
+{\color{blue}\[\frac{d^2y}{dt^2} - 2\frac{dy}{dt} + y = t\]}
 \end{xca}
 \begin{proof}[Solution]
 As the equation is linear with continuous coefficients and continuous right-hand side in \(\mathbb{R}\), the general solution is \(y(t) = y_H(t) + y_p(t), \ t \in \mathbb{R}\), where \(y_H\) is the general solution to
 \[\frac{d^2y}{dt^2} - 2 \frac{dy}{dt} + y = 0\]
+
 and \(y_p\) is a particular solution.
 
 As the homogeneous equation has constant coefficients, we have a solution method to find \(y_H\).
 The characteristic polynomial is \(p(\lambda) = \lambda^2 - 2\lambda + 1 = (\lambda - 1)^2\), and it has \(\lambda = 1\) as root with multiplicity 2.
-Then, the functions \(y_1(t) = e^t, \ y_2(t) = te^t, \ t \in \mathbb{R}\), define a basis of solutions.
-From this, we have \(y_H(t) = c_1 y_1 + c_2 y_2, \ c_1, c_2 \in \mathbb{R}\).
+{\color{blue}Then, the functions \(y_1(t) = e^t, \ y_2(t) = te^t, \ t \in \mathbb{R}\), define a basis of solutions.
+From this, we have \(y_H(t) = c_1 y_1 + c_2 y_2, \ c_1, c_2 \in \mathbb{R}\).}
 
 \begin{remark}
 \[W(y_1, y_2)(t) = \det \begin{pmatrix} y_1(t) & y_2(t) \\ \frac{dy_1(t)}{dt} & \frac{dy_2(t)}{dt} \end{pmatrix} = \det \begin{pmatrix} e^t & te^t \\ e^t & (1+t)e^t \end{pmatrix} = ((1+t) - t)e^{2t} = e^{2t} \neq 0 \ \forall t\]
 
-So \(e^t\) and \(te^t\) are linearly independent in \(\mathbb{R}\).
+{\color{blue}So \(e^t\) and \(te^t\) are linearly independent in \(\mathbb{R}\).}
 \end{remark}
 
-Let's look for a particular solution \(y_p\) in the form \(y_p(t) = at + b\).
+{\color{blue}Let's look for a particular solution \(y_p\) in the form \(y_p(t) = at + b\).}
 
 \begin{remark}
-Consider the system \(\frac{dY}{dt} = AY\), \(Y^{(1)} = \binom{y_1^{(1)}}{y_2^{(1)}}\), \(Y^{(2)} = \binom{y_1^{(2)}}{y_2^{(2)}}\).
+\sout{Consider the system \(\frac{dY}{dt} = AY\), \(Y^{(1)} = \binom{y_1^{(1)}}{y_2^{(1)}}\), \(Y^{(2)} = \binom{y_1^{(2)}}{y_2^{(2)}}\).
 \(Y^{(1)}, Y^{(2)}\) are l.i. iff \(Y^{(1)}(t_0), Y^{(2)}(t_0)\) are l.i.
 
 Using our functions: \(Y^{(1)}(t) = \binom{e^t}{e^t}\), \(Y^{(2)}(t) = \binom{te^t}{(1+t)e^t}\).
-If \(t=0\), \(Y^{(1)}(0) = \binom{1}{1}\), \(Y^{(2)}(0) = \binom{0}{1}\), which are l.i.
+If \(t=0\), \(Y^{(1)}(0) = \binom{1}{1}\), \(Y^{(2)}(0) = \binom{0}{1}\), which are l.i.}
 \end{remark}
 
 Observe that \(y_p(t) = at + b, \frac{dy_p}{dt} = a, \frac{d^2y_p}{dt^2} = 0\).
@@ -40,9 +41,9 @@ Then,
 &\iff \begin{cases} a-1=0 \\ b-2a=0 \end{cases} \iff \begin{cases} a=1 \\ b=2 \end{cases}
 \end{align*}
 
-A particular solution is \(y_p(t) = t + 2\).
+{\color{blue}A particular solution is \(y_p(t) = t + 2\).}
 
-Then, \(y(t) = c_1 e^t + c_2 te^t + t + 2, \ t \in \mathbb{R}, \ c_1, c_2 \in \mathbb{R}\).
+{\color{blue}Then, \(y(t) = c_1 e^t + c_2 te^t + t + 2, \ t \in \mathbb{R}, \ c_1, c_2 \in \mathbb{R}\).}
 \end{proof}
 
 \begin{xca}
@@ -56,23 +57,23 @@ Consider the problem of describing the motion of an object of mass \(m\) which i
 An elastic spring has the property that if it is compressed or stretched by \(\Delta l\) then it exerts a restoring force proportional to \(\Delta l\): \(k \Delta l\), where \(k\) is the spring-constant. At rest, if no external forces are present, \(k \Delta l = mg\) where \(g\) is the acceleration of gravity.
 
 It can be shown that \(y\) is governed by
-\[m \frac{d^2y}{dt^2} + c \frac{dy}{dt} + ky = F(t)\]
+{\color{blue}\[m \frac{d^2y}{dt^2} + c \frac{dy}{dt} + ky = F(t)\]}
 
 \begin{itemize}
-\item \(m\): mass of the object
-\item \(c\): constant related to the medium (\(c \ge 0\))
-\item \(k\): spring-constant (\(k > 0\))
-\item \(F\): external force
+\item {\color{blue}\(m\): mass of the object}
+\item {\color{blue}\(c\): constant related to the medium (\(c \ge 0\))}
+\item {\color{blue}\(k\): spring-constant (\(k > 0\))}
+\item {\color{blue}\(F\): external force}
 \end{itemize}
 
 We'll analyze these cases:
 \begin{itemize}
-\item Free vibrations (\(c=0, F=0\))
-\item Damped free vibrations (\(c \neq 0, F=0\))
-\item Damped forced vibrations (\(c \neq 0, F \neq 0\))
-\item Forced free vibrations (\(c=0, F \neq 0\))
+\item {\color{blue}Free vibrations (\(c=0, F=0\))}
+\item {\color{blue}Damped free vibrations (\(c \neq 0, F=0\))}
+\item {\color{blue}Damped forced vibrations (\(c \neq 0, F \neq 0\))}
+\item {\color{blue}Forced free vibrations (\(c=0, F \neq 0\))}
     
-\(\rightsquigarrow\) A special case models resonance. (Tacoma Bridge (1940))
+\sout{\(\rightsquigarrow\) A special case models resonance. (Tacoma Bridge (1940))}
 \end{itemize}
 
 \end{example}

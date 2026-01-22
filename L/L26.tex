@@ -3,54 +3,54 @@
 \subsection{Example (cont.)}
 
 We are working with
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 t^2 \frac{d^2y}{dt^2} = \lambda \left( t \frac{dy}{dt} - y \right) & 1 < t < 2 \\
 y(1) = 0, \, y(2) = 0
-\end{cases}\]
+\end{cases}\]}
 
-Recall that this is not a regular Sturm-Liouville problem. Also, that the problem does not have any nontrivial solution if \(\lambda \in \mathbb{R}\), i.e. the problem does not have any real eigenvalue.
+Recall that this is {\color{blue}\text{not a regular Sturm-Liouville problem}.} Also, that the problem {\color{blue}\text{does not have any real eigenvalue}.}
 
-Assume now that \(\lambda \in \mathbb{C}, \lambda \notin \mathbb{R}\). Let's look for a solution in the form \(y(t) = t^r\) where \(r \in \mathbb{C}\). As for the Euler's equation, we find that \(y\) solves the equation if and only if \(r\) is a solution to \(r^2 - (\lambda + 1)r + \lambda = 0\). Observe first that
-\[\Delta = (\lambda+1)^2 - 4\lambda = (\lambda-1)^2,\]
+{\color{blue}Assume now that \(\lambda \in \mathbb{C}, \lambda \notin \mathbb{R}\).} Let's look for a solution in the form {\color{blue}\(y(t) = t^r\) where \(r \in \mathbb{C}\).} As for the Euler's equation, we find that \(y\) solves the equation if and only if \(r\) is a solution to {\color{blue}\(r^2 - (\lambda + 1)r + \lambda = 0\).} Observe first that
+{\color{blue}\[\Delta = (\lambda+1)^2 - 4\lambda = (\lambda-1)^2,\]}
 and that the roots are given by
-\[\frac{(\lambda+1) \pm \sqrt{\Delta}}{2}.\]
+{\color{blue}\[\frac{(\lambda+1) \pm \sqrt{\Delta}}{2}.\]}
 
 Then, we find that the solutions are
-\[\frac{(\lambda+1) + \lambda - 1}{2} = \lambda \ \text{and} \ \frac{\lambda+1 - \lambda + 1}{2} = 1.\]
+{\color{blue}\[\frac{(\lambda+1) + \lambda - 1}{2} = \lambda \ \text{and} \ \frac{\lambda+1 - \lambda + 1}{2} = 1.\]}
 
-Then, we have two solutions, \(t^\lambda\) and \(t\). Also, observe that \(y(t) = A t^\lambda + Bt\) is also a solution for any \(A, B \in \mathbb{C}\).
-Also, \(y(1) = A+B=0\) iff \(A=-B\), and
+Then, we have two solutions, {\color{blue}\(t^\lambda\) and \(t\).} Also, observe that {\color{blue}\(y(t) = A t^\lambda + Bt\)} is also a solution for any \(A, B \in \mathbb{C}\).
+Also, \(y(1) = A+B=0\) iff {\color{blue}\(A=-B\),} and
 \begin{align*}
 y(2) &= A(2^\lambda - 2) \\
 &= A \left( e^{\lambda \ln 2} - 2 \right) \\
 &\underset{\lambda = \alpha + i\beta, \, \beta \neq 0}{=} A \left( e^{\alpha \ln 2} e^{i \beta \ln 2} - 2 \right) \\
 &= A \left( 2^\alpha (\cos(\beta \ln 2) + i \sin(\beta \ln 2)) - 2 \right) = 0
 \end{align*}
-if \(\beta = \frac{2\pi}{\ln 2}\) and \(\alpha = 1\), for any value of \(A\).
+if {\color{blue}\(\beta = \frac{2\pi}{\ln 2}\) and \(\alpha = 1\),} for any value of \(A\).
 
-Then, if \(\lambda = 1 + i \frac{2\pi}{\ln 2}\) then the problem admits nontrivial solutions, given by
-\[y(t) = t^\lambda - t, \ t \in [1, 2].\]
+Then, if {\color{blue}\(\lambda = 1 + i \frac{2\pi}{\ln 2}\)} then the problem admits nontrivial solutions, given by
+{\color{blue}\[y(t) = t^\lambda - t, \ t \in [1, 2].\]}
 
 \subsection{Theorem}
 
 \begin{theorem}
 Consider the non-homogeneous problem
-\begin{align*}
+{\color{blue}\begin{align*}
 \frac{d}{dt} \left( p(t) \frac{dy}{dt} \right) - q(t)y &= -\mu r(t) y + f(t) \ \alpha < t < \beta \tag{40} \\
 B_\alpha[y] = 0, \ B_\beta[y] &= 0 \tag{41}
-\end{align*}
-where \(p, \frac{dp}{dt}, q, r \in C[\alpha, \beta]\), \(p(x) > 0\), \(r(x) > 0\) for every \(x \in [\alpha, \beta]\), \(-\infty < \alpha < \beta < \infty\).
+\end{align*}}
+{\color{blue}where \(p, \frac{dp}{dt}, q, r \in C[\alpha, \beta]\), \(p(x) > 0\), \(r(x) > 0\) for every \(x \in [\alpha, \beta]\), \(-\infty < \alpha < \beta < \infty\).}
 Then exactly one of the following possibilities is true:
 \begin{enumerate}
-\item[(a)] For every \(f \in C[\alpha, \beta]\), the non-homogeneous problem admits a unique solution.
-\item[(b)] The homogeneous associated problem (i.e. \(f \equiv 0\)), admits non-trivial solutions.
+\item[(a)] {\color{blue}For every \(f \in C[\alpha, \beta]\), the non-homogeneous problem admits a unique solution.}
+\item[(b)] {\color{blue}The homogeneous associated problem (i.e. \(f \equiv 0\)), admits non-trivial solutions.}
 \end{enumerate}
 
-Also, (a) occurs when \(\mu \neq \lambda\) for every eigenvalue \(\lambda\) of the associated homogeneous problem.
+{\color{blue}Also, (a) occurs when \(\mu \neq \lambda\) for every eigenvalue \(\lambda\) of the associated homogeneous problem.}
 \end{theorem}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}

@@ -3,7 +3,7 @@
 \subsection{\S1. Ordinary differential equations. Some solution methods for first order equations}
 
 \subsubsection{Introduction}
-A differential is an equation that involves a function and its derivatives, where the unknown is the function itself.
+{\color{blue}A differential is an equation that involves a function and its derivatives, where the unknown is the function itself.}
 
 \begin{example}[A falling object]
 The equation
@@ -20,11 +20,11 @@ The equation
 \begin{example}[Heat equation]
 The equation
 \[\frac{\partial T}{\partial t} - d\Delta T = 0 \tag{3}\]
-(where \(T\): unknown; \(d\): data) represents the conduction of heat in an isotropic and homogeneous medium. Here, \(\Delta\) is called the Laplace operator, and it's given by \(\Delta T = \frac{\partial^2 T}{\partial x_1^2} + \frac{\partial^2 T}{\partial x_2^2} + \frac{\partial^2 T}{\partial x_3^2}\) if the medium has dimension 3 (so \(T = T(x_1, x_2, x_3)\)).
+(where \(T\): unknown; \(d\): data) represents the conduction of heat in an isotropic and homogeneous medium. \footnote{Here, \(\Delta\) is called the Laplace operator, and it's given by \(\Delta T = \frac{\partial^2 T}{\partial x_1^2} + \frac{\partial^2 T}{\partial x_2^2} + \frac{\partial^2 T}{\partial x_3^2}\) if the medium has dimension 3 (so \(T = T(x_1, x_2, x_3)\)).}
 \end{example}
 
 \paragraph*{Supplementary Conditions for Differential Equations}
-Often, in practice, mathematical models given by differential equations are supplemented by associated conditions. For instance, if we drop an object from a certain height, then the phenomenon is governed by eq. (1) and the condition \(v(0) = 0\). A very simple model for heat conduction in a long thin bar is given by \(T'' = 0\) for \(0 < x < L\). If we know the temperature of the extremes of the bar, we supplement this eq. with the conditions \(T(0) = a\), \(T(L) = b\). Differential problems supplemented with initial conditions are called initial value problems, and those supplemented with boundary conditions are called boundary value problems.
+Often, in practice, mathematical models given by differential equations are supplemented by associated conditions. For instance, if we drop an object from a certain height, then the phenomenon is governed by eq. (1) and the condition \(v(0) = 0\). A very simple model for heat conduction in a long thin bar is given by \(T'' = 0\) for \(0 < x < L\). If we know the temperature of the extremes of the bar, we supplement this eq. with the conditions \(T(0) = a\), \(T(L) = b\). {\color{blue}Differential problems supplemented with initial conditions are called initial value problems, and those supplemented with boundary conditions are called boundary value problems.}
 
 \begin{example}[Heat Conduction in a 3-dimensional Ball]
 A problem of heat conduction in a 3-dimensional ball \(D \subset \mathbb{R}^3\) is:
@@ -38,11 +38,11 @@ T(x, t) = g(x, t) & x \in \partial D, t \in (0, \tau) \ (\text{boundary conditio
 \subsubsection{Classification of Differential Equations}
 
 \begin{definition}[Ordinary and partial differential equations]
-If the unknown depends on one variable, we say that the eq. is an ordinary differential equation (ODE). If, instead, the unknown depends on two or more variables, we say that the eq. is a partial differential equation (PDE).
+{\color{blue}If the unknown depends on one variable, we say that the eq. is an ordinary differential equation (ODE). If, instead, the unknown depends on two or more variables, we say that the eq. is a partial differential equation (PDE).}
 \end{definition}
 
 \begin{definition}[Scalar differential equations and systems of differential equations]
-If we have a problem with one eq. in one unknown, we have a (scalar) ODE. If we have a problem given by two or more eq. with two or more unknowns, we say that we have a system of ODEs. For instance, the system
+{\color{blue}If we have a problem with one eq. in one unknown, we have a (scalar) ODE. If we have a problem given by two or more eq. with two or more unknowns, we say that we have a system of ODEs.} For instance, the system
 \[\begin{cases}
 \frac{dx}{dt} = ax - \alpha xy \\
 \frac{dy}{dt} = -cy + \delta xy
@@ -51,11 +51,11 @@ If we have a problem with one eq. in one unknown, we have a (scalar) ODE. If we 
 \end{definition}
 
 \begin{definition}[Order]
-The order of an ODE is the order of the highest derivative of the unknown.
+{\color{blue}The order of an ODE is the order of the highest derivative of the unknown.}
 \end{definition}
 
 \begin{definition}[Linear and nonlinear equations]
-An ODE \(F(t, u, u', u'', \cdots, u^{(n)}) = 0\) is linear if \(F\) is linear with respect to the last \((n-1)\) variables. Otherwise, the eq. is called nonlinear.
+{\color{blue}An ODE \(F(t, u, u', u'', \cdots, u^{(n)}) = 0\) is linear if \(F\) is linear with respect to the last \((n-1)\) variables. Otherwise, the eq. is called nonlinear.}
 \end{definition}
 
 \subsubsection{Well-posed problems}
@@ -66,12 +66,12 @@ v(0) = v_0
 \end{cases}\]
 
 \begin{definition}[Well-posedness]
-We say that an initial value problem for an ODE is well-posed if it satisfies the following conditions:
+{\color{blue}We say that an initial value problem for an ODE is well-posed if it satisfies the following conditions:
 \begin{enumerate}[a)]
 \item Existence. The problem has at least one solution.
 \item Uniqueness. The problem has at most one solution.
 \item Stability. ``Small'' changes in the initial data produce ``small'' changes in the solution.
-\end{enumerate}
+\end{enumerate}}
 \end{definition}
 
 \begin{example}
@@ -92,7 +92,7 @@ Assume, for instance, that \(y_0 = 0\). So, the solution is the trivial solution
 y_\epsilon(0) = \epsilon
 \end{cases}\]
     
-for some \(0 < \epsilon \ll 1\). Now, the solution is given by \(y_\epsilon(t) = \epsilon e^t\). To satisfy the stability condition, \(y_\epsilon\) must be close to \(y\) for all \(t > 0\). However, \(|y(t) - y_\epsilon(t)| = \epsilon e^t \to +\infty\) as \(t \to +\infty\). Thus, the problem does not satisfy the stability condition, so it is ill-posed (not well-posed).
+for some \(0 < \epsilon \ll 1\). Now, the solution is given by \(y_\epsilon(t) = \epsilon e^t\). To satisfy the stability condition, \(y_\epsilon\) must be close to \(y\) for all \(t > 0\). {\color{blue}However, \(|y(t) - y_\epsilon(t)| = \epsilon e^t \to +\infty\) as \(t \to +\infty\). Thus, the problem does not satisfy the stability condition, so it is ill-posed (not well-posed).}
 
 \item
 Consider the initial value problem
@@ -115,11 +115,11 @@ This problem admits the trivial solution \(y \equiv 0\). Also, the function \(y(
 \subsection{Some Solution Methods for First-Order Equations}
 
 \begin{definition}[First-order ODE]
-A first-order ODE is an equation of the form:
-\[\frac{dy}{dt} = f(t, y).\]
+{\color{blue}A first-order ODE is an equation of the form:
+\[\frac{dy}{dt} = f(t, y).\]}
 \end{definition}
 
 \begin{definition}[Linear first-order ODE]
-A linear first-order ODE is one of the form:
-\[\frac{dy}{dt} + a(t)y = b(t) \rightsquigarrow \frac{d\tilde{y}}{dt} = \tilde{b}(t).\]
+{\color{blue}A linear first-order ODE is one of the form:
+\[\frac{dy}{dt} + a(t)y = b(t) \rightsquigarrow \frac{d\tilde{y}}{dt} = \tilde{b}(t).\]}
 \end{definition}

@@ -5,12 +5,12 @@
 Consider the equation
 \[M(t, y) + N(t, y)\frac{dy}{dt} = 0 \ \left( \frac{d\phi(t, y(t))}{dt} = 0 \right)\]
 
-\begin{theorem}
+{\color{blue}\begin{theorem}
 If \(M\) and \(N\) are continuous functions with continuous partial derivatives in \(R = (a, b) \times (c, d)\), then there exists \(\phi\) such that \(\frac{\partial \phi}{\partial t} = M\) and \(\frac{\partial \phi}{\partial y} = N\) if and only if
 \[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}.\]
 
 In that case the general solution to the equation is given by \(\phi(t, y) = c\) for \(c \in \mathbb{R}\).
-\end{theorem}
+\end{theorem}}
 
 \subsection{Exercise}
 
@@ -38,7 +38,7 @@ Then,
 
 Then we choose \(h(y) = -\cos(y)\). Therefore, \(\phi(t, y) = 2yt + e^t - \cos(y)\).
 
-Finally, the solution is given implicitly by \(2yt + e^t - \cos(y) = C, \ C \in \mathbb{R}\).
+{\color{blue}Finally, the solution is given implicitly by \(2yt + e^t - \cos(y) = C, \ C \in \mathbb{R}\).}
 \end{proof}
 
 \begin{xca}
@@ -62,7 +62,7 @@ We have,
 Also, we know that \(\mu\) must be a solution to
 \[\frac{d\mu}{dt} = \frac{1}{N} \left( \frac{\partial M}{\partial y} - \frac{\partial N}{\partial t} \right) \mu \iff \frac{d\mu}{dt} = \mu\]
 
-We choose, \(\mu(t) = e^t\).
+{\color{blue}We choose, \(\mu(t) = e^t\).}
 
 From now on, the solution follows as in the previous example:
 
@@ -70,7 +70,7 @@ We look for \(\phi\) such that \(\frac{\partial \phi}{\partial t} = \mu(t)M(t, y
 
 After the computations, we have \(\phi(t, y) = y^2e^t + 2ye^{2t}\) (exercise).
 
-The solution is given by \(y^2e^t + 2ye^{2t} = c, \ c \in \mathbb{R}\).
+{\color{blue}The solution is given by \(y^2e^t + 2ye^{2t} = c, \ c \in \mathbb{R}\).}
 \end{proof}
 
 \begin{xca}
@@ -84,13 +84,13 @@ Let \(M(t, y) = \frac{1}{t^2} + \frac{1}{y^2}\) and \(N(t, y) = \frac{at+1}{y^3}
 Let \(R\) a rectangle as before. We'll find \(a\) such that
 \[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t} \rightsquigarrow a = -2. \ (\text{exercise})\]
 
-After solving the eq., we find the solution given by \(-\frac{1}{t} + \frac{1}{y^2}(t-1) = c, \ c \in \mathbb{R}\).
+{\color{blue}After solving the eq., we find the solution given by \(-\frac{1}{t} + \frac{1}{y^2}(t-1) = c, \ c \in \mathbb{R}\).}
 \end{proof}
 
 \begin{remark}
 Suppose we also have the initial condition \(y(2) = 1\).
 
-From this, \(c = \frac{1}{2}\). The solution is \(y^2 = \frac{t-1}{2+t} 2t\).
+From this, \(c = \frac{1}{2}\). {\color{blue}The solution is \(y^2 = \frac{t-1}{2+t} 2t\).}
 
-This makes sense iff \(\frac{t-1}{2+t} 2t \geq 0\). From here, we find the domain (exercise).
+{\color{blue}This makes sense iff \(\frac{t-1}{2+t} 2t \geq 0\). From here, we find the domain (exercise).}
 \end{remark}

@@ -34,7 +34,7 @@ m \frac{d^2 y}{dt^2} &= mg - k(\Delta l + y) - c \frac{dy}{dt} + F \\
 &= \underbrace{mg - k \Delta l}_{=0} - ky - c \frac{dy}{dt} + F
 \end{align*}
 i.e.
-\[m \frac{d^2 y}{dt^2} + c \frac{dy}{dt} + ky = F \tag{20}\]
+{\color{blue}\[m \frac{d^2 y}{dt^2} + c \frac{dy}{dt} + ky = F \tag{20}\]}
 \end{example}
 
 \subsection{Free vibrations (\(c = 0, F \equiv 0\))}
@@ -42,15 +42,15 @@ i.e.
 Eq.(20) is \(m \frac{d^2 y}{dt^2} + ky = 0\), i.e. \(\frac{d^2 y}{dt^2} + \omega_0^2 y = 0\), \(\omega_0^2 = \frac{k}{m}\) (\(\omega_0 > 0\)).
 
 The char. polynomial is \(p(\lambda) = \lambda^2 + \omega_0^2\). The roots are \(\omega_0 i\) and \(-\omega_0 i\). Then, the general solution is
-\[y(t) = c_1 \cos(\omega_0 t) + c_2 \sin(\omega_0 t) \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
+{\color{blue}\[y(t) = c_1 \cos(\omega_0 t) + c_2 \sin(\omega_0 t) \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]}
 
-Assume that \(c_1 \neq 0\). Then, \(y(t) = R \cos(\omega_0 t - \delta)\), where \(\delta \in (-\frac{\pi}{2}, \frac{\pi}{2})\), \(\tan \delta = \frac{c_2}{c_1}\) and \(R = \sqrt{c_1^2 + c_2^2}\) (exercise). Observe that \(y\) is bounded, more precisely, \(|y(t)| \leq R\) for all \(t \geq 0\). Also, \(y\) is periodic with period \(\frac{2\pi}{\omega_0}\). The solution behaves in the same way if \(c_1 = 0\). This type of motion is called simple harmonic motion. Also,
-\begin{align*}
+Assume that \(c_1 \neq 0\). {\color{blue}Then, \(y(t) = R \cos(\omega_0 t - \delta)\), where \(\delta \in (-\frac{\pi}{2}, \frac{\pi}{2})\), \(\tan \delta = \frac{c_2}{c_1}\) and \(R = \sqrt{c_1^2 + c_2^2}\) (exercise).} Observe that \(y\) is bounded, more precisely, \(|y(t)| \leq R\) for all \(t \geq 0\). Also, \(y\) is periodic with period \(\frac{2\pi}{\omega_0}\). The solution behaves in the same way if \(c_1 = 0\). {\color{blue}This type of motion is called simple harmonic motion.} Also,
+{\color{blue}\begin{align*}
 R &: \text{amplitude of the motion} \\
 T_0 = \frac{2\pi}{\omega_0} &: \text{natural period of the motion} \\
 \delta &: \text{phase angle of the motion} \\
 \omega_0 = \sqrt{\frac{k}{m}} &: \text{natural frequency of the motion}
-\end{align*}
+\end{align*}}
 
 \subsection{Damped free vibrations (\(c \neq 0, F \equiv 0\))}
 
@@ -59,45 +59,47 @@ Eq.(20) is \(m \frac{d^2 y}{dt^2} + c \frac{dy}{dt} + ky = 0\). The characterist
 The roots are given by \(\frac{-c \pm \sqrt{c^2 - 4mk}}{2m}\).
 
 \begin{itemize}
-\item Assume \(c^2 - 4mk > 0\). Then, the roots are
+\item {\color{blue}Assume \(c^2 - 4mk > 0\).} Then, the roots are
 \[0 > \lambda_1 = \frac{-c + \sqrt{c^2 - 4mk}}{2m} \ \text{and} \ \lambda_2 = \frac{-c - \sqrt{c^2 - 4mk}}{2m} < 0\]
+
 Hence, the general solution is
-\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
+{\color{blue}\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{\lambda_1 t} + c_2 e^{\lambda_2 t}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]}
 
-This motion is known as \textbf{overdamped motion}.
+{\color{blue}This motion is known as \textbf{overdamped motion}.}
 
-\item Assume that \(c^2 - 4mk = 0\).
+\item {\color{blue}Assume that \(c^2 - 4mk = 0\).}
 The char. polynomial has a double root \(\lambda = -\frac{c}{2m}\).
 The general solution is
-\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} + c_2 t e^{-\frac{c t}{2m}}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
+{\color{blue}\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} + c_2 t e^{-\frac{c t}{2m}}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]}
     
-This motion is known as \textbf{critically damped motion}.
+{\color{blue}This motion is known as \textbf{critically damped motion}.}
 
-\item Assume that \(c^2 - 4mk < 0\).
+\item {\color{blue}Assume that \(c^2 - 4mk < 0\).}
 The roots of the char. polynomial are
 \[\lambda = -\frac{c}{2m} + i \frac{\sqrt{4mk - c^2}}{2m} \ \text{and} \ \bar{\lambda}\]
-The general solution is
-\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} \cos(\mu t) + c_2 e^{-\frac{c t}{2m}} \sin(\mu t), \ t \geq 0, \ c_1, c_2 \in \mathbb{R},\]
-where \(\mu = \frac{1}{2m} \sqrt{4mk - c^2}\).
 
-This motion is called \textbf{damped vibrations}. Observe that, for \(c_1 \neq 0\),
-\[y(t) = e^{-\frac{ct}{2m}} R \cos(\mu t - \delta) \ \text{and} \ y(t) = e^{-\frac{ct}{2m}} c_2 \cos(\mu t - \pi/2) \ \text{if } c_1 = 0.\]
+The general solution is
+{\color{blue}\[\underset{\to 0 \text{ as } t \to +\infty}{y(t)} = c_1 e^{-\frac{c t}{2m}} \cos(\mu t) + c_2 e^{-\frac{c t}{2m}} \sin(\mu t), \ t \geq 0, \ c_1, c_2 \in \mathbb{R},\]
+where \(\mu = \frac{1}{2m} \sqrt{4mk - c^2}\).}
+
+{\color{blue}This motion is called \textbf{damped vibrations}.} \sout{Observe that, for \(c_1 \neq 0\),}
+{\color{blue}\[y(t) = e^{-\frac{ct}{2m}} R \cos(\mu t - \delta) \ \text{and} \ y(t) = e^{-\frac{ct}{2m}} c_2 \cos(\mu t - \pi/2) \ \text{if } c_1 = 0.\]}
 \end{itemize}
 
 \subsection{Damped forced vibrations (\(c \neq 0, F \neq 0\))}
 
 The eq. is \(m \frac{d^2 y}{dt^2} + c \frac{dy}{dt} + ky = F\).
 The general solution is given by
-\[y(t) = y_H(t) + y_p(t)\]
+{\color{blue}\[y(t) = y_H(t) + y_p(t)\]}
 where \(y_H\) is the general solution to the associated homogeneous eq. and \(y_p\) is a particular sol.
 
 Consider, for instance, that \(F(t) = F_0 \cos(\omega t)\), where \(F_0\) and \(\omega\) are given.
 
 It can be shown that
-\[y_p(t) = \frac{F_0 \cos(\omega t - \delta)}{((k - m\omega^2)^2 + c^2 \omega^2)^{1/2}} \ \text{where } \tan \delta = \frac{c\omega}{k - m\omega^2}\]
-is a particular solution provided \(\underbrace{k \neq m\omega^2}_{\omega \neq \sqrt{\frac{k}{m}} = \omega_0}\), in other words, \(\omega \neq \omega_0\).
+{\color{blue}\[y_p(t) = \frac{F_0 \cos(\omega t - \delta)}{((k - m\omega^2)^2 + c^2 \omega^2)^{1/2}} \ \text{where } \tan \delta = \frac{c\omega}{k - m\omega^2}\]
+is a particular solution provided \(\underbrace{k \neq m\omega^2}_{\omega \neq \sqrt{\frac{k}{m}} = \omega_0}\), in other words, \(\omega \neq \omega_0\).}
 
-As \(y_H(t) \to 0\) as \(t \to +\infty\), we observe that \(y(t)\) behaves as \(y_p(t)\) as \(t \to +\infty\).
+{\color{blue}As \(y_H(t) \to 0\) as \(t \to +\infty\), we observe that \(y(t)\) behaves as \(y_p(t)\) as \(t \to +\infty\).}
 
 \begin{xca}
 Analyze the motion when \(\omega = \omega_0\).
@@ -110,16 +112,16 @@ The eq. is \(m \frac{d^2 y}{dt^2} + ky = F\). The general sol is \(y(t) = y_H(t)
 Consider again the case where \(F(t) = \underbrace{F_0 \cos(\omega t)}_{\text{bounded}}\), \(F_0, \omega\) given.
 
 If \(\omega \neq \omega_0\), then it can be shown that
-\[y_p(t) = \frac{F_0 \cos(\omega t)}{m(\omega_0^2 - \omega^2)}\]
+{\color{blue}\[y_p(t) = \frac{F_0 \cos(\omega t)}{m(\omega_0^2 - \omega^2)}\]
 is a particular solution. So,
-\[y(t) = R \cos(\omega_0 t - \delta) + \frac{F_0 \cos(\omega t)}{m(\omega_0^2 - \omega^2)}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]
+\[y(t) = R \cos(\omega_0 t - \delta) + \frac{F_0 \cos(\omega t)}{m(\omega_0^2 - \omega^2)}, \ t \geq 0, \ c_1, c_2 \in \mathbb{R}\]}
 
 Observe that, as before, \(|y(t)| \leq M\) for every \(t \geq 0\), as in the previous case. And, \(y\) follows an oscillatory law.
 
 Finally, assume that \(\omega = \omega_0\). It can be shown that
-\[y_p(t) = \frac{F_0 t}{2m\omega_0} \sin(\omega_0 t)\]
+{\color{blue}\[y_p(t) = \frac{F_0 t}{2m\omega_0} \sin(\omega_0 t)\]
 is a particular solution.
 Then,
-\[y(t) = \underbrace{R \cos(\omega_0 t - \delta)}_{\text{bounded as } t \to +\infty} + \underbrace{\frac{F_0 t}{2m\omega_0} \sin(\omega_0 t)}_{\to \pm \infty \text{ as } t \to +\infty} \ t \geq 0\]
+\[y(t) = \underbrace{R \cos(\omega_0 t - \delta)}_{\text{bounded as } t \to +\infty} + \underbrace{\frac{F_0 t}{2m\omega_0} \sin(\omega_0 t)}_{\to \pm \infty \text{ as } t \to +\infty} \ t \geq 0\]}
 
-Here we say that the external force is in resonance with the natural frequency of the system.
+{\color{blue}Here we say that the external force is in resonance with the natural frequency of the system.}

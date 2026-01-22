@@ -2,11 +2,9 @@
 
 \subsection{Linear equation: the integrating factor method}
 
-\(\underbrace{\mu(t) (\frac{dy}{dt} + a(t)y)}_{\frac{d}{dt}(\mu(t) y)} = b(t) \mu(t)\), \(a, b\) are continuous functions in \(\mathbb{R}\).
-
+{\color{blue}\(\underbrace{\mu(t) (\frac{dy}{dt} + a(t)y)}_{\frac{d}{dt}(\mu(t) y)} = b(t) \mu(t)\), \(a, b\) are continuous functions in \(\mathbb{R}\).
 \(\mu(t) = e^{\int a(t)dt}\), \(\mu\) can be any solution to \(\frac{d\mu}{dt} = a(t)\mu\).
-
-\(y(t) = e^{-\int a(t) dt} (\int b(t)e^{\int a(t) dt} dt + c)\), \(C \in \mathbb{R}, t \in \mathbb{R}\). (General solution to \(\frac{dy}{dt} + a(t)y = b(t)\).)
+\(y(t) = e^{-\int a(t) dt} (\int b(t)e^{\int a(t) dt} dt + c)\), \(C \in \mathbb{R}, t \in \mathbb{R}\). (General solution to \(\frac{dy}{dt} + a(t)y = b(t)\).)}
 
 \begin{xca}
 Solve the initial-value problem
@@ -26,18 +24,18 @@ y(t) &= e^{-\int a(t) dt} \left( \int b(t) e^{\int a(t) dt} dt + C \right) \\
 &= e^{-\int t dt} \left( \int 2t e^{\int t dt} dt + C \right) \\
 &= e^{-t^2/2} \left( \int 2t e^{t^2/2} dt + C \right) \\
 &= e^{-t^2/2} \left( 2e^{t^2/2} + C \right) \\
-&= 2 + Ce^{-t^2/2}, \ C \in \mathbb{R}, \ t \in \mathbb{R}
+&= {\color{blue}2 + Ce^{-t^2/2}, \ C \in \mathbb{R}, \ t \in \mathbb{R}}
 \end{align*}
 
-\(y(0) = 2 + C e^0 = 2 + C = 1 \iff C = -1\).
+\(y(0) = 2 + C e^0 = 2 + C = 1 \iff {\color{blue}C = -1}\).
 
-So, \(y(t) = 2 - e^{-t^2/2}, \ t \in \mathbb{R}\).
+So, {\color{blue}\(y(t) = 2 - e^{-t^2/2}, \ t \in \mathbb{R}\).}
 \end{proof}
 
 \subsection{Separable equations}
 
-Given an ODE of first-order, \(\frac{dy}{dt} = f(t, y)\), we say that the equation is separable if it can be written as
-\[\frac{dy}{dt} = \frac{g(t)}{h(y)}\]
+{\color{blue}Given an ODE of first-order, \(\frac{dy}{dt} = f(t, y)\), we say that the equation is separable if it can be written as
+\[\frac{dy}{dt} = \frac{g(t)}{h(y)}\]}
 
 Observe that the equ. is equivalent to
 \begin{align*}
@@ -48,13 +46,12 @@ h(y(t)) y'(t) &= g(t)
 Integrate:
 \begin{align*}
 \int h(y(t)) y'(t) dt &= \int g(t) dt \\
-\int h(y) dy &= \int g(t) dt,
+{\color{blue}\int h(y) dy} &= {\color{blue}\int g(t) dt},
 \end{align*}
 where \(y = y(t)\).
 
 By solving, if possible, the integral in the LHS, we find a formula for \(y(t)\) which sometimes gives us \(y(t)\) in an implicit way.
 
-\begin{remark}
 In the context of ODEs. a first-order linear equation is one of the form:
 \[\underbrace{\left[ \frac{dy}{dt} + a(t)y \right]}_{\text{differential operator}} = b(t)\]
 or more generally:
@@ -62,7 +59,6 @@ or more generally:
     
 Observe that \(f(t, y) = b(t) - a(t)y\). We have
 \[f(t, \alpha y + \beta z) \neq \alpha f(t, y) + \beta f(t, z).\]
-\end{remark}
 
 \begin{xca}
 Solve the initial-value problem
@@ -79,7 +75,7 @@ Observe that the ODE is nonlinear. However, it's separable.
 \begin{align*}
 \int e^{y(t)} y'(t) dt &= \int t dt \\
 e^{y(t)} &= t^2/2 + C \\
-y(t) &= \ln\left( \frac{t^2}{2} + C \right)
+y(t) &= {\color{blue}\ln\left( \frac{t^2}{2} + C \right)}
 \end{align*}
 
 Notice that
@@ -88,12 +84,12 @@ Notice that
 \item if \(C \leq 0\), then \(\frac{t^2}{2} + C > 0 \iff |t| > \sqrt{-2C} \iff t \in (-\infty, -\sqrt{-2C}) \cup (\sqrt{-2C}, +\infty)\).
 \end{itemize}
 
-We have
+{\color{blue}We have
 \begin{align*}
 y(1) = 1 \iff \ln\left( \frac{1}{2} + C \right) &= 1 \\
 \frac{1}{2} + C &= e \\
 C = e - \frac{1}{2} &> 0
 \end{align*}
 
-Therefore, \(y(t) = \ln\left( \frac{t^2}{2} + e - \frac{1}{2} \right), \ t \in \mathbb{R}\).
+Therefore, \(y(t) = \ln\left( \frac{t^2}{2} + e - \frac{1}{2} \right), \ t \in \mathbb{R}\).}
 \end{proof}

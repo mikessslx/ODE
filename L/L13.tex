@@ -6,16 +6,16 @@ Find the general solution to
 
 \paragraph*{Method 1} (Method of integrating factors)
     
-\(\frac{dy}{dt} - y = -2\) is in the form \(\frac{dy}{dt} + ay = b\) for \(a = -1\) and \(b = -2\).
+\sout{\(\frac{dy}{dt} - y = -2\) is in the form \(\frac{dy}{dt} + ay = b\) for \(a = -1\) and \(b = -2\).}
 
-The eq. is linear with cont. coeff in \(\mathbb{R}\) (const. coeff.). Then the general solution is
+\sout{The eq. is linear with cont. coeff in \(\mathbb{R}\) (const. coeff.). Then the general solution is}
 \begin{align*}
 y(t) &= e^{-\int a dt} \left( \int b e^{\int a dt} dt + C \right), \ t \in \mathbb{R}, \ C \in \mathbb{R} \\
 &= e^t \left( -2 \int e^{-t} dt + C \right) = e^t (2e^{-t} + C) = 2 + Ce^t
 \end{align*}
     
 Now, \(y'(t) = Ce^t = y(t) - 2\), \(t \in \mathbb{R}\).
-Then the solution is \(y(t) = Ce^t + 2\) for \(t \in \mathbb{R}\).
+{\color{blue}Then the solution is \(y(t) = Ce^t + 2\) for \(t \in \mathbb{R}\).}
 \end{example}
 
 \begin{example}
@@ -35,11 +35,11 @@ The solution exists by the Picard-Lindel\"of thm (check the assumptions!). Then,
 
 \begin{recap}
 \begin{itemize}
-\item \(\frac{dy}{dt} = Ay\), where \(A \in \mathbb{R}^{n \times n}\).
-\item If \(A\) admits \(n\) real distinct eigenvalues \(\lambda_1, \cdots, \lambda_n\) with associated eigenvectors \(v_1, \cdots, v_n \in \mathbb{R}^n\), then \(\{ v_1 e^{\lambda_1 t}, \cdots, v_n e^{\lambda_n t} \}\) is a basis of solutions, \(t \in \mathbb{R}\).
-\item If \(A\) admits an eigenvalue \(\lambda = \alpha + i\beta\) where \(\beta \neq 0\), with eigenvector \(v = u + iw, \ u, w \in \mathbb{R}^n\), then
+\item \sout{\(\frac{dy}{dt} = Ay\), where \(A \in \mathbb{R}^{n \times n}\).}
+\item \sout{If \(A\) admits \(n\) real distinct eigenvalues \(\lambda_1, \cdots, \lambda_n\) with associated eigenvectors \(v_1, \cdots, v_n \in \mathbb{R}^n\), then \(\{ v_1 e^{\lambda_1 t}, \cdots, v_n e^{\lambda_n t} \}\) is a basis of solutions, \(t \in \mathbb{R}\).}
+\item \sout{If \(A\) admits an eigenvalue \(\lambda = \alpha + i\beta\) where \(\beta \neq 0\), with eigenvector \(v = u + iw, \ u, w \in \mathbb{R}^n\), then}
 \[e^{\alpha t} (u \cos(\beta t) - w \sin(\beta t)) \ \text{and} \ e^{\alpha t} (u \sin(\beta t) + w \cos(\beta t)), \ t \in \mathbb{R}\]
-are two l.i. solutions.
+\sout{are two l.i. solutions.}
 \end{itemize}
 \end{recap}
 
@@ -48,7 +48,7 @@ are two l.i. solutions.
 For instance, the matrix \(A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{pmatrix}\) admits two real eigenvalues: \(\lambda_1 = 1\) with multiplicity 2 and \(\lambda_2 = 2\) with multiplicity 1. Also, the eigenvectors for \(\lambda_1\) form a space of dimension 1, and the eigenvector for \(\lambda_2\) as well.
 
 Let's introduce the matrix exponential. We define
-\[e^A = I + A + \frac{A^2}{2} + \frac{A^3}{3!} + \frac{A^4}{4!} + \cdots \ \text{where } A \in \mathbb{R}^{n \times n}\]
+{\color{blue}\[e^A = I + A + \frac{A^2}{2} + \frac{A^3}{3!} + \frac{A^4}{4!} + \cdots \ \text{where } A \in \mathbb{R}^{n \times n}\]}
 
 \begin{remark}
 This is a well-definition since the r.h.s. is convergent in the space of matrices in \(\mathbb{R}^{n \times n}\) with the norm defined by \(\|A\| = \left( \sum_{i,j=1}^n a_{ij}^2 \right)^{1/2}\) where \(A = (a_{ij})_{i,j=1, \cdots, n}\).
@@ -61,12 +61,13 @@ It can be shown that this map can be differentiated term-by-term. Then,
 &= A + A^2 t + \frac{A^3 t^2}{2!} + \cdots \\
 &= A \left( I + At + \frac{A^2 t^2}{2!} + \cdots \right) = A e^{At}
 \end{align*}
+{\color{blue}\[\frac{d(e^{At})}{dt} = A e^{At}\]}
 
 \begin{remark}
-\(F: I \subset \mathbb{R} \to \mathbb{R}^n, \ F = (f_1, \cdots, f_n), \ f_k: I \subset \mathbb{R} \to \mathbb{R}\) and \(\frac{dF}{dt} = \left( \frac{df_1}{dt}, \cdots, \frac{df_n}{dt} \right)\).
+\sout{\(F: I \subset \mathbb{R} \to \mathbb{R}^n, \ F = (f_1, \cdots, f_n), \ f_k: I \subset \mathbb{R} \to \mathbb{R}\) and \(\frac{dF}{dt} = \left( \frac{df_1}{dt}, \cdots, \frac{df_n}{dt} \right)\).}
 \end{remark}
 
-Then, if \(v \in \mathbb{R}^n\) then \(y(t) = e^{At} v\) solves \(\frac{dy}{dt} = Ay\).
+{\color{blue}Then, if \(v \in \mathbb{R}^n\) then \(y(t) = e^{At} v\) solves \(\frac{dy}{dt} = Ay\).}
 
 \begin{xca}
 Can we find vectors \(v \in \mathbb{R}^n\) s.t. \(e^{At}v\) is finite?
@@ -91,6 +92,7 @@ y(t) = e^{At} v &= e^{(At - \lambda I t) + (\lambda I t)} v \\
 &= e^{\lambda t} \left( e^{(A-\lambda I)t} v \right) \\
 &= e^{\lambda t} \left( I + (A-\lambda I)t + \frac{(A-\lambda I)^2 t^2}{2} + \cdots + \frac{(A-\lambda I)^{m-1} t^{m-1}}{(m-1)!} \right) v \tag{\(*\)}
 \end{align*}
+{\color{blue}\[y(t) = e^{At} v = e^{\lambda t} \left( I + (A-\lambda I)t + \frac{(A-\lambda I)^2 t^2}{2} + \cdots + \frac{(A-\lambda I)^{m-1} t^{m-1}}{(m-1)!} \right) v \tag{\(*\)}\]}
 
 \begin{note}
 Recall that \(e^{A+B} = e^A e^B\) this is valid iff \(AB = BA\).
@@ -102,18 +104,18 @@ If there exist \(m \in \mathbb{N}\) and \(v \in \mathbb{C}^n\) s.t. \((A-\lambda
 If \(\lambda\) is an eigenvalue of \(A\) with multiplicity \(l\), then there exist \(m \le l\) such that the equation \((A-\lambda I)^m v = 0\) admits at least \(l\) linearly independent solutions in \(\mathbb{C}^n\).
 
 Therefore, if \(\lambda \in \mathbb{C}\) is an eigenvalue of \(A\) with multiplicity \(l\), then there exist \(v_1, \cdots, v_l \in \mathbb{C}^n\) which are l.i. and hence
-\[
+{\color{blue}\[
 y^{(1)}(t) = e^{At} v_1, \ \cdots, \ y^{(l)}(t) = e^{At} v_l, \ t \in \mathbb{R}
 \]
-are l.i. solutions to the system \(\frac{dy}{dt} = Ay\).
+are l.i. solutions to the system \(\frac{dy}{dt} = Ay\).}
 
 \begin{example}
 Assume that \(A \in \mathbb{R}^{5 \times 5}\) with eigenvalues \(\lambda_1 = 2, \ \lambda_2 = 1+i, \ \lambda_3 = \overline{\lambda_2}\), and \(\lambda_4 = 3\) with multiplicity 2.
     
 \begin{itemize}
-\item From \(\lambda_1 = 2\), we get the solution \(y^{(1)}(t) = v_1 e^{2t}\) where \(v_1\) is an eigenvector for \(\lambda_1\).
-\item From \(\lambda_2 = 1+i\) we get two solutions \(y^{(2)}(t) = e^{t}(u \cos t - w \sin t)\) and \(y^{(3)}(t) = e^{t}(u \sin t + w \cos t)\) in \(\mathbb{R}\), where \(v = u + iw\) is an eigenvector for \(\lambda_2\), \(u, w \in \mathbb{R}^5\).
-\item From \(\lambda_4 = 3\) we get the solutions \(y^{(4)}(t) = v_4 e^{3t}\), where \(v_4\) is an eigenvector for \(\lambda_4\), and \(y^{(5)}(t) = e^{At} \tilde{v}\), \(t \in \mathbb{R}\), where \(\tilde{v}\) is a solution to \((A-3I)^m \tilde{v} = 0\) for some \(m \in \mathbb{N}\), \(m \le 2\).
+\item {\color{blue}From \(\lambda_1 = 2\), we get the solution \(y^{(1)}(t) = v_1 e^{2t}\) where \(v_1\) is an eigenvector for \(\lambda_1\).}
+\item {\color{blue}From \(\lambda_2 = 1+i\) we get two solutions \(y^{(2)}(t) = e^{t}(u \cos t - w \sin t)\) and \(y^{(3)}(t) = e^{t}(u \sin t + w \cos t)\) in \(\mathbb{R}\), where \(v = u + iw\) is an eigenvector for \(\lambda_2\), \(u, w \in \mathbb{R}^5\).}
+\item {\color{blue}From \(\lambda_4 = 3\) we get the solutions \(y^{(4)}(t) = v_4 e^{3t}\), where \(v_4\) is an eigenvector for \(\lambda_4\), and \(y^{(5)}(t) = e^{At} \tilde{v}\), \(t \in \mathbb{R}\), where \(\tilde{v}\) is a solution to \((A-3I)^m \tilde{v} = 0\) for some \(m \in \mathbb{N}\), \(m \le 2\).}
 \end{itemize}
     
 Let \(\mathcal{B} = \{ y^{(1)}, y^{(2)}, y^{(3)}, y^{(4)}, y^{(5)} \}\). This is a basis if \(\mathcal{B}\) is l.i.

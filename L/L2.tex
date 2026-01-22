@@ -3,20 +3,18 @@
 \begin{recap}
 \begin{itemize}
 \item The general form of an ODE is \(F(t, y, y', \cdots, y^{(n)}) = 0\) (\(*\)). A solution \(y\) to eq. (\(*\)) is a function that satisfies \(F(t, y(t), y'(t), \cdots, y^{(n)}(t)) = 0\) for every \(t\) in some interval.
-
-\item Classification of ODEs:
+\item \sout{Classification of ODEs:}
 \begin{itemize}
-\item Order
-\item ODE (scalar), Systems of ODEs
-\item Linear and nonlinear eqs.
+\item \sout{Order}
+\item \sout{ODE (scalar), Systems of ODEs}
+\item \sout{Linear and nonlinear eqs.}
 \end{itemize}
-
-\item Well-posed problems:
+\item \sout{Well-posed problems:}
 \begin{itemize}
-\item Existence of solution
-\item Uniqueness of solution
-\item Stability (or continuous dependence on data)
-\item Ex: \(\begin{cases} y' = f(t, y) \\ y(t_0) = y_0 \end{cases}\)
+\item \sout{Existence of solution}
+\item \sout{Uniqueness of solution}
+\item \sout{Stability (or continuous dependence on data)}
+\item \sout{Ex: \(\begin{cases} y' = f(t, y) \\ y(t_0) = y_0 \end{cases}\)}
 \end{itemize}
 \end{itemize}
 \end{recap}
@@ -30,9 +28,9 @@ The general form of a first-order equation is \(\frac{dy}{dt} = f(t, y)\).
 \subsection{Linear equations: The integrating factor method}
 
 \begin{definition}[Linear First-Order ODE]
-The general form for a first-order linear ODE is
+{\color{blue}The general form for a first-order linear ODE is
 \[\frac{dy}{dt} + a(t)y = b(t) \tag{6}\]
-(Here, \(f(t, y) = b(t) - a(t)y\)). Assume that \(a\) and \(b\) are continuous functions in \(\mathbb{R}\).
+(Here, \(f(t, y) = b(t) - a(t)y\)). Assume that \(a\) and \(b\) are continuous functions in \(\mathbb{R}\).}
 \end{definition}
 
 If we can find an equivalent equation of equation (6), in the form
@@ -66,7 +64,7 @@ which simplifies to
 Since we assumed that \(\mu\) is positive, we get
 \[\mu(t) = C e^{\int a(t) \, dt} \ (C > 0).\]
 
-For simplicity, we set \(C = 1\), so the integrating factor \(\mu(t) = e^{\int a(t) dt}\).
+{\color{blue}For simplicity, we set \(C = 1\), so the integrating factor \(\mu(t) = e^{\int a(t) dt}\).}
 
 It’s easy to verify that \(\mu\) is a solution to \(\frac{d\mu}{dt} = a(t)\mu\).
 
@@ -76,17 +74,17 @@ Then, equation (8) can be written as
 Integration with respect to \(t\), yields
 \[e^{\int a(t) dt} y = \int e^{\int a(t) dt} b(t) dt + C \ (C \in \mathbb{R})\]
 
-Therefore,
-\[y(t) = e^{-\int a(t) \, dt} \left( \int b(t) e^{\int a(t) \, dt} \, dt + C \right), \ t \in \mathbb{R} \tag{10}\]
+{\color{blue}Therefore,
+\[y(t) = e^{-\int a(t) \, dt} \left( \int b(t) e^{\int a(t) \, dt} \, dt + C \right), \ t \in \mathbb{R} \tag{10}\]}
 
 \subsubsection{Summary on Integrating Factor and General Solution}
 
 \begin{theorem}[General Solution to Linear First-Order ODE]
-In summary, we deduced that if eq. (6) has a solution, then the solution must be a function in the form (10).
+{\color{blue}In summary, we deduced that if eq. (6) has a solution, then the solution must be a function in the form (10).
     
-Also, it's easy to verify that any function like (10) solves eq. (6) in \(\mathbb{R}\). So, formula (10) is called the general solution to eq. (6), \(\frac{dy}{dt} + a(t)y = b(t)\).
+Also, it's easy to verify that any function like (10) solves eq. (6) in \(\mathbb{R}\). So, formula (10) is called the general solution to eq. (6), \(\frac{dy}{dt} + a(t)y = b(t)\).}
 \end{theorem}
 
 \begin{definition}[Integrating Factor]
-The function \(\mu(t) = e^{\int a(t) dt}\) is called an integrating factor for eq. (6).
+{\color{blue}The function \(\mu(t) = e^{\int a(t) dt}\) is called an integrating factor for eq. (6).}
 \end{definition}

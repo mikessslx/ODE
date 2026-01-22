@@ -1,4 +1,4 @@
-name: PDF
+name: ODE
 
 on:
   push:
@@ -10,11 +10,16 @@ on:
     branches: [ "main", "master" ]
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_latex:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     
     steps:
       - name: Checkout
@@ -36,3 +41,11 @@ jobs:
           draft: false
           prerelease: false
           make_latest: true
+
+      - name: Clean
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 1

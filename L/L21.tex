@@ -4,21 +4,21 @@
 
 \begin{example}
 Let's look for a solution to
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 u_t - k u_{xx} = 0 & \text{(PDE)} \ 0 < x < L, \ t > 0 \ (k > 0) \\
 u(0, t) = u(L, t) = 0 & \text{(BC)} \ t \geq 0 \\
 u(x, 0) = f(x) & \text{(IC)} \ 0 \leq x \leq L
-\end{cases}\]
+\end{cases}\]}
 where \(u(x, t)\): temperature at position \(x\) at time \(t > 0\).
 \end{example}
 
 \begin{proof}[Solution]
 First, look for a solution \(u\) of the PDE and the BC.
-Specifically, let's look for a solution in the form \(u(x, t) = X(x) T(t)\).
+{\color{blue}Specifically, let's look for a solution in the form \(u(x, t) = X(x) T(t)\).}
 Replacing \(u\) in the PDE, we get (formally)
 \begin{align*}
 X T' - k X'' T &= 0 \\
-\underbrace{\frac{1}{k} \frac{T'}{T}}_{\text{function of } t} = \underbrace{\frac{X''}{X}}_{\text{function of } x} &= -\lambda \ \text{for some } \lambda \in \mathbb{R}
+{\color{blue}\underbrace{\frac{1}{k} \frac{T'}{T}}_{\text{function of } t} = \underbrace{\frac{X''}{X}}_{\text{function of } x} = -\lambda} \ \text{for some } \lambda \in \mathbb{R}
 \end{align*}
 
 Then \(X'' + \lambda X = 0 \ 0 < x < L\) and \(T' + k \lambda T = 0 \ t > 0\).
@@ -28,10 +28,10 @@ Also,
 Moreover, we look for a nontrivial solution. So, \(X\) and \(T\) are not identically zero. Then \(X(0) = 0\). Similarly, \(X(L) = 0\).
 
 Therefore, second-order ODE with BC:
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 X'' + \lambda X = 0 & 0 < x < L \\
 X(0) = X(L) = 0
-\end{cases} \ \text{and} \ T' + \lambda k T = 0 \ t > 0.\]
+\end{cases} \ \text{and} \ {\color{blue}T' + \lambda k T = 0} \ t > 0.\]}
 
 Let's find, if possible, nontrivial solutions to these problems. Let's start with the problem for \(X\).
 
@@ -61,24 +61,24 @@ The roots of the char. polynomial are \(\omega = \sqrt{\lambda}i\) and \(\omega 
 The general solution is \(X(x) = A \cos(\sqrt{\lambda}x) + B \sin(\sqrt{\lambda}x)\).
 
 Also, \(X(0) = A = 0\). \(X(L) = B \sin(\sqrt{\lambda}L) = 0\). To have a nontrivial sol, we consider \(B \neq 0\).
-Then \(\sin(\sqrt{\lambda}L) = 0\), i.e. \(\sqrt{\lambda}L = n\pi\), i.e. \(\lambda_n = (\frac{n\pi}{L})^2\), \(n=1, 2, \cdots\).
+Then \(\sin(\sqrt{\lambda}L) = 0\), i.e. \(\sqrt{\lambda}L = n\pi\), i.e. {\color{blue}\(\lambda_n = (\frac{n\pi}{L})^2\), \(n=1, 2, \cdots\).}
 
-So \(X_n(x) = \sin(\frac{n\pi}{L}x)\) is a nontrivial solution, \(n=1, 2, \cdots\).
+So {\color{blue}\(X_n(x) = \sin(\frac{n\pi}{L}x)\)} is a nontrivial solution, \(n=1, 2, \cdots\).
 \end{itemize}
 
 For \(\lambda_n = (\frac{n\pi}{L})^2\), let's solve the ODE for \(T\): \(T' + k \lambda_n T = 0\). The function
 \[T_n(t) = e^{-k \lambda_n t}\]
 is a nontrivial solution (exercise).
 
-Then, \(u_n(x, t) = e^{-k (\frac{n\pi}{L})^2 t} \sin(\frac{n\pi}{L}x) \ n=1, 2, \cdots\)
+Then, {\color{blue}\(u_n(x, t) = e^{-k (\frac{n\pi}{L})^2 t} \sin(\frac{n\pi}{L}x) \ n=1, 2, \cdots\)}
 are sol. to the PDE and the BC.
 
 To have a solution to the complete problem, including the IC, we look for a solution in the form
-\[u(x, t) = \sum_{n=1}^\infty B_n u_n(x, t)\]
+{\color{blue}\[u(x, t) = \sum_{n=1}^\infty B_n u_n(x, t)\]}
 Formally, \(u\) solves the PDE and the BC. Also,
 \[u(x, 0) = \sum_{n=1}^\infty B_n \sin(\frac{n\pi}{L}x) = f(x) \tag{*}\]
 Assume that \(f\) admits a representation in the form (*). Let's look for \(B_n\).
-\[\int_0^L f(x) \sin(\frac{\pi n}{L}x) dx = \sum_{m=1}^\infty B_m \int_0^L \sin(\frac{\pi n}{L}x) \sin(\frac{\pi m}{L}x) dx \overset{\text{delicate step}}{=} \cdots\]
+{\color{blue}\[\int_0^L f(x) \sin(\frac{\pi n}{L}x) dx = \sum_{m=1}^\infty B_m \int_0^L \sin(\frac{\pi n}{L}x) \sin(\frac{\pi m}{L}x) dx \overset{\text{delicate step}}{=} \cdots\]}
 \end{proof}
 
 \begin{example}
@@ -97,13 +97,13 @@ Let \(V\) be the space of twice continuously diff functions in \([\alpha, \beta]
 We know functions \(f: \mathbb{R} \to \mathbb{R}\), \(f(x) = y\).
 We usually call operators to functions whose domain is a set of functions.
 If \(L: V \to W\) where \(W\) is the space of cont. functions in \([\alpha, \beta]\),
-\(L[y] = -\frac{d^2 y}{dt^2}\), then we call \(L\) an operator.
+{\color{blue}\(L[y] = -\frac{d^2 y}{dt^2}\)}, then we call {\color{blue}\(L\)} an operator.
 \end{remark}
 
 If \(r\) is a nonnegative function then any nontrivial solution to
 \[\begin{cases} L[y] = \lambda r y & \alpha < t < \beta \\ B_\alpha[y] = B_\beta[y] = 0 \end{cases}\]
-is called an \textbf{eigenfunction} of \(L\) with eigenvalue \(\lambda\).
-Also, the function \(r\) is called a \textbf{weight}.
+is called an {\color{blue}\textbf{eigenfunction}} of \(L\) with eigenvalue {\color{blue}\(\lambda\)}.
+Also, the function \(r\) is called a {\color{blue}\textbf{weight}}.
 We'll work with the inner product
 \[(y, z) = \int_\alpha^\beta r y z \, dt \ y, z \in V\]
 
@@ -123,10 +123,10 @@ Let \(A = (a_{ij})\), \(i,j=1, \cdots, n\), \(a_{ij} \in \mathbb{C}\), \(A \in \
 \item We say that \(A\) is \textbf{self-adjoint} or Hermitian if \(A^* = A\).
 \item If \(A\) is self-adjoint then:
 \begin{enumerate}[i)]
-\item All eigenvalues of \(A\) are real.
-\item There exists a basis of \(\mathbb{R}^n\) of eigenvectors of \(A\).
-\item If \(v\) and \(w\) are eigenvector with different eigenvalues then \(v \cdot w = 0\).
-\item \((Av, w) = (v, A^* w) \ \forall v, w \in \mathbb{C}^n\).
+\item {\color{blue}All eigenvalues of \(A\) are real.}
+\item {\color{blue}There exists a basis of \(\mathbb{R}^n\) of eigenvectors of \(A\).}
+\item {\color{blue}If \(v\) and \(w\) are eigenvector with different eigenvalues then \(v \cdot w = 0\).}
+\item {\color{blue}\((Av, w) = (v, A^* w) \ \forall v, w \in \mathbb{C}^n\).}
 \end{enumerate}
 \end{itemize}
 \end{recap}

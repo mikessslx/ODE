@@ -7,7 +7,7 @@ Consider \( p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = f(t) \), whe
 \subsubsection{Case 1: \(p(t) \neq 0\) for every \(t \in I\)}
 
 \begin{remark}
-\(y(t) = y_H(t) + y_p(t), t \in I\).
+{\color{blue}\[y(t) = y_H(t) + y_p(t), t \in I.\]}
 \end{remark}
 
 \begin{remark}[Goal]
@@ -18,8 +18,8 @@ To find a basis of solutions to homogeneous eq.
 Let's find a basis of solutions to \(\frac{d^2 y}{dt^2} - 2t \frac{dy}{dt} - 2y = 0\). Here \(\frac{q(t)}{p(t)}\) and \(\frac{r(t)}{p(t)}\) are polynomials. For simplicity, \(p(t) = 1, q(t) = -2t, r(t) = -2\).
 
 Let's look for a solution in the form \(y(t) = \sum_{n=0}^{\infty} a_n t^n\) for \(|t| < \rho\).
-We already know that a sufficient cond for \(y(t)\) to be a solution to the eq is that 
-\[a_{n+2} = \frac{2 a_n}{n+2}, \ n = 0, 1, 2, \cdots\]
+We already know that a sufficient cond for \(y(t)\) to be a solution to the eq is that
+{\color{blue}\[a_{n+2} = \frac{2 a_n}{n+2}, \ n = 0, 1, 2, \cdots\]}
 
 Consider \(a_0=1, a_1=0\).
 As \(a_1 = 0\), we notice that \(a_{2k+1} = 0\) for \(k = 1, 2, \cdots\).
@@ -28,7 +28,7 @@ Also, \(a_2 = \frac{2 \cdot 1}{2} = 1\), \(a_4 = \frac{2}{4} \cdot 1 = \frac{1}{
 
 It can be shown (by induction) that \(a_{2k} = \frac{1}{k!}\).
 Then,
-\[y_1(t) = \sum_{k=0}^{\infty} a_{2k} t^{2k} = \sum_{k=0}^{\infty} \frac{1}{k!} (t^2)^k = e^{t^2}\]
+{\color{blue}\[y_1(t) = \sum_{k=0}^{\infty} a_{2k} t^{2k} = \sum_{k=0}^{\infty} \frac{1}{k!} (t^2)^k = e^{t^2}\]}
 is a solution for \(t \in I\) where \(I\) is any open interval of \(\mathbb{R}\).
 
 Consider \(a_0=0, a_1=1\).
@@ -38,15 +38,15 @@ Additionally, \(a_3 = \frac{2}{3} \cdot 1 = \frac{2}{3}\), \(a_5 = \frac{2}{5} \
 
 Again by induction, we can prove that \(a_{2k+1} = \frac{2^k}{(2k+1)(2k-1)\cdots 1}\).
 Then,
-\[y_2(t) = \sum_{n=0}^{\infty} a_n t^n = \sum_{k=0}^{\infty} a_{2k+1} t^{2k+1}\]
+{\color{blue}\[y_2(t) = \sum_{n=0}^{\infty} a_n t^n = \sum_{k=0}^{\infty} a_{2k+1} t^{2k+1}\]}
 where \(a_{2k+1}\) is given above.
 
 Let's analyze if \(y_1\) and \(y_2\) are l.i.
 \[W(y_1, y_2)(t) = \det \begin{pmatrix} y_1(t) & y_2(t) \\ y_1'(t) & y_2'(t) \end{pmatrix}\]
 
-If \(t=0\) then \(W(y_1, y_2)(0) = \det \begin{pmatrix} 1 & y_2(0) \\ 0 & a_1 \end{pmatrix} = a_1 = 1 \neq 0\). (since \(y_2(0) = 0\))
+If \(t=0\) then \(W(y_1, y_2)(0) = {\det \begin{pmatrix} 1 & y_2(0) \\ 0 & a_1 \end{pmatrix}} = a_1 = 1 \neq 0\). (since \(y_2(0) = 0\))
 
-Then \(\{y_1, y_2\}\) is a basis.
+{\color{blue}Then \(\{y_1, y_2\}\) is a basis.}
 \end{example}
 
 \begin{remark}
@@ -62,17 +62,17 @@ admit power series expansions.
 \end{itemize}
 \end{remark}
 
-\begin{theorem}
+{\color{blue}\begin{theorem}
 Assume that \(q/p\) and \(r/p\) admit Taylor's series expansions about \(t_0\) for \(|t-t_0| < \rho\). Then, any solution to \(p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = 0\) is analytic at \(t_0\) for \(|t-t_0| < \tilde{\rho}\) with \(\tilde{\rho} \geq \rho\) and the coeff can be obtained by replacing \(y\) in the equation and setting the sum of coeff. of like powers equal to zero.
-\end{theorem}
+\end{theorem}}
 
 \subsubsection{Case 2: \(p(t)\) may vanish at some \(t_0 \in I\)}
 
-We say that the eq \(p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = 0\) is singular at \(t=t_0\) if \(p(t_0) = 0\).
+{\color{blue}We say that the eq \(p(t) \frac{d^2 y}{dt^2} + q(t) \frac{dy}{dt} + r(t) y = 0\) is singular at \(t=t_0\) if \(p(t_0) = 0\).}
 
 \begin{example}[Euler's equation]
 Let's find a basis of solutions to the Euler's eq.
-\[t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0\]
+{\color{blue}\[t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0\]}
 where \(\alpha, \beta \in \mathbb{R}\). Here \(p(t) = t^2\), \(q(t) = \alpha t\), and \(r(t) = \beta\).
 The eq. is singular at \(t_0 = 0\). Observe that the eq. admits solutions in \((0, +\infty)\) and in \((-\infty, 0)\). From now on we'll consider \(t > 0\). Let \(y(t) = t^r\), \(t > 0\). We observe,
 \begin{align*}
@@ -83,15 +83,15 @@ t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y &= t^2 r(r-1) t^{r-2} 
 \(\forall t > 0\) iff \(r^2 + (\alpha-1)r + \beta = 0\).
 
 So, \(y(t) = t^r\), \(t > 0\), is a solution if and only if \(r\) is a solution to \(r^2 + (\alpha-1)r + \beta = 0\), i.e.
-\[r_{1,2} = \frac{-(\alpha-1) \pm \sqrt{(\alpha-1)^2 - 4\beta}}{2}\]
+{\color{blue}\[r_{1,2} = \frac{-(\alpha-1) \pm \sqrt{(\alpha-1)^2 - 4\beta}}{2}\]}
 
 \begin{itemize}
-\item Assume that \((\alpha-1)^2 - 4\beta > 0\). Then, \(y_1(t) = t^{r_1}\) and \(y_2(t) = t^{r_2}\) are solutions for \(t > 0\). Also,
+\item {\color{blue}Assume that \((\alpha-1)^2 - 4\beta > 0\). Then, \(y_1(t) = t^{r_1}\) and \(y_2(t) = t^{r_2}\) are solutions for \(t > 0\).} Also,
 \[W(y_1, y_2)(t) = \det \begin{pmatrix} t^{r_1} & t^{r_2} \\ r_1 t^{r_1-1} & r_2 t^{r_2-1} \end{pmatrix} = r_2 t^{r_1+r_2-1} - r_1 t^{r_1+r_2-1} \neq 0, \ \forall t > 0\]
 since \(r_1 \neq r_2\).
     
-\item Assume that \((\alpha-1)^2 - 4\beta = 0\).
-Then \(r_1 = r_2 = r = \frac{1-\alpha}{2}\). Thus, \(y_1(t) = t^r\) is one solution for \(t > 0\). We'll look for a second solution by a method often called \textbf{reduction of order}. We look for a solution \(y_2(t) = u(t) t^r\). Observe that
+\item {\color{blue}Assume that \((\alpha-1)^2 - 4\beta = 0\).}
+Then \(r_1 = r_2 = r = \frac{1-\alpha}{2}\). Thus, {\color{blue}\(y_1(t) = t^r\)} is one solution for \(t > 0\). {\color{blue}We'll look for a second solution by a method often called \textbf{reduction of order}. We look for a solution \(y_2(t) = u(t) t^r\).} Observe that
 \begin{align*}
 t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y &= \beta u(t) t^r + \alpha t \left( \frac{du}{dt} t^r + r u(t) t^{r-1} \right) \\
 &+ t^2 \left( \frac{d^2 u}{dt^2} t^r + 2r \frac{du}{dt} t^{r-1} + r(r-1) t^{r-2} u(t) \right) \\
@@ -107,7 +107,7 @@ Let \(v = \frac{du}{dt}\). Then \(u\) is a sol to the eq iff \(v\) solves \(t \f
 
 Observe that \(v(t) = \frac{1}{t}\) is a solution for \(t > 0\).
     
-Then, \(u(t) = \ln t\), \(t > 0\). Then \(y_2(t) = (\ln t) t^r\).
+{\color{blue}Then, \(u(t) = \ln t\), \(t > 0\). Then \(y_2(t) = (\ln t) t^r\).}
     
 Also, we have
 \begin{align*}

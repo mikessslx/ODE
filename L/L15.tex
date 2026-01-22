@@ -1,15 +1,15 @@
 \section{Lecture 15 - 12.02}
 
 \begin{theorem}
-\begin{enumerate}[a)]
+{\color{blue}\begin{enumerate}[a)]
 \item A matrix \(Q\) is a fundamental matrix of solutions to \(\frac{dy}{dt} = Ay\) if and only if \(\frac{dQ}{dt} = AQ\) and \(\det(Q)(t_0) \neq 0\) for some \(t_0 \in \mathbb{R}\).
 \item Let \(Q\) and \(R\) be two fundamental matrices for \(\frac{dy}{dt} = Ay\). Then there exists a constant matrix \(C\) s.t. \(R(t) = Q(t)C\) for every \(t \in \mathbb{R}\).
 \item The matrix exponential \(e^{At}\) is a fundamental matrix solution to \(\frac{dy}{dt} = Ay\). Also, if \(Q\) is a fundamental matrix for the same system, then \(e^{At} = Q(t)(Q(0))^{-1}\) for every \(t \in \mathbb{R}\).
-\end{enumerate}
+\end{enumerate}}
 \end{theorem}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}
@@ -60,19 +60,19 @@ C(t) &= C(t_0) + \int_{t_0}^t (Q(s))^{-1}b(s) ds, \text{ where } t_0 \in \mathbb
 \end{align*}
 
 In particular, if \(Q(t) = e^{At}\), then
-\[y(t) = e^{At} \left( e^{-At_0} y(t_0) + \int_{t_0}^t e^{-As} b(s) ds \right)\]
+{\color{blue}\[y(t) = e^{At} \left( e^{-At_0} y(t_0) + \int_{t_0}^t e^{-As} b(s) ds \right)\]}
 
 \begin{note}
 The inverse of \(e^{At}\) is \(e^{-At}\) for every \(t\).
 \end{note}
 
 That is,
-\[y(t) = e^{A(t-t_0)} y(t_0) + \int_{t_0}^t e^{A(t-s)} b(s) ds, \ \forall t \in \mathbb{R}\]
+{\color{blue}\[y(t) = e^{A(t-t_0)} y(t_0) + \int_{t_0}^t e^{A(t-s)} b(s) ds, \ \forall t \in \mathbb{R}\]}
 
-(This can be generalized to
+\sout{(This can be generalized to}
 \[\frac{dy}{dt} = Ay + b(t), \ A: V \to W\]
 
-\(V, W\) are function spaces of (possible) infinite dimension \(\rightsquigarrow\) Cf Semigroup theory for PDE.)
+\sout{\(V, W\) are function spaces of (possible) infinite dimension \(\rightsquigarrow\) Cf Semigroup theory for PDE.)}
 
 \begin{recap}
 Summary:
@@ -97,18 +97,18 @@ We'll present a solution method for eqs. with const. coeff. and then a solution 
 \leavevmode
 \begin{enumerate}[a)]
 \item
-The equation \(m \frac{d^2 y}{dt^2} = F(t, y, \frac{dy}{dt})\) is the Newton's second law of motion.
+{\color{blue}The equation \(m \frac{d^2 y}{dt^2} = F(t, y, \frac{dy}{dt})\) is the Newton's second law of motion.}
         
-The force \(F\) can be nonlinear.
+{\color{blue}The force \(F\) can be nonlinear.}
         
 \item
-The equation \(\frac{d^2 \theta}{dt^2} + \frac{g}{L} \sin(\theta) = 0\) is the pendulum equation.
+{\color{blue}The equation \(\frac{d^2 \theta}{dt^2} + \frac{g}{L} \sin(\theta) = 0\) is the pendulum equation.}
 
 \item
-The equation \(t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0, \ \alpha, \beta \in \mathbb{R}\), is the Euler's equation.
+{\color{blue}The equation \(t^2 \frac{d^2 y}{dt^2} + \alpha t \frac{dy}{dt} + \beta y = 0, \ \alpha, \beta \in \mathbb{R}\), is the Euler's equation.}
 
 \item
-The eq. \(x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - \nu^2)y = 0\) is the Bessel's eq.
+{\color{blue}The eq. \(x^2 \frac{d^2 y}{dx^2} + x \frac{dy}{dx} + (x^2 - \nu^2)y = 0\) is the Bessel's eq.}
 \end{enumerate}
 \end{example}
 
@@ -128,15 +128,15 @@ That is, \(p(\lambda) = \lambda^2 + a\lambda + b\). This polynomial is called th
 
 \subsubsection{Case 1: Assume that \(p(\lambda)\) has two real distinct roots, \(\lambda_1, \lambda_2\).}
 
-Let \(v_1\) and \(v_2\) be eigenvector for \(\lambda_1\) and \(\lambda_2\), respectively. The functions
+Let \(v_1\) and \(v_2\) be eigenvector for \(\lambda_1\) and \(\lambda_2\), respectively. {\color{blue}The functions
 \[y^{(1)}(t) = v_1 e^{\lambda_1 t} \ \text{and} \ y^{(2)}(t) = v_2 e^{\lambda_2 t}, \ t \in \mathbb{R}\]
-form a basis of solutions to the system.
+form a basis of solutions to the system.}
 If \(v_1 = \begin{pmatrix} u_1 \\ w_1 \end{pmatrix}\) and \(v_2 = \begin{pmatrix} u_2 \\ w_2 \end{pmatrix}\) then \(u_1 e^{\lambda_1 t}\) and \(u_2 e^{\lambda_2 t}\), \(t \in \mathbb{R}\), are solutions to the eq. Then, we notice that \(y_1(t) = e^{\lambda_1 t}\) and \(y_2(t) = e^{\lambda_2 t}\), \(t \in \mathbb{R}\), form a basis of solutions.
 
 \subsubsection{Case 2: Assume that \(p(\lambda)\) has a pair of complex conjugates roots, \(\lambda, \bar{\lambda}\).}
 
 Let \(\lambda = \alpha + i\beta\), \(\beta \neq 0\).
 
-If \(v = u + iw, \ u, w \in \mathbb{R}^n\), is an eigenvector for \(\lambda\), then the functions:
+If \(v = u + iw, \ u, w \in \mathbb{R}^n\), is an eigenvector for \(\lambda\), {\color{blue}then the functions:
 \[e^{\alpha t} (u \cos(\beta t) - w \sin(\beta t)) \ \text{and} \ e^{\alpha t} (w \cos(\beta t) + u \sin(\beta t)), \ t \in \mathbb{R}\]
-form a basis of solutions to the system.
+form a basis of solutions to the system.}

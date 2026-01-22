@@ -11,55 +11,55 @@ Find the general solution to the system \(\frac{dy}{dt} = Ay\) in each case.
 
 Let's compute first the eigenvalues of \(A\). They are the roots of
 \[p(\lambda) = \det(A - \lambda I) = \det \begin{pmatrix} 1-\lambda & 12 \\ 3 & 1-\lambda \end{pmatrix} = (1-\lambda)^2 - 36.\]
-Then, \(p(\lambda) = 0 \iff |1-\lambda| = 6 \iff \lambda_1 = -5\) or \(\lambda_2 = 7\).
-As the eigenvalues are real and distinct, we know that \(y^{(1)}(t) = v_1 e^{-5t}\) and \(y^{(2)}(t) = v_2 e^{7t}, \ t \in \mathbb{R}\), is a basis of solutions, where \(v_j\) is an eigenvector for \(\lambda_j, \ j=1, 2\).
+{\color{blue}Then, \(p(\lambda) = 0 \iff |1-\lambda| = 6 \iff \lambda_1 = -5\) or \(\lambda_2 = 7\).}
+{\color{blue}As the eigenvalues are real and distinct, we know that \(y^{(1)}(t) = v_1 e^{-5t}\) and \(y^{(2)}(t) = v_2 e^{7t}, \ t \in \mathbb{R}\), is a basis of solutions, where \(v_j\) is an eigenvector for \(\lambda_j, \ j=1, 2\).}
 
 Let's compute \(v_1\).
-\begin{align*}
-A v_1 = \lambda_1 v &\iff \begin{pmatrix} 1 & 12 \\ 3 & 1 \end{pmatrix} \begin{pmatrix} u \\ w \end{pmatrix} = -5 \begin{pmatrix} u \\ w \end{pmatrix} \iff \begin{cases} u + 12w = -5u \\ 3u + w = -5w \end{cases} \\
-&\iff \begin{cases} 6u + 12w = 0 \\ 3u + 6w = 0 \end{cases} \iff u + 2w = 0.
-\end{align*}
+% \begin{align*}
+% A v_1 = \lambda_1 v &\iff \begin{pmatrix} 1 & 12 \\ 3 & 1 \end{pmatrix} \begin{pmatrix} u \\ w \end{pmatrix} = -5 \begin{pmatrix} u \\ w \end{pmatrix} \iff \begin{cases} u + 12w = -5u \\ 3u + w = -5w \end{cases} \\
+% &\iff \begin{cases} 6u + 12w = 0 \\ 3u + 6w = 0 \end{cases} \iff u + 2w = 0.
+% \end{align*}
 
-For \(w = 1\), we have \(u = -2\). Then, \(v_1 = \begin{pmatrix} -2 \\ 1 \end{pmatrix}\).
+{\color{blue}For \(w = 1\), we have \(u = -2\). Then, \(v_1 = \begin{pmatrix} -2 \\ 1 \end{pmatrix}\).}
 
-Similarly, we get \(v_2 = \begin{pmatrix} 2 \\ 1 \end{pmatrix}\). Then, the general solution is
-\[y(t) = c_1 \begin{pmatrix} -2 \\ 1 \end{pmatrix} e^{-5t} + c_2 \begin{pmatrix} 2 \\ 1 \end{pmatrix} e^{7t}, \ t \in \mathbb{R}, \ c_1, c_2 \in \mathbb{R}.\]
+{\color{blue}Similarly, we get \(v_2 = \begin{pmatrix} 2 \\ 1 \end{pmatrix}\). Then, the general solution is
+\[y(t) = c_1 \begin{pmatrix} -2 \\ 1 \end{pmatrix} e^{-5t} + c_2 \begin{pmatrix} 2 \\ 1 \end{pmatrix} e^{7t}, \ t \in \mathbb{R}, \ c_1, c_2 \in \mathbb{R}.\]}
 
 \subsubsection{Solution b)}
 
 Let's compute the eigenvalues of \(A\).
 \[p(\lambda) = \det \begin{pmatrix} 1-\lambda & 0 & 0 \\ 0 & 1-\lambda & -1 \\ 0 & 1 & 1-\lambda \end{pmatrix} = (1-\lambda) \det \begin{pmatrix} 1-\lambda & -1 \\ 1 & 1-\lambda \end{pmatrix} = (1-\lambda)((1-\lambda)^2 + 1).\]
 
-The roots of \(p(\lambda)\) are \(\lambda_1 = 1, \ \lambda_2 = 1+i, \ \lambda_3 = 1-i\).
+{\color{blue}The roots of \(p(\lambda)\) are \(\lambda_1 = 1, \ \lambda_2 = 1+i, \ \lambda_3 = 1-i\).}
 Then, if \(v_j\) is an eigenvector of \(\lambda_j, \ j=1, 2, 3\), we have that
-\[y^{(1)}(t) = v_1 e^t, \ z^{(2)}(t) = v_2 e^{(1+i)t}, \ z^{(3)}(t) = v_3 e^{(1-i)t}, \ t \in \mathbb{R}\]
+{\color{blue}\[y^{(1)}(t) = v_1 e^t, \ z^{(2)}(t) = v_2 e^{(1+i)t}, \ z^{(3)}(t) = v_3 e^{(1-i)t}, \ t \in \mathbb{R}\]}
 are complex solution, moreover, they are a basis.
 
 The vector \(v_1\) can be considered to be \(v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\) (exercise). Let's compute \(v_2\).
 \[A v_2 = (1+i) v_2 \iff \begin{cases} u = (1+i)u \\ w - iz = (1+i)w \\ w + iz = (1+i)z \end{cases} \iff \begin{cases} u=0 \\ -iz - iw = 0 \\ w - iz = 0 \end{cases} \iff \begin{cases} u=0 \\ z + w = 0 \end{cases}\]
 
-If \(\omega = 1\), then \(v_2 = \begin{pmatrix} 0 \\ 1 \\ -i \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + i \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix}\).
+{\color{blue}If \(w = 1\), then \(v_2 = \begin{pmatrix} 0 \\ 1 \\ -i \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + i \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix}\).}
 
 (\(e^{\alpha + i\beta} = e^\alpha (\cos(\beta) + i\sin(\beta))\), \(\alpha, \beta \in \mathbb{R}\).)
 
 From here, we have
-\begin{align*}
+{\color{blue}\begin{align*}
 z^{(2)}(t) &= \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + i \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} \right] e^t (\cos t + i\sin t) \\
 &= \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} e^t \cos t - \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} e^t \sin t + i \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} e^t \sin t + \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} e^t \cos t \right] \\
 &= y^{(2)}(t) + i y^{(3)}(t)
-\end{align*}
+\end{align*}}
 
 Notice that \(y^{(1)}, y^{(2)}, y^{(3)}\) are solutions, and they are l.i. since
 \[y^{(1)}(0) = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \ y^{(2)}(0) = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}, \ y^{(3)}(0) = \begin{pmatrix} 0 \\ 0 \\ -1 \end{pmatrix} \text{ are l.i.}\]
-The general solution is \(y(t) = c_1 y^{(1)}(t) + c_2 y^{(2)}(t) + c_3 y^{(3)}(t), \ t \in \mathbb{R}, \ c_1, c_2, c_3 \in \mathbb{R}\).
+{\color{blue}The general solution is \(y(t) = c_1 y^{(1)}(t) + c_2 y^{(2)}(t) + c_3 y^{(3)}(t), \ t \in \mathbb{R}, \ c_1, c_2, c_3 \in \mathbb{R}\).}
 
 \subsubsection{Solution c)}
 
-As \(A\) is upper triangular, we have that the eigenvalues of \(A\) are \(\lambda_1 = 1\), with multiplicity 2, and \(\lambda_2 = 2\), with multiplicity one. The dimension of the eigenspace in each case is 1 (exercise). Also, \(v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\) is an eigenvector for \(\lambda_1\), and \(v_2 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\) is an eigenvector for \(\lambda_2\). Now we look for a solution in the form \(y(t) = e^{At} v\) where \(v\) solves \((A - \lambda_1 I)^m v = 0\) for some \(m \le 2\).
+{\color{blue}As \(A\) is upper triangular, we have that the eigenvalues of \(A\) are \(\lambda_1 = 1\), with multiplicity 2, and \(\lambda_2 = 2\), with multiplicity one.} The dimension of the eigenspace in each case is 1 (exercise). Also, \(v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\) is an eigenvector for \(\lambda_1\), and \(v_2 = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}\) is an eigenvector for \(\lambda_2\). {\color{blue}Now we look for a solution in the form \(y(t) = e^{At} v\) where \(v\) solves \((A - \lambda_1 I)^m v = 0\) for some \(m \le 2\).}
 Observe that \(v_1\) solves this eq. Then, we consider the eq. \((A - \lambda_1 I)^2 v = 0\) and look for solutions \(v\) s.t. \((A - \lambda_1 I)v \neq 0\). The vector \(v = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\) solves the eq. and verifies the condition.
 
 Notice that the functions
-\[y^{(1)}(t) = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} e^t, \ y^{(2)}(t) = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} e^{2t}, \ y^{(3)}(t) = e^{At} v = (I + (A-I)t) v e^t\]
+{\color{blue}\[y^{(1)}(t) = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} e^t, \ y^{(2)}(t) = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix} e^{2t}, \ y^{(3)}(t) = e^{At} v = (I + (A-I)t) v e^t\]}
 are three solutions. They are l.i. since \(y^{(1)}(0) = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \ y^{(2)}(0) = \begin{pmatrix} 0 \\ 0 \\ 1 \end{pmatrix}, \ y^{(3)}(0) = v = \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix}\) are l.i.
 
-(\((A-I)v = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\), so \(y^{(3)}(t) = \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}t \right] e^t = \begin{pmatrix} t \\ 1 \\ 0 \end{pmatrix} e^t\).)
+{\color{blue}(\((A-I)v = \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\), so \(y^{(3)}(t) = \left[ \begin{pmatrix} 0 \\ 1 \\ 0 \end{pmatrix} + \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}t \right] e^t = \begin{pmatrix} t \\ 1 \\ 0 \end{pmatrix} e^t\).)}

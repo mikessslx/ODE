@@ -36,13 +36,13 @@ y_2' = 6y_2 - 9y_1
 The coeff. matrix is \(A = \begin{pmatrix} 0 & 1 \\ -9 & 6 \end{pmatrix}\).
 
 Let's find the eigenvalues of \(A\):
-\[p(\lambda) = \det(A - \lambda I) = \det \begin{pmatrix} -\lambda & 1 \\ -9 & 6-\lambda \end{pmatrix} = \lambda(\lambda-6) + 9 = \lambda^2 - 6\lambda + 9 = (\lambda-3)^2\]
+{\color{blue}\[p(\lambda) = \det(A - \lambda I) = \det \begin{pmatrix} -\lambda & 1 \\ -9 & 6-\lambda \end{pmatrix} = \lambda(\lambda-6) + 9 = \lambda^2 - 6\lambda + 9 = (\lambda-3)^2\]}
 \(A\) has one real eigenvalue, \(\lambda = 3\), with multiplicity 2. As 3 is an eigenvalue, we know that \(Y(t) = v e^{3t}\) is a solution to the system, where \(v\) is an eigenvector of \(A\) for \(\lambda = 3\). Let \(v = \begin{pmatrix} u \\ w \end{pmatrix}\). Then \(Y(t) = \begin{pmatrix} ue^{3t} \\ we^{3t} \end{pmatrix}\).
-Then \(ue^{3t}\) is a solution to (*). Let \(\tilde{y}(t) = e^{3t}\). This is a solution to (*) (exercise).
+Then \(ue^{3t}\) is a solution to (*). Let \(\tilde{y}(t) = e^{3t}\). This is a solution to (*) \sout{(exercise)}.
 
 Let's now analyze if \(y\) and \(\tilde{y}\) are l.i.
 \[W(y, \tilde{y})(t) = \det \begin{pmatrix} y(t) & \tilde{y}(t) \\ y'(t) & \tilde{y}'(t) \end{pmatrix} = \det \begin{pmatrix} te^{3t} & e^{3t} \\ e^{3t}(1+3t) & 3e^{3t} \end{pmatrix} = 3te^{6t} - (1+3t)e^{6t} = -e^{6t} \neq 0\]
-for every \(t \in \mathbb{R}\). Then, \(\{y, \tilde{y}\}\) is a basis of solutions to (*). We have \(y_H\).
+for every \(t \in \mathbb{R}\). {\color{blue}Then, \(\{y, \tilde{y}\}\) is a basis of solutions to (*). We have \(y_H\).}
 
 Let's now look for a particular solution \(y_P\) to (**).
 
@@ -51,7 +51,7 @@ One way to find \(y_P\) is by the method of variation of parameters (Exercise).
 
 Another way is the following. Let's look for a particular solution in the form \(y_P = y_{P_1} + y_{P_2}\), where \(y_{P_1}\) is a solution to \(y'' - 6y' + 9y = 1\) and \(y_{P_2}\) is a solution to \(y'' - 6y' + 9y = e^{3t}\).
 
-It's direct that \(y_{P_1}(t) = \frac{1}{9}\) is a solution to \(y'' - 6y' + 9y = 1\).
+{\color{blue}It's direct that \(y_{P_1}(t) = \frac{1}{9}\) is a solution to \(y'' - 6y' + 9y = 1\).}
 Let's look for a solution to the other eq. in the form \(y_{P_2}(t) = c(t)e^{3t}\).
 
 \begin{remark}
@@ -65,7 +65,7 @@ Then, \(y_{P_2}'(t) = c'(t)e^{3t} + 3c(t)e^{3t}\) and \(y_{P_2}''(t) = c''(t)e^{
 Thus, 
 \[y_{P_2}''(t) - 6y_{P_2}'(t) + 9y_{P_2}(t) = e^{3t} ( c''(t) + 6c'(t) + 9c(t) - 6c'(t) - 18c(t) + 9c(t) ) = e^{3t} \iff c''(t) = 1\]
 
-Then, we can take \(c(t) = \frac{t^2}{2}\). Then \(y_{P_2}(t) = \frac{t^2}{2}e^{3t}\).
+{\color{blue}Then, we can take \(c(t) = \frac{t^2}{2}\). Then \(y_{P_2}(t) = \frac{t^2}{2}e^{3t}\).}
 
-(The general solution is \(y(t) = c_1 e^{3t} + c_2 t e^{3t} + \frac{1}{9} + \frac{t^2}{2}e^{3t}, \ t \in \mathbb{R}\).)
+{\color{blue}(The general solution is \(y(t) = c_1 e^{3t} + c_2 t e^{3t} + \frac{1}{9} + \frac{t^2}{2}e^{3t}, \ t \in \mathbb{R}\).)}
 \end{proof}

@@ -43,9 +43,9 @@ The general solution to the system is
 Also, \(y(0) = c_1 y^{(1)}(0) + c_2 y^{(2)}(0) = c_1 \begin{pmatrix} 1 \\ -1 \end{pmatrix} + c_2 \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\).
 
 Then, \(\begin{cases} c_1 = 1 \\ -c_1 + c_2 = 1 \implies c_2 = 2 \end{cases}\).
-The solution is
+{\color{blue}The solution is
 \[y(t) = y^{(1)}(t) + 2y^{(2)}(t), \ t \in \mathbb{R}\]
-i.e., \(y_1(t) = e^{-t} + 2te^{-t}\) and \(y_2(t) = -e^{-t} + 2(1-t)e^{-t}, \ t \in \mathbb{R}\).
+i.e., \(y_1(t) = e^{-t} + 2te^{-t}\) and \(y_2(t) = -e^{-t} + 2(1-t)e^{-t}, \ t \in \mathbb{R}\).}
 \end{enumerate}
 \end{proof}
 
@@ -78,9 +78,9 @@ c_1(t) &= \int t(1-3t)e^t dt = (-3t^2 + 7t - 7)e^t \\
 c_2(t) &= \int 3te^t dt = 3(t-1)e^t
 \end{align*}
 
-Then, the general solution to the non-hom. system is
+{\color{blue}Then, the general solution to the non-hom. system is
 \[y(t) = \underbrace{c_1 y^{(1)}(t) + c_2 y^{(2)}(t)}_{y_H(t)} + \underbrace{(-3t^2 + 7t - 7)e^t y^{(1)}(t) + 3(t-1)e^t y^{(2)}(t)}_{z}\]
-for \(t \in \mathbb{R}\).
+for \(t \in \mathbb{R}\).}
 
 \paragraph{Method 2}
 As the system is linear and of first-order, with constant coefficients and a linear polynomials as non homogeneous terms in each equation, it seems natural to look for a solution in the form \(y_1(t) = a_1 t + b_1, \ y_2(t) = a_2 t + b_2\) and look for appropriate choice of \(a_1, a_2, b_1, b_2\).

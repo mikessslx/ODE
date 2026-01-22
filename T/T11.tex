@@ -1,23 +1,23 @@
 \section{Tutorial 11 - 12.26}
 
-We are working with this problem
-\[-L[y] = a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t)y = -\lambda y, \ \alpha < t < \beta\]
-\begin{align*}
+\sout{We are working with this problem}
+{\color{blue}\[-L[y] = a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t)y = -\lambda y, \ \alpha < t < \beta\]}
+{\color{blue}\begin{align*}
 B_\alpha[y] &= a_1 y(\alpha) + b_1 \frac{dy}{dt}(\alpha) = 0, \ |a_1| + |b_1| > 0 \\
 B_\beta[y] &= a_2 y(\beta) + b_2 \frac{dy}{dt}(\beta) = 0, \ |a_2| + |b_2| > 0
-\end{align*}
+\end{align*}}
 
-\(V = \left\{ y \in C^2[\alpha, \beta], \ B_\alpha[y] = B_\beta[y] = 0 \right\}\).
+{\color{blue}\(V = \left\{ y \in C^2[\alpha, \beta], \ B_\alpha[y] = B_\beta[y] = 0 \right\}\).}
 
-\((L[y], z) = (y, L[z]) \ \forall \ y, z \in V\), where \((u,v) = \int_\alpha^\beta uv \, dt \rightsquigarrow L \text{ is self-adjoint}\).
+{\color{blue}\((L[y], z) = (y, L[z]) \ \forall \ y, z \in V\), where \((u,v) = \int_\alpha^\beta uv \, dt \rightsquigarrow L \text{ is self-adjoint}\).}
 
 \begin{theorem}
-Assume that \(b \in C^1[\alpha, \beta]\) and \(a \in C^2[\alpha, \beta]\).
-The operator \(L\) is self-adjoint iff \(b = \frac{da}{dt}\).
+{\color{blue}Assume that \(b \in C^1[\alpha, \beta]\) and \(a \in C^2[\alpha, \beta]\).}
+{\color{blue}The operator \(L\) is self-adjoint iff \(b = \frac{da}{dt}\).}
 \end{theorem}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}
@@ -80,13 +80,13 @@ Proof is commented out!
 % \end{proof}
 
 If \(L\) is self-adjoint, we know that \(b = \frac{da}{dt}\) in \([\alpha, \beta]\). Using the notation,
-\[p(t) = a(t), \ q(t) = -c(t)\]
+{\color{blue}\[p(t) = a(t), \ q(t) = -c(t)\]}
 
 The operator \(L\) can be equivalently written as
-\[L[y] = -\left( \frac{d}{dt} \left( p \frac{dy}{dt} \right) - qy \right)\]
+{\color{blue}\[L[y] = -\left( \frac{d}{dt} \left( p \frac{dy}{dt} \right) - qy \right)\]}
 
 Then, our original problem is
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 \frac{d}{dt} \left( p \frac{dy}{dt} \right) - qy = -\lambda y & \alpha < t < \beta \\
 B_\alpha[y] = B_\beta[y] = 0
-\end{cases}\]
+\end{cases}\]}

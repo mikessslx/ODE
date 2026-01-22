@@ -3,18 +3,18 @@
 \subsection{\S2. The Existence and Uniqueness Theorem for First-Order ODEs (Continued)}
 
 Consider the initial value problem (IVP):
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 \frac{dy}{dt} = f(t, y) \\
 y(t_0) = y_0
-\end{cases}\]
+\end{cases}\]}
 
 \begin{example}
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 \frac{dy}{dt} = 1 + y^2 \\
 y(0) = 0
-\end{cases}\]
+\end{cases}\]}
 
-Here, \(f(t, y) = 1 + y^2\). This IVP admits a solution given by \(y(t) = \tan(t)\) for \(t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\). Notice that \(y\) cannot be extended outside this interval as a continuous function.
+Here, \(f(t, y) = 1 + y^2\). This IVP admits a solution given by \(y(t) = \tan(t)\) for \(t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\). {\color{blue}Notice that \(y\) cannot be extended outside this interval as a continuous function.}
 \end{example}
 
 \begin{remark}
@@ -22,22 +22,22 @@ The general solution to \(\frac{dy}{dt} = 1 + y^2\) is \(y(t) = \tan(t + c)\). T
 \end{remark}
 
 \begin{example}
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 \frac{dy}{dt} = \sqrt{|y|} \\
 y(0) = 0
-\end{cases}\]
+\end{cases}\]}
 
-Here, \(f(t, y) = \sqrt{|y|}\). This problem has infinitely many solutions, for instance, those of the form
+Here, \(f(t, y) = \sqrt{|y|}\). {\color{blue}This problem has infinitely many solutions, for instance, those of the form
 \[y(t) = 
 \begin{cases} 
 0 & t \geq c \\
 \frac{(t - c)^2}{4} & t < c 
 \end{cases}\]
-for any \(c \geq 0\).
+for any \(c \geq 0\).}
 \end{example}
 
 \begin{theorem}[Picard-Lindelöf Theorem]
-Assume \(f\) and \(\frac{\partial f}{\partial y}\) are continuous in the rectangle
+{\color{blue}Assume \(f\) and \(\frac{\partial f}{\partial y}\) are continuous in the rectangle
 \[R = \left\{ (t, y) \mid t_0 \leq t \leq t_0 + a, \, |y - y_0| \leq b \right\},\]
 where \(a, b\) are given numbers.
 
@@ -46,11 +46,11 @@ Let \(M = \max_{(t, y) \in R} |f(t, y)|\) and \(\alpha = \min\left\{ a, \frac{b}
 \frac{dy}{dt} = f(t, y) \\
 y(t_0) = y_0
 \end{cases}\]
-has a unique solution in \([t_0, t_0 + \alpha]\). A similar result holds for intervals of the form \([t_0 - \alpha, t_0]\).
+has a unique solution in \([t_0, t_0 + \alpha]\). A similar result holds for intervals of the form \([t_0 - \alpha, t_0]\).}
 \end{theorem}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}

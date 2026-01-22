@@ -6,7 +6,6 @@ Solution Methods for Some First-Order ODEs
 \item The integrating factor method for linear equations:
 \[\frac{d\tilde{y}}{dt} = \tilde{b}(t) \tag{*}\]
 (Idea: Transform the given equation into something in the form (*).)
-
 \item Separable equations: \(\mu(y)\frac{dy}{dt} = g(t)\).
 \end{itemize}
 \end{recap}
@@ -18,7 +17,7 @@ Consider the equation \(\frac{dy}{dt} = f(t, y)\). If we can transform it to
 then solutions are \(\phi(t, y) = c\) for some constant \(c \in \mathbb{R}\).
 
 It's common to deal with equations written as
-\[M(t, y) + N(t, y)\frac{dy}{dt} = 0 \tag{18}\]
+{\color{blue}\[M(t, y) + N(t, y)\frac{dy}{dt} = 0 \tag{18}\]}
 
 \begin{note}
 For \(\frac{dy}{dt} = f(t, y)\), we have \(N \equiv 1\) and \(M = -f(t, y)\).
@@ -42,12 +41,12 @@ By an abuse of notation, we usually write \(u = y\).
 \end{remark}
 
 \begin{theorem}[Exactness Condition]
-Let \(M\) and \(N\) be continuous functions with continuous first-order partial derivatives. Then, there exists a function \(\phi\) that satisfies the exactness condition if and only if
-\[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\]
+{\color{blue}Let \(M\) and \(N\) be continuous functions with continuous first-order partial derivatives. Then, there exists a function \(\phi\) that satisfies the exactness condition if and only if
+\[\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\]}
 \end{theorem}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}
@@ -73,31 +72,31 @@ Proof is commented out!
 % \end{proof}
 
 \begin{remark}[Differentiation Under the Integral Sign]
-In the proof we used that \(\frac{\partial}{\partial y} \int M(t, y) dt = \int \frac{\partial}{\partial y} M(t, y) dt\). This holds because \(M\) is continuous and \(\frac{\partial M}{\partial y}\) is continuous as well. The proof of this is based on the Dominated Convergence Theorem (DCT):
+\sout{In the proof we used that \(\frac{\partial}{\partial y} \int M(t, y) dt = \int \frac{\partial}{\partial y} M(t, y) dt\). This holds because \(M\) is continuous and \(\frac{\partial M}{\partial y}\) is continuous as well. The proof of this is based on the Dominated Convergence Theorem (DCT):}
 \begin{itemize}
-\item \(\{f_n(t)\}\), \(f_n(t) \to f(t)\) for every \(t\)
-\item \(|f_n(t)| \leq g(t)\) for every \(t\)
-\item \(\int_a^b g(t) dt\) exists
+\item \sout{\(\{f_n(t)\}\), \(f_n(t) \to f(t)\) for every \(t\)}
+\item \sout{\(|f_n(t)| \leq g(t)\) for every \(t\)}
+\item \sout{\(\int_a^b g(t) dt\) exists}
 \end{itemize}
 
-Then \(\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \lim_{n \to \infty} f_n(t) dt = \int_a^b f(t) dt\).
+\sout{Then \(\lim_{n \to \infty} \int_a^b f_n(t) dt = \int_a^b \lim_{n \to \infty} f_n(t) dt = \int_a^b f(t) dt\).}
 \end{remark}
 
 \begin{definition}[Exact Equation]
-Any first-order ODE in the form \(M(t, y) + N(t, y)\frac{dy}{dt} = 0\) that satisfies \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\) is called an \textbf{exact equation}.
+{\color{blue}Any first-order ODE in the form \(M(t, y) + N(t, y)\frac{dy}{dt} = 0\) that satisfies \(\frac{\partial M}{\partial y} = \frac{\partial N}{\partial t}\) is called an \textbf{exact equation}.}
 \end{definition}
 
 \subsection{Integrating Factor for Non-Exact Equations}
-Consider an equation \(M(t, y) + N(t, y)\frac{dy}{dt} = 0\) which is not exact (that is, \(\frac{\partial M}{\partial y} \neq \frac{\partial N}{\partial t}\)).
+\sout{Consider an equation \(M(t, y) + N(t, y)\frac{dy}{dt} = 0\) which is not exact (that is, \(\frac{\partial M}{\partial y} \neq \frac{\partial N}{\partial t}\)).}
 
-Is there any function \(\mu(t, y)\) such that
+\sout{Is there any function \(\mu(t, y)\) such that}
 \[\mu(t, y)\left( M(t, y) + N(t, y)\frac{dy}{dt} \right) = 0\]
-is exact? In other words, is there any \(\mu(t, y)\) such that \(\frac{\partial \tilde{M}}{\partial y} = \frac{\partial \tilde{N}}{\partial t}?\)
+\sout{is exact? In other words, is there any \(\mu(t, y)\) such that \(\frac{\partial \tilde{M}}{\partial y} = \frac{\partial \tilde{N}}{\partial t}?\)}
 
-(\(\tilde{M}(t, y) = \mu(t, y)M(t, y)\), \(\tilde{N}(t, y) = \mu(t, y)N(t, y)\).)
+\sout{(\(\tilde{M}(t, y) = \mu(t, y)M(t, y)\), \(\tilde{N}(t, y) = \mu(t, y)N(t, y)\).)}
 
-Recall the exactness condition \(\frac{\partial \tilde{M}}{\partial y} = \frac{\partial \tilde{N}}{\partial t}\) for \(\tilde{M} = \mu M\) and \(\tilde{N} = \mu N\), which gives
-\[\frac{\partial \mu}{\partial y} M + \mu \frac{\partial M}{\partial y} = \frac{\partial \mu}{\partial t} N + \mu \frac{\partial N}{\partial t} \tag{23}\]
+\sout{Recall the exactness condition \(\frac{\partial \tilde{M}}{\partial y} = \frac{\partial \tilde{N}}{\partial t}\) for \(\tilde{M} = \mu M\) and \(\tilde{N} = \mu N\), which gives}
+{\color{blue}\[\frac{\partial \mu}{\partial y} M + \mu \frac{\partial M}{\partial y} = \frac{\partial \mu}{\partial t} N + \mu \frac{\partial N}{\partial t} \tag{23}\]}
 
 To simplify, we look for \(\mu\) (called an integrating factor) depending only on \(t\) (so \(\frac{\partial \mu}{\partial y} = 0\)). Equation (23) reduces to
 \[\mu \frac{\partial M}{\partial y} = \frac{d\mu}{dt} N + \mu \frac{\partial N}{\partial t}\]
@@ -106,10 +105,10 @@ Equivalently,
 \[\frac{d\mu(t)}{dt} N = \mu(t) \left( \frac{\partial N}{\partial t} - \frac{\partial M}{\partial y} \right)\]
 
 If \(N\) never vanishes, then
-\[\frac{d\mu(t)}{dt} = \frac{\mu(t)}{N} \left( \frac{\partial N}{\partial t} - \frac{\partial M}{\partial y} \right)\]
+{\color{blue}\[\frac{d\mu(t)}{dt} = \frac{\mu(t)}{N} \left( \frac{\partial N}{\partial t} - \frac{\partial M}{\partial y} \right)\]}
 (The right-hand side is a function of \(t\) only.)
 
-Notice that the previous equation makes sense if and only if \(\frac{1}{N} \left( \frac{\partial N}{\partial t} - \frac{\partial M}{\partial y} \right)\) depends on \(t\) only.
+{\color{blue}Notice that the previous equation makes sense if and only if \(\frac{1}{N} \left( \frac{\partial N}{\partial t} - \frac{\partial M}{\partial y} \right)\) depends on \(t\) only.}
 
 \subsection{\S2. The Existence and Uniqueness Theorem for First-Order ODEs}
 
@@ -120,10 +119,10 @@ y(t_0) = y_0
 \end{cases}\]
 
 \begin{example}
-\[\begin{cases}
+{\color{blue}\[\begin{cases}
 \frac{dy}{dt} = 1 + y^2 \\
 y(0) = 0
-\end{cases}\]
+\end{cases}\]}
 
 Here, \(f(t, y) = 1 + y^2\), \(t_0 = 0\), \(y_0 = 0\).
 
@@ -140,5 +139,5 @@ Therefore,
 \[y(t) = \tan(t + c), \ c \in \mathbb{R}\]
 
 Additionally, to have \(y(0) = 0\), we need \(\tan(c) = 0\). We choose \(c = 0\), so
-\[y(t) = \tan(t), \ t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\]
+{\color{blue}\[y(t) = \tan(t), \ t \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right)\]}
 \end{example}

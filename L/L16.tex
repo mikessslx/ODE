@@ -8,7 +8,7 @@ The associated system is
 \frac{dy_2}{dt} = -by_1 - ay_2
 \end{cases} \ y_1 = y, \ y_2 = \frac{dy}{dt}\]
 
-The coeff. matrix is \(A = \begin{pmatrix} 0 & 1 \\ -b & -a \end{pmatrix}\).
+The coeff. matrix is {\(A = \begin{pmatrix} 0 & 1 \\ -b & -a \end{pmatrix}\)}.
 
 We've deduced that the char. polynomial is \(p(\lambda) = \lambda^2 + a\lambda + b\).
 
@@ -24,20 +24,20 @@ From this we observe that
 
 \subsubsection{Case 1: \(p(\lambda)\) has two distinct real roots \(\lambda_1, \lambda_2\)}
 
-The functions \(y^{(1)}(t) = v_1 e^{\lambda_1 t}, \ y^{(2)}(t) = v_2 e^{\lambda_2 t}, \ t \in \mathbb{R}\), form a basis of solutions to the system. Here and in what follows \(v_j\) is an eigenvector for \(\lambda_j\). The first components \(\tilde{y}_1(t) = u_1 e^{\lambda_1 t}\) and \(\tilde{y}_2(t) = u_2 e^{\lambda_2 t}, \ t \in \mathbb{R}\) are solutions to the eq. Also, \(u_1 \neq 0, \ u_2 \neq 0\). Then, \(y_1(t) = e^{\lambda_1 t}\) and \(y_2(t) = e^{\lambda_2 t}, \ t \in \mathbb{R}\), are solutions to the eq. and they are l.i. because the Wronskian never vanishes (exercise).
+{\color{blue}The functions \(y^{(1)}(t) = v_1 e^{\lambda_1 t}, \ y^{(2)}(t) = v_2 e^{\lambda_2 t}, \ t \in \mathbb{R}\), form a basis of solutions to the system.} Here and in what follows \(v_j\) is an eigenvector for \(\lambda_j\). The first components \(\tilde{y}_1(t) = u_1 e^{\lambda_1 t}\) and \(\tilde{y}_2(t) = u_2 e^{\lambda_2 t}, \ t \in \mathbb{R}\) are solutions to the eq. Also, \(u_1 \neq 0, \ u_2 \neq 0\). {\color{blue}Then, \(y_1(t) = e^{\lambda_1 t}\) and \(y_2(t) = e^{\lambda_2 t}, \ t \in \mathbb{R}\), are solutions to the eq. and they are l.i. because the Wronskian never vanishes (exercise).}
 
 \subsubsection{Case 2: \(p(\lambda)\) has two complex conjugates roots \(\lambda = \alpha + i\beta\) and \(\bar{\lambda}\)}
 
-The functions \(y^{(1)}(t) = e^{\alpha t} (u \cos(\beta t) - w \sin(\beta t))\) and \(y^{(2)}(t) = e^{\alpha t} (u \sin(\beta t) + w \cos(\beta t)), \ t \in \mathbb{R}\) (Here \(v = u + iw, \ u, w \in \mathbb{R}^2, \ u = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}, w = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}\)) form a basis of solutions to the system. The first components
+{\color{blue}The functions \(y^{(1)}(t) = e^{\alpha t} (u \cos(\beta t) - w \sin(\beta t))\) and \(y^{(2)}(t) = e^{\alpha t} (u \sin(\beta t) + w \cos(\beta t)), \ t \in \mathbb{R}\)} (Here {\(v = u + iw, \ u, w \in \mathbb{R}^2, \ u = \begin{pmatrix} u_1 \\ u_2 \end{pmatrix}, w = \begin{pmatrix} w_1 \\ w_2 \end{pmatrix}\)}) {\color{blue}form a basis of solutions to the system.} The first components
 \[e^{\alpha t} (u_1 \cos(\beta t) - w_1 \sin(\beta t)) \ \text{and} \ e^{\alpha t} (u_1 \sin(\beta t) + w_1 \cos(\beta t)) \ t \in \mathbb{R}\]
 are sol. to the eq. From this we observe that
-\[y_1(t) = e^{\alpha t} \cos(\beta t) \ \text{and} \ y_2(t) = e^{\alpha t} \sin(\beta t), \ t \in \mathbb{R}\]
-are solutions to the eq., and as before, we prove that they are l.i. (exercise).
+{\color{blue}\[y_1(t) = e^{\alpha t} \cos(\beta t) \ \text{and} \ y_2(t) = e^{\alpha t} \sin(\beta t), \ t \in \mathbb{R}\]
+are solutions to the eq., and as before, we prove that they are l.i. (exercise).}
 
 \subsubsection{Case 3: \(p(\lambda)\) has a double (real) root \(\lambda\)}
-The functions \(y^{(1)}(t) = v e^{\lambda t}\) and
+{\color{blue}The functions \(y^{(1)}(t) = v e^{\lambda t}\) and
 \[y^{(2)}(t) = \left( I + (A-\lambda I)t + \frac{(A-\lambda I)^2 t^2}{2} + \cdots + \frac{(A-\lambda I)^{m-1} t^{m-1}}{(m-1)!} \right) \tilde{v} e^{\lambda t}\]
-form a basis if \(\tilde{v}\) solves \((A-\lambda I)^m \tilde{v} = 0, \ (A-\lambda I)^{m-1} \tilde{v} \neq 0\). Observe that \((A-\lambda I)^2 = 0\), so we can select \(\tilde{v}\) as any vector l.i. with \(v\), and consider \(y^{(2)}(t) = (I + (A-\lambda I)t) \tilde{v} e^{\lambda t}\).
+form a basis if \(\tilde{v}\) solves \((A-\lambda I)^m \tilde{v} = 0, \ (A-\lambda I)^{m-1} \tilde{v} \neq 0\).} Observe that \((A-\lambda I)^2 = 0\), so we can select \(\tilde{v}\) as any vector l.i. with \(v\), and consider \(y^{(2)}(t) = (I + (A-\lambda I)t) \tilde{v} e^{\lambda t}\).
 
 Let's check that \((A-\lambda I)^2 = 0\):
 \[(A-\lambda I)^2 = \begin{pmatrix} -\lambda & 1 \\ -b & -a-\lambda \end{pmatrix} \begin{pmatrix} -\lambda & 1 \\ -b & -a-\lambda \end{pmatrix} = \begin{pmatrix} \lambda^2 - b & -2\lambda - a \\ \cdots & -b + (a+\lambda)^2 \end{pmatrix}\]
@@ -45,16 +45,16 @@ Let's check that \((A-\lambda I)^2 = 0\):
 Also, \(\lambda = -\frac{a}{2}\) and \(a^2 = 4b\). From this, we find that \((A-\lambda I)^2 = 0\) (exercise).
 
 \begin{remark}
-\(p(\lambda) = \lambda^2 + a\lambda + b \implies \lambda = \frac{-a \pm \sqrt{a^2-4b}}{2}\).
+\sout{\(p(\lambda) = \lambda^2 + a\lambda + b \implies \lambda = \frac{-a \pm \sqrt{a^2-4b}}{2}\).}
 \end{remark}
 
 The first components of \(y^{(1)}\) and \(y^{(2)}\),
 \[u e^{\lambda t} \ \text{and} \ ((1-\lambda t)\tilde{u} + t\tilde{w}) e^{\lambda t} \ t \in \mathbb{R}\]
 (\(v = \begin{pmatrix} u \\ w \end{pmatrix}, \tilde{v} = \begin{pmatrix} \tilde{u} \\ \tilde{w} \end{pmatrix}\))
 are solutions to the eq. From here, we observe that
-\[y_1(t) = e^{\lambda t} \ \text{and} \ y_2(t) = t e^{\lambda t}, \ t \in \mathbb{R}\]
-are solutions, and they are l.i. (exercise).
+{\color{blue}\[y_1(t) = e^{\lambda t} \ \text{and} \ y_2(t) = t e^{\lambda t}, \ t \in \mathbb{R}\]
+are solutions, and they are l.i. (exercise).}
 
-\begin{remark}
+{\color{blue}\begin{remark}
 \(W(y_1, y_2)(t) = \det \begin{pmatrix} y_1(t) & y_2(t) \\ \frac{dy_1(t)}{dt} & \frac{dy_2(t)}{dt} \end{pmatrix}\).
-\end{remark}
+\end{remark}}

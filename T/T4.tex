@@ -15,15 +15,15 @@ Let \(f(t, y) = e^{-t^2} + y^3\). Let \(a, b > 0\) and \(R = [0, a] \times [1-b,
 
 As \(f\) is \(C^\infty\) in \(\mathbb{R}^2\), we have that \(f\) and \(\frac{\partial f}{\partial y}\) are continuous on \(R\).
 
-By the existence and uniqueness thm. (Picard-Lindel\"of), we know that there exists a unique solution \(y\) on \([0, \alpha]\) where \(\alpha = \min\{a, \frac{b}{M}\}\) and \(M = \max_{(t,y)\in R} |f(t,y)|\).
+\color{blue}{By the existence and uniqueness thm. (Picard-Lindel\"of), we know that there exists a unique solution \(y\) on \([0, \alpha]\) where \(\alpha = \min\{a, \frac{b}{M}\}\) and \(M = \max_{(t,y)\in R} |f(t,y)|\).}
 Also, as \((t, y(t)) \in R\) for every \(t \in [0, \alpha]\), we have that \(1-b \leq y(t) \leq 1+b\).
 
 Let \(b=1\). Then
 \[M = \max_{\substack{0 \le t \le a \\ 0 \le y \le 2}} |e^{-t^2} + y^3| = 1 + 2^3 = 9\]
 and
-\[\alpha = \min\left\{ a, \frac{1}{9} \right\}\]
+\color{blue}{\[\alpha = \min\left\{ a, \frac{1}{9} \right\}\]}
 
-Then we set \(a = \frac{1}{9}\) and get \(\alpha = \frac{1}{9}\).
+\color{blue}{Then we set \(a = \frac{1}{9}\) and get \(\alpha = \frac{1}{9}\).}
 \end{proof}
 
 \begin{xca}
@@ -36,7 +36,7 @@ has a unique solution \(y(t)\) for \(t \geq t_0\).
 \end{xca}
 \begin{proof}[Solution]
 By the existence and uniqueness thm., we know that there exists a unique solution \(y\) on \([t_0, t_0 + \alpha]\) where \(\alpha = \min\{a, \frac{b}{M}\}\) and \(M = \max_{R} |f(t,y)|\).
-As \(|f| \leq K\) in \(R\), we have that \(M \leq K\), so \(\alpha \geq \min\left\{ a, \frac{b}{K} \right\}\), \(a, b\) are arbitrary. In particular, we can make \(a\) and \(b\) as large as desired so \(\alpha\) is as large as we want. In other words, \(y\) is well-defined for \(t \in [t_0, T]\) for every \(T > t_0\). So \(y\) must be defined in \([t_0, +\infty)\).
+\color{blue}{As \(|f| \leq K\) in \(R\), we have that \(M \leq K\), so \(\alpha \geq \min\left\{ a, \frac{b}{K} \right\}\), \(a, b\) are arbitrary. In particular, we can make \(a\) and \(b\) as large as desired so \(\alpha\) is as large as we want. In other words, \(y\) is well-defined for \(t \in [t_0, T]\) for every \(T > t_0\). So \(y\) must be defined in \([t_0, +\infty)\).}
 \end{proof}
 
 \begin{xca}
@@ -49,10 +49,10 @@ has the solution \(y_1(t)=1\). Find a solution \(y_2\), different for \(y_1\), a
 \end{xca}
 \begin{proof}[Solution]
 Notice that the ODE is separable.
-\[\underbrace{\frac{dy}{dt}}_{y'(t)} = t\sqrt{1-y^2} \iff \underbrace{\int \frac{y'(t) dt}{\sqrt{1-y(t)^2}}}_{s = y(t)} = \int t dt \iff \arcsin(y(t)) = \frac{t^2}{2} + C\]
+\color{blue}{\[\underbrace{\frac{dy}{dt}}_{y'(t)} = t\sqrt{1-y^2} \iff \underbrace{\int \frac{y'(t) dt}{\sqrt{1-y(t)^2}}}_{s = y(t)} = \int t dt \iff \arcsin(y(t)) = \frac{t^2}{2} + C\]}
 
 Then, \(y(t) = \sin(\frac{t^2}{2} + C)\), \(C \in \mathbb{R}\). Also, \(y(0) = \sin(C) = 1\). We choose \(C = \frac{\pi}{2}\).
-Then \(y(t) = \sin(\frac{t^2}{2} + \frac{\pi}{2})\).
+\color{blue}{Then \(y(t) = \sin(\frac{t^2}{2} + \frac{\pi}{2})\).}
 
 Observe the following:
 \begin{itemize}
@@ -64,6 +64,6 @@ Now we look for a domain of definition \(I\) such that \(0 \in I\) and \(\cos(\f
 \[\frac{3\pi}{2} \le \frac{t^2}{2} + \frac{\pi}{2} \le \frac{5\pi}{2}\]
 Then \(2\pi \le t^2 \le 4\pi\).
 
-This does not violate the thm. since \(\frac{\partial f}{\partial y}\) cannot be continuous at \((t, 1)\).
-Also, \(f\) does not satisfy the Lipschitz condition near \((t, 1)\).
+\color{blue}{This does not violate the thm. since \(\frac{\partial f}{\partial y}\) cannot be continuous at \((t, 1)\).
+Also, \(f\) does not satisfy the Lipschitz condition near \((t, 1)\).}
 \end{proof}

@@ -2,7 +2,7 @@
 
 \subsection{\S3. Systems of First-Order Equations, \(n\)-th Order Equations}
 
-\begin{definition}[System of First-Order ODEs]
+{\color{blue}\begin{definition}[System of First-Order ODEs]
 A system of first-order ODEs is written as
 \[\begin{cases}
 \frac{dy_1}{dt} = f_1(t, y_1, y_2, \cdots, y_n) \\
@@ -22,7 +22,7 @@ We say that \(y_1, \cdots, y_n\) is a solution to the initial-value problem (1)-
 \frac{dy_n}{dt}(t) = f_n(t, y_1(t), \cdots, y_n(t))
 \end{cases} \ \forall \ t \in I\]
 and \(y_1, \cdots, y_n\) satisfy (2).
-\end{definition}
+\end{definition}}
 
 \begin{example}
 \leavevmode
@@ -45,14 +45,14 @@ models the variations of the blood glucose \(g\) and the net hormonal concentrat
 \end{example}
 
 \begin{remark}
-Let
+{\color{blue}Let
 \[\vec{y} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}, \ \frac{d\vec{y}}{dt} = \begin{pmatrix} dy_1/dt \\ dy_2/dt \\ \vdots \\ dy_n/dt \end{pmatrix}, \ \vec{F} = \begin{pmatrix} f_1 \\ f_2 \\ \vdots \\ f_n \end{pmatrix}, \ \vec{y}^0 = \begin{pmatrix} y_1^0 \\ y_2^0 \\ \vdots \\ y_n^0 \end{pmatrix}\]
 
 Then the system (1)-(2) is
 \[\begin{cases}
 \frac{d\vec{y}}{dt} = \vec{F}(t, \vec{y}) \\
 \vec{y}(t_0) = \vec{y}^0
-\end{cases}\]
+\end{cases}\]}
 
 The theorem of existence and uniqueness of solution for the initial-value problem for systems is obtained exactly as for equations. Now, we replace the assumption on \(\frac{\partial f}{\partial y}\) (for the case of equations) by the assumption that \(D_{\vec{y}} \vec{F}\) is continuous, where
 \[D_{\vec{y}} \vec{F} = \begin{pmatrix} \nabla_y f_1 \\ \nabla_y f_2 \\ \vdots \\ \nabla_y f_n \end{pmatrix} = \begin{pmatrix} \frac{\partial f_1}{\partial y_1} & \frac{\partial f_1}{\partial y_2} & \cdots & \frac{\partial f_1}{\partial y_n} \\
@@ -65,15 +65,15 @@ The existence theorem also holds in the context of systems.
 \end{remark}
 
 \begin{remark}
-The theory of continuation of solutions also applies to systems with minor changes in the proof. The general form of a linear system is
+The theory of continuation of solutions also applies to systems with minor changes in the proof. {\color{blue}The general form of a linear system is
 \[\begin{cases}
 \frac{dy_1}{dt} = a_{11}(t)y_1 + a_{12}(t)y_2 + \cdots + a_{1n}(t)y_n + b_1(t) \\
 \frac{dy_2}{dt} = a_{21}(t)y_1 + a_{22}(t)y_2 + \cdots + a_{2n}(t)y_n + b_2(t) \\
 \vdots \\
 \frac{dy_n}{dt} = a_{n1}(t)y_1 + a_{n2}(t)y_2 + \cdots + a_{nn}(t)y_n + b_n(t)
-\end{cases}\]
+\end{cases}\]}
 
-Let
+{\color{blue}Let
 \[A(t) = \begin{pmatrix} a_{11}(t) & \cdots & a_{1n}(t) \\
 a_{21}(t) & \cdots & a_{2n}(t) \\
 \vdots & \ddots & \vdots \\
@@ -81,25 +81,25 @@ a_{n1}(t) & \cdots & a_{nn}(t)
 \end{pmatrix}, \ \vec{b}(t) = \begin{pmatrix} b_1(t) \\ b_2(t) \\ \vdots \\ b_n(t) \end{pmatrix}\]
 
 Then the linear system is
-\[\frac{d\vec{y}}{dt} = A(t)\vec{y} + \vec{b}(t)\]
+\[\frac{d\vec{y}}{dt} = A(t)\vec{y} + \vec{b}(t)\]}
 
 If \(\vec{b} \equiv 0\), we say that the system is homogeneous; otherwise, we say that the system is non-homogeneous.
 
 We'll focus on Linear Systems.
 \begin{itemize}
-\item For \(\frac{d\vec{y}}{dt} = A(t)\vec{y}\) (homogeneous):
+\item {\color{blue}For \(\frac{d\vec{y}}{dt} = A(t)\vec{y}\) (homogeneous):
 \begin{itemize}
 \item The set of solutions is a vector space of dimension \(n\).
 \item The general solution is:
 \[\vec{y}_h(t) = \alpha_1 \vec{y}^{(1)}(t) + \cdots + \alpha_n \vec{y}^{(n)}(t)\]
 where \(\{\vec{y}^{(1)}(t), \cdots, \vec{y}^{(n)}(t)\}\) is a basis (fundamental set of solutions).
-\end{itemize}
-\item For \(\frac{d\vec{y}}{dt} = A(t)\vec{y} + \vec{b}(t)\) (\(\vec{b} \neq 0\), non-homogeneous):
+\end{itemize}}
+\item {\color{blue}For \(\frac{d\vec{y}}{dt} = A(t)\vec{y} + \vec{b}(t)\) (\(\vec{b} \neq 0\), non-homogeneous):
 \begin{itemize}
 \item The general solution is:
 \[\vec{y}_h(t) + \vec{y}_p(t)\]
 where \(\vec{y}_p\) is one particular solution to the non-homogeneous system.
-\end{itemize}
+\end{itemize}}
 \item Qualitative Properties of Nonlinear Systems (some of them) can be deduced from associated linear systems.
 \end{itemize}
 \end{remark}

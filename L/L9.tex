@@ -19,20 +19,20 @@ y(t_0) = y^0 \rightsquigarrow y_1(t_0)=y_1^0, \cdots, y_n(t_0)=y_n^0
 
 \subsection{Structure of the Solution Set}
 
-\begin{theorem}
+{\color{blue}\begin{theorem}
 For \(i,j=1,\cdots,n\), assume that \(a_{ij}\) form a continuous function in an open interval \(I\). Then, the set of solutions to \(\frac{dy}{dt} = A(t)y\) in \(I\) is a vector space of dimension \(n\).
-\end{theorem}
+\end{theorem}}
 
-\begin{remark}[Comparison]
+{\color{blue}\begin{remark}[Comparison]
 \[\begin{tabular}{p{0.1\textwidth} p{0.4\textwidth} p{0.4\textwidth}}
 & \textbf{Scalar} & \textbf{System} \\
 \textbf{ODE} & \(\frac{dy}{dt} = f(t,y)\), \(y: I \subset \mathbb{R} \to \mathbb{R}\) & \(\frac{dy}{dt} = F(t,y)\), \(y: I \subset \mathbb{R} \to \mathbb{R}^n\) \\
 \textbf{IVP} & \(\begin{cases} \frac{dy}{dt} = f(t,y) = a(t)y + b(t) \\ y(t_0) = y_0 \in \mathbb{R} \end{cases}\) & \(\begin{cases} \frac{dy}{dt} = F(t,y) = A(t)y + b(t) \\ y(t_0) = y_0 \in \mathbb{R}^n \end{cases}\)
 \end{tabular}\]
-\end{remark}
+\end{remark}}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}
@@ -70,12 +70,12 @@ Proof is commented out!
 % Therefore, \(\mathcal{B}\) is a basis, and the set of solutions has dimension \(n\).
 % \end{proof}
 
-\begin{proposition}
+{\color{blue}\begin{proposition}
 Consider the same assumptions of the previous theorem. Let \(\mathcal{B} = \{ y^{(1)}, y^{(2)}, \cdots, y^{(n)} \}\) be a set of solutions to \(\frac{dy}{dt} = A(t)y\) in \(I\). Then \(\mathcal{B}\) is linearly independent if and only if the set \(\mathcal{B}_0 = \{ y^{(1)}(t_0), \cdots, y^{(n)}(t_0) \}\) is a set of linearly independent vectors for any \(t_0 \in I\).
-\end{proposition}
+\end{proposition}}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}
@@ -95,7 +95,7 @@ Proof is commented out!
 % Then \(\beta_1 y^{(1)}(t) + \cdots + \beta_n y^{(n)}(t) = 0 \ \forall t \in I\). Using that \(\mathcal{B}\) is l.i., we get \(\beta_1 = \cdots = \beta_n = 0\). Thus, \(\mathcal{B}_0\) is l.i.
 % \end{proof}
 
-\begin{example}
+{\color{blue}\begin{example}
 Let \(y^{(1)}(t) = \begin{pmatrix} e^t \\ 0 \end{pmatrix}\) and \(y^{(2)}(t) = \begin{pmatrix} 0 \\ t \end{pmatrix}\), \(t \in \mathbb{R}\).
 These functions are l.i.:
 \begin{align*}
@@ -105,16 +105,16 @@ These functions are l.i.:
 \end{align*}
 
 However, \(y^{(1)}(0) = \begin{pmatrix} 1 \\ 0 \end{pmatrix}\), \(y^{(2)}(0) = \begin{pmatrix} 0 \\ 0 \end{pmatrix}\) are not l.i.
-\end{example}
+\end{example}}
 
-\begin{theorem}
+{\color{blue}\begin{theorem}
 Assume that \(a_{ij}\) and \(b_i\) are continuous functions in \(I\) for \(i,j=1,\cdots,n\). Then the general solution to \(\frac{dy}{dt} = A(t)y + b(t)\) (14) is
 \[y(t) = y_H(t) + z(t) \tag{15}\]
 where \(y_H\) is the general solution of the homogeneous system associated to (14) and \(z\) is a particular solution to (14).
-\end{theorem}
+\end{theorem}}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}

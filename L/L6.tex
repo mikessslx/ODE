@@ -5,19 +5,19 @@
 \begin{recap}
 \textbf{Picard Iterates (Sequence of Successive Approximations)}
     
-The sequence \(\{y_n(t)\}\) is defined as:
+{\color{blue}The sequence \(\{y_n(t)\}\) is defined as:
 \[\begin{cases}
 y_0(t) = y_0 \\
 y_{n+1}(t) = y_0 + \int_{t_0}^t f(s, y_n(s)) \, ds \ (n = 0, 1, 2, \cdots)
-\end{cases}\]
+\end{cases}\]}
 
-This sequence \(\{y_n(t)\}\) converges to a continuous function \(y(t)\) for each \(t \in [t_0, t_0 + \alpha]\), and \(y(t)\) solves the initial value problem on \([t_0, t_0 + \alpha]\).
+{\color{blue}This sequence \(\{y_n(t)\}\) converges to a continuous function \(y(t)\) for each \(t \in [t_0, t_0 + \alpha]\), and \(y(t)\) solves the initial value problem on \([t_0, t_0 + \alpha]\).}
 \end{recap}
 
 \subsubsection{Proof (Continued)}
 
 \begin{remark}
-Proof is commented out!
+\sout{Proof is commented out!}
 \end{remark}
 
 % \begin{proof}[Proof (Continued)]
@@ -54,12 +54,12 @@ Proof is commented out!
 \leavevmode
 \begin{enumerate}[a)]
 \item
-In the proof, we repeatedly used the inequality:
+{\color{blue}In the proof, we repeatedly used the inequality:
 \[|f(s, y) - f(s, z)| \leq L |y - z| \ \forall (s, y), (s, z) \in R \tag{*}\]
 
-The theorem’s conclusion holds if we replace the assumption that \(\frac{\partial f}{\partial y}\) is continuous in \(R\) with \(f\) satisfying inequality (*). A function satisfying (*) is called \textbf{Lipschitz} with respect to its second argument. There exist differentiable Lipschitz functions (e.g. \(f(t, y) = 2y\), which is differentiable and satisfies \(|2y - 2z| = 2|y - z|\), so \(L = 2\)).
+The theorem’s conclusion holds if we replace the assumption that \(\frac{\partial f}{\partial y}\) is continuous in \(R\) with \(f\) satisfying inequality (*). A function satisfying (*) is called \textbf{Lipschitz} with respect to its second argument. There exist differentiable Lipschitz functions (e.g. \(f(t, y) = 2y\), which is differentiable and satisfies \(|2y - 2z| = 2|y - z|\), so \(L = 2\)).}
 
 \item
-If we remove the assumption on \(\frac{\partial f}{\partial y}\), the \textbf{Cauchy-Peano Theorem} guarantees that the initial value problem has at least one solution.
+{\color{blue}If we remove the assumption on \(\frac{\partial f}{\partial y}\), the \textbf{Cauchy-Peano Theorem} guarantees that the initial value problem has at least one solution.}
 \end{enumerate}
 \end{remark}
